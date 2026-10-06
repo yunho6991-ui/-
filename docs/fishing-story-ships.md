@@ -15,37 +15,37 @@
 
 | 배 | 단골 NPC | 한 줄 | ★5에서 이어지는 메인 이야기 |
 |---|---|---|---|
-| 🏥 의료선 | **윤슬 선생** | 배를 병원 삼아 떠도는 바다 의사 | 지친 심장지기 해솔을 위한 처방 |
+| 🏥 의료선 | **윤슬 선생** | 배를 병원 삼아 떠도는 바다 의사 | 바빠서 못 자는 해솔을 위한 꿀잠 처방 |
 | 🎣 어선 | **꼬마 물방울** | 낚시를 배우고 싶어 따라다니는 동네 아이 | 어린 해솔의 모습 |
 | 💰 무역선 | **보따리 할멈** | 주문서를 대 주는 수상한 행상 할머니 | 용궁의 잔치 준비 |
 | ⛴️ 여객선 | **준호와 미소** | 첫 손님이었던 신혼부부, 그리고 그 가족 | 해솔의 이름이 이어지는 이야기 |
-| ⚔️ 전투선 | **순찰대장 한결** · **그림자 상인 무명** | 현상수배를 넘겨주는 해군 대장과 쫓는 밀수 해적 | 재앙이 깨어난 이유 |
+| ⚔️ 전투선 | **순찰대장 한결** · **그림자 상인 무명** | 현상수배를 넘겨주는 해군 대장과 쫓는 장난꾸러기 해적 | 덩치들이 깬 이유 |
 
 ---
 
 ## 🏥 의료선 — 「윤슬 선생의 진료 기록」 (난이도 ●○○○○)
 
 **★1 · 첫 환자**
-> 🆘 표류하던 어부를 건져 올렸어요. 어쩔 줄 모르는데, 옆 배에서 하얀 가운이 펄럭이며 건너와요.
-> 윤슬 선생: "비켜 봐요. …괜찮아요, 바닷물 좀 마셨을 뿐이에요. 배가 깨끗하네. 여기서 진료 좀 봐도 될까요?"
+> 🆘 둥둥 떠 있던 어부를 건져 올렸어요. 허둥대는데, 옆 배에서 하얀 가운이 펄럭이며 폴짝 건너와요.
+> 윤슬 선생: "비켜 봐요~ …괜찮아요, 바닷물 좀 마시고 놀랐을 뿐이에요. 배 깨끗하네! 여기서 진료 좀 봐도 돼요?"
 
 **★2 · 떠돌이 의사**
-> 🩺 윤슬 선생이 아예 배에 짐을 풀었어요. 약초 상자, 낡은 청진기, 그리고 두꺼운 진료 기록부.
-> 윤슬 선생: "바다엔 병원이 없잖아요. 그래서 배를 병원으로 쓰는 거예요."
+> 🩺 윤슬 선생이 아예 짐을 풀었어요. 약초 상자, 반짝이는 청진기, 그리고 두꺼운 진료 기록부.
+> 윤슬 선생: "바다엔 병원이 없잖아요. 그래서 배를 병원으로 쓰는 거예요!"
 > 🐤 무능: 저 배 아파요! (밥을 너무 먹었음)
 
-**★3 · 비늘 상처**
-> 🐉 구한 사람들 몸에 같은 상처가 있어요. 커다란 비늘에 긁힌 자국이에요.
-> 윤슬 선생: "해왕류 상처예요. 원래 사람을 안 건드리는 애들인데… 바다 전체가 아픈 것 같아요."
+**★3 · 하품 바이러스**
+> 🥱 요즘 구한 사람들이 다 같은 증상이에요. 하품이 멈추질 않아요!
+> 윤슬 선생: "이상하다… 바다 깊은 데서 누가 엄청 크게 하품하나 봐요. 그게 다 옮았어요."
 
 **★4 · 할아버지의 기록부**
 > 📒 윤슬 선생이 아주 오래된 기록부를 펼쳐요. 할아버지 글씨예요. 마지막 환자 이름: **해솔**.
-> 기록: "증상 — 잠을 못 잠. 바다 소리가 심장처럼 들린다고 함. 처방 — 없음. 이 환자는 바다와 같이 아프다."
+> 기록: "증상 — 너무 바빠서 잠을 못 잠. 처방 — 꿀잠 허브차. 근데 안 마시고 도망감."
 
-**★5 · 바다를 위한 처방**
-> 💊 윤슬 선생이 밤새 약을 달였어요. 병에 담긴 약이 일곱 빛깔로 빛나요.
-> 윤슬 선생: "할아버지가 못 쓴 처방이에요. 바다가 아프면 지키는 사람도 아파요. 이건 그 사람한테 보내요. …해솔 씨한테요."
-> (메인: 지친 심장지기 해솔 — 5-0 프롤로그, 5-9 결말에서 해솔이 다시 숨을 돌린다)
+**★5 · 꿀잠 처방**
+> 🍵 윤슬 선생이 밤새 허브차를 끓였어요. 병 속에서 일곱 빛깔로 반짝여요.
+> 윤슬 선생: "할아버지가 못 먹인 처방이에요. 이번엔 꼭 마시게 해요! 바다 지키는 사람도 푹 자야 하니까. …해솔 씨한테 전해 줘요."
+> (메인: 바빠서 자장가를 깜빡한 해솔 — 5-0 프롤로그, 5-9 결말에서 해솔이 드디어 낮잠을 잔다)
 
 ---
 
@@ -127,15 +127,15 @@
 ## ⚔️ 전투선 — 「그림자를 쫓는 배」 (난이도 ●●●●○)
 
 **★1 · 해군의 부탁**
-> ⚓ 순찰대장 한결: "요즘 해적이 들끓소. 귀선 대포가 쓸 만해 보이니, 수배서를 넘기겠소. 잡는 건 선장 몫이오."
+> ⚓ 순찰대장 한결: "요즘 장난꾸러기 해적이 많소! 귀선 대포가 쓸 만해 보이니 수배서를 넘기겠소. 잡는 건 선장 몫이오."
 > 🐤 무능: 경찰 놀이다! (진짜임)
 
 **★2 · 압수품**
-> 🐚 격파한 수배 해적선 화물칸에 **해왕류의 비늘**이 잔뜩 실려 있어요.
-> 순찰대장 한결: "비늘을 노리는 놈들이 있소. 살아 있는 해왕류에게서 억지로 뜯어낸 거요."
+> 🐚 혼쭐난 수배 해적선 화물칸에 **해왕류의 비늘**이 잔뜩 실려 있어요.
+> 순찰대장 한결: "해왕류가 자는 사이에 비늘을 몰래 주워 가는 녀석들이 있소. 해왕류들이 간지러워서 잠을 설친다오."
 
 **★3 · 화난 바다**
-> 🌊 비늘을 뺏긴 해왕류들이 사납게 날뛴다는 소문이 돌아요. 깊은 바다가 술렁여요.
+> 🌊 잠을 설친 해왕류들이 투덜투덜 뒤척인다는 소문이 돌아요. 깊은 바다가 들썩들썩해요.
 > 순찰대장 한결: "그 뒤에 늘 같은 이름이 있소. **그림자 상인 무명**."
 
 **★4 · 그림자의 꼬리**
@@ -143,10 +143,10 @@
 > 쪽지: "비늘을 모으면 올 블루로 가는 길이 열린다. 나는 선장님을 만나야 한다."
 
 **★5 · 무명의 정체**
-> ⛓️ 마침내 무명을 붙잡았어요. 두건을 벗긴 얼굴은 생각보다 앳돼요.
-> 그림자 상인 무명: "우리 증조할아버지는 해솔 선장 배의 선원이었어. 선장을 찾으려고 비늘을 모았는데… 그게 바다를 깨운 줄은 몰랐어."
-> 순찰대장 한결: "이제 알았으니 됐소. 깨운 바다는 우리가 같이 재우면 되오."
-> (메인: 여덟 재앙이 깨어난 이유 하나 — 5-0 프롤로그, 방 공동 봉인)
+> ⛓️ 드디어 무명을 붙잡았어요! 두건을 벗기니 생각보다 앳된 얼굴이에요.
+> 그림자 상인 무명: "우리 증조할아버지가 해솔 선장 배 선원이었어. 비늘 모으면 선장님 만날 수 있대서… 해왕류 잠 깨운 줄은 몰랐어. 미안!"
+> 순찰대장 한결: "모르고 그런 거면 됐소. 깨운 녀석들은 이제 우리가 같이 재워 줍시다."
+> (메인: 덩치들이 깬 이유 하나 — 5-0 프롤로그, 방 공동 재우기)
 
 ---
 
@@ -154,11 +154,11 @@
 
 | 배 이야기 ★5 | 메인에서 비추는 것 | 메인 위치 |
 |---|---|---|
-| 의료선 | 지친 심장지기 해솔과 그를 위한 처방 | 5-0 · 5-9 |
+| 의료선 | 바빠서 못 자는 해솔과 꿀잠 처방 | 5-0 · 5-9 |
 | 어선 | 어린 해솔 | 5-10 숨은 장면 · 신화 선원 꼬마선장 해솔 |
 | 무역선 | 해솔을 기다리는 용궁의 잔치 | 5-9 결말 |
 | 여객선 | 해솔의 이름이 이어짐 | 본편 에필로그 |
-| 전투선 | 재앙이 깨어난 이유(비늘 밀수 해적) | 5-0 프롤로그 |
+| 전투선 | 덩치들이 깬 이유 하나(비늘 줍는 해적) | 5-0 프롤로그 |
 
 > 메인 스토리는 어느 배를 타도 똑같이 다 볼 수 있다. 배 이야기는 "다른 각도에서 본 덤"이다.
 
@@ -172,26 +172,29 @@
 
 ---
 
-## 그림 프롬프트 (ComfyUI)
+## 그림 프롬프트 (귀여운 화풍, ComfyUI)
 
-> 이야기 그림은 ★별 배 그림을 그대로 쓴다. 새로 필요한 건 단골 NPC 초상화와 ★5 장면(선택)뿐이다.
-> 스타일·크기는 `fishing-story-prompts.md`와 같다. 보따리 할멈·순찰대장 한결·그림자 상인 무명은 `season2-ships-prompts.md`의 `npc_cap_peddler` · `npc_cap_navy` · `npc_cap_smuggler`를 쓴다. 바다곰 영감은 `npc_bear.jpg`.
+> 이야기 그림은 ★별 배 그림을 그대로 쓴다. 새로 필요한 건 단골 NPC 초상화와 ★5 장면(선택)뿐.
+> 앞에 `[귀여움]` 스타일 문구(`fishing-story-prompts.md` 맨 위)를 붙인다. 바다곰 영감은 `npc_bear.jpg`.
 
 ### 단골 NPC 초상화 (832×1216)
 
-| 파일 | 프롬프트 |
+| 파일 | 프롬프트 (`[귀여움]` 뒤에) |
 |---|---|
-| `npc_doctor.jpg` | `[스타일] Portrait of a calm kind Korean woman doctor in her thirties with a loose low ponytail, a white coat fluttering in the sea wind over a navy sweater, an old brass stethoscope around her neck, holding a thick worn medical logbook, standing on the deck of a small white clinic boat with a red cross flag, soft morning light.` |
-| `npc_droplet.jpg` | `[스타일] Portrait of an energetic seven-year-old Korean child with a messy bowl haircut and a too-big straw hat, holding a crooked homemade fishing rod, sun-tanned cheeks and a gap-toothed grin, standing on a wooden dock with a bucket.` |
-| `npc_couple.jpg` | `[스타일] Portrait of a sweet young Korean newlywed couple on a ferry deck, the husband with round glasses carrying two suitcases, the wife in a sun hat laughing and pointing at the sea, wind in their hair, bright cheerful morning.` |
-| `npc_couple_family.jpg` | `[스타일] The same young Korean couple a few years later on a ferry deck, the husband with round glasses and the wife in a sun hat, now holding a giggling toddler who reaches toward the sea, warm family moment, golden light.` |
+| `npc_doctor.jpg` | `Character portrait of a cheerful chibi woman doctor with a loose low ponytail, a fluttering white coat over a navy sweater, a shiny brass stethoscope, hugging a thick medical logbook, standing on a small white clinic boat with a red cross flag, soft morning light.` |
+| `npc_droplet.jpg` | `Character portrait of an energetic chibi kid with a messy bowl haircut and a too-big straw hat, holding a crooked homemade fishing rod and a bucket, gap-toothed grin, wooden dock.` |
+| `npc_couple.jpg` | `Character portrait of a sweet chibi newlywed couple on a ferry deck, the husband with round glasses carrying two suitcases, the wife in a sun hat laughing and pointing at the sea, hearts floating, sunny.` |
+| `npc_couple_family.jpg` | `The same sweet chibi couple a few years later on a ferry deck, husband with round glasses and wife in a sun hat, now holding a giggling chubby toddler reaching for the sea, warm family moment.` |
+| `npc_peddler.jpg` | `Character portrait of a tiny chibi grandma peddler with a colorful headscarf and rosy cheeks, a huge cloth bundle on her back overflowing with goods, holding up an order slip with a dragon stamp, mischievous smile.` |
+| `npc_navy.jpg` | `Character portrait of a chibi naval captain with neat short hair, a crisp white-and-navy uniform, holding a wanted poster and a spyglass, serious face but blushing cheeks.` |
+| `npc_mumyeong.jpg` | `Character portrait of a chibi young smuggler pulling back a hood to reveal a sheepish apologetic face, holding a small pouch of glittering sea serpent scales, cute and harmless.` |
 
 ### ★5 장면 (선택, 1216×832)
 
-| 파일 | 프롬프트 |
+| 파일 | 프롬프트 (`[귀여움]` 뒤에) |
 |---|---|
-| `shipstory_medic_5.jpg` | `[스타일] A woman doctor in a white coat holding up a small glass bottle of medicine glowing with seven rainbow colors on the deck of a clinic ship at night, an old open medical logbook and herb bundles on the table beside her, the seven-colored sea shimmering in the distance, hopeful tender mood.` |
-| `shipstory_fisher_5.jpg` | `[스타일] A small child on a wooden dock hauling up a surprisingly huge fish with a crooked homemade rod, splashing water, an elderly bearded fisherman in a navy knit cap watching from behind with teary proud eyes, golden hour.` |
-| `shipstory_merchant_5.jpg` | `[스타일] A grand underwater dragon palace banquet hall being prepared, long tables filled with seafood dishes, an old peddler grandmother standing tall in royal kitchen robes overseeing servants, a single empty seat of honor at the head of the table, festive warm lantern light.` |
-| `shipstory_liner_5.jpg` | `[스타일] A young teenager with a backpack stepping off a ferry and turning back to wave, pointing proudly at a hand-painted toy boat in their hand, the ferry captain seen from behind waving back, sunrise over the harbor, hopeful mood.` |
-| `shipstory_warship_5.jpg` | `[스타일] On an armored patrol ship deck, a young smuggler with a lowered hood looking down remorsefully, a fair naval captain placing a hand on his shoulder, a seized chest of glowing sea serpent scales open between them, stormy sky breaking into light.` |
+| `shipstory_medic_5.jpg` | `A cheerful chibi woman doctor in a white coat holding up a little bottle of herbal tea glowing in seven rainbow colors, a teapot steaming on the clinic boat table, an old logbook open beside her, the rainbow sea twinkling behind, cozy night.` |
+| `shipstory_fisher_5.jpg` | `A tiny chibi kid on a wooden dock hauling up a surprisingly big happy fish with a crooked homemade rod, splash and sparkles, a chubby fluffy-bearded grandpa in a navy beanie behind them wiping a proud tear.` |
+| `shipstory_merchant_5.jpg` | `A festive underwater dragon palace banquet being prepared, long tables of cute seafood dishes, a tiny grandma in royal kitchen robes standing proudly on a stool directing cute fish waiters, one decorated seat of honor waiting, warm lantern light.` |
+| `shipstory_liner_5.jpg` | `A chibi teenager with a backpack hopping off a ferry and turning to wave, proudly holding up a hand-painted toy boat, the ferry captain seen from behind waving back, sunrise harbor.` |
+| `shipstory_warship_5.jpg` | `On a cute armored patrol boat, a chibi young smuggler bowing an apology, a chibi naval captain patting their head, an open chest of glittering sea serpent scales between them, sky clearing into a rainbow.` |
