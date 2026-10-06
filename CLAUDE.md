@@ -27,6 +27,7 @@
 | `docs/backlog.md` | 전체 아이디어 목록(단순도 ✅⚠️❌ 표시). 여기서 골라서 넣는다 |
 | `docs/fishing-ideas.md` | 코드 개선·추가 아이디어 상세 |
 | `docs/fishing-story.md` | 본편 스토리 0~4장 |
+| `docs/fishing-story-ships.md` | 배 이야기 — 배마다 단골 NPC와 5편(★ 오를 때), ★5는 메인과 연결 |
 | `docs/fishing-story-allblue.md` | 5장 올 블루 편, 신화·재앙급, 신화 선원 60명 |
 | `docs/ships-solo.md` | **배 개편 최신안** — 처음에 배 고르기 + 강화 한 줄기(Lv1~20, 4레벨마다 ★), 배마다 혼자 하는 플레이(일감), 난이도 ●○○○○ |
 | `docs/season2-ships.md` | 시즌 2 NPC 배·시즌 전환 (배 개편 부분은 `ships-solo.md`가 우선) |
