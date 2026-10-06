@@ -31,6 +31,7 @@
 | `docs/fishing-story-allblue.md` | 5장 올 블루 편, 신화·재앙급, 신화 선원 60명 |
 | `docs/ships-solo.md` | **배 개편 최신안** — 처음에 배 고르기 + 강화 한 줄기(Lv1~20, 4레벨마다 ★), 배마다 혼자 하는 플레이(일감), 난이도 ●○○○○ |
 | `docs/season2-ships.md` | 시즌 2 NPC 배·시즌 전환 (배 개편 부분은 `ships-solo.md`가 우선) |
+| `docs/season1-rewards.md` | 시즌 1 보상 — 칭호 중심, 배 레벨 소량, 포인트 지급 없음 |
 | `docs/pvp-rework.md` | 약탈 개편 — 유저 간 약탈을 NPC 상선·해적으로 |
 | `docs/crew-traits.md` | 선원 96명 개성(시간·날씨) |
 | `docs/*-prompts.md` | 각 문서의 ComfyUI 그림 프롬프트(Krea2, 자연어 영어) |
