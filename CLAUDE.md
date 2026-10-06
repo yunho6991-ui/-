@@ -29,6 +29,7 @@
 | `docs/fishing-story.md` | 본편 스토리 0~4장 |
 | `docs/fishing-story-allblue.md` | 5장 올 블루 편, 신화·재앙급, 신화 선원 60명 |
 | `docs/season2-ships.md` | 시즌 2 배 밸런스·NPC 배 |
+| `docs/crew-traits.md` | 선원 96명 개성(시간·날씨·해역) |
 | `docs/*-prompts.md` | 각 문서의 ComfyUI 그림 프롬프트(Krea2, 자연어 영어) |
 
 ## 작성 규칙
