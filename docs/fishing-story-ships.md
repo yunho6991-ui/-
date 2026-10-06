@@ -15,36 +15,37 @@
 
 | 배 | 단골 NPC | 한 줄 | ★5에서 이어지는 메인 이야기 |
 |---|---|---|---|
-| 🕸️ 트롤선 | **실타래 할매** | 항구 끝에서 그물을 짜는 할머니 | 해솔이 마지막으로 주문한 그물 |
+| 🏥 의료선 | **윤슬 선생** | 배를 병원 삼아 떠도는 바다 의사 | 지친 심장지기 해솔을 위한 처방 |
 | 🎣 어선 | **꼬마 물방울** | 낚시를 배우고 싶어 따라다니는 동네 아이 | 어린 해솔의 모습 |
 | 💰 무역선 | **보따리 할멈** | 주문서를 대 주는 수상한 행상 할머니 | 용궁의 잔치 준비 |
 | ⛴️ 여객선 | **준호와 미소** | 첫 손님이었던 신혼부부, 그리고 그 가족 | 해솔의 이름이 이어지는 이야기 |
-| 🛡️ 방어선 | **순찰대장 한결** · **그림자 상인 무명** | 검문을 같이 하는 해군 대장과 쫓는 밀수꾼 | 재앙이 깨어난 이유 |
+| ⚔️ 전투선 | **순찰대장 한결** · **그림자 상인 무명** | 현상수배를 넘겨주는 해군 대장과 쫓는 밀수 해적 | 재앙이 깨어난 이유 |
 
 ---
 
-## 🕸️ 트롤선 — 「그물 아래의 노래」 (난이도 ●○○○○)
+## 🏥 의료선 — 「윤슬 선생의 진료 기록」 (난이도 ●○○○○)
 
-**★1 · 첫 그물**
-> 🕸️ 첫 그물을 걷자 낡은 그물 조각이 같이 올라와요. 매듭이 꽃무늬처럼 예뻐요.
-> 항구 끝에서 그물을 짜던 할머니가 손짓해요. "그거, 이리 줘 봐."
+**★1 · 첫 환자**
+> 🆘 표류하던 어부를 건져 올렸어요. 어쩔 줄 모르는데, 옆 배에서 하얀 가운이 펄럭이며 건너와요.
+> 윤슬 선생: "비켜 봐요. …괜찮아요, 바닷물 좀 마셨을 뿐이에요. 배가 깨끗하네. 여기서 진료 좀 봐도 될까요?"
 
-**★2 · 실타래 할매**
-> 🧶 실타래 할매: "이 매듭은 우리 어머니 솜씨야. 백 년 전 거지."
-> 할매가 새 그물을 하나 짜 줘요. "그물은 물고기만 잡는 게 아니야. 바다 이야기도 걸려 올라와."
+**★2 · 떠돌이 의사**
+> 🩺 윤슬 선생이 아예 배에 짐을 풀었어요. 약초 상자, 낡은 청진기, 그리고 두꺼운 진료 기록부.
+> 윤슬 선생: "바다엔 병원이 없잖아요. 그래서 배를 병원으로 쓰는 거예요."
+> 🐤 무능: 저 배 아파요! (밥을 너무 먹었음)
 
-**★3 · 걸려 올라온 것들**
-> 🐚 요즘 그물에 이상한 게 자꾸 걸려요. 반짝이는 비늘, 부서진 노, 은빛 실 한 가닥.
-> 실타래 할매: "은빛 실이라… 그건 어머니가 딱 한 번 쓴 실이야. 아주 특별한 그물에."
+**★3 · 비늘 상처**
+> 🐉 구한 사람들 몸에 같은 상처가 있어요. 커다란 비늘에 긁힌 자국이에요.
+> 윤슬 선생: "해왕류 상처예요. 원래 사람을 안 건드리는 애들인데… 바다 전체가 아픈 것 같아요."
 
-**★4 · 어머니의 장부**
-> 📒 할매가 오래된 장부를 펼쳐요. 마지막 줄에 이름 하나가 적혀 있어요. "해솔 — 은빛 실 그물, 아주 큰 것."
-> 실타래 할매: "물고기를 잡을 그물이 아니었대. 뭔가를 **감싸는** 그물이었다고."
+**★4 · 할아버지의 기록부**
+> 📒 윤슬 선생이 아주 오래된 기록부를 펼쳐요. 할아버지 글씨예요. 마지막 환자 이름: **해솔**.
+> 기록: "증상 — 잠을 못 잠. 바다 소리가 심장처럼 들린다고 함. 처방 — 없음. 이 환자는 바다와 같이 아프다."
 
-**★5 · 심장을 감싼 그물**
-> 💙 할매가 마지막 매듭을 묶어 그물을 완성해요. 할머니의 어머니가 못다 짠 무늬예요.
-> 실타래 할매: "해솔 그 아가씨, 바다의 심장이 식지 않게 감쌀 그물을 주문했었대. 이제야 짝이 맞네."
-> (메인: 해솔이 심장을 지키는 방법 — `fishing-story-allblue.md` 5장)
+**★5 · 바다를 위한 처방**
+> 💊 윤슬 선생이 밤새 약을 달였어요. 병에 담긴 약이 일곱 빛깔로 빛나요.
+> 윤슬 선생: "할아버지가 못 쓴 처방이에요. 바다가 아프면 지키는 사람도 아파요. 이건 그 사람한테 보내요. …해솔 씨한테요."
+> (메인: 지친 심장지기 해솔 — 5-0 프롤로그, 5-9 결말에서 해솔이 다시 숨을 돌린다)
 
 ---
 
@@ -123,14 +124,14 @@
 
 ---
 
-## 🛡️ 방어선 — 「그림자를 쫓는 배」 (난이도 ●●●●○)
+## ⚔️ 전투선 — 「그림자를 쫓는 배」 (난이도 ●●●●○)
 
 **★1 · 해군의 부탁**
-> ⚓ 순찰대장 한결: "요즘 수상한 배가 많소. 귀선이 좀 도와주시오. 검문은 선장 판단에 맡기겠소."
+> ⚓ 순찰대장 한결: "요즘 해적이 들끓소. 귀선 대포가 쓸 만해 보이니, 수배서를 넘기겠소. 잡는 건 선장 몫이오."
 > 🐤 무능: 경찰 놀이다! (진짜임)
 
 **★2 · 압수품**
-> 🐚 검문에서 나온 밀수품 상자에 **해왕류의 비늘**이 잔뜩 들어 있어요.
+> 🐚 격파한 수배 해적선 화물칸에 **해왕류의 비늘**이 잔뜩 실려 있어요.
 > 순찰대장 한결: "비늘을 노리는 놈들이 있소. 살아 있는 해왕류에게서 억지로 뜯어낸 거요."
 
 **★3 · 화난 바다**
@@ -153,11 +154,11 @@
 
 | 배 이야기 ★5 | 메인에서 비추는 것 | 메인 위치 |
 |---|---|---|
-| 트롤선 | 해솔이 심장을 지키는 방법(은빛 실 그물) | 5장 |
+| 의료선 | 지친 심장지기 해솔과 그를 위한 처방 | 5-0 · 5-9 |
 | 어선 | 어린 해솔 | 5-10 숨은 장면 · 신화 선원 꼬마선장 해솔 |
 | 무역선 | 해솔을 기다리는 용궁의 잔치 | 5-9 결말 |
 | 여객선 | 해솔의 이름이 이어짐 | 본편 에필로그 |
-| 방어선 | 재앙이 깨어난 이유(비늘 밀수) | 5-0 프롤로그 |
+| 전투선 | 재앙이 깨어난 이유(비늘 밀수 해적) | 5-0 프롤로그 |
 
 > 메인 스토리는 어느 배를 타도 똑같이 다 볼 수 있다. 배 이야기는 "다른 각도에서 본 덤"이다.
 
@@ -165,7 +166,7 @@
 
 ## 코드에 넣을 때 (나중에 로컬에서)
 
-- 메인 스토리와 같은 `story_seen` 표·`unlock` 함수를 쓴다. 장면 id: `ship:<종류>:<★>` (예: `ship:trawler:3`).
+- 메인 스토리와 같은 `story_seen` 표·`unlock` 함수를 쓴다. 장면 id: `ship:<종류>:<★>` (예: `ship:medic:3`).
 - ★이 오르는 곳(`_upgrade`에서 ★이 바뀔 때)에서 `unlock(..., f"ship:{kind}:{star}")` 하나 부르고, 돌려받은 글을 ★ 오름 메시지에 붙인다.
 - `1개조`로 종류를 바꾼 직후에도 `unlock(..., f"ship:{new_kind}:{star}")` (앞 편은 열린 걸로만 표시하고 보내지는 않음).
 
@@ -180,7 +181,7 @@
 
 | 파일 | 프롬프트 |
 |---|---|
-| `npc_netgran.jpg` | `[스타일] Portrait of a tiny cheerful elderly Korean grandmother sitting on an upturned crate at the end of a harbor pier, weaving a large fishing net with intricate flower-like knots, a basket of colorful thread spools beside her, one silver thread glinting, warm sunset light.` |
+| `npc_doctor.jpg` | `[스타일] Portrait of a calm kind Korean woman doctor in her thirties with a loose low ponytail, a white coat fluttering in the sea wind over a navy sweater, an old brass stethoscope around her neck, holding a thick worn medical logbook, standing on the deck of a small white clinic boat with a red cross flag, soft morning light.` |
 | `npc_droplet.jpg` | `[스타일] Portrait of an energetic seven-year-old Korean child with a messy bowl haircut and a too-big straw hat, holding a crooked homemade fishing rod, sun-tanned cheeks and a gap-toothed grin, standing on a wooden dock with a bucket.` |
 | `npc_couple.jpg` | `[스타일] Portrait of a sweet young Korean newlywed couple on a ferry deck, the husband with round glasses carrying two suitcases, the wife in a sun hat laughing and pointing at the sea, wind in their hair, bright cheerful morning.` |
 | `npc_couple_family.jpg` | `[스타일] The same young Korean couple a few years later on a ferry deck, the husband with round glasses and the wife in a sun hat, now holding a giggling toddler who reaches toward the sea, warm family moment, golden light.` |
@@ -189,8 +190,8 @@
 
 | 파일 | 프롬프트 |
 |---|---|
-| `shipstory_trawler_5.jpg` | `[스타일] An elderly grandmother tying the final knot of an enormous shimmering net woven with glowing silver thread, the net spread across a pier at night, its pattern forming the shape of a beating heart, soft blue magical light.` |
+| `shipstory_medic_5.jpg` | `[스타일] A woman doctor in a white coat holding up a small glass bottle of medicine glowing with seven rainbow colors on the deck of a clinic ship at night, an old open medical logbook and herb bundles on the table beside her, the seven-colored sea shimmering in the distance, hopeful tender mood.` |
 | `shipstory_fisher_5.jpg` | `[스타일] A small child on a wooden dock hauling up a surprisingly huge fish with a crooked homemade rod, splashing water, an elderly bearded fisherman in a navy knit cap watching from behind with teary proud eyes, golden hour.` |
 | `shipstory_merchant_5.jpg` | `[스타일] A grand underwater dragon palace banquet hall being prepared, long tables filled with seafood dishes, an old peddler grandmother standing tall in royal kitchen robes overseeing servants, a single empty seat of honor at the head of the table, festive warm lantern light.` |
 | `shipstory_liner_5.jpg` | `[스타일] A young teenager with a backpack stepping off a ferry and turning back to wave, pointing proudly at a hand-painted toy boat in their hand, the ferry captain seen from behind waving back, sunrise over the harbor, hopeful mood.` |
-| `shipstory_guard_5.jpg` | `[스타일] On an armored patrol ship deck, a young smuggler with a lowered hood looking down remorsefully, a fair naval captain placing a hand on his shoulder, a seized chest of glowing sea serpent scales open between them, stormy sky breaking into light.` |
+| `shipstory_warship_5.jpg` | `[스타일] On an armored patrol ship deck, a young smuggler with a lowered hood looking down remorsefully, a fair naval captain placing a hand on his shoulder, a seized chest of glowing sea serpent scales open between them, stormy sky breaking into light.` |
