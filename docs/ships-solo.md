@@ -1,0 +1,181 @@
+# 배 개편 — 각자 혼자 하는 플레이 중심
+
+> 지금 무역선·여객선·방어선은 **다른 플레이어를 만나야만** 굴러간다(거래, 객실 고용, 도발·검문). 사람이 적거나 시간대가 안 맞으면 할 게 없다.
+> 이 문서는 **배마다 혼자서 하는 플레이**를 주는 두 가지 안이다. 코드는 고치지 않았다.
+> 이 문서가 배 개편의 **최신안**이다. `season2-ships.md`의 배 부분보다 이쪽을 우선한다.
+
+## 목표
+
+- **내 배의 재미는 내 낚시 안에서 끝난다.** 다른 플레이어가 없어도 100% 돌아간다.
+- 다른 플레이어와 엮이는 건 **약탈(배 종류와 무관)**과 방 이벤트뿐이다.
+- 1순위 기준(복잡하지 않게): 새 명령 0개, 새 아이템 0개, 시간 압박 0.
+
+---
+
+## 안 A — 지금 배 5종 유지, 배마다 "일감" (⭐ 추천)
+
+### 공통 규칙: 배 일감
+
+- 낚시 결과가 나올 때 **가끔**(예: 10%) 내 배 종류에 맞는 **일감**이 하나 생긴다. 결과 끝에 한 줄.
+- 일감은 **한 번에 하나**. 시간 제한은 없다.
+- 대부분 **자동으로 끝난다.** 고를 게 있으면 `1선택 1` / `1선택 2` 하나로 답한다(backlog Z-06의 공용 답하기 명령).
+- **고르지 않고 그냥 다음 낚시를 하면** 손해 없는 쪽(기본값)으로 처리된다. 그래서 몰라도 손해가 없다.
+- 지금 일감은 `1배`에 한 줄로 보인다. 새 명령은 없다.
+
+### 배별 플레이
+
+| 배 | 한 줄 설명 | 일감 | 고르기 | 플레이어가 하는 일 |
+|---|---|---|---|---|
+| 🎣 **어선** | 일감 없이 꾸준한 배 | 없음 | 없음 | 그냥 낚시. 덤 한 마리(지금 그대로) |
+| 🕸️ **트롤선** | 그물로 크게 버는 배 | 그물 (지금 그대로) | 없음 | `1그물` (지금 그대로) |
+| 💰 **무역선** | 주문받은 물고기를 납품하는 배 | 🧾 항구 주문 | 없음 (자동 납품) | 주문 물고기가 나오면 자동으로 채워짐 |
+| ⛴️ **여객선** | 손님을 목적지 해역까지 태워다 주는 배 | 🧳 손님 탑승 | 없음 (도착하면 자동) | 손님 목적지 해역으로 옮겨서 낚시 (`1해역`, 지금 명령) |
+| 🛡️ **방어선** | 수상한 배를 검문하는 배 | 🚨 수상한 배 | 검문 / 보내기 | 수상함 정도를 보고 검문할지 고르기 |
+
+---
+
+### 💰 무역선 — 항구 주문
+
+> 결과 끝: `🧾 항구 주문: 고등어 3마리 (값 ×2 · 0/3)`
+
+- 주문은 **물고기 한 종류 × 몇 마리**. 그 물고기를 낚으면 **자동으로 납품**되고 그 마리는 값이 ×2(★에 따라 ×1.5~×2.5).
+- 다 채우면 **완료 보너스**(포인트 소량)가 한 번 더.
+- 주문 물고기는 **지금 해역·등급에서 나올 수 있는 것**만 고른다(못 채우는 주문 없음).
+- 다 못 채워도 **자정에 조용히 사라진다.** 벌칙 없음.
+- 납품한 마리 수만큼 도감·랭킹에는 그대로 잡힌다(낚은 건 낚은 것).
+
+| ★ | 주문 크기 | 납품 값 | 완료 보너스 |
+|---|---|---|---|
+| ★1 | 2~3마리 | ×1.5 | 소 |
+| ★3 | 3~4마리 | ×2.0 | 중 |
+| ★5 | 3~5마리, 가끔 희귀 이상 주문 | ×2.5 | 대 |
+
+### ⛴️ 여객선 — 손님 태우기
+
+> 결과 끝: `🧳 손님 탑승: 신혼부부 → 그랜드 라인 (운임 3,000P)`
+
+- 손님은 **목적지 해역**을 하나 말한다. 그 해역으로 옮겨서(`1해역`, 지금 있는 명령) **한 번 낚시하면 자동 도착**, 운임을 받는다.
+- 목적지는 **내가 갈 수 있는 해역**에서만 고른다. 지금 해역이 목적지인 손님은 안 나온다.
+- 운임은 **해역 거리**(몇 칸 옮기나)와 ★로 정한다. 멀수록 비싸다.
+- 손님이 타 있는 동안 **작은 덤**이 붙는다(손님 종류마다 하나, 자동).
+- 손님은 자정이 지나면 "다른 배를 탔어요"로 조용히 내린다. 벌칙 없음.
+
+| 손님 | 타 있는 동안 덤 |
+|---|---|
+| 🧓 은퇴한 어부 | 쓰레기 확률 ↓ |
+| 💑 신혼부부 | 희귀 이상 ×1.1 |
+| 🎒 배낭여행객 | 기다림 −10% |
+| 🧑‍🔬 해양학자 | 처음 보는 물고기 확률 ↑ |
+| 🎩 부자 손님 | 덤 없음, 대신 운임 ×2 |
+
+> 여객선의 재미 = "손님 목적지에 맞춰 해역 옮기기". 해역 이동에 이유가 생긴다.
+
+### 🛡️ 방어선 — 수상한 배 검문
+
+> 결과 끝: `🚨 수상한 배 발견! 수상함 🤨🤨○ · 1선택 1 검문(미끼 1) / 1선택 2 보내기`
+
+- **수상함 1~3단계**를 보여 준다. 수상할수록 밀수품이 있을 확률이 높다.
+- **검문**(미끼 1개): 밀수품이 있으면 **압수** → 포인트 또는 그물·비늘 소량. 없으면 헛걸음(미끼만 씀).
+- **보내기**: 아무 일 없음.
+- 고르지 않고 다음 낚시를 하면 **보내기**로 처리.
+- 방어선 ★과 **대포 레벨**이 높을수록 압수량 ↑, **탐지기 레벨**이 높을수록 수상함 표시가 정확해진다(지금 강화 부위가 그대로 의미를 가짐).
+
+| 수상함 | 밀수품 확률 (★3 기준 예) |
+|---|---|
+| 🤨○○ | 25% |
+| 🤨🤨○ | 50% |
+| 🤨🤨🤨 | 80% |
+
+> 방어선의 재미 = "이번엔 검문할까?" 짧은 판단. 미끼 1개를 걸고 운을 본다.
+
+---
+
+### 하나 넣으면 하나 빼기 — 다른 플레이어와 엮이는 배 기능 정리
+
+안 A를 넣으면서 **플레이어끼리 배로 엮이는 기능을 뺀다.** 명령이 10개 가까이 줄어든다.
+
+| 뺄 것 | 지금 명령 | 대신 |
+|---|---|---|
+| 무역선 ↔ 플레이어 거래 | `1거래` | 무역선이 팔던 물건(보물 해도, 전설의 미끼 등)은 `1상점`이나 NPC 행상으로 옮김 |
+| 무역선 판매 거부 | `1판매거부`·`1판매거부해제` | 필요 없어짐 |
+| 여객선 객실 · 고용 | `1객실`·`1고용` | 못 태운 선원은 그냥 떠남(지금 기본 배와 같음) |
+| 방어선 도발 · 철벽 | (자동) | 방어선은 약탈에서 다른 배와 같은 규칙 |
+| 방어선 ↔ 무역선 검문 · 통행세 | `1통행세`·`1몰래지나가기`·검문 맞서기 | 방어선 검문은 NPC 수상한 배로 |
+| 검문 제외 | `1검문제외`·`1검문제외해제` | 필요 없어짐 |
+| 항구 이용료 | (자동) | 빼거나, 남긴다면 모든 개조 배 주인에게 똑같이 |
+| 같이끌기 | `1같이끌기` | (선택) 트롤선 그물 보너스로 흡수하고 뺌 |
+
+> 약탈·선상싸움(포격·돌격·방어)은 **배 종류와 상관없는 기능**으로 그대로 남는다.
+
+### 밸런스 목표 (안 A)
+
+- 기본 배 하루 낚시 수익 = 100일 때, ★3 기준 모든 배가 **+20 안팎**(★1 +8, ★5 +35). `season2-ships.md` 3-1과 같은 목표.
+- 일감 빈도(10%)와 보상 크기는 이 목표에 맞춰 조정. 무역선·여객선·방어선은 일감 보상으로, 어선·트롤선은 지금 능력으로 맞춘다.
+- 측정: 배 종류별 하루 평균 수익(포인트 내역 사유별)을 1~2주 재고 맞춘다.
+
+---
+
+## 안 B — 배 전면 교체: 성향형 배
+
+> 배에 **일감이 아예 없다.** 배는 낚시 성향을 바꾸는 **숫자 묶음**일 뿐이다. 가장 단순하지만 "무역 플레이" 같은 재미는 없다.
+
+| 새 배 | 좋은 점 | 대신 | 한 줄 |
+|---|---|---|---|
+| ⚡ **쾌속선** | 기다림 −40% | 대물 이상 ×0.8 | 빨리 많이 |
+| 🐋 **대물선** | 대물 이상 ×1.5 | 기다림 +40% | 느리게 크게 |
+| 🕸️ **저인망선** | 한 번에 1~2마리 더 | 쓰레기 ×2 · 희귀 이상 ×0.8 | 양으로 승부 |
+| 🔭 **탐사선** | 도감에 없는 물고기 확률 ↑ · 처음 낚으면 ×3 | 이미 있는 물고기 −10% | 도감 채우기 |
+| 🏴‍☠️ **해적선** | 약탈 성공 ↑ · 뺏는 양 ↑ | 낚시 포인트 −10% | 약탈 전문 |
+| 🛡️ **철갑선** | 약탈 방어 ↑ · 덜 뺏김 | 기다림 +15% | 털리지 않는 배 |
+
+- ★은 **좋은 점만** 키운다(★1 → ★5로 좋은 점 1배 → 2배). "대신" 쪽은 고정.
+- 새 명령 0, 새 규칙 0. 배 고르는 것 자체가 플레이 성향 선택이 된다.
+
+### 안 B로 갈 때 바꿔 줄 것
+- **기존 배 주인 전환**: 어선 → 쾌속선, 트롤선 → 저인망선, 무역선 → 탐사선, 여객선 → 대물선, 방어선 → 철갑선, ★ 유지. 원하면 **무료로 한 번** 다른 종류로 바꾸게 해 준다.
+- **그림**: 지금 배 그림(`ship_<종류>_<등급>.jpg`)과 재밌는 배 이름(종이배, 오리배 …)을 위 전환표대로 그대로 쓸 수 있다. 새로 뽑는 건 해적선만(`season2-ships-prompts.md`와 같은 스타일). 아래 프롬프트 참고.
+- 트롤선 그물, 같이끌기, 거래, 객실, 검문 같은 배 전용 기능은 **전부 정리**된다(안 A보다 더 많이 줄어든다).
+
+---
+
+## 두 안 비교
+
+| | 안 A (일감) | 안 B (성향형) |
+|---|---|---|
+| 혼자 플레이 | ✅ | ✅ |
+| 새 명령 | 0 (`1선택`은 공용) | 0 |
+| 새 아이템·화폐 | 0 | 0 |
+| 줄어드는 명령 | 약 10개 | 10개 이상 |
+| "무역 플레이" 같은 손맛 | ✅ 배마다 다른 할 일 | ❌ 숫자만 다름 |
+| 기존 배·그림·이름 | 그대로 | 이름 바꿈 + 전환 필요 |
+| 작업량 | M (일감 3종) | M (전환 + 정리) |
+
+**추천: 안 A.** 지금 배 이름·그림·★을 그대로 두고, 요청한 "무역선은 무역 플레이, 여객선은 여객 플레이, 방어선은 검문 플레이"를 그대로 살린다. 동시에 플레이어끼리 엮이는 배 기능을 빼서 전체 명령 수는 오히려 줄어든다.
+
+> 섞는 것도 가능하다: 안 A를 기본으로 하고, 나중에 새 배를 추가하고 싶을 때 안 B의 "탐사선" 같은 성향형 배를 하나씩 더하는 식.
+
+---
+
+## 그림 프롬프트 (ComfyUI)
+
+> 스타일 고정 문구와 크기는 `fishing-story-prompts.md`와 같다. 앞의 `[스타일]` 자리에 붙인다. 1216×832.
+
+### 안 A — 일감 그림 (일감이 처음 생길 때 한 번 보내는 용도, 선택)
+
+| 파일 | 프롬프트 |
+|---|---|
+| `job_order.jpg` | `[스타일] A busy harbor merchant office counter with a parchment order slip pinned to a board showing drawings of three mackerel and a coin stamp, crates and scales around, a cheerful harbor clerk handing the slip toward the viewer, warm afternoon light, no readable text.` |
+| `job_passenger.jpg` | `[스타일] A small ferry boat at a wooden pier where a newlywed couple, a retired old fisherman, a backpacker and a scientist with a specimen case are boarding with luggage, a captain seen from behind helping them aboard, cheerful seaside morning.` |
+| `job_suspicious.jpg` | `[스타일] Seen through a spyglass circle, a shabby cargo boat with tarp-covered crates trying to sail past quietly, a nervous sailor glancing over his shoulder, an armored patrol ship's bow in the foreground, tense overcast sky.` |
+| `job_seized.jpg` | `[스타일] Armored guard sailors opening a tarp-covered crate on a deck to reveal hidden glowing pearls, gold coins and a rolled treasure map, a smuggler with hands raised sheepishly, triumphant bright light.` |
+
+### 안 B — 새 배 (★1 그림 기준, ★이 오를수록 문구 끝에 `more ornate, gilded, glowing details` 추가)
+
+| 파일 | 프롬프트 |
+|---|---|
+| `ship_speed_1.jpg` | `[스타일] A sleek narrow speedboat with a single tall sail and twin outboard engines skimming over the water, long white spray wake, motion blur on the waves, bright sunny day.` |
+| `ship_bigfish_1.jpg` | `[스타일] A sturdy heavy fishing ship with a massive crane and a giant reel on the stern, thick steel cables trailing into deep blue water, a huge dark fish shadow beneath the hull, dramatic calm before a catch.` |
+| `ship_dragnet_1.jpg` | `[스타일] A wide flat trawler dragging an enormous overflowing net full of many small silver fish, seagulls swarming, some junk tangled in the net, busy and abundant mood.` |
+| `ship_explorer_1.jpg` | `[스타일] A compact expedition boat with a glass-bottom hull, telescope and sonar dish on the mast, hand-drawn sea charts pinned on the cabin wall, curious colorful unknown fish visible beneath, adventurous mood.` |
+| `ship_pirate_1.jpg` | `[스타일] A small but menacing pirate sloop with patched black sails, a grinning fish-skull emblem, grappling hooks and a single cannon on deck, cutting through choppy waves at dusk.` |
+| `ship_ironclad_1.jpg` | `[스타일] A squat heavily armored ironclad boat with riveted steel plates, small round portholes and a thick reinforced bow, slow and immovable on grey water, sense of safety and weight.` |
