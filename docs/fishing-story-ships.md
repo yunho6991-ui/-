@@ -175,26 +175,26 @@
 ## 그림 프롬프트 (귀여운 화풍, ComfyUI)
 
 > 이야기 그림은 ★별 배 그림을 그대로 쓴다. 새로 필요한 건 단골 NPC 초상화와 ★5 장면(선택)뿐.
-> 앞에 `[귀여움]` 스타일 문구(`fishing-story-prompts.md` 맨 위)를 붙인다. 바다곰 영감은 `npc_bear.jpg`.
+> 앞에 `[장면]` 스타일 문구(`fishing-story-prompts.md` 맨 위)를 붙인다. 사람은 매력 있게, 생물은 귀엽게. 바다곰 영감은 `npc_bear.jpg`.
 
 ### 단골 NPC 초상화 (832×1216)
 
-| 파일 | 프롬프트 (`[귀여움]` 뒤에) |
+| 파일 | 프롬프트 (`[장면]` 뒤에) |
 |---|---|
-| `npc_doctor.jpg` | `Character portrait of a cheerful chibi woman doctor with a loose low ponytail, a fluttering white coat over a navy sweater, a shiny brass stethoscope, hugging a thick medical logbook, standing on a small white clinic boat with a red cross flag, soft morning light.` |
-| `npc_droplet.jpg` | `Character portrait of an energetic chibi kid with a messy bowl haircut and a too-big straw hat, holding a crooked homemade fishing rod and a bucket, gap-toothed grin, wooden dock.` |
-| `npc_couple.jpg` | `Character portrait of a sweet chibi newlywed couple on a ferry deck, the husband with round glasses carrying two suitcases, the wife in a sun hat laughing and pointing at the sea, hearts floating, sunny.` |
-| `npc_couple_family.jpg` | `The same sweet chibi couple a few years later on a ferry deck, husband with round glasses and wife in a sun hat, now holding a giggling chubby toddler reaching for the sea, warm family moment.` |
-| `npc_peddler.jpg` | `Character portrait of a tiny chibi grandma peddler with a colorful headscarf and rosy cheeks, a huge cloth bundle on her back overflowing with goods, holding up an order slip with a dragon stamp, mischievous smile.` |
-| `npc_navy.jpg` | `Character portrait of a chibi naval captain with neat short hair, a crisp white-and-navy uniform, holding a wanted poster and a spyglass, serious face but blushing cheeks.` |
-| `npc_mumyeong.jpg` | `Character portrait of a chibi young smuggler pulling back a hood to reveal a sheepish apologetic face, holding a small pouch of glittering sea serpent scales, cute and harmless.` |
+| `npc_doctor.jpg` | `Character portrait of a beautiful cheerful young woman doctor with a loose low ponytail, a fluttering white coat over a navy sweater, a shiny brass stethoscope, hugging a thick medical logbook, standing on a small white clinic boat with a red cross flag, soft morning light.` |
+| `npc_droplet.jpg` | `Character portrait of an energetic little kid with a messy bowl haircut and a too-big straw hat, holding a crooked homemade fishing rod and a bucket, gap-toothed grin, wooden dock.` |
+| `npc_couple.jpg` | `Character portrait of a sweet attractive newlywed couple on a ferry deck, the husband with round glasses carrying two suitcases, the wife in a sun hat laughing and pointing at the sea, hearts floating, sunny.` |
+| `npc_couple_family.jpg` | `The same sweet couple a few years later on a ferry deck, husband with round glasses and wife in a sun hat, now holding a giggling chubby toddler reaching for the sea, warm family moment.` |
+| `npc_peddler.jpg` | `Character portrait of a tiny charming grandma peddler with a colorful headscarf and rosy cheeks, a huge cloth bundle on her back overflowing with goods, holding up an order slip with a dragon stamp, mischievous smile.` |
+| `npc_navy.jpg` | `Character portrait of a handsome naval captain with neat short hair, a crisp white-and-navy uniform, holding a wanted poster and a spyglass, serious face but blushing cheeks.` |
+| `npc_mumyeong.jpg` | `Character portrait of a handsome young smuggler pulling back a hood to reveal a sheepish apologetic face, holding a small pouch of glittering sea serpent scales, cute and harmless.` |
 
 ### ★5 장면 (선택, 1216×832)
 
-| 파일 | 프롬프트 (`[귀여움]` 뒤에) |
+| 파일 | 프롬프트 (`[장면]` 뒤에) |
 |---|---|
-| `shipstory_medic_5.jpg` | `A cheerful chibi woman doctor in a white coat holding up a little bottle of herbal tea glowing in seven rainbow colors, a teapot steaming on the clinic boat table, an old logbook open beside her, the rainbow sea twinkling behind, cozy night.` |
-| `shipstory_fisher_5.jpg` | `A tiny chibi kid on a wooden dock hauling up a surprisingly big happy fish with a crooked homemade rod, splash and sparkles, a chubby fluffy-bearded grandpa in a navy beanie behind them wiping a proud tear.` |
+| `shipstory_medic_5.jpg` | `A beautiful cheerful young woman doctor in a white coat holding up a little bottle of herbal tea glowing in seven rainbow colors, a teapot steaming on the clinic boat table, an old logbook open beside her, the rainbow sea twinkling behind, cozy night.` |
+| `shipstory_fisher_5.jpg` | `A tiny kid on a wooden dock hauling up a surprisingly big happy fish with a crooked homemade rod, splash and sparkles, a charming fluffy-bearded grandpa in a navy beanie behind them wiping a proud tear.` |
 | `shipstory_merchant_5.jpg` | `A festive underwater dragon palace banquet being prepared, long tables of cute seafood dishes, a tiny grandma in royal kitchen robes standing proudly on a stool directing cute fish waiters, one decorated seat of honor waiting, warm lantern light.` |
-| `shipstory_liner_5.jpg` | `A chibi teenager with a backpack hopping off a ferry and turning to wave, proudly holding up a hand-painted toy boat, the ferry captain seen from behind waving back, sunrise harbor.` |
-| `shipstory_warship_5.jpg` | `On a cute armored patrol boat, a chibi young smuggler bowing an apology, a chibi naval captain patting their head, an open chest of glittering sea serpent scales between them, sky clearing into a rainbow.` |
+| `shipstory_liner_5.jpg` | `A cheerful teenager with a backpack hopping off a ferry and turning to wave, proudly holding up a hand-painted toy boat, the ferry captain seen from behind waving back, sunrise harbor.` |
+| `shipstory_warship_5.jpg` | `On a cute armored patrol boat, a handsome young smuggler bowing an apology, a handsome naval captain patting their head, an open chest of glittering sea serpent scales between them, sky clearing into a rainbow.` |
