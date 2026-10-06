@@ -4,7 +4,7 @@
 > 이 문서는 **배마다 혼자서 하는 플레이**를 주는 두 가지 안이다. 코드는 고치지 않았다.
 > 이 문서가 배 개편의 **최신안**이다. `season2-ships.md`의 배 부분보다 이쪽을 우선한다.
 
-> **배 6종**: 🦥 늘보선(○○○○○, 새로) · 🏥 의료선 · 🎣 어선 · 💰 무역선 · ⛴️ 여객선 · ⚔️ 전투선.
+> **배 6종**: 🛥️ 요트(○○○○○ 오토파일럿, 새로) · 🏥 의료선 · 🎣 어선 · 💰 무역선 · ⛴️ 여객선 · ⚔️ 전투선.
 > **배 이름 변경**: 🛡️ 방어선 → ⚔️ **전투선**, 🕸️ 트롤선 → 🏥 **의료선** (컨셉도 바뀜). 시즌 2는 전부 초기화라 옮겨 줄 배는 없다(모두 새로 고름). 코드의 종류 id도 `guard` → `warship`, `trawler` → `medic`으로.
 
 ## 목표
@@ -34,7 +34,7 @@
 | 💰 **무역선** | 주문받은 물고기를 납품하는 배 | 🧾 항구 주문 | 없음 (자동 납품) | 주문 물고기가 나오면 자동으로 채워짐 |
 | ⛴️ **여객선** | 손님을 목적지 해역까지 태워다 주는 배 | 🧳 손님 탑승 | 없음 (도착하면 자동) | 손님 목적지 해역으로 옮겨서 낚시 (`1해역`, 지금 명령) |
 | ⚔️ **전투선** | 현상수배 해적을 잡는 배 | 🎯 현상수배 | 포격 / 돌격 / 방어 | 수배된 해적의 버릇을 보고 싸움 수 고르기 |
-| 🦥 **늘보선** | 아무 생각 안 해도 되는 배 | 없음 | 없음 (전부 자동) | `1낚시` 한 번. 끝 |
+| 🛥️ **요트** | 선주는 지휘만, 승무원이 다 하는 배 | 없음 | 없음 (승무원이 처리) | `1낚시`로 출항 명령. 끝 |
 
 ---
 
@@ -118,28 +118,30 @@
 
 ---
 
-### 🦥 늘보선 — 아무 생각 안 해도 되는 배 (새로, 6번째 배)
+### 🛥️ 요트 — 선장은 지휘만, 나머진 승무원이 (새로, 6번째 배)
 
-> **누구를 위한 배?** 생각하는 거 귀찮은 사람, 규칙 읽기 싫은 사람, 그냥 `1낚시`만 치고 싶은 사람.
-> **난이도 ○○○○○** — 점이 하나도 없다. 정말로 아무것도 안 해도 된다.
+> **컨셉**: 가장 비싸 보이는 배. 플레이어는 **선주**이고, 낚시·싸움·강화는 **전속 승무원**이 알아서 한다. 선주는 보고만 받는다.
+> **실제로는**: 생각 없이 `1낚시`만 쳐도 되는 완전 자동 배. 하지만 그걸 "쉬운 배"가 아니라 **"품격 있는 배"**로 보여 준다.
+> **난이도 ○○○○○ (오토파일럿)**
 
-**한 줄: "`1낚시` 한 번이면 미끼 다 쓸 때까지 알아서 낚고, 고를 건 전부 알아서 고르고, 골드가 모이면 알아서 강화한다."**
+**한 줄: "선주님은 `1낚시`로 출항 명령만. 나머지는 승무원이 처리하고 보고드립니다."**
 
-| 자동으로 해 주는 것 | 어떻게 |
+| 승무원이 처리하는 것 | 어떻게 |
 |---|---|
-| 🎣 **계속 낚기** | `1낚시` 한 번 치면, 결과가 나올 때마다 **알아서 다음 찌를 던진다**. 미끼가 떨어지면 멈추고 **한 장 요약**(몇 마리 · 최고 수확 · 번 골드). 기다리는 시간은 보통 낚시와 같다(일괄낚시처럼 깎이지 않음). 중간에 다른 말을 치면 멈춘다. |
-| 🏴‍☠️ **해적 습격** | 알아서 싸운다. 선장 버릇 힌트의 **반대 수**를 자동으로 낸다(사람이 힌트대로 고른 것과 같은 수준). |
-| ⛵ **NPC 상선** | 소·중이면 알아서 기습, 대면 알아서 지나간다. |
-| ⚓ **갑판·미끼통 같은 고르기** | 전부 **손해 없는 쪽**으로 알아서. |
-| 🔧 **강화** | 골드가 다음 강화비를 넘으면 **알아서 `1배강화`**. |
-| 📝 **메시지** | 결과는 **한 줄**만. 설명·힌트·도움말 문구 생략. |
+| 🎣 **오토파일럿 조업** | `1낚시` 한 번이면 미끼가 떨어질 때까지 알아서 계속 낚는다. 끝나면 **항해 보고서** 한 장(몇 마리 · 최고 수확 · 수익). 기다리는 시간은 보통 낚시와 같다. 다른 말을 치면 멈춘다. |
+| 🏴‍☠️ **해적 습격** | 경호팀이 알아서 대응한다. 선장 버릇 힌트의 **반대 수**를 자동으로 낸다. |
+| ⛵ **NPC 상선** | 소·중이면 알아서 처리, 대면 "리스크 관리 차원에서" 지나간다. |
+| ⚓ **갑판·미끼통 같은 고르기** | 집사가 **손해 없는 쪽**으로 알아서. |
+| 🔧 **강화** | 골드가 다음 강화비를 넘으면 **정비팀이 알아서 `1배강화`**. |
+| 📝 **메시지** | 결과는 **보고서 한 줄**. `🛥️ 선주님, 조업 보고: 고등어 외 11마리 · +8,400🪙` |
 
-- **일감 없음.** 새 명령 없음. 끌 설정도 없음(늘보선을 고른 게 곧 설정).
+- **일감 없음.** 새 명령 없음. 끌 설정도 없음(요트를 고른 게 곧 설정).
 - **★이 오를수록**: 낚은 골드 **+5% / +10% / +15% / +20% / +25%** (★1~★5). 숫자 하나뿐.
-- **밸런스**: 다른 배의 "잘 고르면 +5%"는 없지만, 대신 **자동 계속 낚기**라는 편함이 큰 보상이다. 그래서 ★ 보너스는 다른 배 목표(★3 +20%)보다 살짝 낮게 잡았다. "몰라도 손해 없음" 원칙에 맞는다(아무것도 몰라도 평균은 비슷하게 번다).
-- 이벤트 하나 규칙: 늘보선도 결과 하나에 이벤트 하나. 자동으로 처리하고 요약에만 한 줄 남긴다.
+- **밸런스**: 다른 배의 "잘 고르면 +5%"는 없지만, **오토파일럿 조업**이라는 편함이 큰 보상이다. 그래서 ★ 보너스는 다른 배 목표(★3 +20%)보다 살짝 낮게 잡았다. 아무것도 신경 안 써도 평균은 비슷하게 번다.
+- 이벤트 하나 규칙: 요트도 결과 하나에 이벤트 하나. 자동으로 처리하고 보고서에 한 줄만 남긴다.
+- **말투가 핵심**: 모든 메시지를 "선주님"으로 시작하는 집사·승무원 보고 톤으로. 배를 고른 사람이 대접받는 느낌.
 
-> 늘보선의 재미 = 재미를 신경 안 쓰는 재미. 출근길에 `1낚시` 하나 치고 퇴근길에 요약만 본다.
+> 요트의 재미 = 아무것도 안 하는데 대접받는 재미. 출근길에 `1낚시` 하나, 퇴근길에 보고서 하나.
 
 ### 하나 넣으면 하나 빼기 — 다른 플레이어와 엮이는 배 기능 정리
 
@@ -200,7 +202,7 @@
 
 ```
 ⛵ 함께할 배를 골라 주세요 (나중에 1개조 로 바꿀 수 있어요)
-① 🦥 늘보선  ○○○○○  아무것도 안 해도 돼요
+① 🛥️ 요트    ○○○○○  선장은 지휘만, 나머진 승무원이
 ② 🏥 의료선  ●○○○○  알아서 고치고 구해요
 ③ 🎣 어선    ●●○○○  낚시만 하면 돼요
 ④ 💰 무역선  ●●○○○  낚시하면 주문이 저절로 채워져요
@@ -209,7 +211,7 @@
 1선택 [번호]
 ```
 
-- 안 고르고 그냥 낚시하면 **🦥 늘보선**으로 시작(아무것도 몰라도 되는 배). 시간 압박 없음.
+- 안 고르고 그냥 낚시하면 **🛥️ 요트**로 시작("기본으로 요트를 드려요" — 시작부터 대접받는 느낌). 시간 압박 없음.
 - 고른 순간 그 배 그림(`ship_<종류>_1.jpg`) 한 장.
 
 ### 2. 성장 — 강화 한 줄기
@@ -226,7 +228,7 @@
 | Lv13~16 | ★4 | 모비떡호 · 나이팅게일호 · 퀸 마마 케이크호 · 플라잉 더치페이호 · 용골 함선 |
 | Lv17~20 | ★5 | 천 마리 종이학호 · 만병통치 고래방주 · 거북섬 방주 · 오로나민 잭슨호 · 별빛 수정 갈레온 |
 
-> 🦥 늘보선(새 그림): ★1 고무튜브호 · ★2 해먹뗏목 · ★3 안마의자호 · ★4 물침대 크루저 · ★5 구름침대 방주
+> 🛥️ 요트(새 그림): ★1 모닝커피호 · ★2 마호가니호 · ★3 샴페인 선셋호 · ★4 그랜드 마리나호 · ★5 로열 오셔닉호
 
 > 종류×★ 25장 그림(`ship_<종류>_<등급>.jpg`)과 재밌는 배 이름이 **성장 단계 그림**이 된다. ★이 오를 때 그 배의 **배 이야기** 한 편이 같이 열린다(`fishing-story-ships.md`). ★이 오를 때 새 그림 한 장 + 방에 한 줄(`⛵ ○○님의 의료선이 ★3 「닥터피쉬호」가 됐어요!`).
 > 의료선 그림 5장은 새로 뽑는다(맨 아래 프롬프트). 전투선은 예전 방어선 그림·이름을 그대로 쓴다.
@@ -278,7 +280,7 @@
 
 | 난이도 | 뜻 |
 |---|---|
-| ○○○○○ | 아무것도 안 해도 된다. `1낚시` 한 번이면 끝 |
+| ○○○○○ | 오토파일럿. `1낚시`로 출항 명령만 내리면 끝 |
 | ●○○○○ | 켜 두기만 하면 된다. 가끔 명령 하나 |
 | ●●○○○ | 평소처럼 낚시만 하면 된다 |
 | ●●●○○ | 낚시하면서 가끔 **어디서** 낚을지 신경 쓴다 |
@@ -294,7 +296,7 @@
 | 💰 무역선 | ●●○○○ | 낚시하면 주문이 저절로 채워져요 | ●●●●● (거래·검문·판매거부) |
 | ⛴️ 여객선 | ●●●○○ | 손님 목적지로 해역을 옮겨요 | ●●●●○ (객실·고용) |
 | ⚔️ 전투선 | ●●●●○ | 현상수배 해적과 싸워요 | (방어선 ●●●●●) |
-| 🦥 늘보선 | ○○○○○ | 아무것도 안 해도 돼요 | (새 배) |
+| 🛥️ 요트 | ○○○○○ | 선장은 지휘만, 나머진 승무원이 | (새 배) |
 
 > 개편하면 모든 배가 ●●●●○ 이하가 된다. ●●●●●(다른 사람을 계속 신경 써야 하는 배)는 1순위 기준상 만들지 않는다.
 
@@ -369,12 +371,14 @@
 | `ship_medic_5.jpg` | 만병통치 고래방주 | `[스타일] A colossal gentle white whale carrying a gleaming floating hospital ark on its back, glowing herbal gardens and healing springs on deck, rainbow mist and soft golden light, majestic and serene.` |
 
 
-### 🦥 늘보선 그림 (새로, ★1~★5, 1216×832, 앞에 `[귀여움]`)
+### 🛥️ 요트 그림 (새로, ★1~★5, 1216×832)
+
+> 요트는 "비싸 보이는 배"라서 다른 배보다 **고급스럽게**. 앞에 `[장면]` 문구를 붙이고, 끝에 `, luxurious and elegant` 를 더한다.
 
 | 파일 | 이름 | 프롬프트 |
 |---|---|---|
-| `ship_sloth_1.jpg` | 고무튜브호 | `A tiny inflatable rubber ring boat with a little sun umbrella stuck in it, a cute sloth lying in it with sunglasses, drifting lazily on calm turquoise water.` |
-| `ship_sloth_2.jpg` | 해먹뗏목 | `A small wooden raft with a hammock strung between two palm-trunk masts, a cute sloth napping in the hammock, a fishing rod tied to the raft fishing by itself.` |
-| `ship_sloth_3.jpg` | 안마의자호 | `A funny boat shaped like a big comfy massage chair floating on the sea, a fishing rod attached to the armrest reeling by itself, a cute sloth relaxing with a cold drink.` |
-| `ship_sloth_4.jpg` | 물침대 크루저 | `A sleek little cruiser with a giant waterbed on the deck, robotic arms casting fishing rods automatically, a cute sloth asleep under a blanket, sunset glow.` |
-| `ship_sloth_5.jpg` | 구름침대 방주 | `A grand floating ark made of fluffy clouds and pillows, dozens of fishing rods casting themselves, golden fish hopping into baskets on their own, a cute sloth snoring on a giant cloud bed, dreamy pastel sky.` |
+| `ship_yacht_1.jpg` | 모닝커피호 | `A neat little classic sailing yacht with white sails and polished wooden deck, a steaming coffee cup and a folded newspaper on a deck chair, a smartly dressed deck hand casting a fishing rod, calm morning harbor.` |
+| `ship_yacht_2.jpg` | 마호가니호 | `A gleaming mahogany motor yacht with brass fittings, a uniformed crew member reeling in a fish while a cushioned lounge chair waits empty for the owner, sparkling blue sea.` |
+| `ship_yacht_3.jpg` | 샴페인 선셋호 | `An elegant white yacht at golden sunset, champagne glasses on a silver tray, a butler in a tailcoat holding a fishing report on a clipboard, crew handling rods at the stern.` |
+| `ship_yacht_4.jpg` | 그랜드 마리나호 | `A sleek multi-deck luxury yacht with a sun deck and jacuzzi, an attentive crew team operating automated fishing rods, a helipad on top, glamorous Mediterranean-blue sea.` |
+| `ship_yacht_5.jpg` | 로열 오셔닉호 | `A grand royal superyacht with golden trim and flags, a full crew in white uniforms saluting, a red carpet leading to a captain's lounge, fireworks over a glittering sea at night.` |
