@@ -15,11 +15,38 @@
 
 | 배 | 단골 NPC | 한 줄 | ★5에서 이어지는 메인 이야기 |
 |---|---|---|---|
+| 🦥 늘보선 | **멍 선장** | 말도 행동도 아주아주 느린 나무늘보 선장 | 해솔에게 해먹을 선물해 드디어 낮잠 재우기 |
 | 🏥 의료선 | **윤슬 선생** | 배를 병원 삼아 떠도는 바다 의사 | 바빠서 못 자는 해솔을 위한 꿀잠 처방 |
 | 🎣 어선 | **꼬마 물방울** | 낚시를 배우고 싶어 따라다니는 동네 아이 | 어린 해솔의 모습 |
 | 💰 무역선 | **보따리 할멈** | 주문서를 대 주는 수상한 행상 할머니 | 용궁의 잔치 준비 |
 | ⛴️ 여객선 | **준호와 미소** | 첫 손님이었던 신혼부부, 그리고 그 가족 | 해솔의 이름이 이어지는 이야기 |
 | ⚔️ 전투선 | **순찰대장 한결** · **그림자 상인 무명** | 현상수배를 넘겨주는 해군 대장과 쫓는 장난꾸러기 해적 | 덩치들이 깬 이유 |
+
+---
+
+## 🦥 늘보선 — 「멍 선장의 느긋한 항해」 (난이도 ○○○○○)
+
+**★1 · 튜브 위의 손님**
+> 🛟 고무튜브에 누워 둥둥 떠다니는 나무늘보 한 마리. 줄이 저절로 감겨 물고기가 올라와요.
+> 멍 선장: "안……녕……. 낚시는……. 기다리면……. 와……."
+> 🐤 무능: 이분 말 끝나기 전에 제가 늙을 것 같아요. (맞음)
+
+**★2 · 해먹 강의**
+> 🌴 멍 선장이 해먹 매는 법을 알려 줘요. 설명만 30분, 매는 데 3초.
+> 멍 선장: "서두르면……. 물고기도……. 도망……가……."
+
+**★3 · 안마의자의 비밀**
+> 💺 배가 안마의자로 변신했어요! 멍 선장이 처음으로 눈을 반쯤 떠요.
+> 멍 선장: "이건……. 내 친구……. 해솔이……. 설계했……어……."
+
+**★4 · 느린 편지**
+> ✉️ 멍 선장이 아주 오래된 편지를 꺼내요. 백 년 동안 부치려고 했는데 아직 못 부쳤대요.
+> 편지: "멍아! 너 같은 친구 하나 있으면 나도 좀 쉴 텐데. — 해솔"
+
+**★5 · 해먹 배달**
+> 🛏️ 배가 구름침대 방주가 됐어요. 멍 선장이 해먹 하나를 꼭 껴안고 있어요.
+> 멍 선장: "이거……. 해솔한테……. 전해 줘……. 이제……. 쉬라고……."
+> (메인: 5-9 결말에서 해솔이 드디어 해먹에 누워 낮잠을 잔다)
 
 ---
 
@@ -154,6 +181,7 @@
 
 | 배 이야기 ★5 | 메인에서 비추는 것 | 메인 위치 |
 |---|---|---|
+| 늘보선 | 해솔에게 해먹 선물, 드디어 낮잠 | 5-9 |
 | 의료선 | 바빠서 못 자는 해솔과 꿀잠 처방 | 5-0 · 5-9 |
 | 어선 | 어린 해솔 | 5-10 숨은 장면 · 신화 선원 꼬마선장 해솔 |
 | 무역선 | 해솔을 기다리는 용궁의 잔치 | 5-9 결말 |
@@ -181,6 +209,7 @@
 
 | 파일 | 프롬프트 (`[장면]` 뒤에) |
 |---|---|
+| `npc_sloth.jpg` | `Character portrait of a cute sleepy sloth captain wearing a tiny captain hat and a hawaiian shirt, lying in a hammock on a small raft, half-closed eyes, slow happy smile. (use [귀여움] style)` |
 | `npc_doctor.jpg` | `Character portrait of a beautiful cheerful young woman doctor with a loose low ponytail, a fluttering white coat over a navy sweater, a shiny brass stethoscope, hugging a thick medical logbook, standing on a small white clinic boat with a red cross flag, soft morning light.` |
 | `npc_droplet.jpg` | `Character portrait of an energetic little kid with a messy bowl haircut and a too-big straw hat, holding a crooked homemade fishing rod and a bucket, gap-toothed grin, wooden dock.` |
 | `npc_couple.jpg` | `Character portrait of a sweet attractive newlywed couple on a ferry deck, the husband with round glasses carrying two suitcases, the wife in a sun hat laughing and pointing at the sea, hearts floating, sunny.` |
@@ -193,6 +222,7 @@
 
 | 파일 | 프롬프트 (`[장면]` 뒤에) |
 |---|---|
+| `shipstory_sloth_5.jpg` | `A cute sloth captain on a fluffy cloud-bed ark hugging a rolled-up hammock with a ribbon, a beautiful young woman with a sea-blue headband in the distance at the rainbow sea waving, dreamy pastel sunset.` |
 | `shipstory_medic_5.jpg` | `A beautiful cheerful young woman doctor in a white coat holding up a little bottle of herbal tea glowing in seven rainbow colors, a teapot steaming on the clinic boat table, an old logbook open beside her, the rainbow sea twinkling behind, cozy night.` |
 | `shipstory_fisher_5.jpg` | `A tiny kid on a wooden dock hauling up a surprisingly big happy fish with a crooked homemade rod, splash and sparkles, a charming fluffy-bearded grandpa in a navy beanie behind them wiping a proud tear.` |
 | `shipstory_merchant_5.jpg` | `A festive underwater dragon palace banquet being prepared, long tables of cute seafood dishes, a tiny grandma in royal kitchen robes standing proudly on a stool directing cute fish waiters, one decorated seat of honor waiting, warm lantern light.` |
