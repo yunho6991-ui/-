@@ -27,6 +27,7 @@
 | `docs/season2-plan.md` | **시즌 2 기준 한 장** — 정한 것(D1~D12)·경제·이벤트 규칙·방 기능·단계별 반영 순서·아직 정할 것. 다른 문서와 다르면 이걸 따른다 |
 | `docs/dungeon-game.md` | **새 게임 초안** — 카드 던전(방 부속 게임, 이름 없음): `1소환`·`1탐험` 명령 2개, 파티 5장, 도감 보너스, 층마다 카드 해금 |
 | `docs/dungeon-cards.md` | 카드 던전 카드 70장(5구역) 목록 + 그림 프롬프트 |
+| `tools/dungeon_sim.py` | 카드 던전 난이도 모의실험(`python3 tools/dungeon_sim.py [기본값] [배수]`) |
 | `docs/backlog.md` | 전체 아이디어 목록(단순도 ✅⚠️❌ 표시). 여기서 골라서 넣는다 |
 | `docs/fishing-ideas.md` | 코드 개선·추가 아이디어 상세 |
 | `docs/fishing-story.md` | 본편 스토리 0~4장 |
