@@ -14,3 +14,5 @@
 - {id: it_namgung_note, name: 상자 밑 쪽지, kind: 단서, note: "남궁 사람이 녹림에 상단 털이를 맡긴 증거(글을 아는 사람이 읽어 줘야)"}
 - {id: it_yaoshou_core, name: 요수 내단, kind: 재료, note: "의원 · 밀매상이 산다(혈교 피 영약 재료)"}
 - {id: it_smuggle_ledger, name: 밀무역 장부, kind: 단서, note: "세가 · 흑룡도 밀무역 — 5막 폭로 열쇠"}
+- {id: it_dokmok_calendar, name: 독목의 달력, kind: 단서, note: "요수가 약속한 날만 온다 — 불가침의 증거(A204)"}
+- {id: it_tianmo_letter, name: 천마의 밀서, kind: 단서, note: "낙양 맹주전까지 — 7막 맹 · 마교 연합 조건"}

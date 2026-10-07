@@ -108,7 +108,7 @@ weight_mod:                # 조건이 맞으면 더하거나(+) 곱한다(x)
 | 조건 `act:n` · `act:a-b` · `branch:갈래` · `grant:이름` · `clue:갈래>=n` | 지금 막 · 6막 갈래 · 받은 권리(사부 부르기 등) · 모은 단서 수 |
 | 사건 `system: true` · `rule` · `news` | 선택지 없는 엔진 규칙 사건(P06 단서 셋 · A306 · A408 · A704) — 조건이 맞으면 규칙 실행 + 강호 일보 |
 | `main_start_bonus: p` · `grant_use: 이름` · `to: pl_id` | 시작 사건 확률 보정 · 권리 소모 · 그 장소로 이동 |
-| 사건 `town_threat: true` | 고을 시작 서막(농부 · 사냥꾼 · 객잔 · 의원 · 표국)의 2단계 ★사건을 그 고을판으로 바꿈 — 청하진이 아니면 이것(`towns/events.yaml`) |
+| 사건 `town_threat: true` | 고을 · 도시 시작 서막(농부 · 사냥꾼 · 객잔 · 의원 · 표국)의 2단계 ★사건을 그곳판으로 바꿈 — 청하진이 아니면 이것(`towns/events.yaml` · `cities/events.yaml`) · `check_mod` = 생김새 · 기운에 따른 판정 보정 |
 | 조건 `origin:org_id` · `state:npc==상태` | 내 출신 · NPC 상태 |
 | `companion: npc` · `age_days: n` · NPC `spirit` · `teaches_literacy` | 동행 · 나이만 흐름(시간 이상한 숲) · 영물 · 글을 가르쳐 주는 사람 |
 | 사건 `results: {이름: 결과}` · `next_result: 이름` | 여러 선택지가 같은 결과로 갈 때 이름 붙여 한 번만 씀(A305 「실패」 = 맹주 사망 조건) |
