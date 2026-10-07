@@ -42,3 +42,7 @@
 - {id: ma_blood_shadow_sword, name: 혈영검, layer: 무공, branch: 검, grade: 이류, nature: 쾌, qi: 혈, need_realm: 삼류, need_literacy: false, faction_lock: fac_blood, power: 1.0, qi_deviation: 보통, lines: ["붉은 그림자가 칼보다 먼저 닿는다", "피 냄새가 짙어진다"]}
 - {id: ma_shaolin_tuna, name: 소림 토납법, layer: 심법, branch: 내공, grade: 이류, nature: 유, qi: 불, need_realm: 삼류, need_literacy: false, faction_lock: fac_shaolin, power: 0.7, qi_deviation: 낮음, lines: ["숨이 단전으로 가라앉는다", "목탁 소리처럼 고르다"]}
 - {id: ma_luohan_fist, name: 나한권, layer: 무공, branch: 권, grade: 삼류, nature: 중, qi: 불, need_realm: 삼류, need_literacy: false, faction_lock: fac_shaolin, power: 0.6, lines: ["주먹은 화가 아니라 숨으로 지른다", "곧게, 무겁게"]}
+- {id: ma_zixia, name: 자하신공, layer: 심법, branch: 내공, grade: 일류, nature: 쾌, qi: 정, need_realm: 삼류, need_literacy: true, faction_lock: fac_huashan, power: 0.9, qi_deviation: 낮음, lines: ["보랏빛 노을이 단전에 번진다"]}
+- {id: ma_plum_sword, name: 매화검법, layer: 무공, branch: 검, grade: 일류, nature: 쾌, qi: 정, need_realm: 삼류, need_literacy: true, faction_lock: fac_huashan, power: 1.0, lines: ["칼끝에 매화가 핀다", "스물네 송이가 한꺼번에 진다"], note: "원본은 잃어버림 — 지금 화산의 매화검법은 7할(회수하면 power↑)"}
+- {id: ma_taiji_gong, name: 태극신공, layer: 심법, branch: 내공, grade: 일류, nature: 유, qi: 정, need_realm: 삼류, need_literacy: true, faction_lock: fac_wudang, power: 0.9, qi_deviation: 낮음, lines: ["음과 양이 천천히 돈다"]}
+- {id: ma_taiji_fist, name: 태극권, layer: 무공, branch: 권, grade: 일류, nature: 유, qi: 정, need_realm: 삼류, need_literacy: true, faction_lock: fac_wudang, power: 0.9, lines: ["밀려오는 힘을 둥글게 흘린다", "느린데, 닿지 않는다"]}

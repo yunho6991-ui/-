@@ -146,7 +146,25 @@
     - {id: end_shaolin_lay, name: 하산(소림 속가), tags: [소림속가]}
     - {id: end_shaolin_called, name: 봉인의 목소리를 들은 자, tags: [소림속가, 구유의부름], note: "7막 핵심 · 정각은 아직 탑의 목소리를 듣고 있다"}
     - {id: end_shaolin_apostate, name: 파계, require: ["tag:파계"], faction: null, rep: {fac_shaolin: -10}, tags: [파계승], note: "금기를 어긴 행동(살생 · 장경각 반출 등)으로 언제든 이 결말"}
-- {id: org_huashan_wudang, name: 화산 · 무당 문하, grade: 드묾, cap: null, start: {age: 14, money: 10, literacy: true, places: [pl_huashan, pl_wudang]}, todo: true}
+- id: org_huashan_wudang
+  name: 화산 · 무당 문하
+  grade: 드묾
+  cap: null
+  start: {age: 14, money: 10, literacy: true, places: [pl_huashan, pl_wudang]}
+  gender: random
+  variants:
+    화산: {place: pl_huashan, faction: fac_huashan, name_hint: 진유, martial: [ma_zixia, ma_plum_sword], variant_heart: ma_zixia, variant_art: ma_plum_sword, variant_head: npc_jinqing}
+    무당: {place: pl_wudang, faction: fac_wudang, name_hint: 청유, martial: [ma_taiji_gong, ma_taiji_fist], variant_heart: ma_taiji_gong, variant_art: ma_taiji_fist, variant_head: npc_qingxu}
+  init: {skills: {글 읽기: 능숙}, qi: 정, pts: {"{variant_heart}": 1, "{variant_art}": 1}, journal: "같은 날 입문한 동기 「백운」과 늘 1, 2등을 다툼"}
+  stages:
+    - {id: st_hw_1, name: 삼대제자, fixed: [ev_p_hw_1_1], pool: [ev_p_hw_1_2, ev_p_hw_1_3], pick: 2}
+    - {id: st_hw_2, name: 문파의 비밀, fixed: [ev_p_hw_2_1a, ev_p_hw_2_1b], pool: [ev_p_hw_2_2], pick: 1, note: "2-1은 variant 조건으로 하나만 뜬다"}
+    - {id: st_hw_3, name: 하산 임무, fixed: [ev_p_hw_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_hw_hope, name: 문파의 기대주, faction: "{variant_faction}", tags: [명문제자, 기대주]}
+    - {id: end_hw_secret, name: 비밀을 쥔 제자, require: ["flag:secret_found"], faction: "{variant_faction}", tags: [명문제자, 비밀을쥔자], note: "화산 = 매화검법 원본 단서 · 무당 = 맹주 지병"}
+    - {id: end_hw_rival, name: 동기와의 원한, faction: "{variant_faction}", tags: [명문제자, 동문원한]}
+    - {id: end_hw_expelled, name: 파문, require: ["tag:파문"], faction: null, tags: [파문제자], note: "문규를 어긴 행동으로 언제든"}
 - {id: org_tang, name: 사천당가의 제자, grade: 드묾, cap: null, start: {age: 13, money: 20, literacy: true, places: [pl_chengdu]}, todo: true}
 - {id: org_greenwood, name: 녹림 산채의 아이, grade: 드묾, cap: null, start: {age: 15, money: 10, literacy: false, places: [pl_taihang]}, todo: true}
 - {id: org_namgung, name: 후계 다툼 세가 직계(시즌 1 남궁), grade: 희귀, cap: 3, shared_prologue: true, start: {age: 12, money: 500, literacy: true, places: [pl_hefei]}, todo: true}
