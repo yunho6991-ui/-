@@ -1,0 +1,64 @@
+# 녹림 산채의 아이 서막 (wuxia-prologues-full-2.md I) — 곰칼 산채(청운산, 태행산맥 남쪽 끝자락). 농부 서막의 습격을 반대편에서 겪는다
+- id: ev_p_gw_1_1
+  name: 길목 망보기
+  weight: 0
+  prologue: org_greenwood
+  text: "나무 위 망루. 고갯길로 행렬이 온다. 표기(旗)가 펄럭인다 — 「왕가표국」."
+  choices:
+    - {text: 신호를 보낸다, result: {money: +5, aff: {npc_gomkal: +1}, text: "산채가 길목을 막는다. 통행세가 들어온다."}}
+    - {text: 신호를 늦춘다, result: {aff: {npc_gomkal: -1, npc_wangchung: +1}, flag: let_escort_pass, text: "행렬이 지나간다. 저녁에 아버지 주먹이 날아온다."}}
+  record: "망루에서 왕가표국 깃발을 봤다"
+- id: ev_p_gw_1_2
+  name: 채주들의 술자리
+  weight: 0
+  prologue: org_greenwood
+  text: "이웃 산채 채주들이 모였다. 고기, 술, 칼자랑. 누군가 말한다. \"요즘 세가 나리들이 돈을 잘 주더군.\""
+  choices:
+    - {text: 엿듣는다, result: {clue: greenwood_patron, text: "세가가 녹림에 돈을 대 경쟁 상단을 털게 한다."}}
+    - {text: 술을 따른다, require: ["skill:술 세기>=서툶"], result: {rep: {fac_greenwood: +1}}}
+- id: ev_p_gw_1_3
+  name: 아버지의 옛이야기
+  weight: 0
+  prologue: org_greenwood
+  text: "술 취한 아버지가 칼을 쓰다듬는다. \"내 형님은… 이 산에서 제일가는 칼잡이였지. 노석 형님. 마을로 내려가 버렸어.\""
+  choices:
+    - {text: 끝까지 듣는다, result: {aff: {npc_gomkal: +2}, flag: knows_noseok, text: "노석. 아랫마을 청하진의 늙은이."}}
+- id: ev_p_gw_2_1
+  name: 세가의 돈
+  weight: 0
+  prologue: org_greenwood
+  text: "비단 도포의 사내가 은자 상자를 내려놓는다. \"다음 달 이맘때, 청하진으로 가는 상단을 털어 주시게. 사람은 다치지 말고.\" 소매에 언뜻 — 남궁 문양."
+  choices:
+    - {text: 아버지 곁에서 지켜본다, result: {clue: greenwood_patron, tag: [+세가거래의증인]}}
+    - {text: 상자 밑 쪽지를 챙긴다, result: {item: [it_namgung_note], text: "글을 모른다. 누가 읽어 주면 증거가 된다."}}
+  record: "세가 사내가 산채에 은자를 놓고 갔다"
+- id: ev_p_gw_2_2
+  name: 잡혀 온 아이
+  weight: 0
+  prologue: org_greenwood
+  text: "털이에서 돌아온 사람들이 우리에 아이 하나를 가둔다. 표국 국주의 아들이란다. 몸값을 받을 거라고."
+  choices:
+    - {text: 밥을 몰래 준다, result: {aff: {"{caged_kid}": +3}, flag: fed_kid}}
+    - {text: 놀린다, result: {aff: {"{caged_kid}": -3}}}
+  note: "{caged_kid} = 지금 표국 출신 서막을 하는 유저가 있으면 그 몸(W5 · 서로 모름), 없으면 NPC 왕가 아들"
+- id: ev_p_gw_2_3
+  name: 마을 습격 명령
+  weight: 0
+  prologue: org_greenwood
+  death_possible: true
+  mirror: ev_p_farmer_2_1
+  text: "총채주 철산의 전갈. \"곡식이 모자라다. 아랫마을을 털어라.\" 아랫마을은 — 청하진. 아버지가 밤새 칼을 쥐었다 놓는다."
+  choices:
+    - {text: 앞장선다, result: {world_local: {qinghe_damage: +1}, rep: {fac_greenwood: +2}, money: +10, tag: [+청하진원한], text: "횃불. 고함. 누군가의 집이 탄다."}}
+    - {text: "\"노석 형님 마을이잖아요.\"", require: ["flag:knows_noseok"], result: {world_local: {qinghe_damage: -1}, aff: {npc_gomkal: +2}, text: "아버지가 졸개 절반만 데리고 간다. 곡식만 싣고 돌아온다."}}
+    - {text: 산채에 남는다, result: {}}
+- id: ev_p_gw_3_1
+  name: 서열 싸움
+  weight: 0
+  prologue: org_greenwood
+  death_possible: true
+  text: "습격 뒤, 이웃 채주가 아버지 자리를 노린다. \"곰칼은 늙었다. 노석인가 하는 늙은이 앞에서 칼을 거뒀다지?\""
+  choices:
+    - {text: 아버지 편에서 싸운다, result: {fight: {foe: npc_bandit, count: 3, ally: npc_gomkal, win: {fame: +5, ending: end_gw_heir}, lose: {death_check: 0.3, kill_npc_p: {npc_gomkal: 0.5}, ending: end_gw_tieshan}}}}
+    - {text: 총채주 철산에게 간다, result: {aff: {npc_tieshan: +3}, ending: end_gw_tieshan}}
+    - {text: 우리 문을 연다, require: ["flag:fed_kid"], result: {aff: {"{caged_kid}": +5}, ending: end_gw_down}}

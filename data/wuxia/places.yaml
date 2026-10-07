@@ -11,7 +11,7 @@
   threat: 녹림 산적
   clue: [blood_cult, yaoshou]
   links: {pl_luoyang: 5, pl_shimen: 3, pl_qingyunshan: 1}
-- {id: pl_qingyunshan, name: 청운산, kind: site, region: 중원, tier: 0, links: {pl_qinghe: 1}}
+- {id: pl_qingyunshan, name: 청운산, kind: site, region: 중원, tier: 0, start_for: [org_greenwood], links: {pl_qinghe: 1}}
 - {id: pl_xuexia, name: 설하촌, kind: town, region: 북쪽, tier: 1, start_for: [org_farmer, org_hunter, org_inn, org_doctor, org_escort], threat: 남하하는 요수, clue: [yaoshou], links: {pl_hejian: 3}}
 - {id: pl_bodopo, name: 파도포, kind: town, region: 동쪽 해안, tier: 1, start_for: [org_farmer, org_hunter, org_inn, org_doctor, org_escort], threat: 수적, clue: [pirates], links: {pl_hangzhou: 2}}
 - {id: pl_zhulin, name: 죽림향, kind: town, region: 사천, tier: 1, start_for: [org_farmer, org_hunter, org_inn, org_doctor, org_escort], threat: 당가의 독 실험, clue: [tang_poison], links: {pl_chengdu: 1}}
@@ -39,7 +39,7 @@
 - {id: pl_huashan, name: 화산, kind: site, region: 서북, tier: 1, start_for: [org_huashan_wudang]}
 - {id: pl_wudang, name: 무당산, kind: site, region: 서남, tier: 1, start_for: [org_huashan_wudang]}
 - {id: pl_longzhong, name: 융중(제갈), kind: site, region: 중원 서남, tier: 1}
-- {id: pl_taihang, name: 태행산맥, kind: region, tier: 2, start_for: [org_greenwood]}
+- {id: pl_taihang, name: 태행산맥, kind: region, tier: 2, start_for: []}
 - {id: pl_blood_camp, name: 혈교 수련장, kind: site, region: 남쪽 습지, tier: 2, hidden: true, start_for: [org_blood_children]}
 - {id: pl_master_hut, name: 산꼭대기 초막, kind: site, tier: 0, hidden: true, start_for: [org_master_disciple]}
 - {id: pl_north, name: 북방 설원, kind: region, tier: 3}

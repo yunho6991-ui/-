@@ -180,7 +180,22 @@
     - {id: end_tang_disciple, name: 정식 제자, faction: fac_tang, tags: [당가제자]}
     - {id: end_tang_thief, name: 금기 독을 훔쳐 달아남, faction: null, rep: {fac_tang: -10}, tags: [당가배신자], chase: fac_tang}
     - {id: end_tang_poisoned, name: 독에 몸이 상함, require: ["constitution:tr_poison_body"], faction: fac_tang, tags: [당가제자, 독체질], note: "아침의 독에 몸이 상했으면(1-1 실패 중 30%) 정식 제자 대신 이 결말"}
-- {id: org_greenwood, name: 녹림 산채의 아이, grade: 드묾, cap: null, start: {age: 15, money: 10, literacy: false, places: [pl_taihang]}, todo: true}
+- id: org_greenwood
+  name: 녹림 산채의 아이
+  grade: 드묾
+  cap: null
+  start: {age: 15, money: 10, literacy: false, places: [pl_qingyunshan], note: "곰칼 산채 = 청운산(태행산맥 남쪽 끝자락)"}
+  gender: random
+  looks_bias: {face: 험상궂음, build: 거구}
+  init: {skills: {위협: 능숙, 추적: 서툶}, martial: [ma_kaishan_axe], pts: {ma_kaishan_axe: 1}, faction: fac_greenwood, family: {npc_gomkal: 아버지}, journal: "아버지 곰칼 · 산채 식구 서른둘 · 옛날 얘기만 하면 아버지가 「노석 형님」을 찾음"}
+  stages:
+    - {id: st_gw_1, name: 산채, fixed: [ev_p_gw_1_1], pool: [ev_p_gw_1_2, ev_p_gw_1_3], pick: 2}
+    - {id: st_gw_2, name: 큰 거래, fixed: [ev_p_gw_2_1, ev_p_gw_2_2], pool: [ev_p_gw_2_3], pick: 1}
+    - {id: st_gw_3, name: 채주들의 싸움, fixed: [ev_p_gw_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_gw_heir, name: 산채의 후계, faction: fac_greenwood, tags: [녹림, 산채후계]}
+    - {id: end_gw_tieshan, name: 총채주의 사람, faction: fac_greenwood, master: npc_tieshan, tags: [녹림, 철산의수하]}
+    - {id: end_gw_down, name: 산을 내려옴, faction: null, rep: {fac_greenwood: -5}, tags: [녹림원한, 표국인연]}
 - {id: org_namgung, name: 후계 다툼 세가 직계(시즌 1 남궁), grade: 희귀, cap: 3, shared_prologue: true, start: {age: 12, money: 500, literacy: true, places: [pl_hefei]}, todo: true}
 - {id: org_master_disciple, name: 천하제일고수의 제자, grade: 전설, cap: 2, start: {age: 15, money: 0, places: [pl_master_hut]}, init: {talent_genius: 1}, todo: true}
 - {id: org_saintess, name: 마교 성녀 후보, grade: 전설, cap: 1, gender: 여, start: {age: 20, places: [pl_shiwandashan]}, slot_npc: npc_xueying, todo: true}

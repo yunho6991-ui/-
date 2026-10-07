@@ -11,3 +11,4 @@
 - {id: it_wudang_letter, name: 청허 사형께 보내는 편지, kind: 단서, note: "무당 청허진인에게 가는 길 · 맹주 지병 루트"}
 - {id: it_rare_poison_herb, name: 잎맥 붉은 풀, kind: 재료, note: "이름 모를 희귀 독초(당가 서막) — 의원 · 당가가 비싸게 산다"}
 - {id: it_qibao_poison, name: 칠보단장산, kind: 독, cap: 3, note: "세상에 셋뿐 · 한 번 쓰면 절정도 쓰러뜨림 · 지니고 있으면 당가 추격"}
+- {id: it_namgung_note, name: 상자 밑 쪽지, kind: 단서, note: "남궁 사람이 녹림에 상단 털이를 맡긴 증거(글을 아는 사람이 읽어 줘야)"}
