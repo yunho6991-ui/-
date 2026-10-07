@@ -36,3 +36,6 @@
   qi_deviation: 높음
   cap: 1
   lines: ["검은 기운이 하늘을 덮는다", "천마가 내려다본다"]
+
+- {id: ma_hunting_bow, name: 사냥 활술, layer: 무공, branch: 암기, grade: 삼류, nature: 변, qi: 정, need_realm: 삼류, need_literacy: false, power: 0.5, lines: ["숨을 내쉬며 놓는다", "화살이 바람을 가른다"]}
+- {id: ma_escort_sword, name: 표국검, layer: 무공, branch: 검, grade: 이류, nature: 중, qi: 정, need_realm: 삼류, need_literacy: false, power: 0.8, lines: ["묵직하게 내려친다", "표사의 칼은 짐을 지킨다"]}

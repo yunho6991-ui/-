@@ -29,6 +29,8 @@
     - {id: end_farmer_revenge, name: 복수를 품고 떠남, tags: [농부출신, 녹림원한]}
     - {id: end_farmer_follow, name: 지나가던 무인을 따라감, tags: [농부출신]}
     - {id: end_farmer_stay, name: 마을에 남음, tags: [농부출신, 마을의기둥, 평화로운삶]}
+    - {id: end_farmer_greenwood, name: 산채로 끌려감, faction: fac_greenwood, to: {place: pl_qingyunshan}, tags: [농부출신, 녹림]}
+    - {id: end_farmer_wander, name: 그냥 떠남, tags: [농부출신]}
 - id: org_blood_children
   name: 혈교에 납치된 백 명의 아이
   grade: 희귀
@@ -47,3 +49,22 @@
     - {id: end_blood_escape, name: 탈출, tags: [혈교도주자, 추격자]}
     - {id: end_blood_rescued, name: 정파에 구출됨, require: ["var:camp_found==1"], tags: [구출된아이, 혈교원한]}
     - {id: end_blood_abandoned, name: 버려짐, tags: [버려진아이]}
+
+# ── 나머지 출신: 기본 정보만(서막 사건은 wuxia-prologues-full-*.md를 보고 채울 것 — todo) ──
+- {id: org_hunter, name: 사냥꾼의 아이, grade: 흔함, cap: null, start: {age: 15, money: 8, literacy: false, places: [town]}, init: {skills: {사냥: 능숙, 추적: 서툶}, martial: [ma_hunting_bow]}, todo: true}
+- {id: org_beggar, name: 거지, grade: 흔함, cap: null, start: {age: 12, money: 0, literacy: false, places: [pl_luoyang]}, init: {skills: {소매치기: 서툶}}, todo: true}
+- {id: org_escort, name: 몰락한 표국의 자식, grade: 흔함, cap: null, start: {age: 17, money: 30, literacy: true, places: [town, city]}, init: {skills: {기마: 능숙, 흥정: 서툶}, martial: [ma_escort_sword]}, todo: true}
+- {id: org_inn, name: 객잔의 아이, grade: 흔함, cap: null, start: {age: 15, money: 15, literacy: true, places: [town, city]}, init: {skills: {흥정: 능숙, 말재주: 서툶, 술 세기: 서툶}}, todo: true}
+- {id: org_doctor, name: 의원 집 아이, grade: 흔함, cap: null, start: {age: 16, money: 20, literacy: true, places: [town, city]}, init: {skills: {의술: 서툶, 약초 캐기: 능숙}}, todo: true}
+- {id: org_shaolin, name: 소림 동자승, grade: 드묾, cap: null, start: {age: 12, money: 0, literacy: true, places: [pl_songshan]}, todo: true}
+- {id: org_huashan_wudang, name: 화산 · 무당 문하, grade: 드묾, cap: null, start: {age: 14, money: 10, literacy: true, places: [pl_huashan, pl_wudang]}, todo: true}
+- {id: org_tang, name: 사천당가의 제자, grade: 드묾, cap: null, start: {age: 13, money: 20, literacy: true, places: [pl_chengdu]}, todo: true}
+- {id: org_greenwood, name: 녹림 산채의 아이, grade: 드묾, cap: null, start: {age: 15, money: 10, literacy: false, places: [pl_taihang]}, todo: true}
+- {id: org_namgung, name: 후계 다툼 세가 직계(시즌 1 남궁), grade: 희귀, cap: 3, shared_prologue: true, start: {age: 12, money: 500, literacy: true, places: [pl_hefei]}, todo: true}
+- {id: org_master_disciple, name: 천하제일고수의 제자, grade: 전설, cap: 2, start: {age: 15, money: 0, places: [pl_master_hut]}, init: {talent_genius: 1}, todo: true}
+- {id: org_saintess, name: 마교 성녀 후보, grade: 전설, cap: 1, gender: 여, start: {age: 20, places: [pl_shiwandashan]}, slot_npc: npc_xueying, todo: true}
+- {id: org_city_waiter, name: 주루 점소이, grade: 흔함, cap: null, start: {places: [city]}, todo: true}
+- {id: org_city_clerk, name: 상점 견습, grade: 흔함, cap: null, start: {places: [city]}, todo: true}
+- {id: org_city_constable, name: 포졸의 아들, grade: 흔함, cap: null, start: {places: [city]}, todo: true}
+- {id: org_city_courtesan, name: 기루 심부름꾼, grade: 흔함, cap: null, start: {places: [city]}, todo: true}
+- {id: org_city_porter, name: 성문 짐꾼, grade: 흔함, cap: null, start: {places: [city]}, todo: true}

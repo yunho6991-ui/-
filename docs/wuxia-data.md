@@ -1,7 +1,7 @@
 # 무협 게임 — 데이터 형식 (코드로 옮길 때 기준)
 
 > 기획 문서의 내용을 **코드가 읽는 데이터**로 옮기는 형식. 원칙(기획서 11장): **사건 · 사람 · 무공을 추가할 때 코드를 고치지 않는다** — 데이터 파일에 한 덩어리 더하면 끝.
-> 예시 파일: `data/wuxia/*.yaml` (각 파일에 실제 내용 몇 개씩). 나머지는 기획 문서를 보고 같은 꼴로 채운다.
+> 데이터: `data/wuxia/*.yaml`. **작은 강호 한 판(농부 서막 · 청하진 · 청운산)은 완성** — 로드맵 M0~M5에 바로 쓴다. 나머지는 기획 문서를 보고 같은 꼴로 채운다.
 > 검사: `python3 tools/wuxia_data_check.py` — 형식 · id 중복 · 없는 id 참조를 확인.
 
 ---
@@ -75,6 +75,28 @@ weight_mod:                # 조건이 맞으면 더하거나(+) 곱한다(x)
 | `ending` | 서막 결말 | `end_farmer_disciple` |
 | `record` | 생애 기록 한 줄(전기용) | `"산적이 온 날 살아남았다"` |
 | `text` | 결과 문장 | `"허리가 끊어질 것 같지만, 저녁밥이 달다."` |
+
+### 4-1. 작은 강호 데이터에서 더 쓴 키 (`events/prologue_farmer.yaml` · `qinghe.yaml` · `romance_qinghe.yaml`)
+
+| 키 | 뜻 |
+|---|---|
+| `roll: [{p, result}]` | 확률로 결과 하나 고르기 |
+| `heal: n` · `sick: p` | 부상 회복 · 병에 걸릴 확률 |
+| `stat: {체력: +1}` | 기본 능력 변화 |
+| `skill_xp: {특기: n}` | 특기 숙련 경험 |
+| `rumor: n` · `clue_relic: local` | 소문 · 기연 단서 |
+| `shop: market` · `discount` · `gamble: n` · `quest_board: bounty` | 장터 · 흥정 할인 · 도박 · 의뢰판 열기 |
+| `move: random_neighbor` · `move_menu: river` | 이동 |
+| `cost_actions: n` | 이 선택이 행동력을 n 더 씀(여러 날 걸리는 일) |
+| `world_local: {키: 값}` | 그 장소만의 상태(마을 피해 등) |
+| `set_npc: {npc: 상태}` · `kill_npc_p: {npc: p}` | NPC 상태 바꾸기 · 확률로 죽이기 |
+| `pick_npc: [..]` (사건 키) · `"{npc}"` · `"{passerby}"` | 회차마다 등장 인물 고르기 · 그 인물 자리 표시 |
+| `fight: {foe, count, ally, lost_first, win: {...}, lose: {...}}` | 전투 + 이겼을 때 · 졌을 때 결과 |
+| `ally: npc` · `master: npc` · `romance: {npc: 연모}` | 동료 · 스승 · 인연 단계 |
+| `epithet_seed: 이름` | 별호 후보 쌓기 |
+| `reveal: tr_id` · `wall_chance: p` · `flag: 이름` | 숨은 특성 드러내기 · 벽 넘기 기회 · 표시 |
+| `check: {aff: "npc>=단계"}` · `{trait_any: [...], else_p}` | 호감 · 성격으로 판정 |
+| 조건 `literacy` · `alive:npc_id` | 글을 앎 · NPC가 살아 있음 |
 
 ## 5. 선택지 — `choices`
 

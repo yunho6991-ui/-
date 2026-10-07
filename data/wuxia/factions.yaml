@@ -1,37 +1,17 @@
-# 세력 (wuxia-world.md 3장) — 예시 4개. 나머지 10개도 같은 꼴
-- id: fac_alliance
-  name: 무림맹
-  leader: npc_baiyunhe
-  base: pl_luoyang
-  goal: 대륙의 질서, 마교 · 혈교 억제
-  friends: [fac_shaolin, fac_wudang, fac_huashan, fac_zhuge, fac_namgung, fac_tang, fac_peng, fac_kaibang]
-  enemies: [fac_demon, fac_blood, fac_greenwood]
-  inner_conflict: 구파 대 세가의 권력 다툼
-  hidden: 맹주의 숨겨진 지병
-- id: fac_namgung
-  name: 남궁세가
-  leader: npc_namgungcheon
-  base: pl_hefei
-  goal: 남궁에서 맹주 배출
-  friends: []
-  enemies: [fac_blood]
-  rivals: [fac_huashan]
-  inner_conflict: 후계 다툼
-  hidden: 혈교 간부 하나가 남궁의 버려진 장자
-- id: fac_blood
-  name: 혈교
-  leader: npc_xuemo
-  base: pl_altar
-  goal: 혈신 강림 의식
-  friends: []
-  enemies: [all]
-  hidden: 간부들이 맹 · 세가 · 개방 깊숙이 침투
-- id: fac_qingqiu
-  name: 청구
-  leader: npc_ruhua
-  base: pl_qingqiu
-  goal: 인간과의 경계 유지
-  friends: [fac_demon_partial]
-  enemies: [fac_hunters]
-  inner_conflict: 공존파 대 인간사냥파
-  hidden: 인간 사회에 숨어 사는 요괴들의 연락망
+# 세력 14 + 작은 집단 (wuxia-world.md 3장)
+- {id: fac_alliance, name: 무림맹, leader: npc_baiyunhe, base: pl_luoyang, goal: "대륙의 질서, 마교 · 혈교 억제", friends: [fac_shaolin, fac_wudang, fac_huashan, fac_zhuge, fac_namgung, fac_tang, fac_peng, fac_kaibang], enemies: [fac_demon, fac_blood, fac_greenwood], inner_conflict: 구파 대 세가의 권력 다툼, hidden: 맹주의 숨겨진 지병}
+- {id: fac_shaolin, name: 소림, leader: npc_huikong, base: pl_songshan, goal: "불법 수호, 맹의 원로로서 중립", friends: [fac_wudang], enemies: [fac_blood], inner_conflict: 무승파 대 선승파, hidden: 봉인탑 지하의 대요괴}
+- {id: fac_huashan, name: 화산, leader: npc_jinqing, base: pl_huashan, goal: "몰락했던 문파의 재흥", friends: [fac_wudang], rivals: [fac_namgung], inner_conflict: 젊은 검수 대 원로, hidden: 잃어버린 매화검법 원본}
+- {id: fac_wudang, name: 무당, leader: npc_qingxu, base: pl_wudang, goal: "맹의 균형 유지, 맹주 보좌", friends: [fac_shaolin, fac_alliance], enemies: [fac_demon], inner_conflict: 맹주 편 대 독자 노선, hidden: 맹주의 지병을 안다}
+- {id: fac_zhuge, name: 제갈세가, leader: npc_zhugewen, base: pl_longzhong, goal: "다음 맹주를 만드는 것", friends: [fac_alliance], enemies: [fac_tang], inner_conflict: 가주 대 젊은 책사, hidden: 혈교와 비밀 서신}
+- {id: fac_namgung, name: 남궁세가, leader: npc_namgungcheon, base: pl_hefei, goal: "남궁에서 맹주 배출", rivals: [fac_huashan], enemies: [fac_blood], inner_conflict: 후계 다툼, hidden: 혈교 간부가 남궁의 버려진 장자}
+- {id: fac_tang, name: 사천당가, leader: npc_tanglaotai, base: pl_chengdu, goal: "맹의 견제에서 벗어나기", friends: [fac_greenwood], enemies: [fac_zhuge], inner_conflict: 순혈파 대 개방파, hidden: 독으로 요수를 길들이는 비술}
+- {id: fac_peng, name: 하북팽가, leader: npc_pengwu, base: pl_hejian, goal: "북방 요수 막기", friends: [fac_shaolin], enemies: [yaoshou_north], inner_conflict: 지원 요구파 대 독자 행동파, hidden: 북방 요수 왕과의 비밀 불가침}
+- {id: fac_kaibang, name: 개방, leader: npc_laogou, base: pl_luoyang, goal: "정보 · 약자 보호, 중립", friends: [], enemies: [fac_blood], inner_conflict: 정보 장사파 대 협객파, hidden: 장로 하나가 혈교 첩자}
+- {id: fac_demon, name: 마교, leader: npc_weishaotian, base: pl_shiwandashan, goal: "맹과 대등한 나라로 인정받기", friends: [fac_qingqiu], enemies: [fac_alliance, fac_blood], inner_conflict: 교주 후계 · 성녀 후보 다툼, hidden: 요계와의 오래된 계약}
+- {id: fac_blood, name: 혈교, leader: npc_xuemo, base: pl_altar, goal: "혈신 강림 의식", friends: [], enemies: [all], inner_conflict: 교주 대 맹 내부 침투파, hidden: 간부들이 맹 · 세가 · 개방에 침투}
+- {id: fac_greenwood, name: 녹림, leader: npc_tieshan, base: pl_taihang, goal: "길목 · 통행세, 맹의 법 밖의 자유", friends: [fac_pirates, fac_tang], enemies: [fac_alliance], inner_conflict: 채주 서열 싸움, hidden: 세가 돈을 받고 경쟁 상단을 턴다}
+- {id: fac_pirates, name: 수적, leader: npc_heilong, base: pl_heilongdao, goal: "바다 지배 · 밀무역", friends: [fac_greenwood], enemies: [fac_alliance], inner_conflict: 섬마다 다른 두목, hidden: 해룡과의 공생}
+- {id: fac_qingqiu, name: 청구, leader: npc_ruhua, base: pl_qingqiu, goal: "인간과의 경계 유지", friends: [fac_demon], enemies: [fac_hunters], inner_conflict: 공존파 대 인간사냥파, hidden: 인간 사회에 숨은 요괴들의 연락망}
+# 작은 집단(세력 아님 — 사건 · NPC로만)
+- {id: fac_hunters, name: 요괴 사냥꾼, kind: minor, goal: "맹의 돈을 받고 요괴를 잡는다", enemies: [fac_qingqiu]}

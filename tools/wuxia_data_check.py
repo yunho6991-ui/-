@@ -8,7 +8,7 @@ import glob, os, re, sys
 import yaml
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'wuxia')
-PREFIX = ('ev_', 'npc_', 'org_', 'ma_', 'pl_', 'fac_', 'tr_', 'lg_', 'end_', 'st_')
+PREFIX = ('ev_', 'npc_', 'org_', 'ma_', 'pl_', 'fac_', 'tr_', 'lg_', 'end_', 'st_', 'it_')
 ID_RE = re.compile(r'\b(?:%s)[a-z0-9_]+' % '|'.join(PREFIX))
 
 

@@ -1,0 +1,8 @@
+# 물건 (wuxia-economy.md) — 초반 묶음
+- {id: it_old_sword, name: 녹슨 검, kind: 무기, power: 1.0, durability: 30, price: 5}
+- {id: it_soguhandan, name: 소환단, kind: 영약, effect: {pts: {내공: 10}}, price: 300}
+- {id: it_fake_pill, name: 밀가루 환약, kind: 잡화, effect: {}, price: 30}
+- {id: it_geumchang, name: 금창약, kind: 약, effect: {heal: 2}, price: 5}
+- {id: it_antidote, name: 해독단, kind: 약, effect: {poison: -99}, price: 20}
+- {id: it_half_jade, name: 반쪽 옥패, kind: 단서, note: "나머지 반쪽은 어딘가에(객잔 서막)"}
+- {id: it_unread_manual, name: 읽지 못한 비급, kind: 비급, need_literacy: true, teaches: random_branch}
