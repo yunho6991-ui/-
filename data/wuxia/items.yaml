@@ -9,3 +9,5 @@
 - {id: it_red_seal_note, name: 붉은 인장 쪽지, kind: 단서, note: "구장로 = 혈교 첩자 증거(5막 열쇠)"}
 - {id: it_mother_hairband, name: 어머니의 머리끈, kind: 유품, note: "사냥꾼 서막 — 작은 행운"}
 - {id: it_wudang_letter, name: 청허 사형께 보내는 편지, kind: 단서, note: "무당 청허진인에게 가는 길 · 맹주 지병 루트"}
+- {id: it_rare_poison_herb, name: 잎맥 붉은 풀, kind: 재료, note: "이름 모를 희귀 독초(당가 서막) — 의원 · 당가가 비싸게 산다"}
+- {id: it_qibao_poison, name: 칠보단장산, kind: 독, cap: 3, note: "세상에 셋뿐 · 한 번 쓰면 절정도 쓰러뜨림 · 지니고 있으면 당가 추격"}

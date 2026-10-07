@@ -15,6 +15,9 @@ constitutions:
   - id: tr_poison_resist
     name: 독에 강함
     effect: {poison_days: x0.5, antidote: x0.5}
+  - id: tr_poison_body
+    name: 독에 상한 몸
+    effect: {poison_days: x0.3, heal: x0.8, lifespan: -5}
 hidden_traits:
   - id: tr_sword_memory
     name: 알 수 없는 검술의 기억

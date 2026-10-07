@@ -165,7 +165,21 @@
     - {id: end_hw_secret, name: 비밀을 쥔 제자, require: ["flag:secret_found"], faction: "{variant_faction}", tags: [명문제자, 비밀을쥔자], note: "화산 = 매화검법 원본 단서 · 무당 = 맹주 지병"}
     - {id: end_hw_rival, name: 동기와의 원한, faction: "{variant_faction}", tags: [명문제자, 동문원한]}
     - {id: end_hw_expelled, name: 파문, require: ["tag:파문"], faction: null, tags: [파문제자], note: "문규를 어긴 행동으로 언제든"}
-- {id: org_tang, name: 사천당가의 제자, grade: 드묾, cap: null, start: {age: 13, money: 20, literacy: true, places: [pl_chengdu]}, todo: true}
+- id: org_tang
+  name: 사천당가의 제자
+  grade: 드묾
+  cap: null
+  start: {age: 13, money: 20, literacy: true, places: [pl_chengdu]}
+  gender: random
+  init: {skills: {독술: 서툶, 약초 캐기: 서툶}, qi: 독, martial: [ma_tang_poison_heart], pts: {ma_tang_poison_heart: 1}, faction: fac_tang, journal: "아침마다 독 한 방울 · 사형 당무영이 감독 · 당가 아가씨 당소소가 가끔 놀러 옴"}
+  stages:
+    - {id: st_tang_1, name: 독 적응, fixed: [ev_p_tang_1_1], pool: [ev_p_tang_1_2, ev_p_tang_1_3], pick: 2}
+    - {id: st_tang_2, name: 암기 수련, fixed: [ev_p_tang_2_1], pool: [ev_p_tang_2_2, ev_p_tang_2_3], pick: 1}
+    - {id: st_tang_3, name: 출행 허가, fixed: [ev_p_tang_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_tang_disciple, name: 정식 제자, faction: fac_tang, tags: [당가제자]}
+    - {id: end_tang_thief, name: 금기 독을 훔쳐 달아남, faction: null, rep: {fac_tang: -10}, tags: [당가배신자], chase: fac_tang}
+    - {id: end_tang_poisoned, name: 독에 몸이 상함, require: ["constitution:tr_poison_body"], faction: fac_tang, tags: [당가제자, 독체질], note: "아침의 독에 몸이 상했으면(1-1 실패 중 30%) 정식 제자 대신 이 결말"}
 - {id: org_greenwood, name: 녹림 산채의 아이, grade: 드묾, cap: null, start: {age: 15, money: 10, literacy: false, places: [pl_taihang]}, todo: true}
 - {id: org_namgung, name: 후계 다툼 세가 직계(시즌 1 남궁), grade: 희귀, cap: 3, shared_prologue: true, start: {age: 12, money: 500, literacy: true, places: [pl_hefei]}, todo: true}
 - {id: org_master_disciple, name: 천하제일고수의 제자, grade: 전설, cap: 2, start: {age: 15, money: 0, places: [pl_master_hut]}, init: {talent_genius: 1}, todo: true}

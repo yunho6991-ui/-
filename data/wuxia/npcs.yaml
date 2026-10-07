@@ -90,6 +90,8 @@
 - {id: npc_zhugewen, name: 제갈문, age: 58, realm: 일류, faction: fac_zhuge, role: 제갈세가 가주}
 - {id: npc_namgungcheon, name: 남궁천, age: 61, realm: 초절정, faction: fac_namgung, role: 남궁세가 가주}
 - {id: npc_tanglaotai, name: 당노태, age: 77, realm: 절정, faction: fac_tang, role: 사천당가 가주}
+- {id: npc_tangsoso, name: 당소소, age: 19, gender: 여, realm: 이류, looks: {face: 귀여움, build: 왜소}, personality: 장난기, faction: fac_tang, place: pl_chengdu, role: 당가 아가씨 · 독 천재, romance: true, note: "히로인 2(wuxia-heroines.md) · 당가 출신(13세)에겐 인연이 열리기만, 진행은 내가 성인이 된 뒤"}
+- {id: npc_tangmuying, name: 당무영, age: 28, gender: 남, realm: 절정, looks: {face: 음침함, build: 날렵}, personality: 냉정, faction: fac_tang, place: pl_chengdu, role: 사형 · 당가의 독수, secret: "동생 당소소의 해독약 실험을 몰래 돕는다", romance: true, note: "남성 인연 9(wuxia-heroes.md)"}
 - {id: npc_pengwu, name: 팽무, age: 55, realm: 초절정, faction: fac_peng, role: 하북팽가 가주}
 - {id: npc_laogou, name: 노구, realm: 초절정, faction: fac_kaibang, role: 개방 방주}
 - {id: npc_weishaotian, name: 위소천, age: 29, realm: 화경, faction: fac_demon, role: 천마}

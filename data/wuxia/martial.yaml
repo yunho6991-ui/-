@@ -46,3 +46,5 @@
 - {id: ma_plum_sword, name: 매화검법, layer: 무공, branch: 검, grade: 일류, nature: 쾌, qi: 정, need_realm: 삼류, need_literacy: true, faction_lock: fac_huashan, power: 1.0, lines: ["칼끝에 매화가 핀다", "스물네 송이가 한꺼번에 진다"], note: "원본은 잃어버림 — 지금 화산의 매화검법은 7할(회수하면 power↑)"}
 - {id: ma_taiji_gong, name: 태극신공, layer: 심법, branch: 내공, grade: 일류, nature: 유, qi: 정, need_realm: 삼류, need_literacy: true, faction_lock: fac_wudang, power: 0.9, qi_deviation: 낮음, lines: ["음과 양이 천천히 돈다"]}
 - {id: ma_taiji_fist, name: 태극권, layer: 무공, branch: 권, grade: 일류, nature: 유, qi: 정, need_realm: 삼류, need_literacy: true, faction_lock: fac_wudang, power: 0.9, lines: ["밀려오는 힘을 둥글게 흘린다", "느린데, 닿지 않는다"]}
+- {id: ma_tang_poison_heart, name: 독공심법, layer: 심법, branch: 내공, grade: 이류, nature: 변, qi: 독, need_realm: 삼류, need_literacy: true, faction_lock: fac_tang, power: 0.8, qi_deviation: 보통, lines: ["독이 핏줄을 따라 돈다 — 내 편으로"]}
+- {id: ma_mantian, name: 만천화우, layer: 무공, branch: 암기, grade: 절정, nature: 변, qi: 독, need_realm: 삼류, need_literacy: true, faction_lock: fac_tang, power: 1.4, lines: ["하늘 가득 꽃비가 내린다", "스무 개의 바늘이 한 숨에"]}
