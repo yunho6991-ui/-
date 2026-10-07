@@ -54,3 +54,4 @@
 - {id: ma_ximen_heart, name: 무명심결, layer: 심법, branch: 내공, grade: 신공, nature: 유, qi: 정, need_realm: 삼류, need_literacy: false, power: 1.6, qi_deviation: 낮음, cap: 1, lines: ["숨이 산바람처럼 들고 난다", "장작 패던 숨 그대로"]}
 - {id: ma_ximen_sword, name: 무명일검, layer: 무공, branch: 검, grade: 신공, nature: 쾌, qi: 정, need_realm: 삼류, need_literacy: false, power: 1.7, cap: 1, lines: ["도끼가 닿기 전에 나무가 갈라지듯", "단 한 번 벤다"]}
 - {id: ma_ximen_step, name: 무명보, layer: 신법, branch: 신법, grade: 신공, nature: 변, qi: 정, need_realm: 삼류, need_literacy: false, power: 1.5, cap: 1, lines: ["폭포가 갈라진 틈으로 걷는다", "보이는데 닿지 않는다"]}
+- {id: ma_saint_snow, name: 설화무심공, layer: 심법, branch: 내공, grade: 신공, nature: 유, qi: 마, need_realm: 삼류, need_literacy: true, faction_lock: fac_demon, power: 1.5, qi_deviation: 높음, cap: 1, lines: ["눈이 내리듯 마음이 비워진다", "비운 자리에 무언가 들어선다"], note: "찢긴 마지막 장을 찾으면 주화입마 위험이 사라진다"}

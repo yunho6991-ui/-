@@ -50,6 +50,7 @@
   place: pl_shiwandashan
   role: 마교 성녀 후보
   fixed_origin_slot: org_saintess     # 유저가 빙의하면 유저가 된다
+  states: [normal, taken, enthroned]
   goal: 원로들의 꼭두각시에서 벗어나는 것
   secret: 천마와 몰래 편지를 주고받는다
   death: ["var:ritual>=100", "ev_a601:내전"]
@@ -103,6 +104,9 @@
 - {id: npc_pengwu, name: 팽무, age: 55, realm: 초절정, faction: fac_peng, role: 하북팽가 가주}
 - {id: npc_laogou, name: 노구, realm: 초절정, faction: fac_kaibang, role: 개방 방주}
 - {id: npc_weishaotian, name: 위소천, age: 29, realm: 화경, faction: fac_demon, role: 천마}
+- {id: npc_demon_elder, name: 마교 원로, template: passerby, realm: 초절정, faction: fac_demon, role: 성녀를 세운 원로파}
+- {id: npc_maid_ah, name: 아화, age: 18, gender: 여, place: pl_shiwandashan, faction: fac_demon, role: 성녀의 시녀, states: [normal, gone]}
+- {id: npc_demon_guard, name: 마교 호법, template: foe, realm: 일류, faction: fac_demon, intent: 추격}
 - {id: npc_xuemo, name: 혈마, realm: 현경, faction: fac_blood, role: 혈교 교주}
 - {id: npc_tieshan, name: 철산, age: 40, realm: 절정, faction: fac_greenwood, role: 녹림총채주}
 - {id: npc_ximenhyeok, name: 서문혁, age: 110, gender: 남, realm: 생사경, hidden_realm: true, looks: {face: 평범함, build: 날렵, mark: 백발}, personality: 무심 · 장난기, place: pl_master_hut, role: 천하제일고수(은거), goal: "마지막 제자를 키우는 것", note: "제자가 없으면 7막까지 나서지 않음 · 제자가 부르면 7막에 한 번(강림 저지↑)"}

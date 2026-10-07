@@ -232,7 +232,25 @@
     - {id: end_master_disciple, name: 사부의 제자, master: npc_ximenhyeok, tags: [천하제일의제자], grant: {call_master_once: true}, note: "7막에 사부를 한 번 부를 수 있음 · 이때부터 꼬리표 사건 x08(도전자 · 암습자)"}
     - {id: end_master_left, name: 사부를 떠난 제자, tags: [사부를버린자], note: "배운 것 없이 떠남 — 천재 재능만 남는다"}
     - {id: end_master_rival, name: 사형제와 원한, master: npc_ximenhyeok, tags: [천하제일의제자, 동문원한], grant: {call_master_once: true}}
-- {id: org_saintess, name: 마교 성녀 후보, grade: 전설, cap: 1, gender: 여, start: {age: 20, places: [pl_shiwandashan]}, slot_npc: npc_xueying, todo: true}
+- id: org_saintess
+  name: 마교 성녀 후보
+  grade: 전설
+  cap: 1
+  gender: 여
+  draft: true                         # 서막 대본 없이 데이터로 먼저 만든 초안
+  start: {age: 20, money: 0, literacy: true, places: [pl_shiwandashan]}
+  slot_npc: npc_xueying
+  late_join: possess_living_npc
+  looks_fixed: {face: 절세미인, build: 날렵, mark: 백발}
+  init: {realm: 일류, qi: 마, faction: fac_demon, journal: "원로들이 정한 성녀 후보 · 즉위식이 다가온다 · 이름을 불러 주는 사람이 없다"}
+  stages:
+    - {id: st_saint_1, name: 성녀의 방, fixed: [ev_p_saint_1_1], pool: [ev_p_saint_1_2, ev_p_saint_1_3], pick: 2}
+    - {id: st_saint_2, name: 원로와 천마, fixed: [ev_p_saint_2_1], pool: [ev_p_saint_2_2, ev_p_saint_2_3], pick: 1}
+    - {id: st_saint_3, name: 즉위 전야, fixed: [ev_p_saint_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_saint_puppet, name: 원로들의 성녀, faction: fac_demon, tags: [마교성녀, 원로의꼭두각시], note: "마교 내전(ev_a601)에서 원로파 깃발"}
+    - {id: end_saint_tianmo, name: 천마의 편, faction: fac_demon, tags: [마교성녀, 천마파]}
+    - {id: end_saint_flee, name: 산을 내려온 성녀, faction: null, rep: {fac_demon: -10}, tags: [도망친성녀], chase: fac_demon, note: "절세미인 백발 — 변장이 거의 안 된다"}
 - {id: org_city_waiter, name: 주루 점소이, grade: 흔함, cap: null, start: {places: [city]}, todo: true}
 - {id: org_city_clerk, name: 상점 견습, grade: 흔함, cap: null, start: {places: [city]}, todo: true}
 - {id: org_city_constable, name: 포졸의 아들, grade: 흔함, cap: null, start: {places: [city]}, todo: true}

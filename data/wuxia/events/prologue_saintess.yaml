@@ -1,0 +1,67 @@
+# 마교 성녀 후보 서막 — 초안(대본 없음 · npc_xueying · wuxia-heroines.md 8에서 만듦). 정원 1 · 온 세상에 한 명. 빙의하면 「설영」(20 · 성인)
+# 원로파(꼭두각시 성녀) vs 천마파(위소천) 사이. 설영을 만나는 다른 유저는 그녀가 사람인지 모른다(W5)
+- id: ev_p_saint_1_1
+  name: 백발의 아침
+  weight: 0
+  prologue: org_saintess
+  text: "눈을 뜨니 거울 속에 낯선 얼굴. 눈처럼 흰 머리, 사람 같지 않게 고운 얼굴. 시녀 셋이 무릎을 꿇는다. \"성녀님, 원로들께서 기다리십니다.\""
+  choices:
+    - {text: 말없이 따른다, result: {aff: {npc_demon_elder: +1}}}
+    - {text: "\"오늘은 안 가.\"", result: {aff: {npc_demon_elder: -1, npc_maid_ah: +2}, text: "시녀 아화가 고개를 숙인 채 웃음을 참는다."}}
+  record: "십만대산에서 성녀로 눈을 떴다"
+- id: ev_p_saint_1_2
+  name: 행렬
+  weight: 0
+  prologue: org_saintess
+  text: "가마 행렬이 산 아래 마을을 지난다. 사람들이 엎드린다. 가마 발 틈으로, 엎드리지 않은 눈 하나가 너를 본다."
+  choices:
+    - {text: 발을 걷는다, result: {flag: met_outsider, text: "눈이 마주친다. 원로가 발을 내린다."}}
+    - {text: 못 본 척한다, result: {}}
+  note: "그 눈은 다른 유저일 수 있다 — 이 사건과 ev_r_xueying_1은 같은 장면의 양쪽"
+- id: ev_p_saint_1_3
+  name: 베갯속 편지
+  weight: 0
+  prologue: org_saintess
+  text: "베갯속에서 접힌 종이가 나온다. 낯선 필체. \"원로들은 너를 제물로 쓸 생각이다. — 위\""
+  choices:
+    - {text: 답장을 쓴다, require: ["literacy"], result: {aff: {npc_weishaotian: +2}, flag: letters_tianmo}}
+    - {text: 태운다, result: {text: "재가 된 종이에서 묵향이 오래 난다."}}
+- id: ev_p_saint_2_1
+  name: 원로의 의식
+  weight: 0
+  prologue: org_saintess
+  death_possible: true
+  text: "원로들이 성녀의 피 한 사발을 받는다. \"교를 위한 일입니다.\" 사발 바닥에 붉은 글자 — 혈교의 문양과 닮았다."
+  choices:
+    - {text: 견딘다, check: {stat: 체력, dc: 45}, success: {qi: 마, clue: blood_cult}, fail: {injury: 중상, lifespan: -2}}
+    - {text: 사발을 엎는다, result: {aff: {npc_demon_elder: -3}, tag: [+원로의적], clue: blood_cult}}
+  record: "원로들에게 피를 바쳤다"
+- id: ev_p_saint_2_2
+  name: 들킨 편지
+  weight: 0
+  prologue: org_saintess
+  require: ["flag:letters_tianmo"]
+  death_possible: true
+  text: "시녀 아화가 떨며 편지 한 장을 내민다. \"원로님 방에서… 성녀님 필체예요.\""
+  choices:
+    - {text: 아화를 믿는다, result: {aff: {npc_maid_ah: +3}, text: "그날 밤 아화가 원로 방의 등잔에 기름을 엎는다. 편지는 재가 된다."}}
+    - {text: 아화를 의심한다, result: {aff: {npc_maid_ah: -3}, set_npc: {npc_maid_ah: gone}, text: "다음 날 아화가 보이지 않는다."}}
+- id: ev_p_saint_2_3
+  name: 성녀의 무공
+  weight: 0
+  prologue: org_saintess
+  text: "원로가 비급 한 권을 내민다. \"성녀만 익히는 것입니다.\" 첫 장에 이렇게 적혀 있다. 「마음을 비우라. 비운 자리엔 교가 들어선다.」"
+  choices:
+    - {text: 익힌다, result: {learn: [ma_saint_snow], pts: {ma_saint_snow: 1}, aff: {npc_demon_elder: +1}}}
+    - {text: 마지막 장만 읽는다, require: ["literacy"], result: {learn: [ma_saint_snow], text: "마지막 장은 찢겨 있다. 찢긴 자리에 손톱자국."}}
+- id: ev_p_saint_3_1
+  name: 즉위 전야
+  weight: 0
+  prologue: org_saintess
+  death_possible: true
+  text: "내일이 즉위식이다. 창밖에 그림자 하나. 검은 옷, 젊은 사내. \"나와 가자. 원로들 손에 즉위하면, 너는 다시는 네 이름으로 못 산다.\""
+  text_if: {"!flag:letters_tianmo": "내일이 즉위식이다. 원로가 문밖에서 말한다. \"내일부터 성녀님의 이름은 교의 것입니다.\""}
+  choices:
+    - {text: 원로들 뜻대로 즉위한다, result: {ending: end_saint_puppet}}
+    - {text: 천마의 손을 잡는다, require: ["flag:letters_tianmo"], result: {aff: {npc_weishaotian: +3}, world: {eastward: -5}, ending: end_saint_tianmo}}
+    - {text: 혼자 산을 내려간다, check: {stat: 신법, dc: 55}, success: {ending: end_saint_flee}, fail: {injury: 중상, death_check: 0.2, ending: end_saint_puppet}}
