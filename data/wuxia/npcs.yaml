@@ -81,6 +81,8 @@
 # ── 세력 지도자 (wuxia-npcs.md — 줄여서) ──
 - {id: npc_baiyunhe, name: 백운학, age: 72, realm: 화경, faction: fac_alliance, role: 무림맹주, secret: 지병, death: ["var:lifespan<=0", "ev_a305:실패"]}
 - {id: npc_huikong, name: 혜공, age: 95, realm: 현경, faction: fac_shaolin, role: 소림 방장}
+- {id: npc_jeonggak, name: 정각, age: 25, gender: 남, realm: 일류, looks: {face: 수려함, build: 다부짐}, personality: 온화, faction: fac_shaolin, place: pl_songshan, role: 사형 · 십팔나한 마지막 나한, secret: "그도 봉인탑의 목소리를 듣는다", romance: true, note: "남성 인연 13(wuxia-heroes.md) · 소림 출신에겐 사형(family 아님)"}
+- {id: npc_luohan, name: 나한승, template: foe, realm: 이류, faction: fac_shaolin, intent: 시험}
 - {id: npc_jinqing, name: 진청, age: 44, realm: 초절정, faction: fac_huashan, role: 화산 장문인}
 - {id: npc_qingxu, name: 청허진인, age: 80, realm: 화경, faction: fac_wudang, role: 무당 장문}
 - {id: npc_zhugewen, name: 제갈문, age: 58, realm: 일류, faction: fac_zhuge, role: 제갈세가 가주}

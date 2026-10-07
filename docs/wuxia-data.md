@@ -98,6 +98,7 @@ weight_mod:                # 조건이 맞으면 더하거나(+) 곱한다(x)
 | `check: {aff: "npc>=단계"}` · `{trait_any: [...], else_p}` | 호감 · 성격으로 판정 |
 | 조건 `literacy` · `alive:npc_id` · `item:it_id` · `flag:이름` | 글을 앎 · NPC가 살아 있음 · 물건을 가짐 · 표시가 있음 |
 | `item_remove: [..]` · `regression_piece: n` | 물건 내주기 · 회귀 비밀 조각(천기록 n번, `wuxia-regression.md`) |
+| `main_start: 이름` · `reveal_trait: tr_id` · `insight: n` · `deviation_p: p` | 메인 시작 사건을 터뜨림(W11) · 숨은 특성 드러냄 · 깨달음 · 주화입마 확률 |
 | `text_if: {"조건": "문장"}` | 조건이 맞으면 본문을 바꿔 보여 줌(표국 3-1 "…열어 봤군.") |
 | 출신 `init.journal` | 빙의 화면의 `[일지]` 한 줄 |
 | 결말 `faction_hidden` · `hidden` | 본인도 모르게 세력에 묶임 · 숨은 후속(꿈 · 다음 의뢰) |

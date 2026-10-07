@@ -20,6 +20,10 @@ hidden_traits:
     name: 알 수 없는 검술의 기억
     reveal: ["first_weapon:검", "near_death"]
     on_reveal: {pts: {검: 30}, next: ev_memory_sword}
+  - id: tr_guyu_dream
+    name: 구유의 꿈
+    reveal: ["place:pl_pagoda", "place:pl_songshan"]
+    on_reveal: {regression_piece: 1, text: "꿈속에서 무언가가 천천히 씹고 있다."}
 looks:
   face:
     - {name: 절세미인, rarity: 0.015, bias: {all: +2}, risk: [눈에 띔, 납치]}

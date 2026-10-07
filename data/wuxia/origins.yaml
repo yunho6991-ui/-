@@ -130,7 +130,22 @@
     - {id: end_doctor_savior, name: 부상자의 은인, tags: [의원출신, 은인]}
     - {id: end_doctor_village, name: 마을 의원, tags: [의원출신, 평화로운삶]}
     - {id: end_doctor_flee, name: 함께 도망, tags: [의원출신, 도망자, 추격자]}
-- {id: org_shaolin, name: 소림 동자승, grade: 드묾, cap: null, start: {age: 12, money: 0, literacy: true, places: [pl_songshan]}, todo: true}
+- id: org_shaolin
+  name: 소림 동자승
+  grade: 드묾
+  cap: null
+  start: {age: 12, money: 0, literacy: true, places: [pl_songshan]}
+  gender: 남
+  init: {skills: {글 읽기: 능숙}, qi: 불, martial: [ma_shaolin_tuna, ma_luohan_fist], pts: {ma_shaolin_tuna: 2, ma_luohan_fist: 1}, faction: fac_shaolin, journal: "갓난아기 때 산문 앞에 버려짐 · 사형 정각(25)이 업어 키움"}
+  stages:
+    - {id: st_shaolin_1, name: 동자승의 날들, fixed: [ev_p_shaolin_1_1], pool: [ev_p_shaolin_1_2, ev_p_shaolin_1_3], pick: 2}
+    - {id: st_shaolin_2, name: 봉인탑의 소리, fixed: [ev_p_shaolin_2_1], pool: [], pick: 0}
+    - {id: st_shaolin_3, name: 하산 시험, fixed: [ev_p_shaolin_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_shaolin_disciple, name: 소림 제자, faction: fac_shaolin, tags: [소림제자]}
+    - {id: end_shaolin_lay, name: 하산(소림 속가), tags: [소림속가]}
+    - {id: end_shaolin_called, name: 봉인의 목소리를 들은 자, tags: [소림속가, 구유의부름], note: "7막 핵심 · 정각은 아직 탑의 목소리를 듣고 있다"}
+    - {id: end_shaolin_apostate, name: 파계, require: ["tag:파계"], faction: null, rep: {fac_shaolin: -10}, tags: [파계승], note: "금기를 어긴 행동(살생 · 장경각 반출 등)으로 언제든 이 결말"}
 - {id: org_huashan_wudang, name: 화산 · 무당 문하, grade: 드묾, cap: null, start: {age: 14, money: 10, literacy: true, places: [pl_huashan, pl_wudang]}, todo: true}
 - {id: org_tang, name: 사천당가의 제자, grade: 드묾, cap: null, start: {age: 13, money: 20, literacy: true, places: [pl_chengdu]}, todo: true}
 - {id: org_greenwood, name: 녹림 산채의 아이, grade: 드묾, cap: null, start: {age: 15, money: 10, literacy: false, places: [pl_taihang]}, todo: true}
