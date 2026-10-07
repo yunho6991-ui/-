@@ -52,7 +52,23 @@
 
 # ── 나머지 출신: 기본 정보만(서막 사건은 wuxia-prologues-full-*.md를 보고 채울 것 — todo) ──
 - {id: org_hunter, name: 사냥꾼의 아이, grade: 흔함, cap: null, start: {age: 15, money: 8, literacy: false, places: [town]}, init: {skills: {사냥: 능숙, 추적: 서툶}, martial: [ma_hunting_bow]}, todo: true}
-- {id: org_beggar, name: 거지, grade: 흔함, cap: null, start: {age: 12, money: 0, literacy: false, places: [pl_luoyang]}, init: {skills: {소매치기: 서툶}}, todo: true}
+- id: org_beggar
+  name: 거지
+  grade: 흔함
+  cap: null
+  shared_prologue: false
+  start: {age: 12, money: 0, literacy: false, places: [pl_luoyang], spot: 서문 빈민가}
+  gender: random
+  init: {skills: {소매치기: 서툶}, martial: [], looks_bias: {face: 순박함, build: 왜소}}
+  stages:
+    - {id: st_beggar_1, name: 뒷골목, fixed: [ev_p_beggar_1_1], pool: [ev_p_beggar_1_2, ev_p_beggar_1_3, ev_p_beggar_1_4], pick: 2}
+    - {id: st_beggar_2, name: 사라지는 아이들, fixed: [ev_p_beggar_2_1], pool: [ev_p_beggar_2_3], pick: 1}
+    - {id: st_beggar_3, name: 개방의 시험, fixed: [ev_p_beggar_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_beggar_kaibang, name: 개방 제자(구장로의 사람), faction: fac_kaibang, tags: [거지출신, 개방, 구장로의감시]}
+    - {id: end_beggar_kaibang_true, name: 개방 정식 제자(방주의 사람), faction: fac_kaibang, tags: [거지출신, 개방, 방주의신뢰]}
+    - {id: end_beggar_truth, name: 진실을 쥔 거지, tags: [거지출신, 혈교의비밀, 혈교표적]}
+    - {id: end_beggar_alley, name: 뒷골목에 남음, tags: [거지출신, 뒷골목]}
 - {id: org_escort, name: 몰락한 표국의 자식, grade: 흔함, cap: null, start: {age: 17, money: 30, literacy: true, places: [town, city]}, init: {skills: {기마: 능숙, 흥정: 서툶}, martial: [ma_escort_sword]}, todo: true}
 - {id: org_inn, name: 객잔의 아이, grade: 흔함, cap: null, start: {age: 15, money: 15, literacy: true, places: [town, city]}, init: {skills: {흥정: 능숙, 말재주: 서툶, 술 세기: 서툶}}, todo: true}
 - {id: org_doctor, name: 의원 집 아이, grade: 흔함, cap: null, start: {age: 16, money: 20, literacy: true, places: [town, city]}, init: {skills: {의술: 서툶, 약초 캐기: 능숙}}, todo: true}

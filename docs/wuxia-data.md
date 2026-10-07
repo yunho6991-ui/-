@@ -1,7 +1,7 @@
 # 무협 게임 — 데이터 형식 (코드로 옮길 때 기준)
 
 > 기획 문서의 내용을 **코드가 읽는 데이터**로 옮기는 형식. 원칙(기획서 11장): **사건 · 사람 · 무공을 추가할 때 코드를 고치지 않는다** — 데이터 파일에 한 덩어리 더하면 끝.
-> 데이터: `data/wuxia/*.yaml`. **작은 강호 한 판(농부 서막 · 청하진 · 청운산)은 완성** — 로드맵 M0~M5에 바로 쓴다. 나머지는 기획 문서를 보고 같은 꼴로 채운다.
+> 데이터: `data/wuxia/*.yaml`. **작은 강호 한 판(농부 서막 · 청하진 · 청운산) + 거지 서막 · 낙양은 완성** — 로드맵 M0~M5에 바로 쓴다. 나머지는 기획 문서를 보고 같은 꼴로 채운다.
 > 검사: `python3 tools/wuxia_data_check.py` — 형식 · id 중복 · 없는 id 참조를 확인.
 
 ---
@@ -96,7 +96,8 @@ weight_mod:                # 조건이 맞으면 더하거나(+) 곱한다(x)
 | `epithet_seed: 이름` | 별호 후보 쌓기 |
 | `reveal: tr_id` · `wall_chance: p` · `flag: 이름` | 숨은 특성 드러내기 · 벽 넘기 기회 · 표시 |
 | `check: {aff: "npc>=단계"}` · `{trait_any: [...], else_p}` | 호감 · 성격으로 판정 |
-| 조건 `literacy` · `alive:npc_id` | 글을 앎 · NPC가 살아 있음 |
+| 조건 `literacy` · `alive:npc_id` · `item:it_id` · `flag:이름` | 글을 앎 · NPC가 살아 있음 · 물건을 가짐 · 표시가 있음 |
+| `item_remove: [..]` · `regression_piece: n` | 물건 내주기 · 회귀 비밀 조각(천기록 n번, `wuxia-regression.md`) |
 
 ## 5. 선택지 — `choices`
 

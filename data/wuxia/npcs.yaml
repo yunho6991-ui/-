@@ -96,3 +96,19 @@
 - {id: npc_hermit_huashan, name: 초막의 노인(은퇴한 화산 장로), template: hermit, realm: 초절정, faction: fac_huashan, teaches: [검]}
 - {id: npc_hermit_demon, name: 초막의 노인(파문당한 마교 원로), template: hermit, realm: 초절정, faction: fac_demon, teaches: [권장, 내공], qi: 마}
 - {id: npc_hermit_fox, name: 초막의 노인(둔갑한 여우 요괴), template: hermit, realm: 절정, faction: fac_qingqiu, teaches: [신법], qi: 요}
+
+# ── 낙양 (wuxia-cities.md 1장 · 거지 서막) ──
+- {id: npc_kongal, name: 콩알, age: 10, gender: random, looks: {face: 귀여움, build: 왜소}, personality: 낙천, place: pl_luoyang, role: 같은 다리 밑 아이, states: [normal, taken, rescued], note: "구출하면 평생 인연 · 못 구하면 혈교 아이 무리에(다른 유저가 만날 수도) — 미성년이라 폭력은 암시만"}
+- {id: npc_gombo, name: 곰보, age: 34, gender: 남, realm: 삼류, looks: {face: 험상궂음, build: 거구}, personality: 탐욕, place: pl_luoyang, role: 거지 왕초, secret: "혈교 상인에게 돈을 받고 아이들을 눈감아 준다"}
+- {id: npc_elder_qiu, name: 구장로, gender: 남, realm: 절정, looks: {face: 평범함}, personality: 음험, faction: fac_kaibang, hidden_faction: fac_blood, place: pl_luoyang, role: 개방 장로, secret: "혈교 첩자", action: "아이 실종 정보를 막는다(의식 +1/일)", death: ["var:kaibang_mole_known>=1:5막"], on_death: {world: {ritual: -10}}}
+- {id: npc_blood_guard, name: 붉은 옷 무인, template: foe, realm: 이류, faction: fac_blood, intent: 납치}
+- {id: npc_cuihua, name: 취화, age: 20, gender: 여, realm: 이류, looks: {face: 순박함, build: 왜소, mark: 숯검댕}, personality: 자유분방, faction: fac_kaibang, place: pl_luoyang, role: 개방 정보통, secret: "구장로를 혼자 캐고 있다", romance: {stages: {관심: ev_r_cuihua_1, 신뢰: ev_r_cuihua_2, 연모: ev_r_cuihua_3}, marriage_once: true}}
+- {id: npc_xiaoqi, name: 소걸, age: 24, gender: 남, realm: 일류, looks: {face: 순박함, build: 보통}, personality: 의협심, faction: fac_kaibang, place: pl_luoyang, role: 개방 협객, secret: "방주가 후계로 점찍었다", romance: {stages: {관심: ev_r_xiaoqi_1, 신뢰: ev_r_xiaoqi_2, 연모: ev_r_xiaoqi_3}, marriage_once: true}}
+- {id: npc_weijin, name: 위진, age: 58, gender: 남, realm: 이류, looks: {face: 수려함}, personality: 고지식, place: pl_luoyang, role: 은퇴 무인(친위대 퇴역), secret: "맹주가 각혈한 손수건을 보았다", reactions: {신뢰: "맹주 지병 단서"}}
+- {id: npc_bongnang, name: 봉낭, age: 39, gender: 여, realm: 이류, hidden_realm: true, looks: {face: 요염함}, personality: 냉정, place: pl_luoyang, role: 금봉루 주인, secret: "원로들의 술자리 대화를 다 기억한다"}
+- {id: npc_baekcho, name: 백초, age: 61, gender: 남, looks: {face: 평범함, build: 왜소}, personality: 신중, skills: {의술: 달인}, place: pl_luoyang, role: 회춘당 의원, secret: "맹주 처방이 이상하다는 걸 안다"}
+- {id: npc_rat_king, name: 쥐왕, gender: 남, realm: 일류, looks: {face: 엄청나게 못생김, build: 왜소}, personality: 음험, place: pl_luoyang, role: 지하 두목, service: {black_market: true, introduce: 무영루}}
+- {id: npc_jinyeom, name: 진엄, age: 45, gender: 남, realm: 일류, looks: {face: 험상궂음, build: 거구}, personality: 고지식, faction: fac_alliance, place: pl_luoyang, role: 포두, goal: "원로 일가의 비리를 밝히는 것"}
+- {id: npc_munsu, name: 문수, age: 26, gender: 남, looks: {face: 곱상함, build: 왜소}, personality: 호기심, place: pl_luoyang, role: 국자감 서생, goal: "회귀에 대한 옛 기록을 모으는 것", service: {literacy: {cost: 20, actions: 8}, read_manual: true}}
+- {id: npc_clan_guard, name: 세가 호위, template: foe, realm: 이류, intent: 제압}
+- {id: npc_arena_fighter, name: 비무대의 무인, template: foe, realm: random_near, intent: 제압}

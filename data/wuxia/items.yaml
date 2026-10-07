@@ -6,3 +6,4 @@
 - {id: it_antidote, name: 해독단, kind: 약, effect: {poison: -99}, price: 20}
 - {id: it_half_jade, name: 반쪽 옥패, kind: 단서, note: "나머지 반쪽은 어딘가에(객잔 서막)"}
 - {id: it_unread_manual, name: 읽지 못한 비급, kind: 비급, need_literacy: true, teaches: random_branch}
+- {id: it_red_seal_note, name: 붉은 인장 쪽지, kind: 단서, note: "구장로 = 혈교 첩자 증거(5막 열쇠)"}
