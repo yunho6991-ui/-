@@ -51,6 +51,7 @@
 | `docs/wuxia-data.md` · `data/wuxia/` · `tools/wuxia_data_check.py` | 무협 데이터 형식 — 파일 구성 · 조건(require) · 가중치 · 결과(result) · 선택지 · 종류별 형식(사건·NPC·출신·무공·장소·세계·문장), 예시 YAML, 검사기(`python3 tools/wuxia_data_check.py`) |
 | `docs/wuxia-roadmap.md` | 무협 구현 로드맵 — 기존 카톡 봇 구조(handles·dm_handle·연결·kakao.send)에 맞춘 파일 구조 · DB 테이블 · `1행동` 흐름 · 단계 M0~M12(작은 강호 한 판 → 카톡 연결 → 세계 → 메인 → 플레이테스트) · CLI 테스트 |
 | `docs/wuxia-playtest.md` | 무협 출시 전 플레이테스트 체크리스트 — 기록 양식 · 단계별(M0~M11) 확인 · 테스터 성향 12가지 · 정체 새는 곳(W5) · 규칙 W1~W11 · 문장/표현 안전 · 운영 · 출시 판정 |
+| `docs/wuxia-regression.md` | 무협 회귀의 비밀(운영자용) — 진실 다섯 겹(구유의 배고픔 · 천 년 전 봉인 = 무림맹의 기원 · 빙의자 = 구유가 삼킨 시간 속 혼 · 끝내는 길 셋), 시즌 1~5에 한 겹씩, 시즌 1 복선 · 조각 10 · 「천기록」 |
 | `docs/backlog.md` | 전체 아이디어 목록(단순도 ✅⚠️❌ 표시). 여기서 골라서 넣는다 |
 | `docs/fishing-ideas.md` | 코드 개선·추가 아이디어 상세 |
 | `docs/fishing-story.md` | 본편 스토리 0~4장 |
