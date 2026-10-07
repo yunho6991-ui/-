@@ -46,6 +46,7 @@
 | `docs/wuxia-events-acts.md` | 무협 4차 사건 — 시즌 1 막 전용 56(0막 전조 · 1~7막) |
 | `docs/wuxia-texts.md` | 무협 5차 — 문장 모음(합 결과 · 전투 랜덤 사건 · 대표 초식 · 깨달음 · 주화입마 · 사망 원인 · 강호 일보 틀) |
 | `docs/wuxia-origins.md` | 무협 출신과 서막 — 출신 틀(서막 → 합류 → 꼬리표), **고정 출신 정원**(시즌당 n번, 진행 중이면 그 단계에 합류), 예시 3개(혈교 백 명의 아이·남궁세가·당가), 출신 후보 23개 |
+| `docs/wuxia-balance.md` · `tools/wuxia_sim.py` | 무협 밸런스 모의실험 — 성향별(평화·보통·모험) 수명·짧은 생·천수·도달 경지, 추천 숫자(`python3 tools/wuxia_sim.py [전투 빈도 배수]`) |
 | `docs/backlog.md` | 전체 아이디어 목록(단순도 ✅⚠️❌ 표시). 여기서 골라서 넣는다 |
 | `docs/fishing-ideas.md` | 코드 개선·추가 아이디어 상세 |
 | `docs/fishing-story.md` | 본편 스토리 0~4장 |
