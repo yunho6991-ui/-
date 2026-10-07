@@ -112,3 +112,8 @@
 - {id: npc_munsu, name: 문수, age: 26, gender: 남, looks: {face: 곱상함, build: 왜소}, personality: 호기심, place: pl_luoyang, role: 국자감 서생, goal: "회귀에 대한 옛 기록을 모으는 것", service: {literacy: {cost: 20, actions: 8}, read_manual: true}}
 - {id: npc_clan_guard, name: 세가 호위, template: foe, realm: 이류, intent: 제압}
 - {id: npc_arena_fighter, name: 비무대의 무인, template: foe, realm: random_near, intent: 제압}
+
+# ── 혈교 수련장 (wuxia-prologues-full-2.md J) ──
+- {id: npc_hongyan, name: 홍염, age: 38, gender: 남, realm: 초절정, looks: {face: 수려함, build: 날렵, mark: 이색 눈동자(가면)}, personality: 냉정, faction: fac_blood, place: pl_blood_camp, role: 혈교 교관 · 가면의 무인 「무안」, secret: "남궁천이 버린 장자 · 남궁설의 친오빠", goal: "남궁에 대한 복수 → 맹을 손에 넣는 것", death: ["ev_a404:정체 발각", "world:hongyan_wounded"], romance: {stages: {관심: ev_r_hongyan_1, 신뢰: ev_r_hongyan_2, 연모: ev_r_hongyan_3}, marriage_once: true, note: "구원 루트 — 성인 캐릭터로 다시 만났을 때만"}}
+- {id: npc_kid_22, name: 스물둘, age: 7, gender: random, looks: {face: 귀여움, build: 왜소}, personality: 겁이 많음, place: pl_blood_camp, role: 옆자리 아이, slot: org_blood_children, states: [normal, taken], note: "유저가 이 출신을 뽑으면 이 아이에 빙의할 수도(W8) — 미성년, 폭력은 암시만"}
+- {id: npc_gangpo, name: 강포, age: 46, gender: 남, realm: 삼류, looks: {face: 평범함, build: 날렵}, personality: 신중, skills: {사냥: 달인}, place: pl_qinghe, role: 사냥꾼 아버지, secret: "아내가 3년 전 청운산 동굴에서 돌아오지 않았다"}

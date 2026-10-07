@@ -51,7 +51,22 @@
     - {id: end_blood_abandoned, name: 버려짐, tags: [버려진아이]}
 
 # ── 나머지 출신: 기본 정보만(서막 사건은 wuxia-prologues-full-*.md를 보고 채울 것 — todo) ──
-- {id: org_hunter, name: 사냥꾼의 아이, grade: 흔함, cap: null, start: {age: 15, money: 8, literacy: false, places: [town]}, init: {skills: {사냥: 능숙, 추적: 서툶}, martial: [ma_hunting_bow]}, todo: true}
+- id: org_hunter
+  name: 사냥꾼의 아이
+  grade: 흔함
+  cap: null
+  start: {age: 15, money: 8, literacy: false, places: [town]}
+  gender: random
+  init: {skills: {사냥: 능숙, 추적: 서툶}, martial: [ma_hunting_bow], looks_bias: {build: 날렵}}
+  stages:
+    - {id: st_hunter_1, name: 아버지와 사냥, fixed: [ev_p_hunter_1_1], pool: [ev_p_hunter_1_2, ev_p_hunter_1_3, ev_p_hunter_1_4], pick: 2}
+    - {id: st_hunter_2, name: 동굴, fixed: [ev_p_hunter_2_1], pool: [ev_p_hunter_2_2, ev_p_hunter_2_3, ev_p_hunter_2_4], pick: 2}
+    - {id: st_hunter_3, name: 산의 주인, fixed: [ev_p_hunter_3_1], pool: [], pick: 0, then: ev_p_hunter_3_3}
+  endings:
+    - {id: end_hunter_spirit, name: 영물의 친구, tags: [사냥꾼출신, 영물의인연], rep: {fac_qingqiu: +1}}
+    - {id: end_hunter_slayer, name: 요괴 사냥꾼, faction: fac_hunters, tags: [사냥꾼출신, 요수사냥]}
+    - {id: end_hunter_manual, name: 비급을 품고 떠남, tags: [사냥꾼출신, 읽지못한비급]}
+    - {id: end_hunter_stay, name: 산을 지킴, tags: [사냥꾼출신, 평화로운삶]}
 - id: org_beggar
   name: 거지
   grade: 흔함

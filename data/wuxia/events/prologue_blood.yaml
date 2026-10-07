@@ -1,0 +1,89 @@
+# 혈교에 납치된 백 명의 아이 (wuxia-prologues-full-2.md J) — 공유 서막 · 정원 5 · 실제 2/3/1일
+# minor: true — 등장인물이 아이. 폭력은 암시로만(문장 검수 대상, wuxia-playtest.md 5장)
+
+- id: ev_p_blood_1_1
+  name: 첫날 밤
+  weight: 0
+  prologue: org_blood_children
+  minor: true
+  text: "횃불이 켜진다. 붉은 가면의 교관이 아이들 사이를 걷는다. \"너희는 오늘 죽었다. 여기서 다시 태어난다. 살아남는 자만 이름을 얻는다.\""
+  choices:
+    - {text: 고개를 숙인다, result: {text: "발소리가 지나간다."}}
+    - {text: 눈을 마주친다, result: {aff: {npc_hongyan: +2}, tag: [+홍염의눈], text: "교관이 멈춘다. \"…눈이 좋구나.\""}}
+  record: "혈교 수련장의 첫날 밤"
+
+- id: ev_p_blood_1_2
+  name: 한 그릇
+  weight: 0
+  prologue: org_blood_children
+  minor: true
+  text: "하루 한 끼. 그릇은 아이 수보다 적다. 옆자리 스물둘이 배를 움켜쥔다."
+  choices:
+    - {text: 스물둘과 나눈다, result: {aff: {npc_kid_22: +4}, text: "반 그릇. 스물둘이 처음으로 웃는다."}}
+    - {text: 빼앗는다, result: {stat: {체력: +1}, aff: {아이들: -3}, text: "배는 부르다. 등 뒤가 차갑다."}}
+    - {text: 양보한다, result: {stat: {체력: -1}, aff: {아이들: +2}}}
+
+- id: ev_p_blood_1_3
+  name: 탈출 시도
+  weight: 0
+  prologue: org_blood_children
+  minor: true
+  text: "밤, 큰 아이 셋이 담을 넘는다. 아침에 그들의 자리가 비어 있다. 아무도 묻지 않는다."
+  choices:
+    - {text: 그들이 간 길을 떠올린다, result: {flag: drain_route, text: "담 아래 배수로. 물소리가 들렸다."}}
+    - {text: 잊는다, result: {}}
+
+- id: ev_p_blood_2_1
+  name: 숫자가 줄어든다
+  weight: 0
+  prologue: org_blood_children
+  minor: true
+  death_possible: true
+  text: "매일 아침 교관이 숫자를 센다. \"{남은 아이}.\" 오늘 짝 대련 상대는 — 스물둘."
+  choices:
+    - {text: 싸운다, result: {fight: {foe: npc_kid_22, count: 1, nonlethal: true, win: {set_npc: {npc_kid_22: taken}, text: "스물둘이 다른 곳으로 끌려간다. 살았는지는 모른다."}, lose: {tag: [+약한아이들방]}}}}
+    - {text: 져 준다, result: {aff: {npc_kid_22: +5}, tag: [+약한아이들방], text: "스물둘이 남는다. 너는 약한 아이들 방으로."}}
+    - {text: 둘 다 버틴다, check: {p: 0.1}, success: {aff: {npc_hongyan: +3, npc_kid_22: +3}, text: "교관: \"…재미있군.\" 둘 다 남긴다."}, fail: {tag: [+약한아이들방]}}
+
+- id: ev_p_blood_2_2
+  name: 붉은 약
+  weight: 0
+  prologue: org_blood_children
+  minor: true
+  death_possible: true
+  text: "붉은 약 한 모금. 몸이 끓는다. 옆에서 아이 둘이 쓰러진다."
+  choices:
+    - {text: 견딘다, check: {stat: 체력, dc: 45}, success: {qi: 혈, roll: [{p: 0.3, result: {constitution: tr_poison_resist}}, {p: 0.7, result: {}}]}, fail: {injury: 중상, tag: [+약한아이들방]}}
+
+- id: ev_p_blood_2_3
+  name: 밤 수업
+  weight: 0
+  prologue: org_blood_children
+  minor: true
+  require: ["tag:홍염의눈"]
+  text: "교관이 몇 명만 따로 부른다. 가면을 벗지 않은 채, 검을 쥐는 법을 가르친다. 그의 눈 한쪽이 — 다른 색이다."
+  choices:
+    - {text: 배운다, result: {learn: [ma_blood_shadow_sword], pts: {ma_blood_shadow_sword: 1}, aff: {npc_hongyan: +2}}}
+    - {text: 몰래 가면 속을 본다, require: ["skill:은신>=서툶"], show_reason: 은신, result: {clue: hongyan, text: "이색 눈동자. 손목에 낡은 문양 흉터 — 남궁의 문양."}}
+
+- id: ev_p_blood_3_1
+  name: 마지막 대련
+  weight: 0
+  prologue: org_blood_children
+  minor: true
+  death_possible: true
+  text: "남은 아이는 열둘. 혈교 무사가 될 자리는 다섯. 마지막 상대는 — 너와 한 그릇을 나눈 아이다."
+  choices:
+    - {text: 싸운다, result: {fight: {foe: "{bowl_partner}", count: 1, nonlethal: true, win: {ending: end_blood_assassin}, lose: {ending: end_blood_abandoned}}}}
+    - {text: 함께 도망친다, check: {flag: drain_route, else_p: 0.3}, success: {ending: end_blood_escape, aff: {"{bowl_partner}": +5}}, fail: {death_check: 0.4, ending: end_blood_abandoned}}
+    - {text: 교관을 찌른다, check: {p: 0.05}, success: {world: {hongyan_wounded: 1}, ending: end_blood_escape, epithet_seed: 교관을 찌른 아이}, fail: {death_check: 0.7, ending: end_blood_abandoned}}
+
+- id: ev_p_blood_3_2
+  name: 정파의 습격
+  weight: 0
+  prologue: org_blood_children
+  minor: true
+  require: ["var:camp_found>=1"]
+  text: "새벽, 담 밖에서 함성. 정파 무인들이 들이닥친다. 교관이 너를 본다. \"…가라.\""
+  choices:
+    - {text: 달린다, result: {ending: end_blood_rescued}}
