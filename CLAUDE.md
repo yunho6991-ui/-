@@ -49,6 +49,7 @@
 | `docs/wuxia-balance.md` · `tools/wuxia_sim.py` | 무협 밸런스 모의실험 — 성향별(평화·보통·모험) 수명·짧은 생·천수·도달 경지, 추천 숫자(`python3 tools/wuxia_sim.py [전투 빈도 배수]`) |
 | `docs/wuxia-prompts.md` | 무협 ComfyUI 프롬프트 — 무협 전용 문구([무협 인물]·[무협 장면]·[요괴]) · 매력 꼬리, 히로인 13 · 남성 인연 13 · 핵심 NPC 16 · 장소 20 |
 | `docs/wuxia-data.md` · `data/wuxia/` · `tools/wuxia_data_check.py` | 무협 데이터 형식 — 파일 구성 · 조건(require) · 가중치 · 결과(result) · 선택지 · 종류별 형식(사건·NPC·출신·무공·장소·세계·문장), 예시 YAML, 검사기(`python3 tools/wuxia_data_check.py`) |
+| `docs/wuxia-roadmap.md` | 무협 구현 로드맵 — 기존 카톡 봇 구조(handles·dm_handle·연결·kakao.send)에 맞춘 파일 구조 · DB 테이블 · `1행동` 흐름 · 단계 M0~M12(작은 강호 한 판 → 카톡 연결 → 세계 → 메인 → 플레이테스트) · CLI 테스트 |
 | `docs/backlog.md` | 전체 아이디어 목록(단순도 ✅⚠️❌ 표시). 여기서 골라서 넣는다 |
 | `docs/fishing-ideas.md` | 코드 개선·추가 아이디어 상세 |
 | `docs/fishing-story.md` | 본편 스토리 0~4장 |
