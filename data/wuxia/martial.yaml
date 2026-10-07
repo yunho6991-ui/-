@@ -51,3 +51,6 @@
 - {id: ma_kaishan_axe, name: 개산부법, layer: 무공, branch: 도, grade: 삼류, nature: 중, qi: 정, need_realm: 삼류, need_literacy: false, power: 0.7, lines: ["산을 쪼개듯 내리찍는다", "막아도 팔이 저린다"]}
 - {id: ma_canggong_heart, name: 창궁심법, layer: 심법, branch: 내공, grade: 일류, nature: 쾌, qi: 정, need_realm: 삼류, need_literacy: true, faction_lock: fac_namgung, power: 0.9, qi_deviation: 낮음, lines: ["숨이 하늘처럼 넓어진다"]}
 - {id: ma_namgung_basic, name: 남궁 검법, layer: 무공, branch: 검, grade: 이류, nature: 쾌, qi: 정, need_realm: 삼류, need_literacy: true, faction_lock: fac_namgung, power: 0.8, lines: ["곧게 뻗는 남궁의 기본 검", "물러서지 않는다"]}
+- {id: ma_ximen_heart, name: 무명심결, layer: 심법, branch: 내공, grade: 신공, nature: 유, qi: 정, need_realm: 삼류, need_literacy: false, power: 1.6, qi_deviation: 낮음, cap: 1, lines: ["숨이 산바람처럼 들고 난다", "장작 패던 숨 그대로"]}
+- {id: ma_ximen_sword, name: 무명일검, layer: 무공, branch: 검, grade: 신공, nature: 쾌, qi: 정, need_realm: 삼류, need_literacy: false, power: 1.7, cap: 1, lines: ["도끼가 닿기 전에 나무가 갈라지듯", "단 한 번 벤다"]}
+- {id: ma_ximen_step, name: 무명보, layer: 신법, branch: 신법, grade: 신공, nature: 변, qi: 정, need_realm: 삼류, need_literacy: false, power: 1.5, cap: 1, lines: ["폭포가 갈라진 틈으로 걷는다", "보이는데 닿지 않는다"]}

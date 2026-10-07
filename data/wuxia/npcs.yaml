@@ -105,6 +105,9 @@
 - {id: npc_weishaotian, name: 위소천, age: 29, realm: 화경, faction: fac_demon, role: 천마}
 - {id: npc_xuemo, name: 혈마, realm: 현경, faction: fac_blood, role: 혈교 교주}
 - {id: npc_tieshan, name: 철산, age: 40, realm: 절정, faction: fac_greenwood, role: 녹림총채주}
+- {id: npc_ximenhyeok, name: 서문혁, age: 110, gender: 남, realm: 생사경, hidden_realm: true, looks: {face: 평범함, build: 날렵, mark: 백발}, personality: 무심 · 장난기, place: pl_master_hut, role: 천하제일고수(은거), goal: "마지막 제자를 키우는 것", note: "제자가 없으면 7막까지 나서지 않음 · 제자가 부르면 7막에 한 번(강림 저지↑)"}
+- {id: npc_sohan, name: 소한, age: 15, gender: random, place: pl_master_hut, role: 첫째 제자 자리, slot: org_master_disciple}
+- {id: npc_dongzhu, name: 동주, age: 15, gender: random, place: pl_master_hut, role: 둘째 제자 자리(정원 2일 때), slot: org_master_disciple}
 - {id: npc_heilong, name: 흑룡, realm: 초절정, faction: fac_pirates, role: 해적왕}
 - {id: npc_ruhua, name: 여화, age: 900, realm: 현경, faction: fac_qingqiu, role: 청구의 구미호}
 # ── 은둔 고수(회차마다 정체가 다름 — ev_m04) ──

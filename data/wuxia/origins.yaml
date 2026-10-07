@@ -216,7 +216,22 @@
     - {id: end_ng_branch, name: 방계로 밀려남, faction: fac_namgung, tags: [남궁직계, 밀려난자식]}
     - {id: end_ng_runaway, name: 가출, faction: null, tags: [가출한도련님], chase: fac_namgung}
     - {id: end_ng_expelled, name: 파문, require: ["tag:파문"], faction: null, tags: [파문된직계]}
-- {id: org_master_disciple, name: 천하제일고수의 제자, grade: 전설, cap: 2, start: {age: 15, money: 0, places: [pl_master_hut]}, init: {talent_genius: 1}, todo: true}
+- id: org_master_disciple
+  name: 천하제일고수의 제자
+  grade: 전설
+  cap: 2
+  start: {age: 15, money: 0, literacy: random, places: [pl_master_hut]}
+  gender: random
+  slots: [npc_sohan, npc_dongzhu]
+  init: {talent_genius: 1, skills: random, martial: [], journal: "3년 전 사부가 주워 옴 · 사부는 이름을 말해 주지 않음 · (사형제가 있다면) 「동주」와 함께 지냄"}
+  stages:
+    - {id: st_master_1, name: 나무 패기 3년, fixed: [ev_p_master_1_1], pool: [ev_p_master_1_2, ev_p_master_1_3], pick: 2}
+    - {id: st_master_2, name: 첫 가르침, fixed: [ev_p_master_2_1], pool: [ev_p_master_2_2], pick: 1}
+    - {id: st_master_3, name: 하산, fixed: [ev_p_master_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_master_disciple, name: 사부의 제자, master: npc_ximenhyeok, tags: [천하제일의제자], grant: {call_master_once: true}, note: "7막에 사부를 한 번 부를 수 있음 · 이때부터 꼬리표 사건 x08(도전자 · 암습자)"}
+    - {id: end_master_left, name: 사부를 떠난 제자, tags: [사부를버린자], note: "배운 것 없이 떠남 — 천재 재능만 남는다"}
+    - {id: end_master_rival, name: 사형제와 원한, master: npc_ximenhyeok, tags: [천하제일의제자, 동문원한], grant: {call_master_once: true}}
 - {id: org_saintess, name: 마교 성녀 후보, grade: 전설, cap: 1, gender: 여, start: {age: 20, places: [pl_shiwandashan]}, slot_npc: npc_xueying, todo: true}
 - {id: org_city_waiter, name: 주루 점소이, grade: 흔함, cap: null, start: {places: [city]}, todo: true}
 - {id: org_city_clerk, name: 상점 견습, grade: 흔함, cap: null, start: {places: [city]}, todo: true}
