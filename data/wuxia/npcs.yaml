@@ -147,3 +147,12 @@
 - {id: npc_gangpo, name: 강포, age: 46, gender: 남, realm: 삼류, looks: {face: 평범함, build: 날렵}, personality: 신중, skills: {사냥: 달인}, place: pl_qinghe, role: 사냥꾼 아버지, secret: "아내가 3년 전 청운산 동굴에서 돌아오지 않았다"}
 - {id: npc_drunk_ronin, name: 취한 낭인, template: foe, realm: 삼류, intent: 제압}
 - {id: npc_blood_runaway, name: 목에 붉은 끈 자국의 소년, template: passerby, age: 16, faction: fac_blood, note: "혈교 탈주자 — 혈교 아이 출신 유저였을 수도"}
+
+# ── 막 사건용 (acts_*.yaml) ──
+- {id: npc_yaoshou, name: 미친 요수, template: foe, realm: 일류, intent: 광기, note: "눈이 붉다 — 피 영약"}
+- {id: npc_pirate, name: 흑룡도 수적, template: foe, realm: 이류, faction: fac_pirates, intent: 약탈}
+- {id: npc_honglian, name: 홍련, age: 19, gender: 여, realm: 일류, faction: fac_blood, place: pl_heishui, role: 혈교의 살수, romance: true, note: "히로인 9(wuxia-heroines.md) · 7막 마지막 제물"}
+- {id: npc_hailan, name: 해란, age: 26, gender: 여, realm: 절정, faction: fac_pirates, place: pl_heilongdao, role: 흑룡도의 여두목, romance: true, note: "히로인 10"}
+- {id: npc_zhugeyu, name: 제갈유, age: 24, gender: 여, realm: 삼류, faction: fac_zhuge, place: pl_longzhong, role: 제갈세가의 책사, romance: true, note: "히로인 5 · 아버지의 혈교 서신을 바로잡으려 함"}
+- {id: npc_zhugehui, name: 제갈휘, age: 23, gender: 남, realm: 이류, faction: fac_zhuge, place: pl_longzhong, role: 제갈의 젊은 책사, romance: true, note: "남성 인연 4"}
+- {id: npc_mo, name: 묵, age: 300, gender: 남, realm: 절정, faction: fac_qingqiu, place: pl_qingqiu, role: 청구의 늑대 요괴(공존파), romance: true, note: "남성 인연 12"}

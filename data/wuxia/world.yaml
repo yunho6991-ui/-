@@ -25,4 +25,12 @@ vars:
   frontier: {name: 북방 방어선, start: 80, min: 0, max: 100}
   eastward: {name: 마교 동진 의지, start: 30, min: 0, max: 100}
   hardline: {name: 청구 강경파, start: 40, min: 0, max: 100}
+# 막 사건용 보조 변수(acts_*.yaml) — 플레이어에겐 안 보임
+aux_vars:
+  camp_found:     {name: 혈교 수련장 위치가 알려짐, start: 0, note: "flag camp_location이 처음 생기면 1 → A107"}
+  leader_support: {name: 맹주 추대 표, start: {}, note: "세력별 · self — A402 · A406 → A408 판정"}
+  seal_defense:   {name: 봉인탑 수비, start: 0, note: "A701 소림으로 간 사람 수"}
+  altar_assault:  {name: 제단 습격, start: 0, note: "A701 제단으로 간 사람 수"}
+  descent_block:  {name: 강림 저지 힘, start: 0, note: "A703 사부 · 7막 활약 합 → A704"}
+branches: [정마대전, 혈교봉기, 청구봉기]   # 6막 갈래 — 5막 끝의 세계 변수로 하나(또는 둘)
 carryover: [act7_ending, new_leader_faction, xuemo_alive]   # 회귀 때 넘어가는 변수

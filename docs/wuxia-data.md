@@ -105,6 +105,9 @@ weight_mod:                # 조건이 맞으면 더하거나(+) 곱한다(x)
 | `main_start: 이름` · `reveal_trait: tr_id` · `insight: n` · `deviation_p: p` | 메인 시작 사건을 터뜨림(W11) · 숨은 특성 드러냄 · 깨달음 · 주화입마 확률 |
 | 출신 `variants` · 조건 `variant:이름` · `{variant_*}` | 한 출신 안의 갈래(화산 · 무당) — 빙의 때 하나를 고르고, 사건 · 결말의 `{variant_…}` 자리에 그 값이 들어감 |
 | 사건 `mirror: ev_id` · 출신 `looks_bias` | 다른 출신의 같은 사건을 반대편에서(녹림 2-3 ↔ 농부 습격 — 결과가 같은 세계에 쌓임) · 출신이 생김새를 기울임 |
+| 조건 `act:n` · `act:a-b` · `branch:갈래` · `grant:이름` · `clue:갈래>=n` | 지금 막 · 6막 갈래 · 받은 권리(사부 부르기 등) · 모은 단서 수 |
+| 사건 `system: true` · `rule` · `news` | 선택지 없는 엔진 규칙 사건(P06 단서 셋 · A306 · A408 · A704) — 조건이 맞으면 규칙 실행 + 강호 일보 |
+| `main_start_bonus: p` · `grant_use: 이름` · `to: pl_id` | 시작 사건 확률 보정 · 권리 소모 · 그 장소로 이동 |
 | 사건 `results: {이름: 결과}` · `next_result: 이름` | 여러 선택지가 같은 결과로 갈 때 이름 붙여 한 번만 씀(A305 「실패」 = 맹주 사망 조건) |
 | 출신 `slots` · `rotate_each_season` · 사건 `injure_npc` · `{heir_older}` 같은 자리표 | 정원 자리 NPC 목록 · 시즌마다 세가 교체 · NPC 부상 · 자리표는 실행 때 그 자리 주인(유저일 수도)으로 바뀜 |
 | `romance_open: npc` · NPC `age_as_romance` | 인연 루트만 열어 둠 — **나와 상대 모두 성인일 때만** 인연 진행(어린 출신 서막은 열기만) · 미성년 동기는 성인 나이로 다시 만남 |
