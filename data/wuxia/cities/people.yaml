@@ -1,0 +1,46 @@
+# 대도시 5곳 사람 (wuxia-cities.md 2~6장) — 낙양은 events/luoyang.yaml · npcs.yaml. 세가 · 인연 인물은 이미 있는 id를 links로
+# 합비
+- {id: npc_hf_chungbaek, name: 충백, place: pl_hefei, role: 은퇴 무인(남궁 노가복), looks: {mark: 백발}, personality: 고지식, secret: "20년 전 버려진 장자를 강가에 두고 온 사람"}
+- {id: npc_hf_yuwol, name: 유월, gender: 여, place: pl_hefei, role: 강월루 주인, looks: {face: 아름다움}, personality: 신중, secret: "남궁현의 정보원"}
+- {id: npc_hf_song, name: 의원 송, place: pl_hefei, role: 남궁 의원, personality: 다정, secret: "직계 형제들의 상처를 다 안다"}
+- {id: npc_hf_watersnake, name: 물뱀, place: pl_hefei, role: 하류 암흑가 두목, looks: {face: 험상궂음}, personality: 탐욕, secret: "남궁현의 더러운 일"}
+- {id: npc_hf_silk, name: 비단 상단주, place: pl_hefei, role: 수상한 상인, personality: 탐욕, secret: "남궁 돈을 녹림에 전달"}
+- {id: npc_hf_teacher, name: 합비 서원 훈장, place: pl_hefei, role: 훈장, teaches_literacy: true}
+- {id: npc_hf_oldwoman, name: 강가 거지 노파, gender: 여, place: pl_hefei, role: 고유, secret: "20년 전 우는 아기를 데려간 붉은 옷을 봤다"}
+# 성도
+- {id: npc_cd_mudok, name: 당무독, place: pl_chengdu, role: 은퇴 무인(독을 끊은 당가 출신), looks: {face: 음침함}, personality: 무심, teaches: [의술], secret: "당가 해독 비법"}
+- {id: npc_cd_banhyang, name: 반향, gender: 여, place: pl_chengdu, role: 차향루 주인, looks: {face: 아름다움}, personality: 의심 많음}
+- {id: npc_cd_gusaeng, name: 구생당 의원, place: pl_chengdu, role: 의원, personality: 의협심}
+- {id: npc_cd_hongsa, name: 홍사, place: pl_chengdu, role: 비단 공방 두목(암기 · 독 밀매), looks: {face: 수려함}, personality: 음험}
+- {id: npc_cd_merchant, name: 약재 거상, place: pl_chengdu, role: 수상한 상인, personality: 탐욕, secret: "당가 독을 녹림 · 수적 · 혈교에"}
+- {id: npc_cd_teacher, name: 성도 서원 훈장, place: pl_chengdu, role: 훈장, teaches_literacy: true}
+- {id: npc_cd_mule, name: 노새, place: pl_chengdu, role: 촉도 짐꾼, looks: {build: 거구}, personality: 순박, note: "서쪽(난주 · 마교) 길"}
+# 하간
+- {id: npc_hj_dokmok, name: 독목, place: pl_hejian, role: 은퇴 무인(방어선 퇴역), looks: {face: 험상궂음, build: 거구, mark: 외눈}, personality: 대담, secret: "요수가 약속한 날만 온다는 걸 안다"}
+- {id: npc_hj_hoju, name: 호주, gender: 여, place: pl_hejian, role: 술도가 주인, looks: {face: 험상궂은 미인, build: 거구}, personality: 낙천}
+- {id: npc_hj_hanmae, name: 군의 한매, gender: 여, place: pl_hejian, role: 군의, looks: {face: 아름다움}, personality: 냉정, teaches: [의술]}
+- {id: npc_hj_soemok, name: 쇠목, place: pl_hejian, role: 징집 브로커, looks: {face: 험상궂음}, personality: 탐욕}
+- {id: npc_hj_core, name: 내단 상인, place: pl_hejian, role: 수상한 상인, personality: 탐욕, hidden_faction: true, faction: fac_blood}
+- {id: npc_hj_shrine, name: 전사자 사당 지기, place: pl_hejian, role: 훈장, teaches_literacy: true}
+- {id: npc_hj_baekryeon, name: 백련, gender: 여, place: pl_hejian, role: 대장장이, looks: {build: 거구}, note: "천생신력 · 오호단문도를 벼린 집안"}
+- {id: npc_penghu, name: 팽호, age: 26, gender: 남, realm: 일류, faction: fac_peng, place: pl_hejian, role: 팽가 소가주, looks: {face: 험상궂음, build: 거구}, romance: true, note: "남성 인연 5"}
+# 항주
+- {id: npc_hz_baekgyeong, name: 백경, place: pl_hangzhou, role: 은퇴 무인(노선장), personality: 낙천, secret: "해룡을 본 적 있다"}
+- {id: npc_hz_yeonhyang, name: 연향, gender: 여, place: pl_hangzhou, role: 서호루 주인, looks: {face: 절세미인}, personality: 냉정}
+- {id: npc_hz_doctor, name: 부두 의원, place: pl_hangzhou, role: 의원, personality: 다정, note: "외국 약재"}
+- {id: npc_hz_blackfish, name: 흑어, place: pl_hangzhou, role: 부두 두목, looks: {face: 험상궂음, mark: 문신}, personality: 대담, faction: fac_pirates, hidden_faction: true}
+- {id: npc_hz_jangdu, name: 세관 관리 장두, place: pl_hangzhou, role: 포쾌 대신, personality: 탐욕}
+- {id: npc_hz_foreigner, name: 외국 상인, place: pl_hangzhou, role: 수상한 상인, looks: {mark: 이색 눈동자}, personality: 호기심, note: "동쪽 대륙 밖의 땅 — 다음 시즌 떡밥"}
+- {id: npc_hz_agent, name: 세가 상단 대리인, place: pl_hangzhou, role: 남궁 · 제갈 밀무역, personality: 음험}
+- {id: npc_hz_admiral, name: 맹 수군 제독, place: pl_hangzhou, role: 수군 제독, faction: fac_alliance, looks: {build: 거구}, personality: 고지식}
+# 난주
+- {id: npc_lz_desertdog, name: 사막개, place: pl_lanzhou, role: 은퇴 무인(검문소 노병), looks: {face: 험상궂음}, personality: 의심 많음}
+- {id: npc_lz_hwangsa, name: 황사 객잔 주인, place: pl_lanzhou, role: 대상 객잔 주인, looks: {build: 거구}, personality: 탐욕, secret: "맹 · 마교 양쪽에 정보를 판다"}
+- {id: npc_lz_camel, name: 낙타 의원, place: pl_lanzhou, role: 의원, personality: 다정, note: "마교 사람도 치료"}
+- {id: npc_lz_sand, name: 모래, gender: 여, place: pl_lanzhou, role: 골목 두목(마교 밀입국), looks: {face: 요염함}, personality: 음험}
+- {id: npc_lz_captain, name: 난주 수비대장, place: pl_lanzhou, role: 수비대장, faction: fac_alliance, personality: 고지식}
+- {id: npc_lz_western, name: 서역 상인, place: pl_lanzhou, role: 마공 비급 밀반입, looks: {face: 수려함}}
+- {id: npc_lz_monk, name: 난주 노승, place: pl_lanzhou, role: 훈장 · 오래된 사찰, teaches_literacy: true, note: "회귀 비밀 조각 3"}
+- {id: npc_lz_liaison, name: 마교 연락책, gender: 여, place: pl_lanzhou, role: 천마의 밀서 전달, looks: {face: 절세미인}, personality: 냉정, faction: fac_demon}
+# 이미 있는 인물(links)
+- {links: true, pl_hefei: [npc_namgungcheon, npc_namgungseol, npc_namgunghyeon, npc_namgunglin], pl_chengdu: [npc_tanglaotai, npc_tangsoso, npc_tangmuying], pl_hejian: [npc_pengwu, npc_pengsoyeon], pl_hangzhou: [npc_hailan], pl_lanzhou: [npc_xueying, npc_weishaotian]}

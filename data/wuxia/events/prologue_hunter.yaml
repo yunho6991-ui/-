@@ -1,0 +1,111 @@
+# 사냥꾼의 아이 서막 (wuxia-prologues-full-1.md A) — 청하진판(다른 고을에선 산 · 영물이 바뀜)
+
+- id: ev_p_hunter_1_1
+  name: 첫 사냥
+  weight: 0
+  prologue: org_hunter
+  text: "새벽 안개. 아버지 강포가 손가락 하나를 입에 댄다. 서른 걸음 앞, 사슴 한 마리가 풀을 뜯는다. \"숨을 내쉬면서 놓아라.\""
+  choices:
+    - {text: 쏜다, check: {stat: 사냥, dc: 40}, success: {aff: {npc_gangpo: +2}, money: +5, text: "아버지가 처음으로 웃는다."}, fail: {text: "\"사슴은 내일도 있다.\""}}
+    - {text: 활을 내린다, result: {aff: {npc_gangpo: +1}, flag: mother_story, text: "아버지가 한참 본다. \"…네 어미도 그랬지.\""}}
+  record: "아버지와 첫 사냥에 나섰다"
+
+- id: ev_p_hunter_1_2
+  name: 덫 놓기
+  weight: 0
+  prologue: org_hunter
+  text: "짐승 길목에 덫을 놓는다. 아버지가 매듭을 고쳐 준다. \"덫은 짐승보다 사람이 더 잘 걸린다. 늘 표시해 둬라.\""
+  choices:
+    - {text: 덫을 놓는다, result: {skill_xp: {사냥: 1}, flag: trap_blood, text: "사흘 뒤, 덫에 사람의 피가 묻어 있었다."}}
+
+- id: ev_p_hunter_1_3
+  name: 미친 늑대
+  weight: 0
+  prologue: org_hunter
+  death_possible: true
+  text: "늑대 한 마리가 비틀거린다. 눈이 붉고, 입에서 붉은 거품이 흐른다. 아버지 얼굴이 굳는다. \"…이런 건 처음 본다.\""
+  choices:
+    - {text: 쏜다, result: {fight: {foe: beast_mad_wolf, count: 1, win: {clue: yaoshou_cause, text: "사체에서 비린 피 냄새가 난다 — 짐승의 피가 아니다."}}}}
+    - {text: 피한다, result: {aff: {마을: -1}, text: "그날 밤 마을 개 두 마리가 물려 죽었다."}}
+
+- id: ev_p_hunter_1_4
+  name: 어머니의 화살촉
+  weight: 0
+  prologue: org_hunter
+  text: "산 중턱 바위틈에 낡은 화살 하나가 꽂혀 있다. 깃털 묶는 매듭이 — 어머니의 매듭이다."
+  choices:
+    - {text: 화살이 가리키는 쪽으로 간다, result: {next: ev_p_hunter_2_1}}
+    - {text: 아버지에게 가져간다, result: {aff: {npc_gangpo: +4}, text: "아버지가 처음으로 운다."}}
+
+- id: ev_p_hunter_2_1
+  name: 비 피할 곳
+  weight: 0
+  prologue: org_hunter
+  text: "소나기가 쏟아진다. 바위 아래 좁은 틈, 안에서 바람이 새어 나온다. 안쪽이 넓다."
+  choices:
+    - {text: 들어간다, result: {text: "동굴은 생각보다 깊다."}}
+
+- id: ev_p_hunter_2_2
+  name: 낡은 책
+  weight: 0
+  prologue: org_hunter
+  text: "동굴 깊은 곳, 해골 하나가 벽에 기대 앉아 있다. 품에 기름 먹인 천으로 싼 책. 글자는 하나도 모르겠다."
+  choices:
+    - {text: 챙긴다, result: {item: [it_unread_manual], tag: [+읽지못한비급]}}
+    - {text: 해골을 묻어 준다, result: {luck: +1, item: [it_mother_hairband], text: "해골의 손에서 머리끈이 나온다. 어머니의 것이다."}}
+
+- id: ev_p_hunter_2_3
+  name: 다친 흰 사슴
+  weight: 0
+  prologue: org_hunter
+  text: "동굴 안쪽, 흰 사슴이 다리에 덫이 박힌 채 누워 있다. 덫 매듭이 아버지 것이 아니다. 사슴이 사람처럼 눈을 맞춘다."
+  choices:
+    - {text: 덫을 풀어 준다, result: {aff: {npc_white_deer: +4}, text: "그날 밤 꿈에 목소리. \"고맙다, 강포의 아이.\""}}
+    - {text: 잡는다, result: {money: +30, kill_npc_p: {npc_white_deer: 1.0}, tag: [+짐승이피함]}}
+
+- id: ev_p_hunter_2_4
+  name: 숨소리
+  weight: 0
+  prologue: org_hunter
+  death_possible: true
+  text: "동굴 가장 깊은 곳에서 숨 쉬는 소리가 난다. 너무 크다. 무언가 잠들어 있다."
+  choices:
+    - {text: 다가간다, result: {next: ev_p_hunter_2_4b}}
+    - {text: 조용히 나온다, result: {flag: boar_den, text: "그것이 어디 자는지 안다."}}
+- id: ev_p_hunter_2_4b
+  name: 눈을 뜬 것
+  weight: 0
+  death_possible: true
+  text: "소만 한 멧돼지가 눈을 뜬다. 눈이 붉다."
+  choices:
+    - {text: 달린다, check: {stat: 신법, dc: 45}, success: {flag: boar_den}, fail: {injury: 중상, death_check: 0.15}}
+
+- id: ev_p_hunter_3_1
+  name: 내려오는 요수
+  weight: 0
+  prologue: org_hunter
+  death_possible: true
+  text: "가을 밤. 청운산이 운다. 새벽, 소만 한 멧돼지 요수가 마을 쪽으로 내려온다. 아버지가 활을 쥔다. \"넌 마을 사람들을 깨워라.\""
+  choices:
+    - {text: 아버지 곁에 남는다, result: {fight: {foe: beast_boar_yaoshou, count: 1, ally: npc_gangpo, bonus_if: {flag: boar_den, x: 1.3}, win: {flag: slew_beast, money: +40, fame: +8}, lose: {kill_npc_p: {npc_gangpo: 0.5}, injury: 중상}}}}
+    - {text: 마을로 달린다, result: {aff: {마을: +3}, kill_npc_p: {npc_gangpo: 0.5}}}
+    - {text: 동굴 쪽으로 달린다, require: ["aff:npc_white_deer>=호의"], show_reason: 흰 사슴과의 인연, result: {next: ev_p_hunter_3_2}}
+
+- id: ev_p_hunter_3_2
+  name: 흰 사슴
+  weight: 0
+  prologue: org_hunter
+  text: "흰 사슴이 안개 속에서 걸어 나와 요수 앞에 선다. 요수가 멈춘다. 목소리가 머릿속에 울린다. \"피 냄새… 남쪽에서 온 피가 이 아이를 미치게 했다.\""
+  choices:
+    - {text: 귀를 기울인다, result: {clue: yaoshou_cause, world: {ritual: -3, hardline: -3}, flag: deer_friend}}
+
+- id: ev_p_hunter_3_3
+  name: 그 뒤
+  weight: 0
+  prologue: org_hunter
+  text: "부러진 활이 바닥에 놓여 있다."
+  choices:
+    - {text: 흰 사슴을 찾아간다, require: ["flag:deer_friend"], result: {ending: end_hunter_spirit}}
+    - {text: 요괴 사냥꾼 막사로 간다, require: ["flag:slew_beast"], result: {ending: end_hunter_slayer}}
+    - {text: 책을 품고 떠난다, require: ["item:it_unread_manual"], result: {ending: end_hunter_manual}}
+    - {text: 산을 지킨다, result: {ending: end_hunter_stay}}

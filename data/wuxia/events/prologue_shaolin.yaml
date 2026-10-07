@@ -1,0 +1,72 @@
+# 소림 동자승 서막 (wuxia-prologues-full-1.md F) — 숭산. 봉인탑 = 회귀 비밀 조각 4 · 5(wuxia-regression.md)
+- id: ev_p_shaolin_1_1
+  name: 물 긷기
+  weight: 0
+  prologue: org_shaolin
+  text: "새벽 네 시. 물통 두 개를 지고 산 아래 개울까지 천 계단. 사형 정각이 앞서 걷는다. \"흘리지 마라. 흘린 물만큼 다시 간다.\""
+  choices:
+    - {text: 묵묵히 긷는다, result: {pts: {ma_shaolin_tuna: 1}, aff: {npc_jeonggak: +1}}}
+    - {text: 물을 덜 담는다, result: {text: "정각이 웃으며 통을 들여다본다. \"…다시.\""}}
+  record: "천 계단을 물통 지고 올랐다"
+- id: ev_p_shaolin_1_2
+  name: 장경각
+  weight: 0
+  prologue: org_shaolin
+  text: "밤, 장경각 창문 틈으로 촛불이 새어 나온다. 수천 권의 책. 동자승은 들어갈 수 없다."
+  choices:
+    - {text: 몰래 들어간다, check: {stat: 은신, dc: 50}, success: {learn: {random_branch_up_to: 이류}, text: "손에 잡힌 책 한 권. 구결이 머리에 박힌다."}, fail: {cost_actions: 3, text: "들켰다. 물 긷기 열흘."}}
+    - {text: 창밖에서 읽는다, result: {insight: 1, text: "촛불 그림자 너머로 글자 몇 줄."}}
+- id: ev_p_shaolin_1_3
+  name: 사형과의 대련
+  weight: 0
+  prologue: org_shaolin
+  text: "정각 사형이 나한권 기본자세를 잡아 준다. \"주먹은 화가 아니라 숨으로 지르는 거다.\""
+  choices:
+    - {text: 대련한다, result: {pts: {ma_luohan_fist: 1}, aff: {npc_jeonggak: +2}}}
+- id: ev_p_shaolin_2_1
+  name: 밤의 목소리
+  weight: 0
+  prologue: org_shaolin
+  text: "절 뒤편, 아무도 가지 않는 낡은 탑. 가면 혼이 빠진다는 소문. 오늘 밤, 탑에서 누군가 네 이름을 부른다. 아니 — 네가 모르는 이름을."
+  choices:
+    - {text: 가 본다, result: {next: ev_p_shaolin_2_2}}
+    - {text: 사형에게 말한다, result: {aff: {npc_jeonggak: +3}, flag: jeonggak_hears, text: "정각의 얼굴이 하얘진다. \"…너도 들었구나.\""}}
+    - {text: 이불을 뒤집어쓴다, result: {flag: pagoda_dreams, text: "그날부터 매일 밤, 같은 꿈."}}
+  record: "봉인탑에서 모르는 이름을 들었다"
+- id: ev_p_shaolin_2_2
+  name: 봉인탑 문 앞
+  weight: 0
+  prologue: org_shaolin
+  death_possible: true
+  text: "탑 문엔 금빛 부적 수십 장. 문틈으로 바람이 숨 쉬듯 드나든다. 목소리가 속삭인다. \"…풀어 다오. 시간을 돌려주마.\""
+  choices:
+    - {text: 부적 하나를 뗀다, result: {tag: [+구유의부름], regression_piece: 4, main_start: 봉인탑의 목소리에 답함, deviation_p: 0.3, death_check: 0.05, text: "부적이 손안에서 재가 된다. 탑 안에서 무언가 웃는다."}}
+    - {text: 합장하고 돌아선다, result: {insight: 1, qi: 불, reveal_trait: tr_guyu_dream}}
+    - {text: 방장께 고한다, result: {next: ev_p_shaolin_2_3}}
+- id: ev_p_shaolin_2_3
+  name: 방장 혜공
+  weight: 0
+  prologue: org_shaolin
+  text: "방장이 오래 너를 본다. \"그 목소리를 듣는 아이는 백 년에 하나다. …무엇이라 하더냐.\""
+  choices:
+    - {text: 들은 대로 말한다, result: {aff: {npc_huikong: +3}, regression_piece: 4, text: "\"이 탑엔 시간을 먹는 것이 잠들어 있다.\""}}
+    - {text: 아무것도 못 들었다고 한다, result: {text: "방장이 고개를 끄덕인다. 믿는 눈은 아니다."}}
+- id: ev_p_shaolin_3_1
+  name: 십팔나한진
+  weight: 0
+  prologue: org_shaolin
+  death_possible: true
+  text: "하산하려면 열여덟 나한을 지나야 한다. 사형 정각이 마지막 나한이다."
+  choices:
+    - {text: 정면 돌파, result: {fight: {foe: npc_luohan, count: 3, nonlethal: true, win: {fame: +5, flag: may_leave, next: ev_p_shaolin_3_2}, lose: {injury: 중상, ending: end_shaolin_disciple}}}}
+    - {text: 빠져나간다, require: ["skill:신법>=서툶"], show_reason: 신법, check: {aff: "npc_jeonggak>=신뢰"}, success: {flag: may_leave, aff: {npc_jeonggak: +2}, text: "마지막 나한이 반 걸음 비켜선다. 사형의 눈이 웃는다.", next: ev_p_shaolin_3_2}, fail: {injury: 경상, ending: end_shaolin_disciple}}
+    - {text: 포기한다, result: {ending: end_shaolin_disciple}}
+- id: ev_p_shaolin_3_2
+  name: 산문 앞
+  weight: 0
+  prologue: org_shaolin
+  text: "산문 밖으로 길이 뻗어 있다. 뒤에서 종소리. 정각 사형이 말한다. \"가거라. 다만 그 목소리는 따라가지 마라.\""
+  choices:
+    - {text: 떠난다, require: ["tag:구유의부름"], result: {ending: end_shaolin_called}}
+    - {text: 떠난다, require: ["!tag:구유의부름"], result: {ending: end_shaolin_lay}}
+    - {text: 남는다, result: {ending: end_shaolin_disciple}}

@@ -1,0 +1,80 @@
+# 몰락한 표국의 자식 서막 (wuxia-prologues-full-1.md C) — 청하진 왕가표국판(도시판은 큰 표국 · 맹 관원 빚쟁이)
+- id: ev_p_escort_1_1
+  name: 빚쟁이
+  weight: 0
+  prologue: org_escort
+  text: "아침부터 대문을 두드린다. 전장 사람들이다. \"이달 안에 100냥. 아니면 표기(旗)를 내린다.\""
+  choices:
+    - {text: 아버지를 대신해 맞선다, check: {stat: 흥정, dc: 40}, success: {aff: {npc_wangchung: +2}, flag: debt_delayed, text: "\"…한 달이오. 한 달.\" 아버지가 처음으로 네 어깨를 친다."}, fail: {aff: {npc_wangchung: +1}, text: "전장 사람들이 비웃으며 돌아간다. 기한은 그대로다."}}
+    - {text: 숨는다, result: {text: "문틈으로, 아버지가 무릎을 꿇는 걸 본다."}}
+  record: "전장 빚쟁이가 표기를 내리라고 했다"
+- id: ev_p_escort_1_2
+  name: 마삼의 칼
+  weight: 0
+  prologue: org_escort
+  text: "늙은 표사 마삼이 마당에서 칼을 간다. \"도련님, 표국은 깃발이 아니라 사람이오. 사람만 남으면 다시 섭니다.\""
+  choices:
+    - {text: 대련을 청한다, result: {pts: {ma_escort_sword: 1}, aff: {npc_masam: +2}, text: "\"허, 손목은 국주님을 닮으셨소.\""}}
+    - {text: 칼 가는 걸 지켜본다, result: {aff: {npc_masam: +1}}}
+- id: ev_p_escort_1_3
+  name: 떠나는 표사
+  weight: 0
+  prologue: org_escort
+  text: "마지막 남은 젊은 표사가 짐을 싼다. \"녹림 길목이 무서워서가 아니오. 월급이 석 달 밀렸소.\""
+  choices:
+    - {text: 내 돈으로 붙잡는다, require: ["money>=10"], result: {money: -10, flag: escort_kept, text: "표사가 짐을 푼다. \"…한 번만 더 가 보지요.\""}}
+    - {text: 보낸다, result: {text: "표행 인원이 하나 줄었다."}}
+- id: ev_p_escort_2_1
+  name: 큰 의뢰
+  weight: 0
+  prologue: org_escort
+  text: "비단옷 상인 전보가 은 200냥을 내민다. \"상자 하나, 남쪽 늪가 마을까지. 열어 보지만 마시게.\" 아버지가 말없이 받는다. 받을 수밖에 없다."
+  choices:
+    - {text: 표행을 떠난다, result: {aff: {npc_jeonbo: +1}, text: "왕가표국 깃발이 오랜만에 문을 나선다."}}
+  record: "전보의 상자를 싣고 남쪽으로 떠났다"
+- id: ev_p_escort_2_2
+  name: 녹림 길목
+  weight: 0
+  prologue: org_escort
+  death_possible: true
+  text: "고갯마루. \"통행세!\" 곰칼 산채의 깃발. 마삼이 귓속말을 한다. \"싸우면 상자가 다칩니다.\""
+  choices:
+    - {text: 돈을 낸다, require: ["money>=10"], result: {money: -10, text: "산적들이 길을 연다."}}
+    - {text: 싸운다, result: {fight: {foe: npc_bandit, count: 2, ally: npc_masam, bonus_if: {flag: escort_kept, x: 1.2}, win: {fame: +3}, lose: {money: -10, injury: 경상, text: "표물 일부를 빼앗겼다. 상자만은 지켰다."}}}}
+    - {text: "\"산채가 손댈 물건이 아니다.\"", require: ["skill:흥정>=능숙"], show_reason: 흥정, result: {rep: {fac_greenwood: +1}, flag: greenwood_talk, text: "산적 하나가 상자에 코를 대더니 얼굴이 하얘진다. 모두 물러난다. …왜?"}}
+- id: ev_p_escort_2_3
+  name: 상자 속의 소리
+  weight: 0
+  prologue: org_escort
+  text: "밤, 야영. 상자에서 아주 작게 — 무언가 긁는 소리. 그리고 훌쩍이는 소리."
+  choices:
+    - {text: 연다, result: {next: ev_p_escort_2_4}}
+    - {text: 귀를 막는다, result: {flag: box_closed, text: "모닥불이 탁 튄다. 소리는 새벽까지 이어진다."}}
+- id: ev_p_escort_2_4
+  name: 상자 안
+  weight: 0
+  prologue: org_escort
+  text: "상자 안에 아이 둘이 웅크려 있다. 입에 재갈. 목에 붉은 끈. 아이 하나가 너를 올려다본다."
+  choices:
+    - {text: 풀어 준다, result: {flag: box_opened, rep: {fac_blood: -3}, tag: [+혈교원한], aff: {npc_masam: +2}, text: "마삼이 한숨을 쉰다. \"…이제 의뢰는 끝났소. 표국도.\""}}
+    - {text: 다시 닫는다, result: {flag: box_closed, text: "표행은 계속된다. 잠은 오지 않는다."}}
+- id: ev_p_escort_3_1
+  name: 늪가 마을
+  weight: 0
+  prologue: org_escort
+  death_possible: true
+  text: "약속한 늪가 마을. 붉은 옷 사내들이 기다린다. 전보가 웃는다. \"수고했네.\""
+  text_if: {"flag:box_opened": "약속한 늪가 마을. 붉은 옷 사내들이 기다린다. 전보의 웃음이 굳는다. \"…열어 봤군.\""}
+  choices:
+    - {text: 상자를 넘긴다, require: ["flag:box_closed"], result: {money: +200, rep: {fac_blood: +2}, ending: end_escort_restored}}
+    - {text: 마지막에 칼을 뽑는다, require: ["flag:box_closed"], result: {fight: {foe: npc_blood_guard, count: 2, ally: npc_masam, win: {ending: end_escort_rescue}, lose: {death_check: 0.5, ending: end_escort_rescue}}}}
+    - {text: 아이들을 데리고 달린다, require: ["flag:box_opened"], result: {next: ev_p_escort_3_2}}
+    - {text: 녹림 산채로 몸을 숨긴다, require: ["flag:greenwood_talk"], result: {ending: end_escort_greenwood}}
+- id: ev_p_escort_3_2
+  name: 마삼
+  weight: 0
+  prologue: org_escort
+  death_possible: true
+  text: "추격. 마삼이 돌아선다. \"도련님, 가시오!\" 멀리서 칼 부딪는 소리가 들리다가 — 끊긴다. 마삼은 돌아오지 않는다."
+  choices:
+    - {text: 돌아보지 않고 달린다, check: {stat: 신법, dc: 40}, success: {kill_npc_p: {npc_masam: 0.7}, set_npc: {npc_masam: one_arm}, ending: end_escort_rescue}, fail: {kill_npc_p: {npc_masam: 0.7}, injury: 중상, death_check: 0.2, ending: end_escort_rescue}}

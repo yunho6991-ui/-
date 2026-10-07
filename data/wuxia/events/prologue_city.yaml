@@ -1,0 +1,185 @@
+# 도시 출신 서막 5개 (wuxia-cities.md 「도시 출신 서막」) — 6개 대도시 중 하나에서 빙의. {city_*} 자리는 origins.yaml의 city_vars에서 도시별 값
+# ① 주루 점소이 ─────────────────────────────
+- id: ev_p_waiter_1_1
+  name: 귀빈실 시중
+  weight: 0
+  prologue: org_city_waiter
+  text: "손에 쟁반, 코끝에 기름 냄새. 2층 귀빈실에서 {city_guest}들이 술잔을 부딪친다. 문틈으로 낮은 목소리."
+  choices:
+    - {text: 엿듣는다, result: {rumor: 1, flag: overheard}}
+    - {text: 귀를 막는다, result: {money: +3, text: "후한 행하를 받는다. 아무것도 못 들은 자의 몫이다."}}
+  record: "귀빈실에서 술을 날랐다"
+- id: ev_p_waiter_1_2
+  name: 외상 장부
+  weight: 0
+  prologue: org_city_waiter
+  text: "주인이 외상 장부를 내민다. \"이 손님들한테 받아 와라. 웃으면서.\""
+  choices:
+    - {text: 웃으면서 받아 온다, check: {stat: 말재주, dc: 40}, success: {money: +5, aff: {npc_city_boss: +1}}, fail: {injury: 경상, text: "웃으며 맞았다."}}
+- id: ev_p_waiter_2_1
+  name: 엿들은 말
+  weight: 0
+  prologue: org_city_waiter
+  death_possible: true
+  text: "\"다음 달, 그분이 쓰러지시면…\" 그 말을 들은 다음 날부터, 밤길에 발소리가 하나 더 따라온다."
+  text_if: {"!flag:overheard": "귀를 막았는데도 소문이 났다. \"점소이가 다 들었다더라.\" 밤길에 발소리가 하나 더 따라온다."}
+  choices:
+    - {text: 골목으로 뛴다, check: {stat: 신법, dc: 45}, success: {clue: leader_illness}, fail: {fight: {foe: npc_city_thug, count: 1, lose: {injury: 중상, death_check: 0.1}}}}
+    - {text: 돌아서서 묻는다, result: {fight: {foe: npc_city_thug, count: 1, win: {clue: leader_illness, text: "쓰러진 사내 품에서 {city_patron}의 패."}}}}
+- id: ev_p_waiter_3_1
+  name: 들은 것의 값
+  weight: 0
+  prologue: org_city_waiter
+  text: "들은 말은 돈이 될 수도, 목숨값이 될 수도 있다."
+  choices:
+    - {text: 정보상에게 판다, result: {money: +40, tag: [+표적], ending: end_waiter_broker}}
+    - {text: 맹에 알린다, result: {rep: {fac_alliance: +3}, tag: [+원한], ending: end_waiter_witness}}
+    - {text: 입을 닫고 도시를 떠난다, result: {ending: end_waiter_flee}}
+# ② 상점 견습 ─────────────────────────────
+- id: ev_p_clerk_1_1
+  name: 장부
+  weight: 0
+  prologue: org_city_clerk
+  text: "주판 소리. 손가락에 먹물. 주인 어른의 기침. 숫자가 안 맞는다 — 매달 보름, 같은 날 큰돈이 빠진다."
+  choices:
+    - {text: 주인께 말씀드린다, result: {aff: {npc_city_boss: +1}, text: "\"…알았다. 너는 모른 척해라.\" 주인의 손이 떨린다."}}
+    - {text: 혼자 따져 본다, require: ["literacy"], result: {flag: traced_money, skill_xp: {감정: 1}}}
+  record: "장부에서 빠진 돈을 봤다"
+- id: ev_p_clerk_1_2
+  name: 가짜 물건
+  weight: 0
+  prologue: org_city_clerk
+  text: "손님이 옥가락지를 내민다. 주인은 자리를 비웠다."
+  choices:
+    - {text: 감정한다, check: {stat: 감정, dc: 45}, success: {money: +5, aff: {npc_city_boss: +2}, text: "가짜다. 손님이 혀를 차고 나간다."}, fail: {money: -10, text: "비싸게 샀다. 가짜였다."}}
+- id: ev_p_clerk_2_1
+  name: 사라진 장부 한 장
+  weight: 0
+  prologue: org_city_clerk
+  death_possible: true
+  text: "그 장이 없어졌다. 의심은 너에게. 주인이 관아를 부른다."
+  choices:
+    - {text: 결백을 말한다, check: {aff: "npc_city_boss>=신뢰"}, success: {text: "주인이 관원을 돌려보낸다. \"이 아이는 아니오.\""}, fail: {injury: 경상, tag: [+누명], text: "곤장 열 대. 장부는 여전히 없다."}}
+    - {text: 밤에 도망친다, result: {tag: [+누명], ending: end_clerk_framed}}
+- id: ev_p_clerk_3_1
+  name: 진짜 범인
+  weight: 0
+  prologue: org_city_clerk
+  death_possible: true
+  text: "돈이 간 곳을 쫓는다. 끝에 있는 건 — {city_money_sink}."
+  choices:
+    - {text: 증거를 쥐고 주인께 간다, result: {aff: {npc_city_boss: +3}, ending: end_clerk_heir}}
+    - {text: 증거를 숨겨 둔다, result: {clue: "{city_money_clue}", ending: end_clerk_secret}}
+    - {text: 직접 따진다, result: {fight: {foe: npc_city_thug, count: 2, win: {ending: end_clerk_secret}, lose: {death_check: 0.3, ending: end_clerk_framed}}}}
+# ③ 포졸의 아들 ─────────────────────────────
+- id: ev_p_constable_1_1
+  name: 아버지의 술
+  weight: 0
+  prologue: org_city_constable
+  text: "아버지의 포승줄이 벽에 걸려 있다. 밥상엔 술병. 아버지가 요즘 매일 마신다. \"…덮어야 할 사건이 있다.\""
+  choices:
+    - {text: 술병을 치운다, result: {aff: {npc_city_father: +2}}}
+    - {text: 무슨 사건이냐 묻는다, result: {aff: {npc_city_father: -1}, flag: asked_father, text: "\"애들은 몰라도 된다.\""}}
+  record: "아버지가 덮어야 할 사건이 있다고 했다"
+- id: ev_p_constable_1_2
+  name: 순찰
+  weight: 0
+  prologue: org_city_constable
+  text: "아버지 대신 저잣거리를 돈다. 소매치기 아이가 눈앞에서 달아난다."
+  choices:
+    - {text: 쫓는다, check: {stat: 추적, dc: 40}, success: {rumor: 1, text: "붙잡은 아이가 울며 말한다. \"…요즘 아이들이 없어져요.\""}, fail: {}}
+    - {text: 놔준다, result: {text: "아이가 돌아보며 고개를 꾸벅 숙인다."}}
+- id: ev_p_constable_2_1
+  name: 시체 하나
+  weight: 0
+  prologue: org_city_constable
+  death_possible: true
+  text: "새벽 강가에 시체 하나. {city_body_mark}. 아버지가 이를 악문다. \"위에서 덮으란다.\""
+  choices:
+    - {text: 몰래 시체를 살핀다, result: {clue: "{city_body_clue}", flag: dug_case}}
+    - {text: 아버지 말을 따른다, result: {aff: {npc_city_father: +1}}}
+- id: ev_p_constable_3_1
+  name: 아버지의 선택, 나의 선택
+  weight: 0
+  prologue: org_city_constable
+  death_possible: true
+  text: "아버지가 포승줄을 내려놓는다. \"…덮으면 포쾌가 된다. 너도.\""
+  choices:
+    - {text: 아버지를 따른다, result: {money: +20, ending: end_constable_officer}}
+    - {text: 몰래 파헤친다, require: ["flag:dug_case"], result: {death_check: 0.1, ending: end_constable_truth}}
+    - {text: 아버지 대신 고발한다, result: {roll: [{p: 0.3, result: {kill_npc_p: {npc_city_father: 1.0}, text: "고발장이 올라간 밤, 아버지가 돌아오지 않는다."}}, {p: 0.7, result: {}}], ending: end_constable_whistle}}
+# ④ 기루 심부름꾼 ─────────────────────────────
+- id: ev_p_courtesan_1_1
+  name: 쪽지 심부름
+  weight: 0
+  prologue: org_city_courtesan
+  text: "분 냄새, 비단 소리, 웃음 속의 칼. 방에서 방으로 쪽지를 나른다. \"읽지 마라.\""
+  choices:
+    - {text: 그대로 나른다, result: {money: +3, aff: {npc_city_madam: +1}}}
+    - {text: 몰래 펴 본다, require: ["literacy"], result: {flag: read_note, next: ev_p_courtesan_2_1}}
+  record: "기루에서 쪽지를 날랐다"
+- id: ev_p_courtesan_1_2
+  name: 취객
+  weight: 0
+  prologue: org_city_courtesan
+  text: "취객이 소매를 붙잡는다. 기녀 언니가 눈짓한다 — 웃어라."
+  choices:
+    - {text: 웃으며 빠져나간다, check: {stat: 연기, dc: 40}, success: {aff: {npc_city_madam: +1}}, fail: {injury: 경상}}
+    - {text: 숨는다, require: ["skill:은신>=서툶"], result: {}}
+- id: ev_p_courtesan_2_1
+  name: 읽어 버린 쪽지
+  weight: 0
+  prologue: org_city_courtesan
+  text: "쪽지엔 짧은 글: {city_note}."
+  text_if: {"!literacy": "쪽지엔 글자가 빼곡하다. 읽을 수가 없다. 누군가 읽어 주길 바라야 한다."}
+  choices:
+    - {text: 기억해 둔다, require: ["literacy"], result: {clue: "{city_note_clue}", flag: read_note}}
+    - {text: 언니에게 읽어 달라고 한다, require: ["!literacy"], check: {aff: "npc_city_madam>=신뢰"}, success: {clue: "{city_note_clue}", flag: read_note}, fail: {text: "언니가 쪽지를 불에 넣는다. \"넌 아무것도 못 봤어.\""}}
+- id: ev_p_courtesan_3_1
+  name: 쪽지의 주인
+  weight: 0
+  prologue: org_city_courtesan
+  death_possible: true
+  text: "쪽지를 찾는 사람이 둘이다. 하나는 웃으며 돈을, 하나는 말없이 칼을 보인다."
+  choices:
+    - {text: 돈을 주는 쪽에, result: {money: +30, ending: end_courtesan_broker}}
+    - {text: 칼을 든 쪽에, result: {rep: {"{city_patron_fac}": +2}, ending: end_courtesan_spy}}
+    - {text: 둘 다 속인다, check: {stat: 연기, dc: 55}, success: {money: +30, ending: end_courtesan_spy}, fail: {death_check: 0.3, injury: 중상, ending: end_courtesan_hunted}}
+    - {text: 기루를 떠난다, result: {ending: end_courtesan_leave}}
+# ⑤ 성문 짐꾼 ─────────────────────────────
+- id: ev_p_porter_1_1
+  name: 수레 백 대
+  weight: 0
+  prologue: org_city_porter
+  text: "어깨에 굳은살. 매일 같은 수레, 같은 길. 오늘 백 번째 수레가 이상하게 가볍고 — 이상하게 운다."
+  choices:
+    - {text: 귀를 댄다, result: {flag: heard_cart}}
+    - {text: 그냥 민다, result: {stat: {체력: +1}}}
+  record: "성문에서 우는 수레를 밀었다"
+- id: ev_p_porter_1_2
+  name: 짐꾼 두목
+  weight: 0
+  prologue: org_city_porter
+  text: "짐꾼 두목이 품삯 절반을 떼 간다. \"자릿세다.\""
+  choices:
+    - {text: 참는다, result: {}}
+    - {text: 버틴다, result: {fight: {foe: npc_city_thug, count: 1, nonlethal: true, win: {money: +5, fame: +1}, lose: {injury: 경상}}}}
+- id: ev_p_porter_2_1
+  name: 수레를 연다
+  weight: 0
+  prologue: org_city_porter
+  death_possible: true
+  text: "밤, 성문 창고. 그 수레의 덮개를 걷는다. 안에 — {city_cart}."
+  choices:
+    - {text: 덮개를 다시 덮는다, result: {}}
+    - {text: 기억해 둔다, result: {clue: "{city_cart_clue}", flag: opened_cart}}
+- id: ev_p_porter_3_1
+  name: 성문 밖까지
+  weight: 0
+  prologue: org_city_porter
+  death_possible: true
+  text: "새벽, 그 수레가 성문을 나간다."
+  choices:
+    - {text: 따라간다, require: ["flag:opened_cart"], result: {fight: {foe: npc_city_thug, count: 2, win: {fame: +5, ending: end_porter_hero}, lose: {death_check: 0.3, ending: end_porter_hunted}}}}
+    - {text: 경비에 알린다, result: {rep: {fac_alliance: +2}, ending: end_porter_guard}}
+    - {text: 모른 척한다, result: {ending: end_porter_quiet}}

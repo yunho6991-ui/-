@@ -1,0 +1,50 @@
+# 장소 (wuxia-world.md · wuxia-early.md · wuxia-towns.md · wuxia-cities.md)
+# kind: town 시작 고을 · city 대도시 · site 특정 장소 · region 넓은 지역
+# start_for의 town/city 출신은 "랜덤 시작 후보"를 뜻함
+- id: pl_qinghe
+  name: 청하진
+  kind: town
+  region: 중원
+  tier: 0
+  start_for: [org_farmer, org_hunter, org_inn, org_doctor, org_escort]
+  spots: [나루터, 장터, 객잔, 의원, 표국, 관아, 서당, 청운산]
+  threat: 녹림 산적
+  clue: [blood_cult, yaoshou]
+  links: {pl_luoyang: 5, pl_shimen: 3, pl_qingyunshan: 1}
+- {id: pl_qingyunshan, name: 청운산, kind: site, region: 중원, tier: 0, start_for: [org_greenwood], links: {pl_qinghe: 1}}
+- {id: pl_xuexia, name: 설하촌, kind: town, region: 북쪽, tier: 1, start_for: [org_farmer, org_hunter, org_inn, org_doctor, org_escort], threat: 남하하는 요수, clue: [yaoshou], links: {pl_hejian: 3}}
+- {id: pl_bodopo, name: 파도포, kind: town, region: 동쪽 해안, tier: 1, start_for: [org_farmer, org_hunter, org_inn, org_doctor, org_escort], threat: 수적, clue: [pirates], links: {pl_hangzhou: 2}}
+- {id: pl_zhulin, name: 죽림향, kind: town, region: 사천, tier: 1, start_for: [org_farmer, org_hunter, org_inn, org_doctor, org_escort], threat: 당가의 독 실험, clue: [tang_poison], links: {pl_chengdu: 1}}
+- {id: pl_heishui, name: 흑수촌, kind: town, region: 남쪽 습지, tier: 1, start_for: [org_farmer, org_hunter, org_inn, org_doctor, org_escort], threat: 혈교의 아이 사냥, clue: [blood_cult], links: {pl_altar: 2, pl_blood_camp: 2}}
+- {id: pl_yunwu, name: 운무리, kind: town, region: 동북, tier: 1, start_for: [org_farmer, org_hunter, org_inn, org_doctor, org_escort], threat: 인간사냥파 요괴, clue: [regression], links: {pl_qingqiu: 1}}
+- {id: pl_shimen, name: 석문진, kind: town, region: 태행산맥 기슭, tier: 1, start_for: [org_farmer, org_hunter, org_inn, org_doctor, org_escort], threat: 녹림 통행세, clue: [clan_greenwood], links: {pl_taihang: 1, pl_qinghe: 3}}
+- {id: pl_luoyang_out, name: 낙양 외곽 마을, kind: town, region: 중원, tier: 0, start_for: [org_farmer, org_inn, org_doctor, org_escort], threat: 관원 수탈 · 암살자, clue: [leader_illness], links: {pl_luoyang: 0}}
+- id: pl_luoyang
+  name: 낙양
+  kind: city
+  region: 중원
+  tier: 1
+  start_for: [org_beggar, org_inn, org_doctor, org_escort, org_city_waiter, org_city_clerk, org_city_constable, org_city_courtesan, org_city_porter]
+  spots: [맹 청사, 원로회관, 비무대 광장, 동시, 서문 빈민가, 기루 거리, 지하 암시장, 전장 거리]
+  threat: 원로회 정치 · 무영루 암살
+  clue: [leader_illness, tournament]
+  links: {pl_qinghe: 5, pl_hefei: 4, pl_songshan: 2}
+- {id: pl_hefei, name: 합비, kind: city, region: 동쪽 강가, tier: 1, start_for: [org_inn, org_doctor, org_escort, org_city_waiter, org_city_clerk, org_city_constable, org_city_courtesan, org_city_porter, org_namgung], threat: 남궁 후계 다툼, clue: [hongyan], links: {pl_luoyang: 4, pl_hangzhou: 3}}
+- {id: pl_chengdu, name: 성도, kind: city, region: 사천, tier: 1, start_for: [org_inn, org_doctor, org_escort, org_city_waiter, org_city_clerk, org_city_constable, org_city_courtesan, org_city_porter, org_tang], threat: 독살 · 당가의 감시, clue: [tang_poison], links: {pl_lanzhou: 5}}
+- {id: pl_hejian, name: 하간, kind: city, region: 하북, tier: 2, start_for: [org_inn, org_doctor, org_escort, org_city_waiter, org_city_clerk, org_city_constable, org_city_courtesan, org_city_porter], threat: 징집령, clue: [yaoshou], links: {pl_xuexia: 3, pl_north: 3}}
+- {id: pl_hangzhou, name: 항주, kind: city, region: 동쪽 바다, tier: 1, start_for: [org_inn, org_doctor, org_escort, org_city_waiter, org_city_clerk, org_city_constable, org_city_courtesan, org_city_porter], threat: 밀수 조직, clue: [pirates], links: {pl_heilongdao: 2}}
+- {id: pl_lanzhou, name: 난주, kind: city, region: 서쪽 관문, tier: 2, start_for: [org_inn, org_doctor, org_escort, org_city_waiter, org_city_clerk, org_city_constable, org_city_courtesan, org_city_porter], threat: 첩자 사냥, clue: [demon_east], links: {pl_shiwandashan: 3}}
+# 출신 고정 시작 · 핵심 장소
+- {id: pl_songshan, name: 숭산(소림), kind: site, region: 중원, tier: 1, start_for: [org_shaolin]}
+- {id: pl_huashan, name: 화산, kind: site, region: 서북, tier: 1, start_for: [org_huashan_wudang]}
+- {id: pl_wudang, name: 무당산, kind: site, region: 서남, tier: 1, start_for: [org_huashan_wudang]}
+- {id: pl_longzhong, name: 융중(제갈), kind: site, region: 중원 서남, tier: 1}
+- {id: pl_taihang, name: 태행산맥, kind: region, tier: 2, start_for: []}
+- {id: pl_blood_camp, name: 혈교 수련장, kind: site, region: 남쪽 습지, tier: 2, hidden: true, start_for: [org_blood_children]}
+- {id: pl_master_hut, name: 산꼭대기 초막, kind: site, tier: 0, hidden: true, start_for: [org_master_disciple]}
+- {id: pl_north, name: 북방 설원, kind: region, tier: 3}
+- {id: pl_shiwandashan, name: 십만대산, kind: region, tier: 3}
+- {id: pl_heilongdao, name: 흑룡도, kind: site, tier: 3}
+- {id: pl_qingqiu, name: 청구, kind: region, tier: 3}
+- {id: pl_altar, name: 혈교 제단, kind: site, region: 남쪽 습지, tier: 3, hidden: true}
+- {id: pl_pagoda, name: 소림 봉인탑, kind: site, region: 중원, tier: 3}

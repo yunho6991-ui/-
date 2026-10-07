@@ -1,0 +1,158 @@
+# NPC (wuxia-npcs.md · wuxia-early.md · wuxia-heroines.md · wuxia-heroes.md) — 예시
+- id: npc_hongmae
+  name: 홍매
+  age: 41
+  gender: 여
+  realm: 이류
+  hidden_realm: true
+  looks: {face: 요염함, build: 보통}
+  personality: 냉정
+  faction: fac_kaibang
+  place: pl_qinghe
+  role: 객잔 주인
+  goal: 객잔을 지키는 것
+  secret: 개방의 청하진 연락책. 구장로의 지시를 의심한다
+  action: 소문을 모으고 개방에 보고한다
+  speech: "외상은 사절이고, 칼은 문밖에 두고 들어와."
+  reactions:
+    경계: 값을 두 배로 부른다
+    호의: 소문 하나를 공짜로 알려 준다
+    신뢰: 개방에 연결해 준다
+    심복: 구장로가 수상하다고 털어놓는다
+  death: []
+  romance: null
+- id: npc_noseok
+  name: 노석
+  age: 68
+  gender: 남
+  realm: 삼류
+  looks: {face: 평범함, build: 보통, mark: 왼다리를 전다}
+  personality: 고지식
+  place: pl_qinghe
+  role: 은퇴 무인
+  goal: 조용히 늙어 죽는 것
+  secret: 30년 전 녹림 칼잡이. 곰칼의 옛 형님
+  speech: "허허, 막대기 하나도 쥐는 법이 있느니라."
+  reactions:
+    호의: "이리 와 앉거라, 막대기 쥐는 법이나 보자"
+    신뢰: 삼재검법을 가르친다
+    심복: 과거를 털어놓고 녹림과의 일을 대신 짊어진다
+  death: ["ev_p_farmer_2_4:곁에 선다:0.3", "ev_p_farmer_2_4:지켜본다:0.5"]
+  on_death: {aff: {npc_gomkal: x0}, text: 곰칼이 마을 습격을 멈춘다}
+- id: npc_xueying
+  name: 설영
+  age: 20
+  gender: 여
+  realm: 절정
+  looks: {face: 절세미인, build: 날렵, mark: 백발}
+  personality: 무심
+  faction: fac_demon
+  place: pl_shiwandashan
+  role: 마교 성녀 후보
+  fixed_origin_slot: org_saintess     # 유저가 빙의하면 유저가 된다
+  states: [normal, taken, enthroned]
+  goal: 원로들의 꼭두각시에서 벗어나는 것
+  secret: 천마와 몰래 편지를 주고받는다
+  death: ["var:ritual>=100", "ev_a601:내전"]
+  romance:
+    stages: {관심: ev_r_xueying_1, 신뢰: ev_r_xueying_2, 연모: ev_r_xueying_3}
+    branch: ev_r_xueying_branch
+    marriage_once: true
+
+# ── 청하진 사람들 (wuxia-early.md 2장) ──
+- {id: npc_chunhwa, name: 춘화, age: 14, gender: 여, realm: null, looks: {face: 순박함, build: 보통}, personality: 다정, hidden_trait: 복성, place: pl_qinghe, role: 친구, goal: "장터 비단가게를 차리는 것", speech: "또 산에 가? 나도 데려가!", states: [normal, taken], note: "살아남으면 강호에서 다시 만난다(상인 · 녹림 · 혈교 아이 사이 — 회차마다)"}
+- {id: npc_black_umbrella, name: 검은 우산, age: 45, gender: 남, realm: 절정, hidden_realm: true, looks: {face: 평범함, build: 보통}, personality: 무심, place: pl_qinghe, role: 객잔 단골 낭인, goal: "맹주 암살 의뢰를 받은 옛 동료 무면을 막는 것", secret: "무영루를 떠난 살수", speech: "……비가 오겠군.", reactions: {신뢰: "제자로 데려간다", 심복: "처음으로 이름을 알려 준다"}, death: ["ev_a304:무면과의 대결"], romance: {stages: {관심: ev_r_umbrella_1, 신뢰: ev_r_umbrella_2, 연모: ev_r_umbrella_3}, marriage_once: true}}
+- {id: npc_mumyeon, name: 무면, age: 40, gender: 남, realm: 절정, looks: {face: 알 수 없음(가면), build: 날렵}, personality: 무심, faction: null, place: pl_luoyang, role: 무영루 살수 · 맹주 암살 의뢰를 받음, secret: "검은 우산의 옛 동료", states: [normal, dead]}
+- {id: npc_assassin, name: 무영루 살수, template: foe, realm: 일류, intent: 암살}
+- {id: npc_heodam, name: 허담, age: 52, gender: 남, realm: null, looks: {face: 순박함, build: 보통}, personality: 의협심, skills: {의술: 달인}, place: pl_qinghe, role: 의원, goal: "역병을 막는 것", secret: "젊을 때 무당에서 의술을 배웠다 — 청허진인과 아는 사이", speech: "아픈 데를 말해 보게. 돈 얘긴 나중에.", reactions: {신뢰: "무당 청허진인에게 보내는 소개장"}}
+- {id: npc_xulian, name: 허연, family_of: org_doctor, age: 20, gender: 여, realm: null, looks: {face: 귀여움, build: 보통}, personality: 다정, skills: {의술: 능숙}, place: pl_qinghe, role: 의원의 딸, goal: "역병 도는 마을을 모두 살리는 것", romance: {stages: {관심: ev_r_xulian_1, 신뢰: ev_r_xulian_2, 연모: ev_r_xulian_3}, marriage_once: true}}
+- {id: npc_wangchung, name: 왕충, age: 49, gender: 남, realm: 이류, looks: {face: 험상궂음, build: 보통}, personality: 고지식, place: pl_qinghe, role: 표국 국주, goal: "표국을 살리는 것(빚 300냥)", speech: "왕가표국 깃발은 아직 안 내렸다!"}
+- {id: npc_masam, name: 마삼, age: 58, gender: 남, realm: 이류, looks: {face: 험상궂음, build: 다부짐}, personality: 우직, place: pl_qinghe, role: 늙은 표사, states: [normal, one_arm], goal: "표국을 끝까지 지키는 것", speech: "표국은 깃발이 아니라 사람이오.", note: "표국 서막 3-2에서 70% 사망 · 살면 외팔이(one_arm)로 다시 만난다"}
+- {id: npc_jeonbo, name: 전보, age: 35, gender: 남, realm: 일류, hidden_realm: true, looks: {face: 곱상함, build: 보통}, personality: 음험, faction: fac_blood, hidden_faction: true, place: pl_qinghe, role: 수상한 상인, goal: "아이를 모아 남쪽으로", secret: "혈교 포섭책", action: "장터에서 아이들에게 엿을 준다 · 밤배로 아이를 보낸다(의식 +1/일)", speech: "허허, 좋은 일 하는 셈 치시게.", death: ["ev_v09_track:붙잡힘"], on_death: {world: {ritual: -5}}}
+- {id: npc_jinnoya, name: 진노야, age: 60, gender: 남, realm: null, looks: {face: 수려함, build: 보통}, personality: 탐욕, skills: {연기: 달인, 말재주: 달인}, place: pl_qinghe, role: 떠돌이 약장수, goal: 돈, secret: "가끔 진짜 영약을 섞어 판다(무덤 도굴)", speech: "이 환약 하나면 죽은 소도 일어나오!", reactions: {신뢰: "도굴한 무덤 위치(기연 단서)"}}
+- {id: npc_guosan, name: 곽삼, age: 24, gender: 남, realm: 삼류, looks: {face: 험상궂음, build: 거구}, personality: 다혈질, place: pl_qinghe, role: 왈패 두목, goal: "청하진에서 제일 센 놈 · 홀어머니 호강", secret: "글을 몰라 부끄러워한다", speech: "이 동네 길은 내 허락 받고 다녀야 돼.", romance: {stages: {관심: ev_r_guosan_1, 신뢰: ev_r_guosan_2, 연모: ev_r_guosan_3}, marriage_once: true}}
+- {id: npc_janglok, name: 장록, age: 38, gender: 남, realm: 이류, looks: {face: 평범함, build: 보통}, personality: 신중, faction: fac_alliance, place: pl_qinghe, role: 포쾌, goal: "진급해서 낙양으로", reactions: {신뢰: "관아 의뢰"}}
+- {id: npc_teacher_mun, name: 훈장 문씨, age: 70, gender: 남, realm: null, personality: 무심, place: pl_qinghe, role: 훈장, goal: "글을 아는 아이 하나만 더", service: {literacy: {cost: 10, actions: 10}, read_manual: true}}
+- {id: npc_white_deer, name: 흰 사슴, age: 300, kind: 영물, place: pl_qingyunshan, role: 영물, goal: "청운산을 지키는 것", speech_only: 짐승의 말, on_death: {world_local: {qingyun_beasts_mad: 1}}}
+- {id: npc_gomkal, name: 곰칼, age: 55, gender: 남, realm: 이류, looks: {face: 험상궂음, build: 거구}, personality: 다혈질, faction: fac_greenwood, place: pl_qingyunshan, role: 산채 채주, secret: "노석의 옛 아우", goal: "산채 식구를 굶기지 않는 것"}
+- {id: npc_father, name: 아버지, template: family, gender: 남, note: "빙의한 인물의 가족 — 이름 · 나이는 빙의 때 생성"}
+# ── 서막에서 쓰는 틀(template) NPC ──
+- {id: npc_bandit, name: 산적 졸개, template: foe, realm: 삼류, faction: fac_greenwood, intent: 약탈}
+- {id: npc_city_thug, name: 뒷골목 왈패, template: foe, realm: 삼류, intent: 협박}
+- {id: npc_city_boss, name: "주인(도시 출신 서막)", template: passerby, realm: null, note: "점소이 · 견습 출신의 주인 — 도시마다 이름만 바뀜"}
+- {id: npc_city_father, name: 포졸 아버지, template: passerby, realm: 삼류, states: [normal, dead], note: "포졸의 아들 출신 가족"}
+- {id: npc_city_madam, name: 기루 언니, template: passerby, realm: null, note: "기루 심부름꾼 출신의 보호자"}
+- {id: npc_wanderer_huashan, name: 화산의 삼대제자, template: passerby, realm: 이류, faction: fac_huashan}
+- {id: npc_namgung_branch, name: 남궁 방계의 귀공자, template: passerby, realm: 이류, faction: fac_namgung}
+- {id: npc_demon_wanderer, name: 검은 옷의 마교 무인, template: passerby, realm: 일류, faction: fac_demon}
+# ── 세력 지도자 (wuxia-npcs.md — 줄여서) ──
+- {id: npc_baiyunhe, name: 백운학, age: 72, realm: 화경, faction: fac_alliance, role: 무림맹주, secret: 지병, death: ["var:lifespan<=0", "ev_a305:실패"]}
+- {id: npc_huikong, name: 혜공, age: 95, realm: 현경, faction: fac_shaolin, role: 소림 방장}
+- {id: npc_jeonggak, name: 정각, age: 25, gender: 남, realm: 일류, looks: {face: 수려함, build: 다부짐}, personality: 온화, faction: fac_shaolin, place: pl_songshan, role: 사형 · 십팔나한 마지막 나한, secret: "그도 봉인탑의 목소리를 듣는다", romance: true, note: "남성 인연 13(wuxia-heroes.md) · 소림 출신에겐 사형(family 아님)"}
+- {id: npc_luohan, name: 나한승, template: foe, realm: 이류, faction: fac_shaolin, intent: 시험}
+- {id: npc_jinqing, name: 진청, age: 44, realm: 초절정, faction: fac_huashan, role: 화산 장문인}
+- {id: npc_qingxu, name: 청허진인, age: 80, realm: 화경, faction: fac_wudang, role: 무당 장문}
+- {id: npc_baekun, name: 백운, age: 14, age_as_romance: 22, gender: random, realm: 삼류, looks: {face: 귀여움, build: 보통}, personality: 다혈질, faction: "{variant_faction}", place: "{variant_place}", role: 동기 · 맞수, secret: "가난한 집에서 팔려 옴 · 쫓겨나면 갈 데가 없다", romance: true, romance_min_age: 성인, note: "남성 인연 3(wuxia-heroes.md) · 서막 땐 미성년이라 인연은 열리기만(romance_open) · 인연 사건은 22세(heroes.md 나이) 이후 · 서막 뒤 강호에서 다시 만날 때 나이를 맞춘다"}
+- {id: npc_senior_disciple, name: 이대제자, template: foe, realm: 삼류, intent: 괴롭힘}
+- {id: npc_zhugewen, name: 제갈문, age: 58, realm: 일류, faction: fac_zhuge, role: 제갈세가 가주}
+- {id: npc_namgungcheon, name: 남궁천, age: 61, realm: 초절정, faction: fac_namgung, role: 남궁세가 가주}
+- {id: npc_namgungseol, name: 남궁설, age: 21, gender: 여, realm: 일류, looks: {face: 아름다움, build: 날렵}, personality: 자존심, faction: fac_namgung, place: pl_hefei, role: 직계 장녀 · 여자라서 후계에서 밀려남, romance: true, family_of: org_namgung, note: "히로인 1(wuxia-heroines.md) · 남궁 출신에겐 누나(인연 대상 아님)"}
+- {id: npc_namgunglin, name: 남궁린, age: 17, gender: 남, realm: 이류, personality: 성실 · 겁이 많음, faction: fac_namgung, place: pl_hefei, role: 직계 첫째, slot: org_namgung, goal: "아버지에게 인정받기"}
+- {id: npc_namgungjin, name: 남궁진, age: 12, gender: random, realm: 삼류, faction: fac_namgung, place: pl_hefei, role: 직계 셋째, slot: org_namgung}
+- {id: npc_namgungho, name: 남궁호, age: 10, gender: random, realm: 삼류, faction: fac_namgung, place: pl_hefei, role: 직계 넷째, slot: org_namgung}
+- {id: npc_namgunghyeon, name: 남궁현, age: 25, gender: 남, realm: 일류, looks: {face: 잘생김, build: 날렵}, personality: 음험, faction: fac_namgung, place: pl_hefei, role: 방계 검객, goal: "직계를 넘어서는 것", secret: "후계 다툼의 함정을 꾸민 장본인", romance: true, note: "남성 인연 6(wuxia-heroes.md)"}
+- {id: npc_dolsoe, name: 돌쇠, age: 13, gender: 남, place: pl_hefei, role: 마구간 하인 아이, note: "유일하게 믿을 사람 — 혹은 배신할 사람(남궁현 포섭 시)"}
+- {id: npc_ng_elder_sword, name: 남궁 무공파 장로, template: passerby, realm: 절정, faction: fac_namgung}
+- {id: npc_ng_elder_politic, name: 남궁 정치파 장로, template: passerby, realm: 일류, faction: fac_namgung}
+- {id: npc_tanglaotai, name: 당노태, age: 77, realm: 절정, faction: fac_tang, role: 사천당가 가주}
+- {id: npc_tangsoso, name: 당소소, age: 19, gender: 여, realm: 이류, looks: {face: 귀여움, build: 왜소}, personality: 장난기, faction: fac_tang, place: pl_chengdu, role: 당가 아가씨 · 독 천재, romance: true, note: "히로인 2(wuxia-heroines.md) · 당가 출신(13세)에겐 인연이 열리기만, 진행은 내가 성인이 된 뒤"}
+- {id: npc_tangmuying, name: 당무영, age: 28, gender: 남, realm: 절정, looks: {face: 음침함, build: 날렵}, personality: 냉정, faction: fac_tang, place: pl_chengdu, role: 사형 · 당가의 독수, secret: "동생 당소소의 해독약 실험을 몰래 돕는다", romance: true, note: "남성 인연 9(wuxia-heroes.md)"}
+- {id: npc_pengwu, name: 팽무, age: 55, realm: 초절정, faction: fac_peng, role: 하북팽가 가주}
+- {id: npc_laogou, name: 노구, realm: 초절정, faction: fac_kaibang, role: 개방 방주}
+- {id: npc_weishaotian, name: 위소천, age: 29, realm: 화경, faction: fac_demon, role: 천마}
+- {id: npc_demon_elder, name: 마교 원로, template: passerby, realm: 초절정, faction: fac_demon, role: 성녀를 세운 원로파}
+- {id: npc_maid_ah, name: 아화, age: 18, gender: 여, place: pl_shiwandashan, faction: fac_demon, role: 성녀의 시녀, states: [normal, gone]}
+- {id: npc_demon_guard, name: 마교 호법, template: foe, realm: 일류, faction: fac_demon, intent: 추격}
+- {id: npc_xuemo, name: 혈마, realm: 현경, faction: fac_blood, role: 혈교 교주}
+- {id: npc_tieshan, name: 철산, age: 40, realm: 절정, faction: fac_greenwood, role: 녹림총채주}
+- {id: npc_ximenhyeok, name: 서문혁, age: 110, gender: 남, realm: 생사경, hidden_realm: true, looks: {face: 평범함, build: 날렵, mark: 백발}, personality: 무심 · 장난기, place: pl_master_hut, role: 천하제일고수(은거), goal: "마지막 제자를 키우는 것", note: "제자가 없으면 7막까지 나서지 않음 · 제자가 부르면 7막에 한 번(강림 저지↑)"}
+- {id: npc_sohan, name: 소한, age: 15, gender: random, place: pl_master_hut, role: 첫째 제자 자리, slot: org_master_disciple}
+- {id: npc_dongzhu, name: 동주, age: 15, gender: random, place: pl_master_hut, role: 둘째 제자 자리(정원 2일 때), slot: org_master_disciple}
+- {id: npc_heilong, name: 흑룡, realm: 초절정, faction: fac_pirates, role: 해적왕}
+- {id: npc_ruhua, name: 여화, age: 900, realm: 현경, faction: fac_qingqiu, role: 청구의 구미호}
+# ── 은둔 고수(회차마다 정체가 다름 — ev_m04) ──
+- {id: npc_hermit_huashan, name: 초막의 노인(은퇴한 화산 장로), template: hermit, realm: 초절정, faction: fac_huashan, teaches: [검]}
+- {id: npc_hermit_demon, name: 초막의 노인(파문당한 마교 원로), template: hermit, realm: 초절정, faction: fac_demon, teaches: [권장, 내공], qi: 마}
+- {id: npc_hermit_fox, name: 초막의 노인(둔갑한 여우 요괴), template: hermit, realm: 절정, faction: fac_qingqiu, teaches: [신법], qi: 요}
+
+# ── 낙양 (wuxia-cities.md 1장 · 거지 서막) ──
+- {id: npc_kongal, name: 콩알, age: 10, gender: random, looks: {face: 귀여움, build: 왜소}, personality: 낙천, place: pl_luoyang, role: 같은 다리 밑 아이, states: [normal, taken, rescued], note: "구출하면 평생 인연 · 못 구하면 혈교 아이 무리에(다른 유저가 만날 수도) — 미성년이라 폭력은 암시만"}
+- {id: npc_gombo, name: 곰보, age: 34, gender: 남, realm: 삼류, looks: {face: 험상궂음, build: 거구}, personality: 탐욕, place: pl_luoyang, role: 거지 왕초, secret: "혈교 상인에게 돈을 받고 아이들을 눈감아 준다"}
+- {id: npc_elder_qiu, name: 구장로, gender: 남, realm: 절정, looks: {face: 평범함}, personality: 음험, faction: fac_kaibang, hidden_faction: fac_blood, place: pl_luoyang, role: 개방 장로, secret: "혈교 첩자", action: "아이 실종 정보를 막는다(의식 +1/일)", death: ["var:kaibang_mole_known>=1:5막"], on_death: {world: {ritual: -10}}}
+- {id: npc_blood_guard, name: 붉은 옷 무인, template: foe, realm: 이류, faction: fac_blood, intent: 납치}
+- {id: npc_cuihua, name: 취화, age: 20, gender: 여, realm: 이류, looks: {face: 순박함, build: 왜소, mark: 숯검댕}, personality: 자유분방, faction: fac_kaibang, place: pl_luoyang, role: 개방 정보통, secret: "구장로를 혼자 캐고 있다", romance: {stages: {관심: ev_r_cuihua_1, 신뢰: ev_r_cuihua_2, 연모: ev_r_cuihua_3}, marriage_once: true}}
+- {id: npc_xiaoqi, name: 소걸, age: 24, gender: 남, realm: 일류, looks: {face: 순박함, build: 보통}, personality: 의협심, faction: fac_kaibang, place: pl_luoyang, role: 개방 협객, secret: "방주가 후계로 점찍었다", romance: {stages: {관심: ev_r_xiaoqi_1, 신뢰: ev_r_xiaoqi_2, 연모: ev_r_xiaoqi_3}, marriage_once: true}}
+- {id: npc_weijin, name: 위진, age: 58, gender: 남, realm: 이류, looks: {face: 수려함}, personality: 고지식, place: pl_luoyang, role: 은퇴 무인(친위대 퇴역), secret: "맹주가 각혈한 손수건을 보았다", reactions: {신뢰: "맹주 지병 단서"}}
+- {id: npc_bongnang, name: 봉낭, age: 39, gender: 여, realm: 이류, hidden_realm: true, looks: {face: 요염함}, personality: 냉정, place: pl_luoyang, role: 금봉루 주인, secret: "원로들의 술자리 대화를 다 기억한다"}
+- {id: npc_baekcho, name: 백초, age: 61, gender: 남, looks: {face: 평범함, build: 왜소}, personality: 신중, skills: {의술: 달인}, place: pl_luoyang, role: 회춘당 의원, secret: "맹주 처방이 이상하다는 걸 안다"}
+- {id: npc_rat_king, name: 쥐왕, gender: 남, realm: 일류, looks: {face: 엄청나게 못생김, build: 왜소}, personality: 음험, place: pl_luoyang, role: 지하 두목, service: {black_market: true, introduce: 무영루}}
+- {id: npc_jinyeom, name: 진엄, age: 45, gender: 남, realm: 일류, looks: {face: 험상궂음, build: 거구}, personality: 고지식, faction: fac_alliance, place: pl_luoyang, role: 포두, goal: "원로 일가의 비리를 밝히는 것"}
+- {id: npc_munsu, name: 문수, age: 26, gender: 남, looks: {face: 곱상함, build: 왜소}, personality: 호기심, place: pl_luoyang, role: 국자감 서생, goal: "회귀에 대한 옛 기록을 모으는 것", service: {literacy: {cost: 20, actions: 8}, read_manual: true}}
+- {id: npc_clan_guard, name: 세가 호위, template: foe, realm: 이류, intent: 제압}
+- {id: npc_arena_fighter, name: 비무대의 무인, template: foe, realm: random_near, intent: 제압}
+
+# ── 혈교 수련장 (wuxia-prologues-full-2.md J) ──
+- {id: npc_hongyan, name: 홍염, age: 38, gender: 남, realm: 초절정, looks: {face: 수려함, build: 날렵, mark: 이색 눈동자(가면)}, personality: 냉정, faction: fac_blood, place: pl_blood_camp, role: 혈교 교관 · 가면의 무인 「무안」, secret: "남궁천이 버린 장자 · 남궁설의 친오빠", goal: "남궁에 대한 복수 → 맹을 손에 넣는 것", death: ["ev_a404:정체 발각", "world:hongyan_wounded"], romance: {stages: {관심: ev_r_hongyan_1, 신뢰: ev_r_hongyan_2, 연모: ev_r_hongyan_3}, marriage_once: true, note: "구원 루트 — 성인 캐릭터로 다시 만났을 때만"}}
+- {id: npc_kid_22, name: 스물둘, age: 7, gender: random, looks: {face: 귀여움, build: 왜소}, personality: 겁이 많음, place: pl_blood_camp, role: 옆자리 아이, slot: org_blood_children, states: [normal, taken], note: "유저가 이 출신을 뽑으면 이 아이에 빙의할 수도(W8) — 미성년, 폭력은 암시만"}
+- {id: npc_gangpo, name: 강포, age: 46, gender: 남, realm: 삼류, looks: {face: 평범함, build: 날렵}, personality: 신중, skills: {사냥: 달인}, place: pl_qinghe, role: 사냥꾼 아버지, secret: "아내가 3년 전 청운산 동굴에서 돌아오지 않았다"}
+- {id: npc_drunk_ronin, name: 취한 낭인, template: foe, realm: 삼류, intent: 제압}
+- {id: npc_blood_runaway, name: 목에 붉은 끈 자국의 소년, template: passerby, age: 16, faction: fac_blood, note: "혈교 탈주자 — 혈교 아이 출신 유저였을 수도"}
+
+# ── 막 사건용 (acts_*.yaml) ──
+- {id: npc_yaoshou, name: 미친 요수, template: foe, realm: 일류, intent: 광기, note: "눈이 붉다 — 피 영약"}
+- {id: npc_pirate, name: 흑룡도 수적, template: foe, realm: 이류, faction: fac_pirates, intent: 약탈}
+- {id: npc_honglian, name: 홍련, age: 19, gender: 여, realm: 일류, faction: fac_blood, place: pl_heishui, role: 혈교의 살수, romance: true, note: "히로인 9(wuxia-heroines.md) · 7막 마지막 제물"}
+- {id: npc_hailan, name: 해란, age: 26, gender: 여, realm: 절정, faction: fac_pirates, place: pl_heilongdao, role: 흑룡도의 여두목, romance: true, note: "히로인 10"}
+- {id: npc_zhugeyu, name: 제갈유, age: 24, gender: 여, realm: 삼류, faction: fac_zhuge, place: pl_longzhong, role: 제갈세가의 책사, romance: true, note: "히로인 5 · 아버지의 혈교 서신을 바로잡으려 함"}
+- {id: npc_zhugehui, name: 제갈휘, age: 23, gender: 남, realm: 이류, faction: fac_zhuge, place: pl_longzhong, role: 제갈의 젊은 책사, romance: true, note: "남성 인연 4"}
+- {id: npc_mo, name: 묵, age: 300, gender: 남, realm: 절정, faction: fac_qingqiu, place: pl_qingqiu, role: 청구의 늑대 요괴(공존파), romance: true, note: "남성 인연 12"}

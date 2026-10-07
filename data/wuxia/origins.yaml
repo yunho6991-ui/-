@@ -1,0 +1,332 @@
+# 출신 (wuxia-origins.md · wuxia-prologues*.md) — 예시 2개
+- id: org_farmer
+  name: 농부의 아이
+  grade: 흔함
+  cap: null
+  shared_prologue: false
+  start: {age: 14, money: 5, literacy: false, places: [town]}
+  gender: random
+  init: {skills: {농사: 능숙}, martial: []}
+  stages:
+    - id: st_farmer_1
+      name: 평범한 마을
+      fixed: [ev_p_farmer_1_1]
+      pool: [ev_p_farmer_1_2, ev_p_farmer_1_3, ev_p_farmer_1_4, ev_p_farmer_1_5, ev_p_farmer_1_6]
+      pick: 3
+    - id: st_farmer_2
+      name: 산적이 온 날
+      fixed: [ev_p_farmer_2_1]
+      pool: [ev_p_farmer_2_2, ev_p_farmer_2_3, ev_p_farmer_2_4]
+      pick: 2
+    - id: st_farmer_3
+      name: 그 뒤
+      fixed: [ev_p_farmer_3_1]
+      pool: [ev_p_farmer_3_2]
+      pick: 1
+      then: ev_p_farmer_3_3          # 결말 선택
+  endings:
+    - {id: end_farmer_disciple, name: 노석의 제자, require: ["aff:npc_noseok>=신뢰"], tags: [농부출신, 노석의제자], learn: {ma_samjae: 3}}
+    - {id: end_farmer_revenge, name: 복수를 품고 떠남, tags: [농부출신, 녹림원한]}
+    - {id: end_farmer_follow, name: 지나가던 무인을 따라감, tags: [농부출신]}
+    - {id: end_farmer_stay, name: 마을에 남음, tags: [농부출신, 마을의기둥, 평화로운삶]}
+    - {id: end_farmer_greenwood, name: 산채로 끌려감, faction: fac_greenwood, to: {place: pl_qingyunshan}, tags: [농부출신, 녹림]}
+    - {id: end_farmer_wander, name: 그냥 떠남, tags: [농부출신]}
+- id: org_blood_children
+  name: 혈교에 납치된 백 명의 아이
+  grade: 희귀
+  cap: 5
+  shared_prologue: true
+  group_size: 100
+  start: {age: 7, money: 0, literacy: false, places: [pl_blood_camp]}
+  gender: random
+  late_join: possess_living_npc      # 늦게 오면 살아 있는 NPC 아이에 빙의 + 일지
+  stages:
+    - {id: st_blood_1, name: 수용, days: 2, fixed: [ev_p_blood_1_1], pool: [ev_p_blood_1_2, ev_p_blood_1_3], pick: 2}
+    - {id: st_blood_2, name: 선별, days: 3, fixed: [ev_p_blood_2_1], pool: [ev_p_blood_2_2, ev_p_blood_2_3], pick: 2}
+    - {id: st_blood_3, name: 마지막 시험, days: 1, fixed: [ev_p_blood_3_1], pool: [ev_p_blood_3_2], pick: 1}
+  endings:
+    - {id: end_blood_assassin, name: 혈교 살수, faction: fac_blood, tags: [혈교출신, 살수]}
+    - {id: end_blood_escape, name: 탈출, tags: [혈교도주자, 추격자]}
+    - {id: end_blood_rescued, name: 정파에 구출됨, require: ["var:camp_found==1"], tags: [구출된아이, 혈교원한]}
+    - {id: end_blood_abandoned, name: 버려짐, tags: [버려진아이]}
+
+# ── 나머지 출신(전부 서막 데이터 완료) ──
+- id: org_hunter
+  name: 사냥꾼의 아이
+  grade: 흔함
+  cap: null
+  start: {age: 15, money: 8, literacy: false, places: [town]}
+  gender: random
+  init: {skills: {사냥: 능숙, 추적: 서툶}, martial: [ma_hunting_bow], looks_bias: {build: 날렵}}
+  stages:
+    - {id: st_hunter_1, name: 아버지와 사냥, fixed: [ev_p_hunter_1_1], pool: [ev_p_hunter_1_2, ev_p_hunter_1_3, ev_p_hunter_1_4], pick: 2}
+    - {id: st_hunter_2, name: 동굴, fixed: [ev_p_hunter_2_1], pool: [ev_p_hunter_2_2, ev_p_hunter_2_3, ev_p_hunter_2_4], pick: 2}
+    - {id: st_hunter_3, name: 산의 주인, fixed: [ev_p_hunter_3_1], pool: [], pick: 0, then: ev_p_hunter_3_3}
+  endings:
+    - {id: end_hunter_spirit, name: 영물의 친구, tags: [사냥꾼출신, 영물의인연], rep: {fac_qingqiu: +1}}
+    - {id: end_hunter_slayer, name: 요괴 사냥꾼, faction: fac_hunters, tags: [사냥꾼출신, 요수사냥]}
+    - {id: end_hunter_manual, name: 비급을 품고 떠남, tags: [사냥꾼출신, 읽지못한비급]}
+    - {id: end_hunter_stay, name: 산을 지킴, tags: [사냥꾼출신, 평화로운삶]}
+- id: org_beggar
+  name: 거지
+  grade: 흔함
+  cap: null
+  shared_prologue: false
+  start: {age: 12, money: 0, literacy: false, places: [pl_luoyang], spot: 서문 빈민가}
+  gender: random
+  init: {skills: {소매치기: 서툶}, martial: [], looks_bias: {face: 순박함, build: 왜소}}
+  stages:
+    - {id: st_beggar_1, name: 뒷골목, fixed: [ev_p_beggar_1_1], pool: [ev_p_beggar_1_2, ev_p_beggar_1_3, ev_p_beggar_1_4], pick: 2}
+    - {id: st_beggar_2, name: 사라지는 아이들, fixed: [ev_p_beggar_2_1], pool: [ev_p_beggar_2_3], pick: 1}
+    - {id: st_beggar_3, name: 개방의 시험, fixed: [ev_p_beggar_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_beggar_kaibang, name: 개방 제자(구장로의 사람), faction: fac_kaibang, tags: [거지출신, 개방, 구장로의감시]}
+    - {id: end_beggar_kaibang_true, name: 개방 정식 제자(방주의 사람), faction: fac_kaibang, tags: [거지출신, 개방, 방주의신뢰]}
+    - {id: end_beggar_truth, name: 진실을 쥔 거지, tags: [거지출신, 혈교의비밀, 혈교표적]}
+    - {id: end_beggar_alley, name: 뒷골목에 남음, tags: [거지출신, 뒷골목]}
+- id: org_escort
+  name: 몰락한 표국의 자식
+  grade: 흔함
+  cap: null
+  start: {age: 17, money: 30, literacy: true, places: [town, city]}
+  gender: random
+  init: {skills: {기마: 능숙, 흥정: 서툶}, martial: [ma_escort_sword], family: {npc_wangchung: 아버지}, journal: "표국 빚 300냥 · 표사 일곱 중 넷이 떠남 · 늙은 표사 마삼은 남음"}
+  stages:
+    - {id: st_escort_1, name: 기우는 표국, fixed: [ev_p_escort_1_1], pool: [ev_p_escort_1_2, ev_p_escort_1_3], pick: 2}
+    - {id: st_escort_2, name: 마지막 표행, fixed: [ev_p_escort_2_1, ev_p_escort_2_2, ev_p_escort_2_3], pool: [], pick: 0}
+    - {id: st_escort_3, name: 상자의 비밀, fixed: [ev_p_escort_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_escort_restored, name: 표국을 다시 세움, faction_hidden: fac_blood, tags: [표국주인, 혈교하수인], hidden: "꿈에 그 아이가 나온다 · 혈교가 다음 일을 맡긴다"}
+    - {id: end_escort_rescue, name: 아이를 구함, tags: [표국출신, 혈교원한, 구한아이], note: "구한 아이 = 다른 유저의 혈교 아이 출신일 수도(W5)"}
+    - {id: end_escort_greenwood, name: 녹림과 손잡음, faction: fac_greenwood, tags: [표국출신, 녹림]}
+- id: org_inn
+  name: 객잔의 아이
+  grade: 흔함
+  cap: null
+  start: {age: 15, money: 15, literacy: true, places: [town, city]}
+  gender: random
+  init: {skills: {흥정: 능숙, 말재주: 서툶, 술 세기: 서툶}}
+  stages:
+    - {id: st_inn_1, name: 객잔의 하루, fixed: [ev_p_inn_1_1], pool: [ev_p_inn_1_2, ev_p_inn_1_3, ev_p_inn_1_4], pick: 2}
+    - {id: st_inn_2, name: 객잔의 밤, fixed: [ev_p_inn_2_1], pool: [ev_p_inn_2_3], pick: 1}
+    - {id: st_inn_3, name: 검은 우산, fixed: [ev_p_inn_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_inn_keeper, name: 객잔을 물려받음, tags: [객잔주인, 평화로운삶]}
+    - {id: end_inn_ronin, name: 낭인을 따라감, master: npc_black_umbrella, tags: [객잔출신, 무영루의적]}
+    - {id: end_inn_jade, name: 옥패를 쫓음, tags: [객잔출신, 노리는자]}
+    - {id: end_inn_wander, name: 그냥 떠남, tags: [객잔출신]}
+- id: org_doctor
+  name: 의원 집 아이
+  grade: 흔함
+  cap: null
+  start: {age: 16, money: 20, literacy: true, places: [town, city]}
+  gender: random
+  init: {skills: {의술: 서툶, 약초 캐기: 능숙}, family: {npc_heodam: 아버지, npc_xulian: 누이}}
+  stages:
+    - {id: st_doctor_1, name: 약방, fixed: [ev_p_doctor_1_1], pool: [ev_p_doctor_1_2, ev_p_doctor_1_3], pick: 2}
+    - {id: st_doctor_2, name: 그날 밤, fixed: [ev_p_doctor_2_1], pool: [], pick: 0}
+    - {id: st_doctor_3, name: 추격자, fixed: [ev_p_doctor_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_doctor_savior, name: 부상자의 은인, tags: [의원출신, 은인]}
+    - {id: end_doctor_village, name: 마을 의원, tags: [의원출신, 평화로운삶]}
+    - {id: end_doctor_flee, name: 함께 도망, tags: [의원출신, 도망자, 추격자]}
+- id: org_shaolin
+  name: 소림 동자승
+  grade: 드묾
+  cap: null
+  start: {age: 12, money: 0, literacy: true, places: [pl_songshan]}
+  gender: 남
+  init: {skills: {글 읽기: 능숙}, qi: 불, martial: [ma_shaolin_tuna, ma_luohan_fist], pts: {ma_shaolin_tuna: 2, ma_luohan_fist: 1}, faction: fac_shaolin, journal: "갓난아기 때 산문 앞에 버려짐 · 사형 정각(25)이 업어 키움"}
+  stages:
+    - {id: st_shaolin_1, name: 동자승의 날들, fixed: [ev_p_shaolin_1_1], pool: [ev_p_shaolin_1_2, ev_p_shaolin_1_3], pick: 2}
+    - {id: st_shaolin_2, name: 봉인탑의 소리, fixed: [ev_p_shaolin_2_1], pool: [], pick: 0}
+    - {id: st_shaolin_3, name: 하산 시험, fixed: [ev_p_shaolin_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_shaolin_disciple, name: 소림 제자, faction: fac_shaolin, tags: [소림제자]}
+    - {id: end_shaolin_lay, name: 하산(소림 속가), tags: [소림속가]}
+    - {id: end_shaolin_called, name: 봉인의 목소리를 들은 자, tags: [소림속가, 구유의부름], note: "7막 핵심 · 정각은 아직 탑의 목소리를 듣고 있다"}
+    - {id: end_shaolin_apostate, name: 파계, require: ["tag:파계"], faction: null, rep: {fac_shaolin: -10}, tags: [파계승], note: "금기를 어긴 행동(살생 · 장경각 반출 등)으로 언제든 이 결말"}
+- id: org_huashan_wudang
+  name: 화산 · 무당 문하
+  grade: 드묾
+  cap: null
+  start: {age: 14, money: 10, literacy: true, places: [pl_huashan, pl_wudang]}
+  gender: random
+  variants:
+    화산: {place: pl_huashan, faction: fac_huashan, name_hint: 진유, martial: [ma_zixia, ma_plum_sword], variant_heart: ma_zixia, variant_art: ma_plum_sword, variant_head: npc_jinqing}
+    무당: {place: pl_wudang, faction: fac_wudang, name_hint: 청유, martial: [ma_taiji_gong, ma_taiji_fist], variant_heart: ma_taiji_gong, variant_art: ma_taiji_fist, variant_head: npc_qingxu}
+  init: {skills: {글 읽기: 능숙}, qi: 정, pts: {"{variant_heart}": 1, "{variant_art}": 1}, journal: "같은 날 입문한 동기 「백운」과 늘 1, 2등을 다툼"}
+  stages:
+    - {id: st_hw_1, name: 삼대제자, fixed: [ev_p_hw_1_1], pool: [ev_p_hw_1_2, ev_p_hw_1_3], pick: 2}
+    - {id: st_hw_2, name: 문파의 비밀, fixed: [ev_p_hw_2_1a, ev_p_hw_2_1b], pool: [ev_p_hw_2_2], pick: 1, note: "2-1은 variant 조건으로 하나만 뜬다"}
+    - {id: st_hw_3, name: 하산 임무, fixed: [ev_p_hw_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_hw_hope, name: 문파의 기대주, faction: "{variant_faction}", tags: [명문제자, 기대주]}
+    - {id: end_hw_secret, name: 비밀을 쥔 제자, require: ["flag:secret_found"], faction: "{variant_faction}", tags: [명문제자, 비밀을쥔자], note: "화산 = 매화검법 원본 단서 · 무당 = 맹주 지병"}
+    - {id: end_hw_rival, name: 동기와의 원한, faction: "{variant_faction}", tags: [명문제자, 동문원한]}
+    - {id: end_hw_expelled, name: 파문, require: ["tag:파문"], faction: null, tags: [파문제자], note: "문규를 어긴 행동으로 언제든"}
+- id: org_tang
+  name: 사천당가의 제자
+  grade: 드묾
+  cap: null
+  start: {age: 13, money: 20, literacy: true, places: [pl_chengdu]}
+  gender: random
+  init: {skills: {독술: 서툶, 약초 캐기: 서툶}, qi: 독, martial: [ma_tang_poison_heart], pts: {ma_tang_poison_heart: 1}, faction: fac_tang, journal: "아침마다 독 한 방울 · 사형 당무영이 감독 · 당가 아가씨 당소소가 가끔 놀러 옴"}
+  stages:
+    - {id: st_tang_1, name: 독 적응, fixed: [ev_p_tang_1_1], pool: [ev_p_tang_1_2, ev_p_tang_1_3], pick: 2}
+    - {id: st_tang_2, name: 암기 수련, fixed: [ev_p_tang_2_1], pool: [ev_p_tang_2_2, ev_p_tang_2_3], pick: 1}
+    - {id: st_tang_3, name: 출행 허가, fixed: [ev_p_tang_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_tang_disciple, name: 정식 제자, faction: fac_tang, tags: [당가제자]}
+    - {id: end_tang_thief, name: 금기 독을 훔쳐 달아남, faction: null, rep: {fac_tang: -10}, tags: [당가배신자], chase: fac_tang}
+    - {id: end_tang_poisoned, name: 독에 몸이 상함, require: ["constitution:tr_poison_body"], faction: fac_tang, tags: [당가제자, 독체질], note: "아침의 독에 몸이 상했으면(1-1 실패 중 30%) 정식 제자 대신 이 결말"}
+- id: org_greenwood
+  name: 녹림 산채의 아이
+  grade: 드묾
+  cap: null
+  start: {age: 15, money: 10, literacy: false, places: [pl_qingyunshan], note: "곰칼 산채 = 청운산(태행산맥 남쪽 끝자락)"}
+  gender: random
+  looks_bias: {face: 험상궂음, build: 거구}
+  init: {skills: {위협: 능숙, 추적: 서툶}, martial: [ma_kaishan_axe], pts: {ma_kaishan_axe: 1}, faction: fac_greenwood, family: {npc_gomkal: 아버지}, journal: "아버지 곰칼 · 산채 식구 서른둘 · 옛날 얘기만 하면 아버지가 「노석 형님」을 찾음"}
+  stages:
+    - {id: st_gw_1, name: 산채, fixed: [ev_p_gw_1_1], pool: [ev_p_gw_1_2, ev_p_gw_1_3], pick: 2}
+    - {id: st_gw_2, name: 큰 거래, fixed: [ev_p_gw_2_1, ev_p_gw_2_2], pool: [ev_p_gw_2_3], pick: 1}
+    - {id: st_gw_3, name: 채주들의 싸움, fixed: [ev_p_gw_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_gw_heir, name: 산채의 후계, faction: fac_greenwood, tags: [녹림, 산채후계]}
+    - {id: end_gw_tieshan, name: 총채주의 사람, faction: fac_greenwood, master: npc_tieshan, tags: [녹림, 철산의수하]}
+    - {id: end_gw_down, name: 산을 내려옴, faction: null, rep: {fac_greenwood: -5}, tags: [녹림원한, 표국인연]}
+- id: org_namgung
+  name: 후계 다툼 세가 직계(시즌 1 남궁)
+  grade: 희귀
+  cap: 3
+  shared_prologue: true
+  rotate_each_season: true           # 시즌마다 다른 세가(W7)
+  start: {age: 12, money: 500, literacy: true, places: [pl_hefei]}
+  gender: random
+  slots: [npc_namgunglin, npc_namgungjin, npc_namgungho]   # 유저가 이 중 하나에 빙의
+  late_join: possess_living_npc
+  init: {skills: {글 읽기: 능숙, 기마: 서툶}, qi: 정, martial: [ma_canggong_heart, ma_namgung_basic], pts: {ma_canggong_heart: 1, ma_namgung_basic: 1}, faction: fac_namgung, family: {npc_namgungcheon: 아버지, npc_namgungseol: 누나}, journal: "아버지 남궁천은 후계를 정하지 않음 · 형제 중 누가 사람인지는 모른다"}
+  stages:
+    - {id: st_ng_1, name: 세가의 아이, days: 3, fixed: [ev_p_ng_1_1], pool: [ev_p_ng_1_2, ev_p_ng_1_3], pick: 2}
+    - {id: st_ng_2, name: 후계 다툼, days: 4, fixed: [ev_p_ng_2_1], pool: [ev_p_ng_2_2, ev_p_ng_2_3], pick: 2}
+    - {id: st_ng_3, name: 성년식, days: 1, fixed: [ev_p_ng_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_ng_candidate, name: 후계 후보, faction: fac_namgung, tags: [남궁직계, 후계후보], note: "4막 무림대회 후보 · 형제였던 유저와 서로 모른 채 다시 만남"}
+    - {id: end_ng_branch, name: 방계로 밀려남, faction: fac_namgung, tags: [남궁직계, 밀려난자식]}
+    - {id: end_ng_runaway, name: 가출, faction: null, tags: [가출한도련님], chase: fac_namgung}
+    - {id: end_ng_expelled, name: 파문, require: ["tag:파문"], faction: null, tags: [파문된직계]}
+- id: org_master_disciple
+  name: 천하제일고수의 제자
+  grade: 전설
+  cap: 2
+  start: {age: 15, money: 0, literacy: random, places: [pl_master_hut]}
+  gender: random
+  slots: [npc_sohan, npc_dongzhu]
+  init: {talent_genius: 1, skills: random, martial: [], journal: "3년 전 사부가 주워 옴 · 사부는 이름을 말해 주지 않음 · (사형제가 있다면) 「동주」와 함께 지냄"}
+  stages:
+    - {id: st_master_1, name: 나무 패기 3년, fixed: [ev_p_master_1_1], pool: [ev_p_master_1_2, ev_p_master_1_3], pick: 2}
+    - {id: st_master_2, name: 첫 가르침, fixed: [ev_p_master_2_1], pool: [ev_p_master_2_2], pick: 1}
+    - {id: st_master_3, name: 하산, fixed: [ev_p_master_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_master_disciple, name: 사부의 제자, master: npc_ximenhyeok, tags: [천하제일의제자], grant: {call_master_once: true}, note: "7막에 사부를 한 번 부를 수 있음 · 이때부터 꼬리표 사건 x08(도전자 · 암습자)"}
+    - {id: end_master_left, name: 사부를 떠난 제자, tags: [사부를버린자], note: "배운 것 없이 떠남 — 천재 재능만 남는다"}
+    - {id: end_master_rival, name: 사형제와 원한, master: npc_ximenhyeok, tags: [천하제일의제자, 동문원한], grant: {call_master_once: true}}
+- id: org_saintess
+  name: 마교 성녀 후보
+  grade: 전설
+  cap: 1
+  gender: 여
+  draft: true                         # 서막 대본 없이 데이터로 먼저 만든 초안
+  start: {age: 20, money: 0, literacy: true, places: [pl_shiwandashan]}
+  slot_npc: npc_xueying
+  late_join: possess_living_npc
+  looks_fixed: {face: 절세미인, build: 날렵, mark: 백발}
+  init: {realm: 일류, qi: 마, faction: fac_demon, journal: "원로들이 정한 성녀 후보 · 즉위식이 다가온다 · 이름을 불러 주는 사람이 없다"}
+  stages:
+    - {id: st_saint_1, name: 성녀의 방, fixed: [ev_p_saint_1_1], pool: [ev_p_saint_1_2, ev_p_saint_1_3], pick: 2}
+    - {id: st_saint_2, name: 원로와 천마, fixed: [ev_p_saint_2_1], pool: [ev_p_saint_2_2, ev_p_saint_2_3], pick: 1}
+    - {id: st_saint_3, name: 즉위 전야, fixed: [ev_p_saint_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_saint_puppet, name: 원로들의 성녀, faction: fac_demon, tags: [마교성녀, 원로의꼭두각시], note: "마교 내전(ev_a601)에서 원로파 깃발"}
+    - {id: end_saint_tianmo, name: 천마의 편, faction: fac_demon, tags: [마교성녀, 천마파]}
+    - {id: end_saint_flee, name: 산을 내려온 성녀, faction: null, rep: {fac_demon: -10}, tags: [도망친성녀], chase: fac_demon, note: "절세미인 백발 — 변장이 거의 안 된다"}
+# 도시 출신 5개 — 도시별 값은 city_vars.yaml
+- id: org_city_waiter
+  name: 주루 점소이
+  grade: 흔함
+  cap: null
+  start: {age: 16, money: 15, literacy: true, places: [city]}
+  gender: random
+  init: {skills: {흥정: 서툶, 말재주: 서툶}}
+  stages:
+    - {id: st_waiter_1, name: 귀빈실, fixed: [ev_p_waiter_1_1], pool: [ev_p_waiter_1_2], pick: 1}
+    - {id: st_waiter_2, name: 엿들은 말, fixed: [ev_p_waiter_2_1], pool: [], pick: 0}
+    - {id: st_waiter_3, name: 선택, fixed: [ev_p_waiter_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_waiter_broker, name: 정보상, tags: [도시출신, 정보상, 표적]}
+    - {id: end_waiter_witness, name: 맹의 증인, faction: fac_alliance, tags: [도시출신, 맹의증인]}
+    - {id: end_waiter_flee, name: 도망자, tags: [도시출신]}
+- id: org_city_clerk
+  name: 상점 견습
+  grade: 흔함
+  cap: null
+  start: {age: 15, money: 20, literacy: true, places: [city]}
+  gender: random
+  init: {skills: {흥정: 서툶, 감정: 서툶}}
+  stages:
+    - {id: st_clerk_1, name: 장부, fixed: [ev_p_clerk_1_1], pool: [ev_p_clerk_1_2], pick: 1}
+    - {id: st_clerk_2, name: 사라진 한 장, fixed: [ev_p_clerk_2_1], pool: [], pick: 0}
+    - {id: st_clerk_3, name: 진짜 범인, fixed: [ev_p_clerk_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_clerk_heir, name: 상단의 후계, tags: [도시출신, 상단후계]}
+    - {id: end_clerk_framed, name: 누명 쓴 도망자, tags: [도시출신, 누명]}
+    - {id: end_clerk_secret, name: 비밀을 쥔 자, tags: [도시출신, 비밀을쥔자]}
+- id: org_city_constable
+  name: 포졸의 아들
+  grade: 흔함
+  cap: null
+  start: {age: 16, money: 10, literacy: false, places: [city]}
+  gender: random
+  init: {skills: {추적: 서툶, 위협: 서툶}, family: {npc_city_father: 아버지}}
+  stages:
+    - {id: st_constable_1, name: 아버지의 술, fixed: [ev_p_constable_1_1], pool: [ev_p_constable_1_2], pick: 1}
+    - {id: st_constable_2, name: 사건, fixed: [ev_p_constable_2_1], pool: [], pick: 0}
+    - {id: st_constable_3, name: 아버지의 선택, fixed: [ev_p_constable_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_constable_officer, name: 포쾌, faction: fac_alliance, tags: [도시출신, 포쾌]}
+    - {id: end_constable_whistle, name: 쫓기는 고발자, tags: [도시출신, 고발자], chase: "{city_patron_fac}"}
+    - {id: end_constable_truth, name: 진실을 쥔 자, tags: [도시출신, 비밀을쥔자]}
+- id: org_city_courtesan
+  name: 기루 심부름꾼
+  grade: 흔함
+  cap: null
+  start: {age: 16, money: 10, literacy: random, places: [city]}
+  gender: random
+  init: {skills: {말재주: 서툶, 은신: 서툶, 연기: 서툶}}
+  stages:
+    - {id: st_courtesan_1, name: 쪽지 심부름, fixed: [ev_p_courtesan_1_1], pool: [ev_p_courtesan_1_2], pick: 1}
+    - {id: st_courtesan_2, name: 읽어 버린 쪽지, fixed: [ev_p_courtesan_2_1], pool: [], pick: 0}
+    - {id: st_courtesan_3, name: 쪽지의 주인, fixed: [ev_p_courtesan_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_courtesan_spy, name: 첩자, faction_hidden: "{city_patron_fac}", tags: [도시출신, 첩자]}
+    - {id: end_courtesan_broker, name: 정보상, tags: [도시출신, 정보상]}
+    - {id: end_courtesan_hunted, name: 쫓기는 자, tags: [도시출신, 추격자]}
+    - {id: end_courtesan_leave, name: 기루를 떠남, tags: [도시출신]}
+- id: org_city_porter
+  name: 성문 짐꾼
+  grade: 흔함
+  cap: null
+  start: {age: 17, money: 5, literacy: false, places: [city]}
+  gender: random
+  looks_bias: {build: 거구}
+  init: {stat: {체력: +2}}
+  stages:
+    - {id: st_porter_1, name: 수레 백 대, fixed: [ev_p_porter_1_1], pool: [ev_p_porter_1_2], pick: 1}
+    - {id: st_porter_2, name: 수레를 연다, fixed: [ev_p_porter_2_1], pool: [], pick: 0}
+    - {id: st_porter_3, name: 성문 밖까지, fixed: [ev_p_porter_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_porter_hero, name: 숨은 영웅, tags: [도시출신, 숨은영웅]}
+    - {id: end_porter_guard, name: 경비병, faction: fac_alliance, tags: [도시출신, 경비병]}
+    - {id: end_porter_hunted, name: 쫓기는 자, tags: [도시출신, 추격자]}
+    - {id: end_porter_quiet, name: 모른 척, tags: [도시출신, 평화로운삶]}

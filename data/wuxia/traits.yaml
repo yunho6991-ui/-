@@ -1,0 +1,47 @@
+# 성격 · 체질 · 숨겨진 특성 · 생김새 · 재능 · 유산 (wuxia-traits.md) — 예시
+personalities:
+  - id: tr_bold
+    name: 대담
+    away_default: 맞선다
+    weight_mod: {"region:위험": x1.3}
+    check_bonus: {위협: +10}
+    bias: {무인: +1}
+  - id: tr_timid
+    name: 겁이 많음
+    away_default: 도망친다
+    check_bonus: {도망: +15}
+    bias: {all: -1}
+constitutions:
+  - id: tr_poison_resist
+    name: 독에 강함
+    effect: {poison_days: x0.5, antidote: x0.5}
+  - id: tr_poison_body
+    name: 독에 상한 몸
+    effect: {poison_days: x0.3, heal: x0.8, lifespan: -5}
+hidden_traits:
+  - id: tr_sword_memory
+    name: 알 수 없는 검술의 기억
+    reveal: ["first_weapon:검", "near_death"]
+    on_reveal: {pts: {검: 30}, next: ev_memory_sword}
+  - id: tr_guyu_dream
+    name: 구유의 꿈
+    reveal: ["place:pl_pagoda", "place:pl_songshan"]
+    on_reveal: {regression_piece: 1, text: "꿈속에서 무언가가 천천히 씹고 있다."}
+looks:
+  face:
+    - {name: 절세미인, rarity: 0.015, bias: {all: +2}, risk: [눈에 띔, 납치]}
+    - {name: 험상궂음, rarity: 0.12, bias: {fac_demon: +1, fac_greenwood: +1, fac_alliance: -1}, check_bonus: {위협: +15}}
+    - {name: 엄청나게 못생김, rarity: 0.015, bias: {fac_demon: +2, 마을: -2}, check_bonus: {위협: +25}, immune: [미인계]}
+talents:
+  - {name: 천재, mult: 2.0, rarity: 0.05}
+  - {name: 재능, mult: 1.5, rarity: 0.25}
+  - {name: 둔함, mult: 0.6, rarity: 0.15}
+legacies:
+  - id: lg_branch_trace
+    name: "{갈래}의 흔적"
+    from: "pts:{갈래}>=7성"
+    effect: {start_pts: {갈래: 2성}}
+  - id: lg_enemy_face
+    name: 원수의 얼굴
+    from: "death_by:npc"
+    effect: {recognize: killer_npc}

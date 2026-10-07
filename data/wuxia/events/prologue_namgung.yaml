@@ -1,0 +1,76 @@
+# 후계 다툼 세가 직계 — 시즌 1 남궁세가 서막 (wuxia-prologues-full-2.md K) — 합비 · 공유 서막(실제 일수) · 정원 3
+# 직계 3자리 = npc_namgunglin(첫째 17) · npc_namgungjin(셋째 12) · npc_namgungho(넷째 10). 유저가 들어오면 그 자리 NPC에 빙의(W8).
+# {heir_older} · {heir_younger} = 나보다 위 · 아래 직계 자리(유저일 수도 — 서로 모름, W5)
+- id: ev_p_ng_1_1
+  name: 아버지의 눈
+  weight: 0
+  prologue: org_namgung
+  text: "연무장. 아버지 남궁천이 자식들을 한 줄로 세운다. \"검을 들어라.\" 아무도 칭찬받지 못한다. 마지막에 누나 남궁설이 들어와 검을 휘두른다 — 가장 빠르다. 아버지는 보지도 않는다."
+  choices:
+    - {text: 누나에게 말을 건다, result: {aff: {npc_namgungseol: +2}, text: "\"…동생이 뭘 안다고.\" 귀 끝이 붉다."}}
+    - {text: 인정받으려 수련한다, result: {pts: {ma_canggong_heart: 1}, aff: {npc_namgungcheon: +1}}}
+  record: "아버지 앞에서 검을 들었다"
+- id: ev_p_ng_1_2
+  name: 하인 아이
+  weight: 0
+  prologue: org_namgung
+  text: "마구간 하인 아이 「돌쇠」가 말 다루는 법을 몰래 가르쳐 준다. \"도련님, 말은 겁을 먼저 알아봐요.\""
+  choices:
+    - {text: 친구가 된다, result: {aff: {npc_dolsoe: +3}, skill_xp: {기마: 1}}}
+    - {text: "\"하인 주제에.\"", result: {aff: {npc_dolsoe: -2}}}
+- id: ev_p_ng_1_3
+  name: 장로의 시험
+  weight: 0
+  prologue: org_namgung
+  text: "세가 장로가 수수께끼를 낸다. \"검이 먼저냐, 가문이 먼저냐.\""
+  choices:
+    - {text: 검, result: {aff: {npc_ng_elder_sword: +2}}}
+    - {text: 가문, result: {aff: {npc_ng_elder_politic: +2}}}
+    - {text: 사람, result: {aff: {npc_ng_elder_sword: +1, npc_ng_elder_politic: +1}, text: "장로가 오래 웃는다."}}
+- id: ev_p_ng_2_1
+  name: 줄 서기
+  weight: 0
+  prologue: org_namgung
+  text: "장로들이 둘로 갈렸다. 위쪽엔 무공파, 아래쪽엔 정치파. 방계 남궁현이 다가와 웃는다. \"누구 편이시죠, 도련님?\""
+  choices:
+    - {text: 위 형제 편, result: {aff: {"{heir_older}": +3, npc_ng_elder_sword: +1}, flag: side_older}}
+    - {text: 아래 형제 편, result: {aff: {"{heir_younger}": +3, npc_ng_elder_politic: +1}, flag: side_younger}}
+    - {text: 나 자신, check: {stat: 말재주, dc: 50}, success: {flag: side_self, aff: {npc_ng_elder_sword: +1, npc_ng_elder_politic: +1}, text: "장로 하나가 조용히 고개를 끄덕인다."}, fail: {flag: side_self, aff: {npc_namgunghyeon: +1}, text: "남궁현이 웃는다. \"재미있군요.\""}}
+  record: "후계 다툼에서 줄을 섰다"
+- id: ev_p_ng_2_2
+  name: 형제의 함정
+  weight: 0
+  prologue: org_namgung
+  death_possible: true
+  text: "연회 날, 술잔에서 이상한 냄새. 독이다. 누가 넣었는지는 모른다 — 형제 중 하나, 혹은 남궁현."
+  pick_npc: {trap_setter: [{npc: npc_namgunghyeon, p: 0.7}, {npc: "{heir_any}", p: 0.3}]}
+  choices:
+    - {text: 잔을 바꿔 놓는다, require: ["any:trait:맑은 눈|skill:독술>=서툶"], show_reason: 맑은 눈 · 독술, result: {injure_npc: {"{trap_setter}": 중상}, text: "그날 밤, 누군가 피를 토한다."}}
+    - {text: 마신다, result: {injury: 중상, death_check: 0.1, flag: poisoned_at_feast}}
+    - {text: 아버지께 알린다, result: {aff: {npc_namgungcheon: +1}, text: "\"증거를 가져와라.\""}}
+- id: ev_p_ng_2_3
+  name: 사라진 장자의 이야기
+  weight: 0
+  prologue: org_namgung
+  text: "늙은 하녀가 몰래 말해 준다. \"도련님 위로 형님이 한 분 더 계셨지요. 눈 색이 달라서… 대감께서 버리셨어요.\""
+  choices:
+    - {text: 누나에게 말한다, result: {clue: hongyan, aff: {npc_namgungseol: +3}, text: "누나가 오래 말이 없다. \"…나도 들은 적 있어.\""}}
+    - {text: 혼자 간직한다, result: {clue: hongyan}}
+- id: ev_p_ng_3_1
+  name: 세가의 검
+  weight: 0
+  prologue: org_namgung
+  death_possible: true
+  text: "사당 앞. 아버지가 창궁무애검의 첫 초식을 시험한다. 형제들이 차례로 나선다."
+  choices:
+    - {text: 시험에 나선다, check: {stat: 검, dc: 55}, success: {learn: [ma_namgung_sword], pts: {ma_namgung_sword: 1}, ending: end_ng_candidate}, fail: {injury: 경상, ending: end_ng_branch}}
+    - {text: 누나에게 양보하자고 청한다, result: {aff: {npc_namgungcheon: -3, npc_namgungseol: +5}, ending: end_ng_branch, text: "아버지의 손이 떨린다. 누나가 처음으로 너를 똑바로 본다."}}
+    - {text: 가출한다, result: {next: ev_p_ng_3_2}}
+- id: ev_p_ng_3_2
+  name: 담장 밖
+  weight: 0
+  prologue: org_namgung
+  text: "밤, 담장을 넘는다. 뒤에서 보따리 하나가 날아온다."
+  text_if: {"aff:npc_dolsoe>=신뢰": "밤, 담장을 넘는다. 뒤에서 돌쇠가 보따리를 던져 준다. \"도련님, 잘 가세요.\""}
+  choices:
+    - {text: 돌아보지 않는다, result: {money: 50, ending: end_ng_runaway}}

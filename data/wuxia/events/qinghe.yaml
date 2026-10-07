@@ -1,0 +1,247 @@
+# 청하진 · 청운산 사건 (wuxia-events.md 1~4장 · wuxia-early.md 4장) — 작은 강호 한 판용
+# place: pl_qinghe = 청하진에서만 / region: 마을 · 산 · 강 = 같은 종류 어디서나
+
+# ── 마을 ──
+- id: ev_v01
+  name: 장터
+  region: 마을
+  weight: 30
+  text: "장날이다. 사방에서 사람이 몰려 골목까지 북적인다."
+  choices:
+    - {text: 구경한다, result: {rumor: 1, text: "약장수 목소리, 엿 냄새, 낯선 사투리."}}
+    - {text: 물건을 산다, result: {shop: market}}
+    - {text: 흥정한다, require: ["skill:흥정>=서툶"], show_reason: 흥정, result: {shop: market, discount: 0.2}}
+    - {text: 지갑을 노린다, require: ["skill:소매치기>=서툶"], show_reason: 소매치기, check: {stat: 소매치기, dc: 45}, success: {money: +8}, fail: {infamy: +2, aff: {npc_janglok: -1}, text: "\"도둑이야!\""}}
+  record: "장터를 거닐었다"
+
+- id: ev_v02
+  name: 우물가 수다
+  region: 마을
+  weight: 25
+  text: "우물가에 아낙들이 모여 있다. 목소리가 낮아지는 대목이 있다."
+  choices:
+    - {text: 귀를 기울인다, result: {rumor: 1}}
+    - {text: 말을 섞는다, require: ["skill:말재주>=서툶"], show_reason: 말재주, result: {rumor: 2, aff: {마을: +1}}}
+
+- id: ev_v04
+  name: 아픈 아이
+  region: 마을
+  weight: 15
+  weight_mod: {"skill:의술>=서툶": +10}
+  text: "열이 끓는 아이를 안은 어미가 길에서 운다. \"의원은 왕진을 나갔대요…\""
+  choices:
+    - {text: 고친다, require: ["skill:의술>=서툶"], show_reason: 의술, check: {stat: 의술, dc: 40}, success: {aff: {마을: +3}, fame: +3, epithet_seed: 의원, text: "새벽녘, 아이의 숨이 고르게 바뀐다."}, fail: {text: "열은 내리지 않았다. 허씨 약방으로 업고 뛴다.", aff: {npc_heodam: +1}}}
+    - {text: 약값을 쥐여 준다, result: {money: -5, aff: {마을: +1}}}
+    - {text: 지나친다, result: {}}
+
+- id: ev_v05
+  name: 관아 방(榜)
+  region: 마을
+  weight: 15
+  text: "관아 분소 앞에 방이 붙었다. 사람들이 웅성거린다."
+  choices:
+    - {text: 읽는다, require: ["literacy"], show_reason: 글 읽기, result: {quest_board: bounty}}
+    - {text: 누가 읽어 주길 기다린다, result: {rumor: 1, text: "\"곰칼 산채에 현상금이 붙었다는구먼.\""}}
+
+- id: ev_v06
+  name: 떠돌이 약장수
+  region: 마을
+  weight: 10
+  text: "\"죽은 소도 일으킨다는 소환단이 단돈 30냥!\" 백발 노인이 목청을 높인다."
+  choices:
+    - {text: 산다, require: ["money>=30"], result: {money: -30, roll: [{p: 0.3, result: {item: [it_soguhandan], text: "…진짜다. 배 속이 뜨겁다."}}, {p: 0.7, result: {item: [it_fake_pill], text: "…밀가루 맛이 난다."}}]}}
+    - {text: 가짜를 알아챈다, require: ["skill:감정>=서툶"], show_reason: 감정, result: {aff: {npc_jinnoya: +1}, next: ev_v06_deal}}
+    - {text: 바람잡이를 해 준다, require: ["skill:연기>=서툶"], show_reason: 연기, result: {money: +10, aff: {npc_jinnoya: +2}, infamy: +1}}
+- id: ev_v06_deal
+  name: 약장수의 귓속말
+  weight: 0
+  text: "노인이 귀에 속삭인다. \"쉿, 반 나눠 주지.\""
+  choices:
+    - {text: 받는다, result: {money: +10, aff: {npc_jinnoya: +2}, tag: [+사기공범]}}
+    - {text: 포쾌에게 넘긴다, result: {aff: {npc_janglok: +2, npc_jinnoya: -3}, fame: +1}}
+
+- id: ev_v07
+  name: 노인의 옛이야기
+  region: 마을
+  weight: 12
+  text: "정자나무 아래, 노인이 옛 고수 이야기를 한다. \"저 청운산 동굴에 말이여…\""
+  choices:
+    - {text: 끝까지 듣는다, result: {clue_relic: local, text: "동굴, 해골, 기름 먹인 천에 싼 책."}}
+
+- id: ev_v08
+  name: 혼례 잔치
+  region: 마을
+  weight: 8
+  text: "마을 혼례. 국수가 돌고 술이 돈다."
+  choices:
+    - {text: 즐긴다, result: {aff: {마을: +1}, heal: 1}}
+    - {text: 술 내기, require: ["skill:술 세기>=서툶"], show_reason: 술 세기, check: {stat: 술 세기, dc: 45}, success: {money: +5, fame: +1}, fail: {text: "눈을 떠 보니 남의 집 마당이다."}}
+    - {text: 투전판, require: ["skill:도박>=서툶"], show_reason: 도박, result: {gamble: 10}}
+
+- id: ev_v10
+  name: 역병
+  region: 마을
+  weight: 6
+  death_possible: true
+  text: "마을에 열병이 돈다. 문마다 쑥 연기."
+  choices:
+    - {text: 치료한다, require: ["skill:의술>=능숙"], show_reason: 의술, check: {stat: 의술, dc: 55}, success: {aff: {마을: +5}, fame: +8, epithet_seed: 신의}, fail: {sick: 0.3}}
+    - {text: 떠난다, result: {move: random_neighbor}}
+    - {text: 머문다, result: {sick: 0.2}}
+
+- id: ev_v11
+  name: 무인의 하룻밤
+  region: 마을
+  weight: 10
+  text: "청하루에 상처 입은 무인이 묵는다. 피 묻은 소매를 감춘다."
+  choices:
+    - {text: 돕는다, result: {aff: {"{passerby}": +2}, item: [it_geumchang], text: "\"…은혜는 잊지 않겠소.\""}}
+    - {text: 엿본다, require: ["skill:은신>=서툶"], show_reason: 은신, result: {pts: {"{passerby_branch}": 2}, text: "밤새 그가 운기하는 자세를 훔쳐보았다."}}
+    - {text: 고발한다, result: {money: +10, aff: {npc_janglok: +1}, tag: [+원한씨앗]}}
+
+- id: ev_v12
+  name: 아무 일 없는 날
+  region: 마을
+  weight: 20
+  text: "해가 뉘엿, 밥 짓는 연기가 오른다."
+  choices:
+    - {text: 쉰다, result: {heal: 1}}
+    - {text: 수련한다, result: {pts: {main: 1}}}
+
+# ── 청운산 ──
+- id: ev_m01
+  name: 산적의 통행세
+  region: 산
+  weight: 25
+  weight_mod: {"looks:수려함": +5, "money>=50": +10}
+  death_possible: true
+  text: "고갯마루. 나무 뒤에서 셋이 튀어나온다. \"통행세! 가진 거 반 내놔!\" 칼집에 「곰」 자."
+  choices:
+    - {text: 돈을 낸다, result: {money: "-50%"}}
+    - {text: 싸운다, result: {fight: {foe: npc_bandit, count: 3, win: {item: [it_old_sword], clue: greenwood_raid}}}}
+    - {text: 도망친다, check: {stat: 신법, dc: 40}, success: {text: "덤불 속으로 굴러 떨어진다. 살았다."}, fail: {fight: {foe: npc_bandit, count: 3, lost_first: true}}}
+    - {text: 노려본다, require: ["looks:험상궂음"], show_reason: 험상궂은 얼굴, result: {money: "-25%", text: "셋이 서로 눈치를 본다."}}
+    - {text: "\"곰칼 형님께 노석이 안부 전한다더라.\"", require: ["tag:노석의제자"], show_reason: 노석의 제자, result: {rep: {fac_greenwood: +1}, text: "칼이 내려간다. \"…지나가시오.\""}}
+  record: "청운산 고갯마루에서 산적을 만났다"
+
+- id: ev_m02
+  name: 약초밭
+  region: 산
+  weight: 20
+  weight_mod: {"skill:약초 캐기>=서툶": +10}
+  text: "골짜기에 약초가 군락을 이룬다."
+  choices:
+    - {text: 캔다, result: {money: +4, skill_xp: {약초 캐기: 1}}}
+    - {text: 깊이 뒤진다, require: ["skill:약초 캐기>=능숙"], show_reason: 약초 캐기, result: {roll: [{p: 0.1, result: {item: [it_soguhandan], text: "영지 한 송이."}}, {p: 0.9, result: {money: +8}}]}}
+
+- id: ev_m03
+  name: 멧돼지
+  region: 산
+  weight: 18
+  text: "수풀이 갈라지며 성난 멧돼지가 돌진한다."
+  choices:
+    - {text: 싸운다, result: {fight: {foe: beast_boar, count: 1, win: {money: +6}}}}
+    - {text: 나무 위로, check: {stat: 신법, dc: 30}, success: {}, fail: {injury: 경상}}
+    - {text: 덫으로 잡는다, require: ["skill:사냥>=서툶"], show_reason: 사냥, result: {money: +8, skill_xp: {사냥: 1}}}
+
+- id: ev_m04
+  name: 은둔 고수의 초막
+  region: 산
+  weight: 4
+  weight_mod: {"looks:순박함": x2, "looks:엄청나게 못생김": x3, "trait:고지식": x1.5, "trait:무심": x1.5}
+  death_possible: true
+  text: "산 중턱, 쓰러져 가는 초막. 노인이 장작을 패는데 도끼가 닿기도 전에 나무가 갈라진다."
+  pick_npc: [npc_hermit_huashan, npc_hermit_demon, npc_hermit_fox]   # 회차마다 정체가 다름
+  choices:
+    - {text: 공손히 인사한다, result: {next: ev_m04_trial}}
+    - {text: 지나간다, result: {flag: hermit_gone}}
+    - {text: 도전한다, result: {roll: [{p: 0.3, result: {next: ev_m04_trial, text: "\"기개는 있구나.\""}}, {p: 0.7, result: {injury: 중상, text: "손가락 하나에 날아갔다."}}]}}
+- id: ev_m04_trial
+  name: 물 한 동이
+  weight: 0
+  text: "\"물 한 동이 길어 오너라. 사흘 동안.\""
+  choices:
+    - {text: 사흘 동안 긷는다, cost_actions: 3, check: {trait_any: [고지식, 무심, 신중], else_p: 0.5}, success: {master: "{npc}", learn: {random_branch_up_to: 일류}, text: "\"…내일부터 오너라.\""}, fail: {text: "사흘째 날, 초막이 비어 있다."}}
+
+- id: ev_m05
+  name: 신비한 동굴
+  region: 산
+  weight: 6
+  death_possible: true
+  text: "바위틈에서 바람이 새어 나온다. 안쪽이 넓다."
+  choices:
+    - {text: 들어간다, result: {roll: [{p: 0.35, result: {item: [it_unread_manual], text: "해골의 품에 기름 먹인 책."}}, {p: 0.25, result: {fight: {foe: beast_boar_yaoshou, count: 1}}}, {p: 0.2, result: {injury: 경상, text: "발밑이 꺼진다."}}, {p: 0.2, result: {text: "박쥐 떼만 날아오른다."}}]}}
+    - {text: 표시만 해 둔다, result: {flag: cave_marked}}
+
+- id: ev_m07
+  name: 부상당한 무인
+  region: 산
+  weight: 10
+  text: "계곡에 무인이 쓰러져 있다. 아직 숨이 붙어 있다."
+  choices:
+    - {text: 돕는다, result: {aff: {"{passerby}": +3}, text: "\"…이름을 묻지 마시오. 빚은 갚겠소.\""}}
+    - {text: 약탈한다, result: {money: +15, infamy: +3, tag: [+원한씨앗]}}
+    - {text: 지나친다, result: {}}
+
+- id: ev_m11
+  name: 수련하기 좋은 폭포
+  region: 산
+  weight: 12
+  text: "폭포 아래 평평한 바위. 물소리에 생각이 씻긴다."
+  choices:
+    - {text: 수련한다, result: {pts: {main: 2}, wall_chance: 0.08}}
+
+- id: ev_m12
+  name: 고요한 산길
+  region: 산
+  weight: 20
+  text: "새소리뿐이다."
+  choices:
+    - {text: 쉰다, result: {heal: 1}}
+    - {text: 사냥한다, result: {money: +2}}
+
+# ── 강 · 나루 ──
+- id: ev_r01
+  name: 나루터
+  region: 강
+  weight: 25
+  text: "나루터에 배를 기다리는 사람들. 사공이 담뱃대를 문다."
+  choices:
+    - {text: 배를 탄다, result: {move_menu: river, cost_actions: 0}}
+    - {text: 소문을 듣는다, result: {rumor: 1}}
+
+- id: ev_r02
+  name: 물에 빠진 아이
+  region: 강
+  weight: 10
+  death_possible: true
+  text: "나루터 아래, 아이 하나가 물살에 휩쓸린다. 어미가 비명을 지른다."
+  choices:
+    - {text: 뛰어든다, require: ["skill:수영>=서툶"], show_reason: 수영, result: {aff: {마을: +4}, fame: +5, epithet_seed: 물 위의 협객}}
+    - {text: 뛰어든다, require: ["!skill:수영>=서툶"], result: {roll: [{p: 0.5, result: {aff: {마을: +4}, fame: +5}}, {p: 0.5, result: {injury: 중상, text: "하류에서 정신을 차린다. 아이는 사냥꾼이 건졌다고 한다."}}]}}
+    - {text: 사람을 부른다, result: {roll: [{p: 0.6, result: {aff: {마을: +1}, text: "곽삼이 뛰어든다."}}, {p: 0.4, result: {aff: {마을: -1}}}]}}
+    - {text: 지나친다, result: {aff: {마을: -2}}}
+
+# ── 메인 2막 (청하진판) ──
+- id: ev_a201
+  name: 청운산 요수 습격
+  place: pl_qinghe
+  weight: 30
+  require: ["act:2-3"]
+  main: true
+  death_possible: true
+  text: "가을 밤, 청운산에서 짐승 울음이 끊이지 않는다. 새벽, 소만 한 멧돼지 요수가 밭을 짓밟는다. 눈이 붉다."
+  choices:
+    - {text: 토벌한다, result: {fight: {foe: beast_boar_yaoshou, count: 1, win: {money: +40, fame: +10, world: {frontier: +2}}}}}
+    - {text: 흰 사슴을 부른다, require: ["aff:npc_white_deer>=호의"], show_reason: 흰 사슴과의 인연, result: {clue: yaoshou_cause, world: {ritual: -3, hardline: -3}, text: "\"피 냄새… 남쪽에서 온 피가 이 아이를 미치게 했다.\""}}
+    - {text: 사람들을 피신시킨다, result: {aff: {마을: +3}, world_local: {qinghe_damage: +2}}}
+    - {text: 그대로 둔다, result: {world_local: {qinghe_helper: random_faction}}}
+  record: "청운산 요수가 내려온 밤"
+
+# ── 숨겨진 특성 ──
+- id: ev_memory_sword
+  name: 손에 익은 검
+  weight: 0
+  text: "처음 쥔 검인데, 손이 먼저 길을 안다. 누군가의 기억이 손끝에 남아 있다."
+  choices:
+    - {text: 몸이 기억하는 대로 휘두른다, result: {pts: {검: 30}, reveal: tr_sword_memory}}

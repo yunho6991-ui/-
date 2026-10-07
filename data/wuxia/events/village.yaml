@@ -1,0 +1,61 @@
+# 마을 사건 (wuxia-events.md 1장 · wuxia-early.md 4장) — 예시
+- id: ev_v03
+  name: 시비 거는 왈패
+  region: 마을
+  weight: 20
+  weight_mod: {"looks:곱상함": +10, "looks:왜소": +10}
+  text: "장터 골목. 덩치 큰 사내가 길을 막는다. \"이 동네 길은 내 허락 받고 다녀야 돼.\""
+  choices:
+    - text: 싸운다
+      result: {fight: {foe: npc_guosan}}
+    - text: 돈을 준다
+      result: {money: -5, text: "\"눈치가 있네.\""}
+    - text: 노려본다
+      require: ["looks:험상궂음"]
+      show_reason: 험상궂은 얼굴
+      result: {aff: {npc_guosan: -1}, text: "사내가 슬쩍 비킨다."}
+    - text: "\"어머님이 찾으시던데.\""
+      require: ["skill:말재주>=서툶"]
+      show_reason: 말재주
+      result: {aff: {npc_guosan: +1}, text: "사내가 허둥지둥 달아난다."}
+  record: "장터에서 왈패와 마주쳤다"
+- id: ev_v09
+  name: 사라진 아이
+  region: 마을
+  weight: 12
+  require: ["act:1-2"]
+  main: true
+  death_possible: true
+  text: "이웃집 아이가 밤새 돌아오지 않았다. 문간에 붉은 진흙 발자국이 찍혀 있다."
+  choices:
+    - text: 찾아 나선다
+      result: {next: ev_v09_track}
+    - text: 관아에 알린다
+      result: {world: {ritual: +3}}
+    - text: 모른 척한다
+      result: {world: {ritual: +5}, aff: {마을: -2}}
+  record: "사라진 이웃집 아이의 일을 겪었다"
+  memory_key: blood_cult_kidnap
+- id: ev_v09_track
+  name: 붉은 진흙
+  region: 마을
+  weight: 0                     # 이어지는 사건 전용(랜덤으로 안 나옴)
+  text: "발자국은 나루터로 이어진다. 밤배 한 척이 남쪽으로 떠날 채비를 한다."
+  choices:
+    - text: 배에 숨어 탄다
+      check: {stat: 은신, dc: 45}
+      success: {clue: blood_cult, next: ev_v09_ship}
+      fail: {fight: {foe: npc_jeonbo}, death_check: 0.1}
+    - text: 홍매에게 알린다
+      result: {aff: {npc_hongmae: +1}, clue: blood_cult}
+- id: ev_v09_ship
+  name: 남쪽으로 가는 배
+  region: 마을
+  weight: 0
+  death_possible: true
+  text: "짐칸에 아이 다섯이 묶여 있다. 갑판에서 목소리. \"습지까지 사흘이다.\""
+  choices:
+    - text: 아이들을 풀고 뛰어내린다
+      result: {world: {ritual: -10}, fame: +10, tag: [+혈교원한], record: "밤배에서 아이 다섯을 구했다"}
+    - text: 끝까지 탄다
+      result: {clue: blood_cult, world: {camp_found: 1}, death_check: 0.25, text: "습지의 수련장이 보인다."}

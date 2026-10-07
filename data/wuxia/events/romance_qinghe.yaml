@@ -1,0 +1,90 @@
+# 청하진 인연 3명 — 관심 · 신뢰 · 연모 (wuxia-heroines.md 12 · wuxia-heroes.md 7 · 8)
+# 인연 사건은 호감 단계가 되면 그 NPC가 있는 곳에서 가중치가 크게 오른다(romance 단계).
+
+# ── 허연 (평화로운 삶의 히로인) ──
+- id: ev_r_xulian_1
+  name: 약방의 손
+  place: pl_qinghe
+  weight: 8
+  require: ["!seen:ev_r_xulian_1"]
+  text: "다쳐서 허씨 약방에 실려 갔다. 상처를 꿰매는 손이 빠르고 차갑다. \"움직이지 마세요. 아파도 참아요.\""
+  choices:
+    - {text: 이를 악문다, result: {aff: {npc_xulian: +2}, heal: 2, text: "\"…생각보다 잘 참네요.\""}}
+    - {text: 농담을 던진다, result: {aff: {npc_xulian: +1}, heal: 2, text: "그녀가 처음으로 웃는다."}}
+- id: ev_r_xulian_2
+  name: 역병 마을
+  place: pl_qinghe
+  weight: 10
+  require: ["aff:npc_xulian>=신뢰", "!seen:ev_r_xulian_2"]
+  death_possible: true
+  text: "강 건너 마을에 역병이 돈다. 허연이 보따리를 싼다. \"같이 가 줄래요? 손이 모자라요.\""
+  choices:
+    - {text: 함께 간다, cost_actions: 3, result: {aff: {npc_xulian: +3, 마을: +3}, sick: 0.15, skill_xp: {의술: 3}}}
+    - {text: 말린다, result: {aff: {npc_xulian: -1}, text: "\"그럼 나 혼자라도.\""}}
+- id: ev_r_xulian_3
+  name: 약방의 등불
+  place: pl_qinghe
+  weight: 12
+  require: ["aff:npc_xulian>=심복", "!seen:ev_r_xulian_3"]
+  text: "늦은 밤, 약방 등불 아래 허연이 약재를 썬다. \"…강호로 떠날 거예요? 아니면, 여기 있어 줄래요?\""
+  choices:
+    - {text: 곁에 남는다, result: {romance: {npc_xulian: 연모}, tag: [+평화로운삶], text: "약 냄새 속에서 그녀가 고개를 기댄다."}}
+    - {text: "\"돌아올게.\"", result: {romance: {npc_xulian: 연모}, flag: promise_xulian}}
+    - {text: 대답하지 못한다, result: {aff: {npc_xulian: -2}}}
+
+# ── 검은 우산 ──
+- id: ev_r_umbrella_1
+  name: 구석 자리
+  place: pl_qinghe
+  weight: 8
+  require: ["!seen:ev_r_umbrella_1"]
+  text: "청하루 구석 자리. 비도 안 오는데 검은 우산을 기대 둔 사내가 혼자 잔을 비운다."
+  choices:
+    - {text: 술을 한 잔 놓아 둔다, result: {aff: {npc_black_umbrella: +1}, text: "말없이 고개를 끄덕인다."}}
+    - {text: "\"누굴 기다려요?\"", result: {text: "\"……비를.\""}}
+- id: ev_r_umbrella_2
+  name: 비 오는 날
+  place: pl_qinghe
+  weight: 10
+  require: ["aff:npc_black_umbrella>=신뢰", "!seen:ev_r_umbrella_2"]
+  text: "장대비. 처마 밑에서 젖고 있는데, 검은 우산이 머리 위로 드리워진다."
+  choices:
+    - {text: 같이 걷는다, result: {aff: {npc_black_umbrella: +2}, text: "\"…무영루라는 곳을 아나.\" 그가 처음으로 자기 이야기를 한다."}}
+- id: ev_r_umbrella_3
+  name: 이름
+  place: pl_qinghe
+  weight: 12
+  require: ["aff:npc_black_umbrella>=심복", "!seen:ev_r_umbrella_3"]
+  text: "새벽 나루터. 그가 우산을 접는다. \"내 이름은… 오래 아무도 부르지 않았다.\""
+  choices:
+    - {text: 이름을 부른다, result: {romance: {npc_black_umbrella: 연모}, text: "그가 처음으로 웃는다. 낯선 얼굴이다."}}
+    - {text: 같이 무면을 쫓겠다고 한다, result: {romance: {npc_black_umbrella: 연모}, tag: [+무영루의적], flag: hunt_wumian}}
+
+# ── 곽삼 ──
+- id: ev_r_guosan_1
+  name: 형님(누님)
+  place: pl_qinghe
+  weight: 8
+  require: ["seen:ev_v03", "!seen:ev_r_guosan_1"]
+  text: "장터에서 곽삼이 길을 막는다 — 이번엔 고개를 숙인다. \"그날 일… 내가 졌소. 형님(누님)으로 모시겠소.\""
+  choices:
+    - {text: 받아 준다, result: {aff: {npc_guosan: +2}, ally: npc_guosan}}
+    - {text: 됐다고 한다, result: {aff: {npc_guosan: +1}}}
+- id: ev_r_guosan_2
+  name: 서당
+  place: pl_qinghe
+  weight: 10
+  require: ["aff:npc_guosan>=신뢰", "!seen:ev_r_guosan_2"]
+  text: "서당 담 너머로 곽삼이 기웃거린다. 들키자 얼굴이 붉어진다. \"…글을 모르오. 부끄러워서.\""
+  choices:
+    - {text: 같이 다니자고 한다, cost_actions: 2, result: {aff: {npc_guosan: +3}, skill_xp: {글 읽기: 1}}}
+    - {text: 웃는다, result: {aff: {npc_guosan: -2}}}
+- id: ev_r_guosan_3
+  name: 첫 편지
+  place: pl_qinghe
+  weight: 12
+  require: ["aff:npc_guosan>=심복", "!seen:ev_r_guosan_3"]
+  text: "곽삼이 꼬깃꼬깃한 종이를 내민다. 삐뚤빼뚤한 글씨 몇 줄. 맞춤법이 다 틀렸다."
+  choices:
+    - {text: 끝까지 읽는다, result: {romance: {npc_guosan: 연모}, text: "마지막 줄: \"글 배운 거, 이거 쓰려고 그랬소.\""}}
+    - {text: 웃으며 고쳐 준다, result: {romance: {npc_guosan: 연모}, aff: {npc_guosan: +1}}}

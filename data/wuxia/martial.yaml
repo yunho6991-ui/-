@@ -1,0 +1,58 @@
+# 무공 (wuxia-martial.md) — 예시
+- id: ma_samjae
+  name: 삼재검법
+  layer: 무공
+  branch: 검
+  grade: 삼류
+  nature: 쾌
+  qi: 정
+  need_realm: 삼류
+  need_literacy: false
+  power: 0.6
+  lines: ["하늘 · 땅 · 사람, 세 갈래로 찌른다", "단순하지만 흔들림이 없다", "수천 번 반복한 칼끝"]
+- id: ma_namgung_sword
+  name: 창궁무애검
+  layer: 무공
+  branch: 검
+  grade: 신공
+  nature: 쾌
+  qi: 정
+  need_realm: 일류
+  need_literacy: true
+  faction_lock: fac_namgung
+  power: 1.8
+  qi_deviation: 낮음
+  lines: ["하늘을 가르는 검광이 세 갈래로 갈라진다", "끝없는 창공처럼 칼이 넓어진다", "남궁의 칼은 물러서지 않는다"]
+- id: ma_heavenly_demon
+  name: 천마신공
+  layer: 심법
+  branch: 내공
+  grade: 전설
+  nature: 중
+  qi: 마
+  need_realm: 절정
+  need_literacy: true
+  power: 2.5
+  qi_deviation: 높음
+  cap: 1
+  lines: ["검은 기운이 하늘을 덮는다", "천마가 내려다본다"]
+
+- {id: ma_hunting_bow, name: 사냥 활술, layer: 무공, branch: 암기, grade: 삼류, nature: 변, qi: 정, need_realm: 삼류, need_literacy: false, power: 0.5, lines: ["숨을 내쉬며 놓는다", "화살이 바람을 가른다"]}
+- {id: ma_escort_sword, name: 표국검, layer: 무공, branch: 검, grade: 이류, nature: 중, qi: 정, need_realm: 삼류, need_literacy: false, power: 0.8, lines: ["묵직하게 내려친다", "표사의 칼은 짐을 지킨다"]}
+- {id: ma_blood_shadow_sword, name: 혈영검, layer: 무공, branch: 검, grade: 이류, nature: 쾌, qi: 혈, need_realm: 삼류, need_literacy: false, faction_lock: fac_blood, power: 1.0, qi_deviation: 보통, lines: ["붉은 그림자가 칼보다 먼저 닿는다", "피 냄새가 짙어진다"]}
+- {id: ma_shaolin_tuna, name: 소림 토납법, layer: 심법, branch: 내공, grade: 이류, nature: 유, qi: 불, need_realm: 삼류, need_literacy: false, faction_lock: fac_shaolin, power: 0.7, qi_deviation: 낮음, lines: ["숨이 단전으로 가라앉는다", "목탁 소리처럼 고르다"]}
+- {id: ma_luohan_fist, name: 나한권, layer: 무공, branch: 권, grade: 삼류, nature: 중, qi: 불, need_realm: 삼류, need_literacy: false, faction_lock: fac_shaolin, power: 0.6, lines: ["주먹은 화가 아니라 숨으로 지른다", "곧게, 무겁게"]}
+- {id: ma_zixia, name: 자하신공, layer: 심법, branch: 내공, grade: 일류, nature: 쾌, qi: 정, need_realm: 삼류, need_literacy: true, faction_lock: fac_huashan, power: 0.9, qi_deviation: 낮음, lines: ["보랏빛 노을이 단전에 번진다"]}
+- {id: ma_plum_sword, name: 매화검법, layer: 무공, branch: 검, grade: 일류, nature: 쾌, qi: 정, need_realm: 삼류, need_literacy: true, faction_lock: fac_huashan, power: 1.0, lines: ["칼끝에 매화가 핀다", "스물네 송이가 한꺼번에 진다"], note: "원본은 잃어버림 — 지금 화산의 매화검법은 7할(회수하면 power↑)"}
+- {id: ma_taiji_gong, name: 태극신공, layer: 심법, branch: 내공, grade: 일류, nature: 유, qi: 정, need_realm: 삼류, need_literacy: true, faction_lock: fac_wudang, power: 0.9, qi_deviation: 낮음, lines: ["음과 양이 천천히 돈다"]}
+- {id: ma_taiji_fist, name: 태극권, layer: 무공, branch: 권, grade: 일류, nature: 유, qi: 정, need_realm: 삼류, need_literacy: true, faction_lock: fac_wudang, power: 0.9, lines: ["밀려오는 힘을 둥글게 흘린다", "느린데, 닿지 않는다"]}
+- {id: ma_tang_poison_heart, name: 독공심법, layer: 심법, branch: 내공, grade: 이류, nature: 변, qi: 독, need_realm: 삼류, need_literacy: true, faction_lock: fac_tang, power: 0.8, qi_deviation: 보통, lines: ["독이 핏줄을 따라 돈다 — 내 편으로"]}
+- {id: ma_mantian, name: 만천화우, layer: 무공, branch: 암기, grade: 절정, nature: 변, qi: 독, need_realm: 삼류, need_literacy: true, faction_lock: fac_tang, power: 1.4, lines: ["하늘 가득 꽃비가 내린다", "스무 개의 바늘이 한 숨에"]}
+- {id: ma_kaishan_axe, name: 개산부법, layer: 무공, branch: 도, grade: 삼류, nature: 중, qi: 정, need_realm: 삼류, need_literacy: false, power: 0.7, lines: ["산을 쪼개듯 내리찍는다", "막아도 팔이 저린다"]}
+- {id: ma_canggong_heart, name: 창궁심법, layer: 심법, branch: 내공, grade: 일류, nature: 쾌, qi: 정, need_realm: 삼류, need_literacy: true, faction_lock: fac_namgung, power: 0.9, qi_deviation: 낮음, lines: ["숨이 하늘처럼 넓어진다"]}
+- {id: ma_namgung_basic, name: 남궁 검법, layer: 무공, branch: 검, grade: 이류, nature: 쾌, qi: 정, need_realm: 삼류, need_literacy: true, faction_lock: fac_namgung, power: 0.8, lines: ["곧게 뻗는 남궁의 기본 검", "물러서지 않는다"]}
+- {id: ma_ximen_heart, name: 무명심결, layer: 심법, branch: 내공, grade: 신공, nature: 유, qi: 정, need_realm: 삼류, need_literacy: false, power: 1.6, qi_deviation: 낮음, cap: 1, lines: ["숨이 산바람처럼 들고 난다", "장작 패던 숨 그대로"]}
+- {id: ma_ximen_sword, name: 무명일검, layer: 무공, branch: 검, grade: 신공, nature: 쾌, qi: 정, need_realm: 삼류, need_literacy: false, power: 1.7, cap: 1, lines: ["도끼가 닿기 전에 나무가 갈라지듯", "단 한 번 벤다"]}
+- {id: ma_ximen_step, name: 무명보, layer: 신법, branch: 신법, grade: 신공, nature: 변, qi: 정, need_realm: 삼류, need_literacy: false, power: 1.5, cap: 1, lines: ["폭포가 갈라진 틈으로 걷는다", "보이는데 닿지 않는다"]}
+- {id: ma_saint_snow, name: 설화무심공, layer: 심법, branch: 내공, grade: 신공, nature: 유, qi: 마, need_realm: 삼류, need_literacy: true, faction_lock: fac_demon, power: 1.5, qi_deviation: 높음, cap: 1, lines: ["눈이 내리듯 마음이 비워진다", "비운 자리에 무언가 들어선다"], note: "찢긴 마지막 장을 찾으면 주화입마 위험이 사라진다"}
+- {id: ma_wuhu_blade, name: 오호단문도, layer: 무공, branch: 도, grade: 일류, nature: 중, qi: 정, need_realm: 삼류, need_literacy: false, faction_lock: fac_peng, power: 1.1, lines: ["다섯 마리 범이 문을 부순다", "막으면 칼째로 끊는다"], note: "팽가 무공 — 팽노(설하촌)에게서 예외적으로 배울 수 있음"}

@@ -1,0 +1,68 @@
+# 천하제일고수의 제자 서막 (wuxia-prologues-full-2.md L) — 산꼭대기 초막 · 정원 1~2. 정원 2면 사형제 자리 npc_dongzhu(유저일 수도)
+- id: ev_p_master_1_1
+  name: 사부
+  weight: 0
+  prologue: org_master_disciple
+  text: "초막 앞, 백발 노인이 장작을 팬다. 도끼가 닿기 전에 나무가 갈라진다. \"일어났으면 장작 백 개.\""
+  choices:
+    - {text: 팬다, result: {stat: {체력: +1}}}
+    - {text: "\"무공은 언제 가르쳐 주세요?\"", result: {aff: {npc_ximenhyeok: +1}, text: "노인이 웃는다. \"장작 백 개 더.\""}}
+  record: "이름 모를 노인 밑에서 장작을 팼다"
+- id: ev_p_master_1_2
+  name: 폭포
+  weight: 0
+  prologue: org_master_disciple
+  text: "사부가 손가락 하나로 폭포를 가른다. 물이 반으로 나뉘어 멈춘다. 일 년에 한 번 보여 준다."
+  choices:
+    - {text: 숨을 멈추고 본다, result: {insight: 2, pts: {"{genius_branch}": 1}}}
+- id: ev_p_master_1_3
+  name: 도망
+  weight: 0
+  prologue: org_master_disciple
+  text: "3년째 장작만 팼다. 밤, 산 아래 불빛이 보인다."
+  choices:
+    - {text: 도망친다, result: {next: ev_p_master_1_4}}
+    - {text: 남는다, result: {aff: {npc_ximenhyeok: +2}, text: "등 뒤에서 사부가 말한다. \"…이제 됐다.\""}}
+- id: ev_p_master_1_4
+  name: 산 아래 불빛
+  weight: 0
+  prologue: org_master_disciple
+  text: "사흘을 걸었다. 불빛은 생각보다 작은 마을이었다."
+  choices:
+    - {text: 돌아간다, result: {aff: {npc_ximenhyeok: +3}, text: "초막에 밥이 차려져 있다. 사부가 웃는다. \"식었다. 데워 먹어라.\""}}
+    - {text: 돌아가지 않는다, result: {ending: end_master_left}}
+- id: ev_p_master_2_1
+  name: 하나만
+  weight: 0
+  prologue: org_master_disciple
+  text: "사부가 앉으라 한다. \"세 가지 중 하나만 가르쳐 주마. 마음 · 칼 · 발.\""
+  choices:
+    - {text: 마음, require: ["!taken_by_sibling:ma_ximen_heart"], result: {learn: [ma_ximen_heart], pts: {ma_ximen_heart: 1}}}
+    - {text: 칼, require: ["!taken_by_sibling:ma_ximen_sword"], result: {learn: [ma_ximen_sword], pts: {ma_ximen_sword: 1}}}
+    - {text: 발, require: ["!taken_by_sibling:ma_ximen_step"], result: {learn: [ma_ximen_step], pts: {ma_ximen_step: 1}}}
+  note: "사형제가 먼저 고른 것은 못 고른다"
+  record: "사부에게서 단 하나를 배웠다"
+- id: ev_p_master_2_2
+  name: 사형제
+  weight: 0
+  prologue: org_master_disciple
+  require: ["alive:npc_dongzhu"]
+  text: "동주가 묻는다. \"사부님은 왜 하나만 가르쳐 주실까? 둘이 합쳐야 다 배우는 건가?\""
+  choices:
+    - {text: 서로 가르쳐 주자, result: {aff: {npc_dongzhu: +4}, learn_from: npc_dongzhu, flag: shared_arts}}
+    - {text: 숨긴다, result: {aff: {npc_dongzhu: -2}, tag: [+동문원한씨앗]}}
+- id: ev_p_master_3_1
+  name: 마지막 말
+  weight: 0
+  prologue: org_master_disciple
+  text: "사부가 장작을 패다 말고 말한다. \"세상 구경하고 와라. 죽지는 말고. …정 죽을 것 같으면 한 번은 불러라.\""
+  choices:
+    - {text: 절하고 내려간다, result: {next: ev_p_master_3_2}}
+- id: ev_p_master_3_2
+  name: 사부의 이름값
+  weight: 0
+  prologue: org_master_disciple
+  text: "산 아래 첫 객잔. 누군가 네 보따리의 매듭을 알아본다. \"…서문혁의 매듭이다.\""
+  choices:
+    - {text: 모른 척한다, require: ["!tag:동문원한씨앗"], result: {ending: end_master_disciple}}
+    - {text: 모른 척한다, require: ["tag:동문원한씨앗"], result: {ending: end_master_rival}}

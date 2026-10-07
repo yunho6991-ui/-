@@ -1,0 +1,195 @@
+# 농부 서막 전체 (wuxia-early.md 3장) — 청하진 판. 다른 고을에선 역할이 같은 NPC로 바뀐다(role_swap).
+# weight 0 = 서막 단계(origins.yaml)가 직접 부르는 사건. 랜덤 사건 표에는 안 나온다.
+
+# ── 1단계 「평범한 마을」 ──
+- id: ev_p_farmer_1_1
+  name: 밭일
+  weight: 0
+  prologue: org_farmer
+  text: "해가 뜨기 전부터 아버지가 호미를 쥐여 준다. \"오늘 안에 콩밭은 다 매야 한다.\""
+  choices:
+    - text: 묵묵히 일한다
+      result: {stat: {체력: +1}, aff: {npc_father: +1}, text: "허리가 끊어질 것 같지만, 저녁밥이 달다."}
+    - text: 꾀를 부린다
+      result: {aff: {npc_father: -1}, next: ev_p_farmer_1_4}
+  record: "콩밭을 매던 날"
+
+- id: ev_p_farmer_1_2
+  name: 노석의 막대기
+  weight: 0
+  prologue: org_farmer
+  text: "울타리 너머에서 노석 할아버지가 나무 막대를 휘두르고 있다. 늙은 다리로도 막대 끝이 흔들리지 않는다."
+  choices:
+    - text: 구경한다
+      result: {aff: {npc_noseok: +1}, text: "막대 끝이 바람을 가른다. 이상하게 눈을 뗄 수가 없다."}
+    - text: 따라 해 본다
+      result: {learn: [ma_samjae], pts: {ma_samjae: 1}, text: "노석: \"허허, 손목에 힘이 들어갔구나.\""}
+    - text: "\"가르쳐 주세요.\""
+      check: {aff: "npc_noseok>=호의"}
+      success: {learn: [ma_samjae], pts: {ma_samjae: 1}, tag: [+노석의사제], text: "\"막대기 하나도 쥐는 법이 있느니라.\""}
+      fail: {text: "\"농사꾼이 칼은 배워 뭐 하게.\""}
+  record: "노석 할아버지의 막대기를 보았다"
+
+- id: ev_p_farmer_1_3
+  name: 장날
+  weight: 0
+  prologue: org_farmer
+  text: "닷새장이 섰다. 약장수 진노야가 목청을 높이고, 상인 전보가 아이들에게 엿을 나눠 준다."
+  choices:
+    - text: 약장수 구경
+      result: {aff: {npc_jinnoya: +1}, text: "\"이 환약 하나면 죽은 소도 일어나오!\""}
+    - text: 엿을 받는다
+      result: {aff: {npc_jeonbo: +1}, tag: [+전보의눈], text: "엿이 달다. 전보가 오래 웃는다."}
+    - text: 대장간 구경
+      result: {item: [it_old_sword], text: "대장장이가 쓰다 버린 검 한 자루를 던져 준다."}
+  record: "닷새장 구경을 했다"
+
+- id: ev_p_farmer_1_4
+  name: 춘화와 산에
+  weight: 0
+  prologue: org_farmer
+  text: "춘화가 소매를 잡아끈다. \"청운산 중턱에 산딸기가 지천이래!\""
+  choices:
+    - text: 따라간다
+      result:
+        aff: {npc_chunhwa: +1}
+        roll:                       # 하나만 굴린다
+          - {p: 0.5, result: {aff: {npc_white_deer: +1}, text: "덤불 너머 흰 사슴과 눈이 마주친다."}}
+          - {p: 0.2, result: {clue: greenwood_raid, text: "바위 위에서 낯선 사내 둘이 마을을 내려다본다."}}
+          - {p: 0.3, result: {text: "입가가 산딸기 물로 붉다. 해가 기운다."}}
+    - text: 말린다
+      result: {aff: {npc_chunhwa: -1}, tag: [+춘화혼자감], text: "\"나 혼자라도 갈 거야.\""}
+  record: "춘화와 청운산에 올랐다"
+
+- id: ev_p_farmer_1_5
+  name: 이상한 소문
+  weight: 0
+  prologue: org_farmer
+  text: "청하루에 술 배달을 갔다. 홍매 이모가 낯선 무인들과 낮게 이야기한다. \"…요즘 아이들이 자꾸 없어진다더군.\""
+  choices:
+    - text: 엿듣는다
+      result: {clue: blood_cult, text: "아이들이 없어진다 — 남쪽으로."}
+    - text: 모른 척한다
+      result: {aff: {npc_hongmae: +1}, text: "\"눈치 빠른 아이네.\""}
+  record: "아이들이 사라진다는 소문을 들었다"
+
+- id: ev_p_farmer_1_6
+  name: 아무 일 없는 저녁
+  weight: 0
+  prologue: org_farmer
+  text: "밥 짓는 연기, 개 짖는 소리. 내일도 오늘 같을 줄 알았다."
+  choices:
+    - text: 쉰다
+      result: {heal: 1}
+
+# ── 2단계 「산적이 온 날」 ──
+- id: ev_p_farmer_2_1
+  name: 습격
+  weight: 0
+  prologue: org_farmer
+  death_possible: true
+  text: "새벽, 개들이 한꺼번에 짖는다. 횃불. 고함. \"곡식 내놔! 저항하면 다 죽인다!\" — 청운산 산채 곰칼의 졸개들이다."
+  choices:
+    - text: 숨는다
+      check: {stat: 은신, dc: 40}
+      success: {text: "숨을 죽인다. 마을이 털리는 소리를 듣는다.", world_local: {qinghe_damage: +1}}
+      fail: {next: ev_p_farmer_2_2}
+    - text: 가족을 지킨다
+      result: {fight: {foe: npc_bandit, count: 1}, fame: +3}
+    - text: 춘화네로 달려간다
+      result: {next: ev_p_farmer_2_3}
+    - text: 노석 할아버지네로
+      result: {next: ev_p_farmer_2_4}
+  record: "산적이 온 날"
+
+- id: ev_p_farmer_2_2
+  name: 끌려 나옴
+  weight: 0
+  prologue: org_farmer
+  death_possible: true
+  text: "목에 칼이 닿는다. \"어린 놈이 눈빛이 좋구나. 산채로 데려갈까.\""
+  choices:
+    - text: 빈다
+      check: {trait_any: [겁이 많음, 낙천], else_p: 0.5}
+      success: {text: "칼이 물러난다. \"꺼져라.\""}
+      fail: {injury: 경상, text: "발길질 한 번. 그래도 살았다."}
+    - text: 따라간다
+      result: {ending: end_farmer_greenwood, text: "산채로 끌려간다 — 새로운 삶이 시작된다."}
+    - text: 칼을 잡는다
+      result: {death_check: 0.3, fame: +5, text: "손바닥에서 피가 흐른다. 산적이 놀라 물러선다."}
+
+- id: ev_p_farmer_2_3
+  name: 춘화네
+  weight: 0
+  prologue: org_farmer
+  death_possible: true
+  text: "춘화네 집이 불탄다. 산적 하나가 춘화를 어깨에 메고 간다."
+  choices:
+    - text: 쫓아간다
+      result: {fight: {foe: npc_bandit, count: 1, win: {aff: {npc_chunhwa: +3}, text: "춘화를 되찾았다."}, lose: {set_npc: {npc_chunhwa: taken}, injury: 중상}}}
+    - text: 사람을 부른다
+      result: {fight: {foe: npc_bandit, count: 1, ally: npc_guosan, win: {aff: {npc_chunhwa: +2, npc_guosan: +2}}, lose: {set_npc: {npc_chunhwa: taken}}}}
+    - text: 못 본 척한다
+      result: {set_npc: {npc_chunhwa: taken}, tag: [+녹림원한], text: "그 뒤로 오래, 춘화의 목소리가 꿈에 나온다."}
+
+- id: ev_p_farmer_2_4
+  name: 노석의 칼
+  weight: 0
+  prologue: org_farmer
+  death_possible: true
+  text: "노석 할아버지가 오래된 칼을 들고 마을 어귀에 섰다. 졸개 뒤에서 덩치 큰 채주가 나선다. \"…형님?\""
+  choices:
+    - text: 곁에 선다
+      result: {fight: {foe: npc_bandit, count: 2, ally: npc_noseok}, aff: {npc_noseok: +3}, kill_npc_p: {npc_noseok: 0.3}, text: "곰칼이 졸개들을 거둔다. \"형님 얼굴을 봐서다.\""}
+    - text: 지켜본다
+      result: {kill_npc_p: {npc_noseok: 0.5}, text: "곰칼이 졸개들을 거둬 간다. 노석은 칼을 내린다. 그날 밤 기침 소리가 오래 들린다."}
+    - text: 도망친다
+      result: {kill_npc_p: {npc_noseok: 0.7}, world_local: {qinghe_damage: +2}}
+  record: "노석 할아버지가 칼을 든 날"
+
+# ── 3단계 「그 뒤」 ──
+- id: ev_p_farmer_3_1
+  name: 잿더미
+  weight: 0
+  prologue: org_farmer
+  text: "불탄 지붕, 우는 사람들. 포쾌 장록은 해가 중천에 떠서야 왔다. \"산적들은 산으로 갔다. 우리 둘로는 어림없다.\""
+  choices:
+    - text: 장록에게 따진다
+      result: {aff: {npc_janglok: -1}, text: "\"…맹에 지원을 청하마.\" 관아 앞에 곰칼 산채의 현상금 방이 붙는다."}
+    - text: 마을 정리를 돕는다
+      result: {aff: {마을: +2}, tag: [+마을의기둥후보]}
+
+- id: ev_p_farmer_3_2
+  name: 지나가던 무인
+  weight: 0
+  prologue: org_farmer
+  text: "무인 하나가 잿더미를 내려다본다. \"…늦었군.\""
+  pick_npc: [npc_wanderer_huashan, npc_black_umbrella, npc_namgung_branch, npc_demon_wanderer]   # 회차마다 하나
+  choices:
+    - text: 무공을 가르쳐 달라 한다
+      check: {aff: "{npc}>=호의", or_looks: [순박함], or_talent: 1.5}
+      success: {tag: [+무인의제자후보], aff: {"{npc}": +2}, text: "\"…따라올 테면 따라와라.\""}
+      fail: {text: "무인은 대답 없이 떠난다."}
+    - text: 산적 산채 위치를 알려 준다
+      result: {roll: [{p: 0.5, result: {world_local: {qingyun_bandits: -1}, text: "다음 날, 산채 하나가 무너졌다는 소식."}}, {p: 0.5, result: {text: "무인은 돌아오지 않았다."}}]}
+
+- id: ev_p_farmer_3_3
+  name: 떠날지 남을지
+  weight: 0
+  prologue: org_farmer
+  text: "장터 끝에서 마을 사람들이 짐을 꾸린다. 아버지가 묻는다. \"너는 어쩔 테냐.\""
+  choices:
+    - text: 노석 할아버지께 간다
+      require: ["alive:npc_noseok", "aff:npc_noseok>=신뢰"]
+      show_reason: 노석의 신뢰
+      result: {ending: end_farmer_disciple}
+    - text: 복수를 품고 떠난다
+      require: ["tag:녹림원한"]
+      result: {ending: end_farmer_revenge}
+    - text: 무인을 따라간다
+      require: ["tag:무인의제자후보"]
+      result: {ending: end_farmer_follow}
+    - text: 마을에 남는다
+      result: {ending: end_farmer_stay}
+    - text: 그냥 떠난다
+      result: {ending: end_farmer_wander}

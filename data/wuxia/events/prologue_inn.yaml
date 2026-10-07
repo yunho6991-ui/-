@@ -1,0 +1,79 @@
+# 객잔의 아이 서막 (wuxia-prologues-full-1.md D) — 청하진판(도시판은 큰 주루 · 맹 관원 · 원로회 밀서)
+- id: ev_p_inn_1_1
+  name: 손님들
+  weight: 0
+  prologue: org_inn
+  text: "아래층은 시끄럽다. 표사, 상인, 낭인, 어디서 왔는지 모를 사람들. 홍매 이모가 눈짓한다. \"3번 탁자, 저 손님들 말 잘 들어 둬.\""
+  choices:
+    - {text: 술을 나르며 엿듣는다, result: {rumor: 1}}
+    - {text: 말을 붙인다, require: ["skill:말재주>=서툶"], show_reason: 말재주, result: {rumor: 2, money: +2}}
+  record: "청하루에서 손님들 말을 주워들었다"
+- id: ev_p_inn_1_2
+  name: 외상 손님
+  weight: 0
+  prologue: org_inn
+  death_possible: true
+  text: "덩치 큰 낭인이 술값을 안 내고 나간다."
+  choices:
+    - {text: 쫓아간다, result: {fight: {foe: npc_drunk_ronin, count: 1, nonlethal: true, win: {money: +5, aff: {npc_hongmae: +1}}}}}
+    - {text: "\"이모가 다음엔 독을 탄대요.\"", require: ["skill:말재주>=서툶"], show_reason: 말재주, result: {money: +5, text: "낭인이 웃음을 터뜨리며 돈을 던진다."}}
+    - {text: 놔둔다, result: {text: "이모가 한숨을 쉰다."}}
+- id: ev_p_inn_1_3
+  name: 검은 우산
+  weight: 0
+  prologue: org_inn
+  text: "비도 안 오는데 검은 우산을 든 단골이 늘 같은 구석에 앉는다. 늘 같은 술, 늘 혼자."
+  choices:
+    - {text: 술을 한 잔 더 놓아 둔다, result: {aff: {npc_black_umbrella: +2}, text: "말없이 고개를 끄덕인다."}}
+    - {text: "\"누굴 기다려요?\"", result: {text: "\"……비를.\""}}
+- id: ev_p_inn_1_4
+  name: 취한 무인
+  weight: 0
+  prologue: org_inn
+  text: "취한 무인이 탁자를 엎는다. \"이 집 술에 물 탔지!\""
+  choices:
+    - {text: 사과한다, result: {}}
+    - {text: "\"제가 한 잔 받겠습니다.\"", require: ["skill:술 세기>=서툶"], show_reason: 술 세기, check: {stat: 술 세기, dc: 45}, success: {aff: {npc_drunk_ronin: +3}, text: "무인이 껄껄 웃는다. \"이놈 보게!\""}, fail: {text: "눈을 떠 보니 부엌 바닥이다."}}
+- id: ev_p_inn_2_1
+  name: 칼부림
+  weight: 0
+  prologue: org_inn
+  death_possible: true
+  text: "자정. 2층에서 비명. 계단에 피가 흐른다. 방 안에 남자 하나가 쓰러져 있고, 창문이 열려 있다."
+  choices:
+    - {text: 쓰러진 남자에게 간다, result: {next: ev_p_inn_2_2}}
+    - {text: 홍매 이모를 깨운다, result: {aff: {npc_hongmae: +1}, text: "이모가 칼을 들고 올라간다. 처음 보는 이모의 칼끝."}}
+    - {text: 창밖을 본다, require: ["skill:은신>=서툶"], show_reason: 은신, result: {clue: wuying, text: "지붕 위로 달아나는 그림자. 얼굴 없는 가면."}}
+- id: ev_p_inn_2_2
+  name: 쓰러진 남자의 말
+  weight: 0
+  prologue: org_inn
+  text: "\"…이걸… 낙양의…\" 남자가 손에 쥔 것을 내민다. 반쪽짜리 옥패. 그리고 숨을 거둔다."
+  choices:
+    - {text: 옥패를 챙긴다, result: {item: [it_half_jade], tag: [+노리는자]}}
+    - {text: 이모에게 맡긴다, result: {aff: {npc_hongmae: +2}, text: "이모가 굳는다. \"…개방에 알려야겠다.\""}}
+- id: ev_p_inn_2_3
+  name: 이모의 비밀
+  weight: 0
+  prologue: org_inn
+  text: "새벽, 이모가 뒷문에서 거지 차림 사내와 낮게 이야기한다. \"구장로 지시가 이상해. 아이들 일은 덮으라니…\""
+  choices:
+    - {text: 엿들은 걸 말한다, result: {aff: {npc_hongmae: +3}, clue: kaibang_mole}}
+    - {text: 모른 척한다, result: {aff: {npc_hongmae: +1}}}
+- id: ev_p_inn_3_1
+  name: 떠날 채비
+  weight: 0
+  prologue: org_inn
+  text: "검은 우산이 처음으로 술값과 함께 쪽지를 놓고 간다. \"내일 새벽, 나루터. 같이 가겠다면.\""
+  choices:
+    - {text: 나루터로 간다, check: {aff: "npc_black_umbrella>=신뢰"}, success: {ending: end_inn_ronin}, fail: {text: "나루터는 비어 있다. 젖은 발자국만.", next: ev_p_inn_3_2}}
+    - {text: 객잔에 남는다, result: {next: ev_p_inn_3_2}}
+- id: ev_p_inn_3_2
+  name: 이모의 부탁
+  weight: 0
+  prologue: org_inn
+  text: "\"소이야. 이 객잔, 네가 지켜 줄래?\""
+  choices:
+    - {text: 맡는다, result: {ending: end_inn_keeper}}
+    - {text: 옥패를 쫓아 떠난다, require: ["item:it_half_jade"], result: {ending: end_inn_jade}}
+    - {text: 그냥 떠난다, result: {ending: end_inn_wander}}

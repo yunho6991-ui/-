@@ -1,0 +1,55 @@
+# 시즌 1 막 사건 중 NPC 사망 조건에 걸린 핵심 4개 (wuxia-events-acts.md A304 · A305 · A404 · A601)
+# 선택지 text가 NPC death 조건의 "사건:선택" 이름과 같다(예: npc_black_umbrella → "ev_a304:무면과의 대결")
+- id: ev_a304
+  name: 무영루의 의뢰
+  place: pl_luoyang
+  weight: 10
+  require: ["act:3", "!seen:ev_a304"]
+  death_possible: true
+  text: "낙양 뒷골목에 소문이 돈다. 무영루가 큰 의뢰를 받았다고. 값은 금 만 냥, 표적은 — 맹주전의 그분."
+  text_if: {"alive:npc_black_umbrella": "검은 우산이 비도 안 오는데 우산을 편다. \"…무면이 왔다. 내 옛 동료다. 이번 표적은 맹주다.\""}
+  choices:
+    - {text: 무면과의 대결, require: ["alive:npc_black_umbrella", "aff:npc_black_umbrella>=신뢰"], cost_actions: 2, result: {fight: {foe: npc_mumyeon, count: 1, ally: npc_black_umbrella, win: {world: {lifespan: +2}, set_npc: {npc_mumyeon: dead}, fame: +8, text: "가면이 반으로 갈라진다. 검은 우산이 처음으로 웃는다."}, lose: {death_check: 0.3, kill_npc_p: {npc_black_umbrella: 0.6}, world: {lifespan: -1}}}}}
+    - {text: 무면을 쫓는다, check: {stat: 추적, dc: 55}, success: {clue: wuying, flag: mumyeon_trail, text: "기루 지붕에서 끊긴 발자국. 맹주전까지 사흘 거리."}, fail: {injury: 경상}}
+    - {text: 의뢰를 산다, require: ["money>=500"], result: {money: -500, infamy: +10, world: {lifespan: -2}, tag: [+맹주암살의뢰인], text: "무영루의 장부에 네 이름이 오른다. 다시는 지워지지 않는다."}}
+    - {text: 못 들은 걸로 한다, result: {}}
+  record: "맹주 암살 의뢰 소문을 들었다"
+- id: ev_a305
+  name: 암살의 밤
+  place: pl_luoyang
+  weight: 12
+  require: ["act:3", "!seen:ev_a305", "any:tag:맹주친위|flag:mumyeon_trail|aff:npc_baiyunhe>=호의"]
+  death_possible: true
+  text: "맹주전, 자정. 지붕 위에 그림자 셋. 기와 한 장이 소리 없이 들린다."
+  choices:
+    - {text: 막는다, result: {fight: {foe: npc_assassin, count: 3, bonus_if: {"!alive:npc_mumyeon": 1.3}, win: {flag: a305_saved, world: {lifespan: +3, unity: +5}, fame: +15, aff: {npc_baiyunhe: +5}, epithet_seed: 맹주를 지킨 자}, lose: {death_check: 0.4, next_result: 실패}}}}
+    - {text: 경보를 울린다, result: {roll: [{p: 0.6, result: {flag: a305_saved, world: {lifespan: +1}, text: "친위대가 몰려온다. 그림자들이 흩어진다."}}, {p: 0.4, result: {next_result: 실패}}]}}
+    - {text: 지켜본다, result: {next_result: 실패}}
+  results:
+    실패: {world: {lifespan: -6, unity: -10}, news: "맹주전에 피가 흘렀다. 맹주가 쓰러졌다.", text: "늦었다. 맹주가 무릎을 꿇는다."}
+- id: ev_a404
+  name: 가면의 무인
+  place: pl_luoyang
+  weight: 12
+  require: ["act:4", "!seen:ev_a404", "alive:npc_hongyan"]
+  death_possible: true
+  text: "비무대. 가면의 무인 「무안」이 또 이긴다. 칼끝이 묘하게 낯익다 — 곧게 뻗다가 하늘로 꺾이는, 남궁의 검로."
+  choices:
+    - {text: 가면 아래를 본다, require: ["any:trait:맑은 눈|skill:은신>=능숙"], show_reason: 맑은 눈 · 은신, result: {clue: hongyan, flag: saw_wuan_eyes, text: "가면 틈으로 — 한쪽은 검고, 한쪽은 붉은 눈."}}
+    - {text: 정체 발각, require: ["any:flag:saw_wuan_eyes|clue:hongyan>=2"], result: {kill_npc_p: {npc_hongyan: 0.5}, world: {ritual: -30}, fame: +20, rep: {fac_blood: -10}, news: "무림대회의 가면 무인이 혈교 교관이었다.", text: "가면이 떨어진다. 객석의 남궁천이 일어선다. 그 얼굴을 안다."}}
+    - {text: 숨겨 준다, require: ["romance:npc_hongyan>=신뢰"], result: {aff: {npc_hongyan: +5}, flag: hid_hongyan, text: "\"…왜.\" 처음으로 그의 목소리가 흔들린다."}}
+    - {text: 지켜본다, result: {}}
+  record: "무림대회에서 가면의 무인을 보았다"
+- id: ev_a601
+  name: 십만대산을 넘는 깃발
+  place: [pl_chengdu, pl_hejian, pl_lanzhou]
+  weight: 14
+  require: ["act:6", "branch:정마대전", "!seen:ev_a601"]
+  death_possible: true
+  text: "천마의 검은 깃발이 십만대산을 넘는다. 사천과 하북이 최전선이다. 그런데 마교 진영에서 깃발이 둘로 갈라졌다는 소문 — 원로파가 성녀를 내세워 천마를 등졌다."
+  choices:
+    - {text: 맹 편으로 참전, result: {fight: {foe: npc_demon_guard, count: 3, win: {world: {eastward: -10, unity: +5}, fame: +10}, lose: {death_check: 0.35, injury: 중상}}}}
+    - {text: 마교 편으로 참전, require: ["any:faction:fac_demon|rep:fac_demon>=10"], result: {fight: {foe: npc_clan_guard, count: 3, win: {world: {eastward: +10}, rep: {fac_demon: +5}}, lose: {death_check: 0.35}}}}
+    - {text: 피난민을 돕는다, cost_actions: 2, result: {fame: +6, money: -20, tag: [+민심]}}
+    - {text: 밀약 사자로 간다, require: ["any:aff:npc_weishaotian>=신뢰|aff:npc_baiyunhe>=신뢰"], result: {world: {eastward: -20}, flag: truce_envoy, text: "천마가 웃는다. \"맹주의 편지를 가져온 게 너라고?\""}}
+    - {text: 내전, require: ["alive:npc_xueying"], result: {kill_npc_p: {npc_xueying: 0.5}, world: {eastward: -15}, text: "마교 진영 안에서 칼이 맞부딪친다. 원로파와 천마파. 그 한가운데 백발의 성녀."}, note: "성녀 내전에 휘말림 — 설영 사망 조건(ev_a601:내전)"}

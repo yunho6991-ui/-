@@ -1,0 +1,109 @@
+# 거지 서막 전체 (wuxia-prologues-full-1.md B) — 낙양 서문 빈민가 고정 시작
+
+# ── 1단계 「뒷골목」 ──
+- id: ev_p_beggar_1_1
+  name: 아침
+  weight: 0
+  prologue: org_beggar
+  text: "다리 밑, 거적 한 장. 옆에서 콩알이 기침을 한다. \"형(언니), 오늘은 만두 냄새 나는 데로 가자.\""
+  choices:
+    - {text: 만두 가게 뒤로, result: {aff: {npc_kongal: +3}, text: "버린 만두 반쪽. 콩알에게 더 큰 쪽을 준다."}}
+    - {text: 시장으로, result: {next: ev_p_beggar_1_3}}
+  record: "다리 밑에서 콩알과 아침을 맞았다"
+
+- id: ev_p_beggar_1_2
+  name: 왕초 곰보
+  weight: 0
+  prologue: org_beggar
+  text: "곰보 왕초가 손을 내민다. \"오늘 몫.\""
+  choices:
+    - {text: 빈다, result: {injury: 경상, text: "따귀 한 대. \"내일은 두 배다.\""}}
+    - {text: 바친다, require: ["money>=3"], result: {money: -3, text: "곰보가 고개를 까딱한다."}}
+    - {text: 노려본다, result: {aff: {npc_gombo: -3}, tag: [+곰보원한], text: "그날 밤, 거적을 빼앗겼다."}}
+
+- id: ev_p_beggar_1_3
+  name: 소매치기
+  weight: 0
+  prologue: org_beggar
+  text: "비단옷 도령이 노점 앞에서 흥정한다. 허리춤 주머니가 묵직하다."
+  pick_npc: [npc_cuihua, npc_xiaoqi]          # 숯검댕 얼굴의 구원자 — 회차마다
+  choices:
+    - text: 턴다
+      check: {stat: 소매치기, dc: 45}
+      success: {money: +3, skill_xp: {소매치기: 1}}
+      fail: {aff: {"{npc}": +1}, text: "호위의 손이 목덜미를 잡는다 — 그때 숯검댕 얼굴의 누군가가 호위를 엎어 버리고 사라진다. \"뛰어!\""}
+    - {text: 그만둔다, result: {money: +1, text: "도령이 떨어뜨린 엽전 한 닢을 줍는다."}}
+
+- id: ev_p_beggar_1_4
+  name: 개방의 눈
+  weight: 0
+  prologue: org_beggar
+  text: "담벼락에 거지들만 아는 표시. 개방이 이 골목을 지켜본다는 뜻이다."
+  choices:
+    - {text: 표시를 기억한다, result: {flag: kaibang_mark}}
+
+# ── 2단계 「사라지는 아이들」 ──
+- id: ev_p_beggar_2_1
+  name: 콩알이 없다
+  weight: 0
+  prologue: org_beggar
+  death_possible: true
+  text: "아침에 눈을 뜨니 콩알이 없다. 거적 옆에 붉은 진흙 발자국. 어젯밤, 사탕을 나눠 주던 상인 얘기를 했었다."
+  choices:
+    - {text: 찾아 나선다, result: {next: ev_p_beggar_2_2}}
+    - {text: 왕초에게 묻는다, result: {clue: blood_cult, text: "곰보가 눈을 피한다. \"…모른다. 너도 모른 척해라.\""}}
+    - {text: 모른 척한다, result: {set_npc: {npc_kongal: taken}, tag: [+콩알의꿈], text: "콩알은 다시 돌아오지 않았다."}}
+  record: "콩알이 사라진 아침"
+
+- id: ev_p_beggar_2_2
+  name: 붉은 진흙
+  weight: 0
+  prologue: org_beggar
+  death_possible: true
+  text: "발자국은 성 밖 버려진 사당으로 이어진다. 안에서 아이들 우는 소리. 문 앞엔 붉은 옷 둘."
+  choices:
+    - text: 숨어든다
+      require: ["skill:은신>=서툶"]
+      show_reason: 은신
+      check: {stat: 은신, dc: 50}
+      success: {set_npc: {npc_kongal: rescued}, aff: {npc_kongal: +5}, world: {ritual: -3}, tag: [+혈교원한], text: "묶인 줄을 끊는다. 콩알의 손이 차갑다."}
+      fail: {fight: {foe: npc_blood_guard, count: 2}, death_check: 0.3}
+    - {text: 개방 표시가 있던 담으로 달린다, require: ["flag:kaibang_mark"], show_reason: 개방의 표시, result: {aff: {npc_elder_qiu: +0}, clue: kaibang_mole, text: "개방 사람들이 온다 — 장로 하나가 \"늦었다\"며 사람들을 돌린다."}}
+    - {text: 관아에 알린다, result: {text: "포쾌가 웃는다. \"거지 새끼 하나 없어진 게 대수냐.\""}}
+
+- id: ev_p_beggar_2_3
+  name: 수레
+  weight: 0
+  prologue: org_beggar
+  death_possible: true
+  text: "새벽, 사당 뒤로 덮개 씌운 수레가 남쪽으로 떠난다. 바퀴에 붉은 진흙."
+  choices:
+    - {text: 수레에 매달린다, result: {clue: blood_cult, world: {camp_found: 1}, death_check: 0.35, tag: [+혈교원한], text: "사흘 밤낮. 습지의 붉은 안개 너머로 높은 담이 보인다."}}
+    - {text: 방향을 외워 둔다, result: {clue: blood_cult}}
+    - {text: 주저앉는다, result: {set_npc: {npc_kongal: taken}}}
+
+# ── 3단계 「개방의 시험」 ──
+- id: ev_p_beggar_3_1
+  name: 구장로
+  weight: 0
+  prologue: org_beggar
+  text: "개방 장로가 다리 밑으로 찾아온다. 웃는 얼굴. \"본 것을 잊는다면, 개방이 너를 먹이고 재워 주마.\""
+  choices:
+    - {text: 받아들인다, result: {ending: end_beggar_kaibang}}
+    - {text: "\"콩알을 찾아 주면요.\"", result: {aff: {npc_elder_qiu: -3}, tag: [+혈교표적], next: ev_p_beggar_3_2}}
+    - text: 소매에서 쪽지를 훔친다
+      require: ["skill:소매치기>=서툶"]
+      show_reason: 소매치기
+      check: {stat: 소매치기, dc: 55}
+      success: {item: [it_red_seal_note], next: ev_p_beggar_3_2, text: "붉은 인장이 찍힌 쪽지."}
+      fail: {aff: {npc_elder_qiu: -5}, tag: [+혈교표적], next: ev_p_beggar_3_2}
+
+- id: ev_p_beggar_3_2
+  name: 방주의 술
+  weight: 0
+  prologue: org_beggar
+  text: "다리 위, 술병을 든 늙은 거지가 앉아 있다. 취개 노구, 개방 방주. \"아이야, 그 쪽지 이리 줘 보거라.\""
+  choices:
+    - {text: 준다, require: ["item:it_red_seal_note"], result: {aff: {npc_laogou: +4}, item_remove: [it_red_seal_note], world: {kaibang_mole_known: 1}, ending: end_beggar_kaibang_true}}
+    - {text: 안 준다, require: ["item:it_red_seal_note"], result: {aff: {npc_laogou: +2}, ending: end_beggar_truth, text: "\"허허, 똑똑한 놈.\""}}
+    - {text: 아무것도 없다고 한다, result: {aff: {npc_laogou: +1}, ending: end_beggar_alley}}
