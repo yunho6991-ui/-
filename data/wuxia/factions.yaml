@@ -1,0 +1,37 @@
+# 세력 (wuxia-world.md 3장) — 예시 4개. 나머지 10개도 같은 꼴
+- id: fac_alliance
+  name: 무림맹
+  leader: npc_baiyunhe
+  base: pl_luoyang
+  goal: 대륙의 질서, 마교 · 혈교 억제
+  friends: [fac_shaolin, fac_wudang, fac_huashan, fac_zhuge, fac_namgung, fac_tang, fac_peng, fac_kaibang]
+  enemies: [fac_demon, fac_blood, fac_greenwood]
+  inner_conflict: 구파 대 세가의 권력 다툼
+  hidden: 맹주의 숨겨진 지병
+- id: fac_namgung
+  name: 남궁세가
+  leader: npc_namgungcheon
+  base: pl_hefei
+  goal: 남궁에서 맹주 배출
+  friends: []
+  enemies: [fac_blood]
+  rivals: [fac_huashan]
+  inner_conflict: 후계 다툼
+  hidden: 혈교 간부 하나가 남궁의 버려진 장자
+- id: fac_blood
+  name: 혈교
+  leader: npc_xuemo
+  base: pl_altar
+  goal: 혈신 강림 의식
+  friends: []
+  enemies: [all]
+  hidden: 간부들이 맹 · 세가 · 개방 깊숙이 침투
+- id: fac_qingqiu
+  name: 청구
+  leader: npc_ruhua
+  base: pl_qingqiu
+  goal: 인간과의 경계 유지
+  friends: [fac_demon_partial]
+  enemies: [fac_hunters]
+  inner_conflict: 공존파 대 인간사냥파
+  hidden: 인간 사회에 숨어 사는 요괴들의 연락망

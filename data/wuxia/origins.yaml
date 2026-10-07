@@ -1,0 +1,49 @@
+# 출신 (wuxia-origins.md · wuxia-prologues*.md) — 예시 2개
+- id: org_farmer
+  name: 농부의 아이
+  grade: 흔함
+  cap: null
+  shared_prologue: false
+  start: {age: 14, money: 5, literacy: false, places: [town]}
+  gender: random
+  init: {skills: {농사: 능숙}, martial: []}
+  stages:
+    - id: st_farmer_1
+      name: 평범한 마을
+      fixed: [ev_p_farmer_1_1]
+      pool: [ev_p_farmer_1_2, ev_p_farmer_1_3, ev_p_farmer_1_4, ev_p_farmer_1_5, ev_p_farmer_1_6]
+      pick: 3
+    - id: st_farmer_2
+      name: 산적이 온 날
+      fixed: [ev_p_farmer_2_1]
+      pool: [ev_p_farmer_2_2, ev_p_farmer_2_3, ev_p_farmer_2_4]
+      pick: 2
+    - id: st_farmer_3
+      name: 그 뒤
+      fixed: [ev_p_farmer_3_1]
+      pool: [ev_p_farmer_3_2]
+      pick: 1
+      then: ev_p_farmer_3_3          # 결말 선택
+  endings:
+    - {id: end_farmer_disciple, name: 노석의 제자, require: ["aff:npc_noseok>=신뢰"], tags: [농부출신, 노석의제자], learn: {ma_samjae: 3}}
+    - {id: end_farmer_revenge, name: 복수를 품고 떠남, tags: [농부출신, 녹림원한]}
+    - {id: end_farmer_follow, name: 지나가던 무인을 따라감, tags: [농부출신]}
+    - {id: end_farmer_stay, name: 마을에 남음, tags: [농부출신, 마을의기둥, 평화로운삶]}
+- id: org_blood_children
+  name: 혈교에 납치된 백 명의 아이
+  grade: 희귀
+  cap: 5
+  shared_prologue: true
+  group_size: 100
+  start: {age: 7, money: 0, literacy: false, places: [pl_blood_camp]}
+  gender: random
+  late_join: possess_living_npc      # 늦게 오면 살아 있는 NPC 아이에 빙의 + 일지
+  stages:
+    - {id: st_blood_1, name: 수용, days: 2, fixed: [ev_p_blood_1_1], pool: [ev_p_blood_1_2, ev_p_blood_1_3], pick: 2}
+    - {id: st_blood_2, name: 선별, days: 3, fixed: [ev_p_blood_2_1], pool: [ev_p_blood_2_2, ev_p_blood_2_3], pick: 2}
+    - {id: st_blood_3, name: 마지막 시험, days: 1, fixed: [ev_p_blood_3_1], pool: [ev_p_blood_3_2], pick: 1}
+  endings:
+    - {id: end_blood_assassin, name: 혈교 살수, faction: fac_blood, tags: [혈교출신, 살수]}
+    - {id: end_blood_escape, name: 탈출, tags: [혈교도주자, 추격자]}
+    - {id: end_blood_rescued, name: 정파에 구출됨, require: ["var:camp_found==1"], tags: [구출된아이, 혈교원한]}
+    - {id: end_blood_abandoned, name: 버려짐, tags: [버려진아이]}

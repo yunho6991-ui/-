@@ -1,0 +1,37 @@
+# 장소 (wuxia-early.md · wuxia-towns.md · wuxia-cities.md) — 예시
+- id: pl_qinghe
+  name: 청하진
+  kind: town
+  region: 중원
+  tier: 0
+  start_for: [org_farmer, org_hunter, org_inn, org_doctor, org_escort]
+  spots: [나루터, 장터, 객잔, 의원, 표국, 관아, 서당, 청운산]
+  threat: 녹림 산적
+  clue: [blood_cult, yaoshou]
+  links: {pl_luoyang: 5, pl_shimen: 3}
+- id: pl_heishui
+  name: 흑수촌
+  kind: town
+  region: 남쪽 습지
+  tier: 1
+  start_for: [org_farmer, org_hunter, org_inn, org_doctor, org_escort]
+  spots: [장대 집, 늪가 주막, 나룻배, 버려진 서당, 늪 깊은 곳]
+  threat: 혈교의 아이 사냥
+  clue: [blood_cult]
+  links: {pl_altar: 2}
+- id: pl_luoyang
+  name: 낙양
+  kind: city
+  region: 중원
+  tier: 1
+  start_for: [org_beggar, org_inn, org_doctor, org_escort, org_city_waiter, org_city_clerk, org_city_constable, org_city_courtesan, org_city_porter]
+  spots: [맹 청사, 원로회관, 비무대 광장, 동시, 서문 빈민가, 기루 거리, 지하 암시장, 전장 거리]
+  threat: 원로회 정치 · 무영루 암살
+  clue: [leader_illness, tournament]
+  links: {pl_qinghe: 5, pl_hefei: 4}
+- id: pl_altar
+  name: 혈교 제단
+  kind: site
+  region: 남쪽 습지
+  tier: 3
+  hidden: true

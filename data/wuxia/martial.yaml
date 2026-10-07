@@ -1,0 +1,38 @@
+# 무공 (wuxia-martial.md) — 예시
+- id: ma_samjae
+  name: 삼재검법
+  layer: 무공
+  branch: 검
+  grade: 삼류
+  nature: 쾌
+  qi: 정
+  need_realm: 삼류
+  need_literacy: false
+  power: 0.6
+  lines: ["하늘 · 땅 · 사람, 세 갈래로 찌른다", "단순하지만 흔들림이 없다", "수천 번 반복한 칼끝"]
+- id: ma_namgung_sword
+  name: 창궁무애검
+  layer: 무공
+  branch: 검
+  grade: 신공
+  nature: 쾌
+  qi: 정
+  need_realm: 일류
+  need_literacy: true
+  faction_lock: fac_namgung
+  power: 1.8
+  qi_deviation: 낮음
+  lines: ["하늘을 가르는 검광이 세 갈래로 갈라진다", "끝없는 창공처럼 칼이 넓어진다", "남궁의 칼은 물러서지 않는다"]
+- id: ma_heavenly_demon
+  name: 천마신공
+  layer: 심법
+  branch: 내공
+  grade: 전설
+  nature: 중
+  qi: 마
+  need_realm: 절정
+  need_literacy: true
+  power: 2.5
+  qi_deviation: 높음
+  cap: 1
+  lines: ["검은 기운이 하늘을 덮는다", "천마가 내려다본다"]

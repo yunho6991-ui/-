@@ -1,0 +1,59 @@
+# NPC (wuxia-npcs.md · wuxia-early.md · wuxia-heroines.md · wuxia-heroes.md) — 예시
+- id: npc_hongmae
+  name: 홍매
+  age: 41
+  gender: 여
+  realm: 이류
+  hidden_realm: true
+  looks: {face: 요염함, build: 보통}
+  personality: 냉정
+  faction: fac_kaibang
+  place: pl_qinghe
+  role: 객잔 주인
+  goal: 객잔을 지키는 것
+  secret: 개방의 청하진 연락책. 구장로의 지시를 의심한다
+  action: 소문을 모으고 개방에 보고한다
+  speech: "외상은 사절이고, 칼은 문밖에 두고 들어와."
+  reactions:
+    경계: 값을 두 배로 부른다
+    호의: 소문 하나를 공짜로 알려 준다
+    신뢰: 개방에 연결해 준다
+    심복: 구장로가 수상하다고 털어놓는다
+  death: []
+  romance: null
+- id: npc_noseok
+  name: 노석
+  age: 68
+  gender: 남
+  realm: 삼류
+  looks: {face: 평범함, build: 보통, mark: 왼다리를 전다}
+  personality: 고지식
+  place: pl_qinghe
+  role: 은퇴 무인
+  goal: 조용히 늙어 죽는 것
+  secret: 30년 전 녹림 칼잡이. 곰칼의 옛 형님
+  speech: "허허, 막대기 하나도 쥐는 법이 있느니라."
+  reactions:
+    호의: "이리 와 앉거라, 막대기 쥐는 법이나 보자"
+    신뢰: 삼재검법을 가르친다
+    심복: 과거를 털어놓고 녹림과의 일을 대신 짊어진다
+  death: ["ev_p_farmer_2_4:곁에 선다:0.3", "ev_p_farmer_2_4:지켜본다:0.5"]
+  on_death: {aff: {npc_gomkal: x0}, text: 곰칼이 마을 습격을 멈춘다}
+- id: npc_xueying
+  name: 설영
+  age: 20
+  gender: 여
+  realm: 절정
+  looks: {face: 절세미인, build: 날렵, mark: 백발}
+  personality: 무심
+  faction: fac_demon
+  place: pl_shiwandashan
+  role: 마교 성녀 후보
+  fixed_origin_slot: org_saintess     # 유저가 빙의하면 유저가 된다
+  goal: 원로들의 꼭두각시에서 벗어나는 것
+  secret: 천마와 몰래 편지를 주고받는다
+  death: ["var:ritual>=100", "ev_a601:내전"]
+  romance:
+    stages: {관심: ev_r_xueying_1, 신뢰: ev_r_xueying_2, 연모: ev_r_xueying_3}
+    branch: ev_r_xueying_branch
+    marriage_once: true

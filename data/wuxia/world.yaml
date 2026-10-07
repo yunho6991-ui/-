@@ -1,0 +1,28 @@
+# 세계 상수 · 세계 변수 · 확률 기본값 (wuxia-game.md · wuxia-balance.md)
+time:
+  action_days: 10              # 행동 1번 = 강호 10일(내 나이)
+  regen_minutes: 60            # 행동력 1시간에 1
+  max_stock: 20
+  world_day_per_real_day: 30   # 메인이 깨어난 뒤 실제 1일 = 강호 1개월
+  auto_start_days: 7           # 아무도 시작 사건을 못 터뜨리면 며칠 뒤 자동 시작(정할 것)
+realms: [삼류, 이류, 일류, 절정, 초절정, 화경, 현경, 생사경]
+life_base: 60
+life_bonus: [0, 0, 0, 10, 20, 40, 60, 100]
+short_life_actions: 36
+legacy_slots: 5
+probabilities:
+  flee_success: 0.6
+  kill_by_tier: [0.03, 0.05, 0.08, 0.10, 0.12, 0.14, 0.16, 0.18]
+  kill_bonus_if_heavy_injury: 0.4
+  wall_on_train_or_win: 0.08
+  wall_on_near_death: 0.10
+  fight_rate: {탐험: 0.10, 의뢰: 0.20, 수련: 0.007, 생업: 0.007}
+  main_event_share: 0.15
+vars:
+  ritual:   {name: 혈교 의식 진행도, start: 0,  min: 0, max: 100}
+  lifespan: {name: 맹주 남은 수명(개월), start: 12, min: 0, max: 60, hidden: true}
+  unity:    {name: 맹 결속, start: 70, min: 0, max: 100}
+  frontier: {name: 북방 방어선, start: 80, min: 0, max: 100}
+  eastward: {name: 마교 동진 의지, start: 30, min: 0, max: 100}
+  hardline: {name: 청구 강경파, start: 40, min: 0, max: 100}
+carryover: [act7_ending, new_leader_faction, xuemo_alive]   # 회귀 때 넘어가는 변수
