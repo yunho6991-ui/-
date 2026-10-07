@@ -55,3 +55,4 @@
 - {id: ma_ximen_sword, name: 무명일검, layer: 무공, branch: 검, grade: 신공, nature: 쾌, qi: 정, need_realm: 삼류, need_literacy: false, power: 1.7, cap: 1, lines: ["도끼가 닿기 전에 나무가 갈라지듯", "단 한 번 벤다"]}
 - {id: ma_ximen_step, name: 무명보, layer: 신법, branch: 신법, grade: 신공, nature: 변, qi: 정, need_realm: 삼류, need_literacy: false, power: 1.5, cap: 1, lines: ["폭포가 갈라진 틈으로 걷는다", "보이는데 닿지 않는다"]}
 - {id: ma_saint_snow, name: 설화무심공, layer: 심법, branch: 내공, grade: 신공, nature: 유, qi: 마, need_realm: 삼류, need_literacy: true, faction_lock: fac_demon, power: 1.5, qi_deviation: 높음, cap: 1, lines: ["눈이 내리듯 마음이 비워진다", "비운 자리에 무언가 들어선다"], note: "찢긴 마지막 장을 찾으면 주화입마 위험이 사라진다"}
+- {id: ma_wuhu_blade, name: 오호단문도, layer: 무공, branch: 도, grade: 일류, nature: 중, qi: 정, need_realm: 삼류, need_literacy: false, faction_lock: fac_peng, power: 1.1, lines: ["다섯 마리 범이 문을 부순다", "막으면 칼째로 끊는다"], note: "팽가 무공 — 팽노(설하촌)에게서 예외적으로 배울 수 있음"}

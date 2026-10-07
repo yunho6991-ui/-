@@ -1,0 +1,68 @@
+# 시작 고을 7곳 사람 (wuxia-towns.md) — 고을마다 역할 틀 10명. 한 줄 형식. 인연 인물은 npcs.yaml에 이미 있으면 참조만(아래 links)
+# 설하촌
+- {id: npc_xx_pengno, name: 팽노, place: pl_xuexia, role: 은퇴 무인(외팔 퇴역 팽가 무인), looks: {face: 험상궂음, build: 거구, mark: 외팔}, personality: 고지식, secret: "팽가 불가침을 처음 맺던 자리에 있었다", teaches: [ma_wuhu_blade]}
+- {id: npc_xx_okran, name: 옥란, gender: 여, place: pl_xuexia, role: 주막 주인, looks: {face: 아름다움}, personality: 낙천, secret: "남편이 설산에서 돌아오지 않음 · 사냥꾼에게 정보를 판다"}
+- {id: npc_xx_kim, name: 김약손, place: pl_xuexia, role: 의원(동상 · 요수 상처), personality: 신중, secret: "요수 내단으로 약을 만든다 — 밀매상과 거래"}
+- {id: npc_xx_uchi, name: 털보 우치, place: pl_xuexia, role: 왈패(사냥꾼 패거리), looks: {face: 험상궂음, build: 거구}, personality: 다혈질, goal: "마을 최고 사냥꾼"}
+- {id: npc_xx_hanseok, name: 포쾌 한석, place: pl_xuexia, role: 포쾌(팽가 초소 겸), personality: 신중, secret: "그날 밤 초소 철수 명령을 받았다"}
+- {id: npc_xx_bando, name: 반도, place: pl_xuexia, role: 수상한 상인(요수 내단 밀매), looks: {face: 곱상함}, personality: 탐욕, hidden_faction: true, faction: fac_blood, secret: "내단을 남쪽 혈교로 — 피 영약 재료"}
+- {id: npc_xx_shaman, name: 늙은 무당 할매, gender: 여, place: pl_xuexia, role: 훈장 대신(굿 · 글), teaches_literacy: true, secret: "요수의 말을 알아듣는다고 함"}
+- {id: npc_xx_snowwolf, name: 설랑, place: pl_xuexia, role: 영물(흰 늑대) · 설산의 주인, spirit: true, note: "팽가와의 불가침 당사자 · 북방 요수 왕의 사자"}
+- {id: npc_pengsoyeon, name: 팽소연, age: 23, gender: 여, realm: 일류, faction: fac_peng, place: pl_xuexia, role: 하북팽가의 도객, looks: {face: 아름다움, mark: 흉터, build: 거구}, romance: true, note: "히로인 6"}
+- {id: npc_xx_snowflake, name: 꼬마 눈송이, age: 10, place: pl_xuexia, role: 마을 아이, note: "설랑을 봤다 — 아무도 안 믿음 · 영물 인연 단서"}
+# 파도포
+- {id: npc_bd_galchi, name: 갈치 영감, place: pl_bodopo, role: 은퇴 무인(맹 수군 퇴역), looks: {mark: 문신}, personality: 낙천, secret: "흑룡의 옛 동료"}
+- {id: npc_bd_muri, name: 물이, gender: 여, age: 30, place: pl_bodopo, role: 주막 주인(해녀 출신), looks: {face: 섹시함}, personality: 대담, secret: "난파선 위치를 안다"}
+- {id: npc_bd_salt, name: 소금 의원, place: pl_bodopo, role: 의원, personality: 다정, secret: "해룡의 비늘로 약을 만든다"}
+- {id: npc_bd_shark, name: 상어 패 두목, place: pl_bodopo, role: 왈패, looks: {face: 험상궂음, build: 거구}, personality: 다혈질, secret: "수적에게 상납"}
+- {id: npc_bd_bell, name: 포쾌 방울, place: pl_bodopo, role: 포쾌, personality: 겁이 많음}
+- {id: npc_bd_yeom, name: 염 선주, place: pl_bodopo, role: 수상한 상인(선주), personality: 음험, secret: "세가 · 수적 밀무역 장부를 가졌다"}
+- {id: npc_bd_shrine, name: 바다신 사당 무녀, gender: 여, place: pl_bodopo, role: 훈장 대신, teaches_literacy: true, personality: 무심}
+- {id: npc_bd_dragonling, name: 해룡의 새끼, place: pl_bodopo, role: 영물(작은 바다뱀 용), spirit: true}
+- {id: npc_bd_parang, name: 파랑, age: 16, place: pl_bodopo, role: 어부의 아이, goal: "수적선에 타는 것"}
+# 죽림향
+- {id: npc_zl_qinga, name: 청아, gender: 여, place: pl_zhulin, role: 은퇴 무인(당가에서 쫓겨난 독수), looks: {face: 음침함}, personality: 냉정, secret: "당노태의 독 실험을 반대하다 쫓겨남", teaches: [독술]}
+- {id: npc_zl_bamboo, name: 죽엽 아씨, gender: 여, place: pl_zhulin, role: 찻집 주인, personality: 의심 많음, note: "독 감별의 혀"}
+- {id: npc_zl_tangchil, name: 약재상 당칠, place: pl_zhulin, role: 수상한 상인(약재상), personality: 탐욕, secret: "당가 · 녹림 독 거래 중개"}
+- {id: npc_zl_dae, name: 의원 대씨, place: pl_zhulin, role: 의원, personality: 의협심}
+- {id: npc_zl_spear, name: 죽창 패 두목, place: pl_zhulin, role: 왈패, personality: 자유분방}
+- {id: npc_zl_yusam, name: 포쾌 유삼, place: pl_zhulin, role: 포쾌, personality: 신중}
+- {id: npc_zl_craftsman, name: 대나무 공방 장인, place: pl_zhulin, role: 훈장 대신, teaches_literacy: true}
+- {id: npc_zl_bluesnake, name: 청사, place: pl_zhulin, role: 영물(푸른 뱀), spirit: true}
+- {id: npc_zl_juksun, name: 죽순, age: 9, place: pl_zhulin, role: 마을 아이, note: "우물물을 마시고 잠만 잔다"}
+# 흑수촌
+- {id: npc_hs_muryang, name: 무량, place: pl_heishui, role: 은퇴 무인(숨은 혈교 탈주자), looks: {mark: 손목 붉은 끈 자국}, personality: 겁이 많음, secret: "수련장 위치를 안다", states: [normal, gone]}
+- {id: npc_hs_mudgran, name: 진흙 할멈, gender: 여, place: pl_heishui, role: 주막 주인, personality: 다정, secret: "손자를 혈교에 빼앗김"}
+- {id: npc_hs_doctor, name: 늪 의원, place: pl_heishui, role: 의원(독안개), personality: 무심, secret: "혈교에 해독약을 판다 — 안 팔면 죽는다"}
+- {id: npc_hs_hongui, name: 홍의, gender: 여, place: pl_heishui, role: 수상한 상인(혈교 포섭책), looks: {face: 요염함}, personality: 음험, faction: fac_blood, hidden_faction: true}
+- {id: npc_hs_snakeeye, name: 사공 뱀눈, place: pl_heishui, role: 나룻배 사공, looks: {face: 험상궂음}, personality: 탐욕}
+- {id: npc_hs_oldyokai, name: 늪의 노요괴, place: pl_heishui, role: 영물 · 요괴, spirit: true, note: "혈교를 싫어한다"}
+- {id: npc_hs_pulip, name: 풀잎, age: 8, place: pl_heishui, role: 마을에 남은 마지막 아이, states: [normal, hidden, taken]}
+# 운무리
+- {id: npc_yw_baek, name: 백할멈, gender: 여, place: pl_yunwu, role: 요괴와 혼인했던 노파, looks: {mark: 백발}, personality: 다정, secret: "청구 가는 길을 안다"}
+- {id: npc_yw_mist, name: 안개 주모, gender: 여, place: pl_yunwu, role: 주막 주인, personality: 의심 많음, secret: "둔갑한 너구리 요괴"}
+- {id: npc_yw_sundeok, name: 떡집 순덕, gender: 여, place: pl_yunwu, role: 떡집, personality: 다정}
+- {id: npc_yw_dosam, name: 도삼, place: pl_yunwu, role: 요괴 사냥꾼 두목, looks: {face: 험상궂음, build: 거구}, personality: 오만, faction: fac_hunters}
+- {id: npc_yw_ssuk, name: 의원 쑥뜸, place: pl_yunwu, role: 의원, personality: 신중, secret: "요괴도 몰래 고쳐 준다"}
+- {id: npc_yw_shrine, name: 산신당 지기, place: pl_yunwu, role: 훈장 대신, teaches_literacy: true}
+- {id: npc_yw_whitefox, name: 흰 여우, place: pl_yunwu, role: 영물 · 여화의 눈, spirit: true}
+# 석문진
+- {id: npc_sm_bawi, name: 바위, place: pl_shimen, role: 은퇴 무인(녹림 은퇴 채주), looks: {face: 엄청나게 못생김, build: 거구}, personality: 낙천, note: "72채 채주를 다 안다"}
+- {id: npc_sm_gogae, name: 고개 아재, place: pl_shimen, role: 객잔 주인, personality: 탐욕, secret: "녹림에 표국 출발 시간을 판다"}
+- {id: npc_sm_sinbal, name: 신발, place: pl_shimen, role: 표국 척후, looks: {face: 곱상함}, personality: 의심 많음}
+- {id: npc_sm_stable, name: 마방 주인, place: pl_shimen, role: 말 거래, looks: {face: 험상궂음, build: 거구}}
+- {id: npc_sm_doctor, name: 역참 의원, place: pl_shimen, role: 의원(화살 상처) · 중립}
+- {id: npc_sm_branch, name: 표국 지부장, place: pl_shimen, role: 표국 지부장, personality: 고지식}
+- {id: npc_sm_clerk, name: 역참 서기, place: pl_shimen, role: 훈장 대신, teaches_literacy: true, note: "통행 장부 속 세가 이름"}
+- {id: npc_sm_goat, name: 늙은 산양, place: pl_shimen, role: 영물 · 산길 안내, spirit: true}
+# 낙양 외곽
+- {id: npc_lo_seok, name: 석총관, place: pl_luoyang_out, role: 은퇴 무인(맹 퇴역 친위대), personality: 고지식, secret: "맹주를 30년 호위 — 기침을 기억한다"}
+- {id: npc_lo_manbok, name: 만복 아저씨, place: pl_luoyang_out, role: 객잔 주인, looks: {build: 거구}, personality: 낙천}
+- {id: npc_lo_shade, name: 그늘, place: pl_luoyang_out, role: 무영루 연락책, personality: 무심}
+- {id: npc_lo_doctor, name: 성문 의원, place: pl_luoyang_out, role: 의원, personality: 의협심}
+- {id: npc_lo_jo, name: 관원 조씨, place: pl_luoyang_out, role: 세금 관원, looks: {face: 곱상함}, personality: 탐욕}
+- {id: npc_lo_monk, name: 사당 스님, place: pl_luoyang_out, role: 훈장 대신, teaches_literacy: true, note: "거지 아이들에게 글"}
+- {id: npc_lo_cat, name: 꼬리 둘 고양이, place: pl_luoyang_out, role: 영물(요괴) · 성안 소문, spirit: true}
+- {id: npc_baeksohwa, name: 백소화, age: 18, gender: 여, realm: 이류, faction: fac_alliance, place: pl_luoyang_out, role: 맹주의 손녀, looks: {face: 수려함}, romance: true, note: "히로인 13 · 몰래 성밖 시장 구경"}
+# 이미 있는 인연 인물이 머무는 고을(links)
+- {links: true, pl_bodopo: [npc_hailan], pl_zhulin: [npc_tangsoso, npc_tangmuying], pl_heishui: [npc_honglian], pl_yunwu: [npc_mo, npc_ruhua], pl_shimen: [npc_tieshan], pl_luoyang_out: [npc_xiaoqi]}
