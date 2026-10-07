@@ -1,8 +1,30 @@
 # 카드 던전 — 카드 목록 (첫 출시 5구역 · 70장)
 
-> `docs/dungeon-game.md`의 카드 목록. 구역(10층)마다 13장 + 보스 카드 1장.
-> 소환은 **내가 도달한 구역까지의** 카드에서만 나온다. 보스 카드는 그 보스를 처음 잡을 때 자동 획득.
-> 카드는 시즌마다 구역을 추가해서 계속 늘린다.
+> `docs/dungeon-game.md`의 카드 목록. 구역마다 13장 + 보스 카드 1장. 구역 = 판의 배경(10층 던전이 판마다 모양을 바꾼다).
+> 소환은 **이번 판의 26장**(반 구역 4개)에서만 나온다. 10층을 깨면 가장 오래된 반 구역이 빠지고(절판) 새 반 구역이 들어온다 — 아래 "판 교체표".
+> 보스 카드는 그 판을 깰 때 자동 획득(뽑기로는 안 나옴).
+> 첫 출시 70장 = 7판 분량. 그 뒤로는 구역을 추가해서 계속 늘린다.
+
+## 판 교체표
+
+구역마다 13장을 반으로 나눈다.
+- **A반(6장)**: `n1` · `r1` · `r2` · `sr1` · `ssr1` · `ur1`
+- **B반(7장)**: `n2` · `n3` · `r3` · `sr2` · `sr3` · `ssr2` · `lr1`
+
+| 판 | 소환 풀 (26장) | 새로 들어옴 | 빠짐(절판) | 10층 보스 · 배경 |
+|---|---|---|---|---|
+| 1 | 1A · 1B · 2A · 2B | (처음 26장) | — | 졸린 문지기 골렘 · 이끼 동굴 |
+| 2 | 1B · 2A · 2B · 3A | 3A | 1A | 거울 마녀 미라 · 거울 미궁 |
+| 3 | 2A · 2B · 3A · 3B | 3B | 1B | 대장장이 드래곤 루비 · 용암 대장간 |
+| 4 | 2B · 3A · 3B · 4A | 4A | 2A | 사서장 스노우 올빼미 · 얼음 도서관 |
+| 5 | 3A · 3B · 4A · 4B | 4B | 2B | 정원사 거인 미르 · 별빛 정원 |
+| 6 | 3B · 4A · 4B · 5A | 5A | 3A | 6구역 보스(새로) · 과자 성 |
+| 7 | 4A · 4B · 5A · 5B | 5B | 3B | 7구역 보스(새로) · 태엽 공장 |
+| 8~ | 반 구역씩 계속 | 6A, 6B, … (새로 그림) | 4A, 4B, … | 구역 아이디어 표 순서대로 |
+
+- 판마다 UR이나 LR이 한 장씩 빠진다 → **절판 UR·LR**이 생긴다. 1판에 뽑은 「지하 호수의 용 아쿠아」(1B)는 3판부터 안 나온다.
+- 판은 사람마다 따로라서, 같은 방이라도 내가 3판이면 3판 풀에서 나온다.
+- 6판 보스·배경부터는 새로 그린다. 그때쯤 6구역 카드도 같이(보통 사람 기준 한 달쯤 뒤).
 
 ## 그림 프롬프트 쓰는 법
 
@@ -27,7 +49,7 @@ Cute kawaii storybook illustration, soft pastel colors, rounded chubby shapes, b
 
 ---
 
-## 1구역 · 1~10층 「이끼 동굴」
+## 1구역 「이끼 동굴」
 
 > 촉촉한 이끼와 지하 호수가 있는 첫 동굴. 처음 들어온 모험가들의 놀이터.
 
@@ -48,7 +70,7 @@ Cute kawaii storybook illustration, soft pastel colors, rounded chubby shapes, b
 | [ ] | `c1_lr1.jpg` | LR | 💧 | 지하 호수의 용 아쿠아 | 호수 바닥에서 잠자던 물의 용 | 귀여움 | `A majestic but adorable blue water dragon rising from a glowing underground lake, sparkling droplets, giant and gentle.` |
 | — | `boss_10.jpg` | 보스 | 🌿 | 졸린 문지기 골렘 | 1구역 보스. 졸려서 자꾸 문을 열어 준다 | 귀여움 | `A big round stone golem guarding a dungeon door, yawning with sleepy eyes, moss and tiny flowers on its shoulders.` |
 
-## 2구역 · 11~20층 「거울 미궁」
+## 2구역 「거울 미궁」
 
 > 벽이 전부 거울인 미로. 빛과 그림자가 서로를 비춘다.
 
@@ -69,7 +91,7 @@ Cute kawaii storybook illustration, soft pastel colors, rounded chubby shapes, b
 | [ ] | `c2_lr1.jpg` | LR | ✨ | 빛의 대천사 세레스 | 거울 미궁 꼭대기에 내려온 천사 | 🌸 | `an archangel woman with six radiant wings and a halo, white and gold robes, descending through mirrors of light.` |
 | — | `boss_20.jpg` | 보스 | 🌑 | 거울 마녀 미라 | 2구역 보스. 거울 보며 화장하느라 바쁨 | 🔥 | `a glamorous witch woman with a pointed hat admiring herself in a giant ornate mirror, holding a makeup brush wand.` |
 
-## 3구역 · 21~30층 「용암 대장간」
+## 3구역 「용암 대장간」
 
 > 용암이 흐르는 거대한 대장간. 최고의 무기가 여기서 태어난다.
 
@@ -90,7 +112,7 @@ Cute kawaii storybook illustration, soft pastel colors, rounded chubby shapes, b
 | [ ] | `c3_lr1.jpg` | LR | 🔥 | 태양룡 솔 | 대장간 불을 처음 붙인 용 | 귀여움 | `A majestic but adorable golden sun dragon wreathed in gentle flames, glowing like a sunrise.` |
 | — | `boss_30.jpg` | 보스 | 🔥 | 대장장이 드래곤 루비 | 3구역 보스. 무기 만들기에 진심인 용 | 귀여움 | `A chubby red dragon wearing a blacksmith apron and goggles, hammering on an anvil with sparks flying.` |
 
-## 4구역 · 31~40층 「얼음 도서관」
+## 4구역 「얼음 도서관」
 
 > 얼어붙은 책장이 끝없이 이어진 도서관. 조용히 하세요.
 
@@ -111,9 +133,9 @@ Cute kawaii storybook illustration, soft pastel colors, rounded chubby shapes, b
 | [ ] | `c4_lr1.jpg` | LR | ✨ | 지혜의 고래 아스트라 | 책 속 바다를 헤엄치는 고래 | 귀여움 | `A majestic but adorable starlight whale swimming through floating open books, constellations on its body.` |
 | — | `boss_40.jpg` | 보스 | 💧 | 사서장 스노우 올빼미 | 4구역 보스. 떠들면 혼난다 | 귀여움 | `A big fluffy snowy owl librarian with tiny glasses holding a "shh" finger feather, towering over bookshelves.` |
 
-## 5구역 · 41~50층 「별빛 정원」
+## 5구역 「별빛 정원」
 
-> 탑 안인데 하늘이 보이는 이상한 정원. 모든 속성이 모여 있다.
+> 던전 안인데 하늘이 보이는 이상한 정원. 모든 속성이 모여 있다.
 
 | 다시 뽑기 | 파일 | 등급 | 속성 | 이름 | 한 줄 | 그림 | 묘사 |
 |---|---|---|---|---|---|---|---|
@@ -129,7 +151,7 @@ Cute kawaii storybook illustration, soft pastel colors, rounded chubby shapes, b
 | [ ] | `c5_ssr1.jpg` | SSR | 🌿 | 꽃의 여신 플로라 | 걸음마다 꽃이 핀다 | 🌸 | `a flower goddess woman with a dress of blooming petals, flowers sprouting where she steps.` |
 | [ ] | `c5_ssr2.jpg` | SSR | 🌑 | 밤의 정원사 녹턴 | 밤에만 피는 꽃을 가꾼다 | 😎 | `a night gardener man in a dark cloak tending glowing moonflowers, mysterious gentle smile.` |
 | [ ] | `c5_ur1.jpg` | UR | ✨ | 별을 엮는 자 스텔라 | 별을 실처럼 엮어 하늘을 짠다 | 🔥 | `a star weaver woman pulling threads of starlight from the sky and weaving them, cosmic gown.` |
-| [ ] | `c5_lr1.jpg` | LR | 🌿 | 세계수의 정령 이그드라 | 탑을 뚫고 자란 나무의 정령 | 귀여움 | `A majestic but adorable spirit of a giant world tree, a gentle leafy creature with glowing eyes and branches full of stars.` |
+| [ ] | `c5_lr1.jpg` | LR | 🌿 | 세계수의 정령 이그드라 | 던전을 뚫고 자란 나무의 정령 | 귀여움 | `A majestic but adorable spirit of a giant world tree, a gentle leafy creature with glowing eyes and branches full of stars.` |
 | — | `boss_50.jpg` | 보스 | 🌿 | 정원사 거인 미르 | 5구역 보스. 꽃을 밟을까 봐 조심조심 | 귀여움 | `A huge gentle giant with a flower crown tiptoeing carefully through a starlit garden, holding a tiny watering can.` |
 
 ---
@@ -144,12 +166,12 @@ Cute kawaii storybook illustration, soft pastel colors, rounded chubby shapes, b
 - 매력 분포(사람 카드 36장): 😎 잘생김 16 · 🌸 아름다움 13 · 🔥 섹시 5 · 💕 귀여움 2 — 나머지 34장은 귀여운 몬스터·동물.
 - 섹시는 성인 캐릭터에만, 옷은 다 입은 채로.
 
-## 다음 구역 아이디어 (시즌 2 이후)
+## 다음 구역 아이디어 (6판부터)
 
-| 구역 | 층 | 테마 |
+| 구역 | 보스·배경으로 나오는 판 | 테마 |
 |---|---|---|
-| 6 | 51~60 | 🍰 과자 성 — 사탕 골렘, 케이크 기사 |
-| 7 | 61~70 | ⚙️ 태엽 공장 — 로봇, 시계 장인 |
-| 8 | 71~80 | 🌊 가라앉은 신전 — 인어 왕국 (낚시 세계관과 이어도 좋음) |
-| 9 | 81~90 | ☁️ 구름 섬 — 하늘 고래, 바람 정령 |
-| 10 | 91~100 | 🌌 탑의 바닥 — "소원을 들어주는 무언가"의 정체 |
+| 6 | 6판 | 🍰 과자 성 — 사탕 골렘, 케이크 기사 |
+| 7 | 7판 | ⚙️ 태엽 공장 — 로봇, 시계 장인 |
+| 8 | 8판 | 🌊 가라앉은 신전 — 인어 왕국 (낚시 세계관과 이어도 좋음) |
+| 9 | 9판 | ☁️ 구름 섬 — 하늘 고래, 바람 정령 |
+| 10 | 10판 | 🌌 던전의 소원 — "소원을 들어주는 무언가"의 정체 |
