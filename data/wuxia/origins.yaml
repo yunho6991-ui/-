@@ -84,7 +84,21 @@
     - {id: end_beggar_kaibang_true, name: 개방 정식 제자(방주의 사람), faction: fac_kaibang, tags: [거지출신, 개방, 방주의신뢰]}
     - {id: end_beggar_truth, name: 진실을 쥔 거지, tags: [거지출신, 혈교의비밀, 혈교표적]}
     - {id: end_beggar_alley, name: 뒷골목에 남음, tags: [거지출신, 뒷골목]}
-- {id: org_escort, name: 몰락한 표국의 자식, grade: 흔함, cap: null, start: {age: 17, money: 30, literacy: true, places: [town, city]}, init: {skills: {기마: 능숙, 흥정: 서툶}, martial: [ma_escort_sword]}, todo: true}
+- id: org_escort
+  name: 몰락한 표국의 자식
+  grade: 흔함
+  cap: null
+  start: {age: 17, money: 30, literacy: true, places: [town, city]}
+  gender: random
+  init: {skills: {기마: 능숙, 흥정: 서툶}, martial: [ma_escort_sword], family: {npc_wangchung: 아버지}, journal: "표국 빚 300냥 · 표사 일곱 중 넷이 떠남 · 늙은 표사 마삼은 남음"}
+  stages:
+    - {id: st_escort_1, name: 기우는 표국, fixed: [ev_p_escort_1_1], pool: [ev_p_escort_1_2, ev_p_escort_1_3], pick: 2}
+    - {id: st_escort_2, name: 마지막 표행, fixed: [ev_p_escort_2_1, ev_p_escort_2_2, ev_p_escort_2_3], pool: [], pick: 0}
+    - {id: st_escort_3, name: 상자의 비밀, fixed: [ev_p_escort_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_escort_restored, name: 표국을 다시 세움, faction_hidden: fac_blood, tags: [표국주인, 혈교하수인], hidden: "꿈에 그 아이가 나온다 · 혈교가 다음 일을 맡긴다"}
+    - {id: end_escort_rescue, name: 아이를 구함, tags: [표국출신, 혈교원한, 구한아이], note: "구한 아이 = 다른 유저의 혈교 아이 출신일 수도(W5)"}
+    - {id: end_escort_greenwood, name: 녹림과 손잡음, faction: fac_greenwood, tags: [표국출신, 녹림]}
 - id: org_inn
   name: 객잔의 아이
   grade: 흔함
