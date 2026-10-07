@@ -49,3 +49,5 @@
 - {id: ma_tang_poison_heart, name: 독공심법, layer: 심법, branch: 내공, grade: 이류, nature: 변, qi: 독, need_realm: 삼류, need_literacy: true, faction_lock: fac_tang, power: 0.8, qi_deviation: 보통, lines: ["독이 핏줄을 따라 돈다 — 내 편으로"]}
 - {id: ma_mantian, name: 만천화우, layer: 무공, branch: 암기, grade: 절정, nature: 변, qi: 독, need_realm: 삼류, need_literacy: true, faction_lock: fac_tang, power: 1.4, lines: ["하늘 가득 꽃비가 내린다", "스무 개의 바늘이 한 숨에"]}
 - {id: ma_kaishan_axe, name: 개산부법, layer: 무공, branch: 도, grade: 삼류, nature: 중, qi: 정, need_realm: 삼류, need_literacy: false, power: 0.7, lines: ["산을 쪼개듯 내리찍는다", "막아도 팔이 저린다"]}
+- {id: ma_canggong_heart, name: 창궁심법, layer: 심법, branch: 내공, grade: 일류, nature: 쾌, qi: 정, need_realm: 삼류, need_literacy: true, faction_lock: fac_namgung, power: 0.9, qi_deviation: 낮음, lines: ["숨이 하늘처럼 넓어진다"]}
+- {id: ma_namgung_basic, name: 남궁 검법, layer: 무공, branch: 검, grade: 이류, nature: 쾌, qi: 정, need_realm: 삼류, need_literacy: true, faction_lock: fac_namgung, power: 0.8, lines: ["곧게 뻗는 남궁의 기본 검", "물러서지 않는다"]}

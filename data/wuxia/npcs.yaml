@@ -89,6 +89,14 @@
 - {id: npc_senior_disciple, name: 이대제자, template: foe, realm: 삼류, intent: 괴롭힘}
 - {id: npc_zhugewen, name: 제갈문, age: 58, realm: 일류, faction: fac_zhuge, role: 제갈세가 가주}
 - {id: npc_namgungcheon, name: 남궁천, age: 61, realm: 초절정, faction: fac_namgung, role: 남궁세가 가주}
+- {id: npc_namgungseol, name: 남궁설, age: 21, gender: 여, realm: 일류, looks: {face: 아름다움, build: 날렵}, personality: 자존심, faction: fac_namgung, place: pl_hefei, role: 직계 장녀 · 여자라서 후계에서 밀려남, romance: true, family_of: org_namgung, note: "히로인 1(wuxia-heroines.md) · 남궁 출신에겐 누나(인연 대상 아님)"}
+- {id: npc_namgunglin, name: 남궁린, age: 17, gender: 남, realm: 이류, personality: 성실 · 겁이 많음, faction: fac_namgung, place: pl_hefei, role: 직계 첫째, slot: org_namgung, goal: "아버지에게 인정받기"}
+- {id: npc_namgungjin, name: 남궁진, age: 12, gender: random, realm: 삼류, faction: fac_namgung, place: pl_hefei, role: 직계 셋째, slot: org_namgung}
+- {id: npc_namgungho, name: 남궁호, age: 10, gender: random, realm: 삼류, faction: fac_namgung, place: pl_hefei, role: 직계 넷째, slot: org_namgung}
+- {id: npc_namgunghyeon, name: 남궁현, age: 25, gender: 남, realm: 일류, looks: {face: 잘생김, build: 날렵}, personality: 음험, faction: fac_namgung, place: pl_hefei, role: 방계 검객, goal: "직계를 넘어서는 것", secret: "후계 다툼의 함정을 꾸민 장본인", romance: true, note: "남성 인연 6(wuxia-heroes.md)"}
+- {id: npc_dolsoe, name: 돌쇠, age: 13, gender: 남, place: pl_hefei, role: 마구간 하인 아이, note: "유일하게 믿을 사람 — 혹은 배신할 사람(남궁현 포섭 시)"}
+- {id: npc_ng_elder_sword, name: 남궁 무공파 장로, template: passerby, realm: 절정, faction: fac_namgung}
+- {id: npc_ng_elder_politic, name: 남궁 정치파 장로, template: passerby, realm: 일류, faction: fac_namgung}
 - {id: npc_tanglaotai, name: 당노태, age: 77, realm: 절정, faction: fac_tang, role: 사천당가 가주}
 - {id: npc_tangsoso, name: 당소소, age: 19, gender: 여, realm: 이류, looks: {face: 귀여움, build: 왜소}, personality: 장난기, faction: fac_tang, place: pl_chengdu, role: 당가 아가씨 · 독 천재, romance: true, note: "히로인 2(wuxia-heroines.md) · 당가 출신(13세)에겐 인연이 열리기만, 진행은 내가 성인이 된 뒤"}
 - {id: npc_tangmuying, name: 당무영, age: 28, gender: 남, realm: 절정, looks: {face: 음침함, build: 날렵}, personality: 냉정, faction: fac_tang, place: pl_chengdu, role: 사형 · 당가의 독수, secret: "동생 당소소의 해독약 실험을 몰래 돕는다", romance: true, note: "남성 인연 9(wuxia-heroes.md)"}

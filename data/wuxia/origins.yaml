@@ -196,7 +196,26 @@
     - {id: end_gw_heir, name: 산채의 후계, faction: fac_greenwood, tags: [녹림, 산채후계]}
     - {id: end_gw_tieshan, name: 총채주의 사람, faction: fac_greenwood, master: npc_tieshan, tags: [녹림, 철산의수하]}
     - {id: end_gw_down, name: 산을 내려옴, faction: null, rep: {fac_greenwood: -5}, tags: [녹림원한, 표국인연]}
-- {id: org_namgung, name: 후계 다툼 세가 직계(시즌 1 남궁), grade: 희귀, cap: 3, shared_prologue: true, start: {age: 12, money: 500, literacy: true, places: [pl_hefei]}, todo: true}
+- id: org_namgung
+  name: 후계 다툼 세가 직계(시즌 1 남궁)
+  grade: 희귀
+  cap: 3
+  shared_prologue: true
+  rotate_each_season: true           # 시즌마다 다른 세가(W7)
+  start: {age: 12, money: 500, literacy: true, places: [pl_hefei]}
+  gender: random
+  slots: [npc_namgunglin, npc_namgungjin, npc_namgungho]   # 유저가 이 중 하나에 빙의
+  late_join: possess_living_npc
+  init: {skills: {글 읽기: 능숙, 기마: 서툶}, qi: 정, martial: [ma_canggong_heart, ma_namgung_basic], pts: {ma_canggong_heart: 1, ma_namgung_basic: 1}, faction: fac_namgung, family: {npc_namgungcheon: 아버지, npc_namgungseol: 누나}, journal: "아버지 남궁천은 후계를 정하지 않음 · 형제 중 누가 사람인지는 모른다"}
+  stages:
+    - {id: st_ng_1, name: 세가의 아이, days: 3, fixed: [ev_p_ng_1_1], pool: [ev_p_ng_1_2, ev_p_ng_1_3], pick: 2}
+    - {id: st_ng_2, name: 후계 다툼, days: 4, fixed: [ev_p_ng_2_1], pool: [ev_p_ng_2_2, ev_p_ng_2_3], pick: 2}
+    - {id: st_ng_3, name: 성년식, days: 1, fixed: [ev_p_ng_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_ng_candidate, name: 후계 후보, faction: fac_namgung, tags: [남궁직계, 후계후보], note: "4막 무림대회 후보 · 형제였던 유저와 서로 모른 채 다시 만남"}
+    - {id: end_ng_branch, name: 방계로 밀려남, faction: fac_namgung, tags: [남궁직계, 밀려난자식]}
+    - {id: end_ng_runaway, name: 가출, faction: null, tags: [가출한도련님], chase: fac_namgung}
+    - {id: end_ng_expelled, name: 파문, require: ["tag:파문"], faction: null, tags: [파문된직계]}
 - {id: org_master_disciple, name: 천하제일고수의 제자, grade: 전설, cap: 2, start: {age: 15, money: 0, places: [pl_master_hut]}, init: {talent_genius: 1}, todo: true}
 - {id: org_saintess, name: 마교 성녀 후보, grade: 전설, cap: 1, gender: 여, start: {age: 20, places: [pl_shiwandashan]}, slot_npc: npc_xueying, todo: true}
 - {id: org_city_waiter, name: 주루 점소이, grade: 흔함, cap: null, start: {places: [city]}, todo: true}
