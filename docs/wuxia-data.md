@@ -68,13 +68,17 @@ weight_mod:                # 조건이 맞으면 더하거나(+) 곱한다(x)
 | `world` | 세계 변수 | `{ritual: -10}` |
 | `tag` | 꼬리표 붙이기 · 떼기 | `[+녹림원한, -추격자]` |
 | `item` | 물건 | `[it_soguhandan]` |
-| `clue` | 시작 사건 단서(같은 갈래 셋이면 시작) | `blood_cult` |
+| `clue` | 단서 갈래 — 시작 사건 갈래는 셋 모이면 시작, 나머지는 숨은 비밀(아래) | `blood_cult` |
 | `fight` | 전투(상대 · 대수) | `{foe: npc_bandit, count: 3}` |
 | `death_check` | 사망 판정 확률 | `0.3` |
 | `next` | 이어지는 사건 | `ev_v09_track` |
 | `ending` | 서막 결말 | `end_farmer_disciple` |
 | `record` | 생애 기록 한 줄(전기용) | `"산적이 온 날 살아남았다"` |
 | `text` | 결과 문장 | `"허리가 끊어질 것 같지만, 저녁밥이 달다."` |
+
+**단서 갈래** (`clue`)
+- 시작 사건 갈래(셋이면 「천기가 흔들린 날」, `wuxia-season1.md`): `blood_cult`(혈교 수련장) · `leader_illness`(맹주 지병) · `yaoshou_cause`(미친 요수) · `hongyan`(가면의 무인). 봉인탑은 단서 없이 `main_start`로 바로.
+- 숨은 비밀(시작은 안 함 — 사건 · 인연 · 결말 조건에 쓰임): `council_politics`(원로회) · `kaibang_mole`(개방 첩자) · `wuying`(무영루) · `greenwood_raid` · `greenwood_patron`(세가가 녹림에 돈을 댐) · `plum_original`(매화검법 원본) · `tang_beast_taming`(당가의 요수 길들이기).
 
 ### 4-1. 작은 강호 데이터에서 더 쓴 키 (`events/prologue_farmer.yaml` · `qinghe.yaml` · `romance_qinghe.yaml`)
 

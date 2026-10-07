@@ -50,7 +50,7 @@
     - {id: end_blood_rescued, name: 정파에 구출됨, require: ["var:camp_found==1"], tags: [구출된아이, 혈교원한]}
     - {id: end_blood_abandoned, name: 버려짐, tags: [버려진아이]}
 
-# ── 나머지 출신: 기본 정보만(서막 사건은 wuxia-prologues-full-*.md를 보고 채울 것 — todo) ──
+# ── 나머지 출신(전부 서막 데이터 완료) ──
 - id: org_hunter
   name: 사냥꾼의 아이
   grade: 흔함
@@ -251,8 +251,82 @@
     - {id: end_saint_puppet, name: 원로들의 성녀, faction: fac_demon, tags: [마교성녀, 원로의꼭두각시], note: "마교 내전(ev_a601)에서 원로파 깃발"}
     - {id: end_saint_tianmo, name: 천마의 편, faction: fac_demon, tags: [마교성녀, 천마파]}
     - {id: end_saint_flee, name: 산을 내려온 성녀, faction: null, rep: {fac_demon: -10}, tags: [도망친성녀], chase: fac_demon, note: "절세미인 백발 — 변장이 거의 안 된다"}
-- {id: org_city_waiter, name: 주루 점소이, grade: 흔함, cap: null, start: {places: [city]}, todo: true}
-- {id: org_city_clerk, name: 상점 견습, grade: 흔함, cap: null, start: {places: [city]}, todo: true}
-- {id: org_city_constable, name: 포졸의 아들, grade: 흔함, cap: null, start: {places: [city]}, todo: true}
-- {id: org_city_courtesan, name: 기루 심부름꾼, grade: 흔함, cap: null, start: {places: [city]}, todo: true}
-- {id: org_city_porter, name: 성문 짐꾼, grade: 흔함, cap: null, start: {places: [city]}, todo: true}
+# 도시 출신 5개 — 도시별 값은 city_vars.yaml
+- id: org_city_waiter
+  name: 주루 점소이
+  grade: 흔함
+  cap: null
+  start: {age: 16, money: 15, literacy: true, places: [city]}
+  gender: random
+  init: {skills: {흥정: 서툶, 말재주: 서툶}}
+  stages:
+    - {id: st_waiter_1, name: 귀빈실, fixed: [ev_p_waiter_1_1], pool: [ev_p_waiter_1_2], pick: 1}
+    - {id: st_waiter_2, name: 엿들은 말, fixed: [ev_p_waiter_2_1], pool: [], pick: 0}
+    - {id: st_waiter_3, name: 선택, fixed: [ev_p_waiter_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_waiter_broker, name: 정보상, tags: [도시출신, 정보상, 표적]}
+    - {id: end_waiter_witness, name: 맹의 증인, faction: fac_alliance, tags: [도시출신, 맹의증인]}
+    - {id: end_waiter_flee, name: 도망자, tags: [도시출신]}
+- id: org_city_clerk
+  name: 상점 견습
+  grade: 흔함
+  cap: null
+  start: {age: 15, money: 20, literacy: true, places: [city]}
+  gender: random
+  init: {skills: {흥정: 서툶, 감정: 서툶}}
+  stages:
+    - {id: st_clerk_1, name: 장부, fixed: [ev_p_clerk_1_1], pool: [ev_p_clerk_1_2], pick: 1}
+    - {id: st_clerk_2, name: 사라진 한 장, fixed: [ev_p_clerk_2_1], pool: [], pick: 0}
+    - {id: st_clerk_3, name: 진짜 범인, fixed: [ev_p_clerk_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_clerk_heir, name: 상단의 후계, tags: [도시출신, 상단후계]}
+    - {id: end_clerk_framed, name: 누명 쓴 도망자, tags: [도시출신, 누명]}
+    - {id: end_clerk_secret, name: 비밀을 쥔 자, tags: [도시출신, 비밀을쥔자]}
+- id: org_city_constable
+  name: 포졸의 아들
+  grade: 흔함
+  cap: null
+  start: {age: 16, money: 10, literacy: false, places: [city]}
+  gender: random
+  init: {skills: {추적: 서툶, 위협: 서툶}, family: {npc_city_father: 아버지}}
+  stages:
+    - {id: st_constable_1, name: 아버지의 술, fixed: [ev_p_constable_1_1], pool: [ev_p_constable_1_2], pick: 1}
+    - {id: st_constable_2, name: 사건, fixed: [ev_p_constable_2_1], pool: [], pick: 0}
+    - {id: st_constable_3, name: 아버지의 선택, fixed: [ev_p_constable_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_constable_officer, name: 포쾌, faction: fac_alliance, tags: [도시출신, 포쾌]}
+    - {id: end_constable_whistle, name: 쫓기는 고발자, tags: [도시출신, 고발자], chase: "{city_patron_fac}"}
+    - {id: end_constable_truth, name: 진실을 쥔 자, tags: [도시출신, 비밀을쥔자]}
+- id: org_city_courtesan
+  name: 기루 심부름꾼
+  grade: 흔함
+  cap: null
+  start: {age: 16, money: 10, literacy: random, places: [city]}
+  gender: random
+  init: {skills: {말재주: 서툶, 은신: 서툶, 연기: 서툶}}
+  stages:
+    - {id: st_courtesan_1, name: 쪽지 심부름, fixed: [ev_p_courtesan_1_1], pool: [ev_p_courtesan_1_2], pick: 1}
+    - {id: st_courtesan_2, name: 읽어 버린 쪽지, fixed: [ev_p_courtesan_2_1], pool: [], pick: 0}
+    - {id: st_courtesan_3, name: 쪽지의 주인, fixed: [ev_p_courtesan_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_courtesan_spy, name: 첩자, faction_hidden: "{city_patron_fac}", tags: [도시출신, 첩자]}
+    - {id: end_courtesan_broker, name: 정보상, tags: [도시출신, 정보상]}
+    - {id: end_courtesan_hunted, name: 쫓기는 자, tags: [도시출신, 추격자]}
+    - {id: end_courtesan_leave, name: 기루를 떠남, tags: [도시출신]}
+- id: org_city_porter
+  name: 성문 짐꾼
+  grade: 흔함
+  cap: null
+  start: {age: 17, money: 5, literacy: false, places: [city]}
+  gender: random
+  looks_bias: {build: 거구}
+  init: {stat: {체력: +2}}
+  stages:
+    - {id: st_porter_1, name: 수레 백 대, fixed: [ev_p_porter_1_1], pool: [ev_p_porter_1_2], pick: 1}
+    - {id: st_porter_2, name: 수레를 연다, fixed: [ev_p_porter_2_1], pool: [], pick: 0}
+    - {id: st_porter_3, name: 성문 밖까지, fixed: [ev_p_porter_3_1], pool: [], pick: 0}
+  endings:
+    - {id: end_porter_hero, name: 숨은 영웅, tags: [도시출신, 숨은영웅]}
+    - {id: end_porter_guard, name: 경비병, faction: fac_alliance, tags: [도시출신, 경비병]}
+    - {id: end_porter_hunted, name: 쫓기는 자, tags: [도시출신, 추격자]}
+    - {id: end_porter_quiet, name: 모른 척, tags: [도시출신, 평화로운삶]}

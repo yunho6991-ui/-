@@ -76,6 +76,10 @@
 - {id: npc_father, name: 아버지, template: family, gender: 남, note: "빙의한 인물의 가족 — 이름 · 나이는 빙의 때 생성"}
 # ── 서막에서 쓰는 틀(template) NPC ──
 - {id: npc_bandit, name: 산적 졸개, template: foe, realm: 삼류, faction: fac_greenwood, intent: 약탈}
+- {id: npc_city_thug, name: 뒷골목 왈패, template: foe, realm: 삼류, intent: 협박}
+- {id: npc_city_boss, name: "주인(도시 출신 서막)", template: passerby, realm: null, note: "점소이 · 견습 출신의 주인 — 도시마다 이름만 바뀜"}
+- {id: npc_city_father, name: 포졸 아버지, template: passerby, realm: 삼류, states: [normal, dead], note: "포졸의 아들 출신 가족"}
+- {id: npc_city_madam, name: 기루 언니, template: passerby, realm: null, note: "기루 심부름꾼 출신의 보호자"}
 - {id: npc_wanderer_huashan, name: 화산의 삼대제자, template: passerby, realm: 이류, faction: fac_huashan}
 - {id: npc_namgung_branch, name: 남궁 방계의 귀공자, template: passerby, realm: 이류, faction: fac_namgung}
 - {id: npc_demon_wanderer, name: 검은 옷의 마교 무인, template: passerby, realm: 일류, faction: fac_demon}
